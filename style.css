@@ -381,8 +381,14 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 /* ============================================
-   MISSION PAGE (menupaan section-eyebrow-sm/h/body 踏襲)
+   MISSION PAGE — menupaan 完全踏襲、 5章構成 + Founder's Story
    ============================================ */
+
+/* セクション (info-section と並列の汎用) */
+.section {
+  margin-bottom:48px;
+}
+
 .section-eyebrow-sm {
   font-family:'Marcellus', serif;
   font-size:12px;
@@ -420,89 +426,118 @@ img { max-width:100%; height:auto; display:block; }
 
 .section-body p:last-child { margin-bottom:0; }
 
-/* Mission statement card (menupaan name-meta 風) */
-.mission-statement {
-  margin:8px 0 0;
-  padding:32px 28px;
-  background:var(--paan-card);
-  border:1px solid var(--paan-line);
-  border-radius:6px;
+/* page-title 内の strong (= 強調) */
+.page-title strong {
+  color:var(--paan-primary);
+  font-weight:500;
+}
+
+/* ============ FOUNDER'S STORY (menupaan v315 踏襲) ============ */
+.founder-section {
+  margin-top:64px;
+  padding:48px 0 0;
+  border-top:1px solid var(--paan-line);
+}
+
+.founder-section .section-eyebrow-sm {
+  font-family:'Marcellus', serif;
+  font-size:11px;
+  color:var(--paan-primary-soft);
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  margin-bottom:14px;
   text-align:center;
 }
 
-.mission-lead {
+.founder-section .section-h {
   font-family:'Noto Serif JP', serif;
-  font-size:17px;
+  font-size:24px;
   font-weight:500;
-  line-height:2.05;
-  letter-spacing:0.06em;
-  color:var(--paan-primary);
-  margin-bottom:24px;
+  line-height:1.6;
+  letter-spacing:0.04em;
+  color:var(--paan-ink);
+  text-align:center;
+  margin-bottom:32px;
+  padding-bottom:0;
+  border-bottom:none;
 }
 
-.mission-divider {
+.founder-story-body {
+  font-family:'Noto Serif JP', serif;
+  font-size:15px;
+  line-height:1.95;
+  color:var(--paan-ink);
+  letter-spacing:0.03em;
+}
+
+.founder-story-body p {
+  margin:0 0 18px;
+}
+
+.founder-story-body p:last-of-type {
+  margin-bottom:0;
+}
+
+.founder-story-body em {
+  font-family:'Marcellus', 'Noto Serif JP', serif;
+  font-style:normal;
+  font-weight:500;
+  color:var(--paan-primary);
+  letter-spacing:0.05em;
+}
+
+.founder-story-body strong {
+  color:var(--paan-primary);
+  font-weight:500;
+}
+
+.founder-divider {
   width:32px;
   height:1px;
   background:var(--paan-primary-soft);
-  margin:0 auto 24px;
-  opacity:0.5;
+  margin:24px auto;
+  border:none;
 }
 
-.mission-body {
+/* 著者署名 (右揃え、 menupaan v316-perf15 踏襲) */
+.founder-signature {
+  text-align:right;
+  margin-top:32px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.founder-signature-name {
   font-family:'Noto Serif JP', serif;
-  font-size:15px;
-  letter-spacing:0.03em;
-  line-height:1.95;
+  font-size:18px;
   color:var(--paan-ink);
-  margin-bottom:18px;
-  text-align:left;
-}
-
-.mission-body:last-child { margin-bottom:0; }
-
-/* Values grid (3 列 → mobile 1 列) */
-.values-grid {
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:14px;
-  margin-top:8px;
-}
-
-.value-card {
-  padding:24px 22px;
-  background:var(--paan-card);
-  border:1px solid var(--paan-line);
-  border-radius:6px;
-}
-
-.value-num {
-  font-family:'Marcellus', serif;
-  font-size:13px;
-  color:var(--paan-primary-soft);
   letter-spacing:0.18em;
-  margin-bottom:10px;
-}
-
-.value-title {
-  font-family:'Noto Serif JP', serif;
-  font-size:15.5px;
   font-weight:500;
-  letter-spacing:0.04em;
-  color:var(--paan-ink);
-  margin-bottom:10px;
-  line-height:1.6;
+  line-height:1.4;
 }
 
-.value-body {
-  font-size:13px;
-  line-height:1.95;
+.founder-signature-title {
+  font-family:'Noto Serif JP', serif;
+  font-size:12.5px;
   color:var(--paan-ink-mid);
-  letter-spacing:0.02em;
+  letter-spacing:0.06em;
+  line-height:1.5;
+  font-style:italic;
 }
 
 @media (max-width:720px) {
-  .values-grid { grid-template-columns:1fr; gap:12px; }
+  .section { margin-bottom:32px; }
+  .founder-section { margin-top:48px; padding-top:36px; }
+  .founder-section .section-h { font-size:20px; line-height:1.55; margin-bottom:22px; }
+  .founder-story-body { font-size:14px; line-height:1.9; }
+  .founder-story-body p { margin-bottom:14px; }
 }
+
+/* ============================================
+   MISSION PAGE — 旧 v3 の mission-statement / values は削除済
+   (menupaan の section ベース構造に統一)
+   ============================================ */
 
 /* ============================================
    BRAND PAGE
@@ -953,7 +988,4 @@ img { max-width:100%; height:auto; display:block; }
   .info-val { font-size:13px; }
   .section-h { font-size:19px; line-height:1.6; }
   .section-body p { font-size:14.5px; }
-  .mission-statement { padding:24px 20px; }
-  .mission-lead { font-size:15px; }
-  .mission-body { font-size:13.5px; }
 }

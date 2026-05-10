@@ -24,6 +24,7 @@
       <header class="mp-site-header" role="banner">
         <a href="/" class="mp-site-logo" aria-label="株式会社PAAN ホーム">PAAN</a>
         <nav class="mp-lp-nav" aria-label="グローバルナビゲーション">
+          <a href="/"        class="mp-lp-link ${isActive('/')}">トップ</a>
           <a href="/mission" class="mp-lp-link ${isActive('/mission')}">理念</a>
           <a href="/brand"   class="mp-lp-link ${isActive('/brand')}">ブランド</a>
           <a href="/company" class="mp-lp-link ${isActive('/company')}">会社概要</a>
@@ -44,6 +45,7 @@
         <div class="mp-footer-tag">Unlocking the path to undiscovered cuisines.</div>
 
         <div class="mp-footer-links">
+          <a href="/"        class="mp-footer-link">トップ</a>
           <a href="/mission" class="mp-footer-link">理念</a>
           <a href="/brand"   class="mp-footer-link">ブランド</a>
           <a href="/company" class="mp-footer-link">会社概要</a>
