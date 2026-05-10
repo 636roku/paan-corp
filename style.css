@@ -492,7 +492,15 @@ img { max-width:100%; height:auto; display:block; }
   letter-spacing:0.04em;
   line-height:2;
   margin:0 auto 36px;
-  max-width:520px;
+  max-width:560px;
+  /* v22: 日本語の意味単位で折り返し (= 「乗り越える」が割れる問題対応)
+     keep-all で CJK の単語の途中で改行しない、
+     line-break:strict で禁則処理を厳格に、
+     text-wrap:pretty で見栄えの良い改行を優先 */
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  line-break:strict;
+  text-wrap:pretty;
 }
 
 @media (max-width:720px) {
