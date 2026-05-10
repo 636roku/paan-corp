@@ -42,7 +42,7 @@
         <a href="/" class="mp-footer-logo-link" aria-label="株式会社PAAN ホーム">
           <div class="mp-footer-logo">PAAN</div>
         </a>
-        <div class="mp-footer-tag">Unlocking the path to undiscovered cuisines.</div>
+        <div class="mp-footer-tag">未だ見ぬ料理への道を拓く。</div>
 
         <div class="mp-footer-links">
           <a href="/"        class="mp-footer-link">トップ</a>
@@ -50,12 +50,6 @@
           <a href="/brand"   class="mp-footer-link">ブランド</a>
           <a href="/company" class="mp-footer-link">会社概要</a>
           <a href="/contact" class="mp-footer-link">お問い合わせ</a>
-        </div>
-
-        <div class="mp-footer-cross-wrap">
-          <a href="https://www.menupaan.com" target="_blank" rel="noopener" class="mp-footer-cross-link">
-            MENU-PAAN を見る →
-          </a>
         </div>
 
         <div class="mp-footer-copy">

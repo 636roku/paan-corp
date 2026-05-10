@@ -206,31 +206,14 @@ img { max-width:100%; height:auto; display:block; }
   color:var(--paan-ink-mid);
   letter-spacing:0.04em;
   line-height:2;
-  margin:0 auto 24px;
+  margin:0 auto 36px;
   max-width:520px;
-}
-
-.hero-tagline {
-  font-family:'Noto Serif JP', serif;
-  font-size:15px;
-  color:var(--paan-primary);
-  letter-spacing:0.04em;
-  margin-bottom:36px;
-}
-
-.hero-tagline .brand {
-  font-family:'Marcellus', serif;
-  font-size:17px;
-  letter-spacing:0.18em;
-  margin-right:4px;
 }
 
 @media (max-width:720px) {
   .hero { padding:20px 20px 28px; }
   .hero-title { font-size:24px; line-height:1.55; margin:32px auto 14px; }
-  .hero-sub { font-size:14.5px; line-height:1.95; }
-  .hero-tagline { font-size:13px; margin-bottom:24px; }
-  .hero-tagline .brand { font-size:15px; }
+  .hero-sub { font-size:14.5px; line-height:1.95; margin-bottom:24px; }
 }
 
 /* ============================================
@@ -535,9 +518,71 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 /* ============================================
-   MISSION PAGE — 旧 v3 の mission-statement / values は削除済
-   (menupaan の section ベース構造に統一)
+   MISSION PAGE — v6 全面書き直し対応
    ============================================ */
+
+/* Opening statement card (page-title 直下の引用ブロック) */
+.mission-statement {
+  margin:8px 0 56px;
+  padding:40px 32px;
+  background:var(--paan-card);
+  border:1px solid var(--paan-line);
+  border-radius:6px;
+  text-align:center;
+}
+
+.mission-lead {
+  font-family:'Noto Serif JP', serif;
+  font-size:18px;
+  font-weight:500;
+  line-height:2.1;
+  letter-spacing:0.08em;
+  color:var(--paan-primary);
+  margin:0;
+}
+
+/* Story-style sections (Five Small Regrets) */
+.story-lead {
+  font-family:'Noto Serif JP', serif;
+  font-size:17px;
+  font-weight:500;
+  letter-spacing:0.06em;
+  color:var(--paan-primary);
+  margin:32px 0 12px !important;
+  line-height:1.6;
+}
+
+.section-body > .story-lead:first-child {
+  margin-top:8px !important;
+}
+
+.story-divider {
+  width:32px;
+  height:1px;
+  background:var(--paan-primary-soft);
+  margin:32px auto;
+  border:none;
+  opacity:0.5;
+}
+
+.story-coda {
+  margin-top:40px !important;
+  padding-top:32px;
+  border-top:1px solid var(--paan-line);
+  font-family:'Noto Serif JP', serif;
+  font-size:15.5px !important;
+  line-height:2.0 !important;
+  letter-spacing:0.04em !important;
+  color:var(--paan-ink) !important;
+}
+
+@media (max-width:720px) {
+  .mission-statement { padding:28px 22px; margin-bottom:40px; }
+  .mission-lead { font-size:15px; line-height:2.0; letter-spacing:0.06em; }
+  .story-lead { font-size:15px; margin:24px 0 10px !important; }
+  .story-divider { margin:24px auto; }
+  .story-coda { font-size:14px !important; padding-top:24px; margin-top:32px !important; }
+}
 
 /* ============================================
    BRAND PAGE
@@ -907,13 +952,12 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-footer-tag {
-  font-family:'Playfair Display', serif;
-  font-size:10px;
+  font-family:'Noto Serif JP', serif;
+  font-size:11px;
   letter-spacing:0.18em;
-  font-style:italic;
   color:var(--paan-primary-soft);
-  margin-bottom:10px;
-  text-transform:uppercase;
+  margin-bottom:14px;
+  font-weight:400;
 }
 
 .mp-footer-links {
@@ -921,7 +965,7 @@ img { max-width:100%; height:auto; display:block; }
   justify-content:center;
   gap:14px;
   font-size:12px;
-  margin-bottom:8px;
+  margin-bottom:14px;
   flex-wrap:wrap;
 }
 
@@ -933,34 +977,6 @@ img { max-width:100%; height:auto; display:block; }
 .mp-footer-link:hover {
   opacity:1;
   text-decoration:underline;
-}
-
-.mp-footer-cross-wrap {
-  margin-top:2px;
-  margin-bottom:8px;
-  display:flex;
-  justify-content:center;
-}
-
-.mp-footer-cross-link {
-  display:inline-block;
-  font-size:11px;
-  letter-spacing:0.10em;
-  color:var(--paan-primary);
-  font-style:italic;
-  font-family:'Playfair Display', serif;
-  padding:6px 16px;
-  border:1px solid rgba(26,46,92,0.3);
-  border-radius:999px;
-  text-decoration:none;
-  transition:all 0.2s;
-  background:#FFFFFF;
-}
-
-.mp-footer-cross-link:hover {
-  color:#FFFFFF;
-  background:var(--paan-primary);
-  border-color:var(--paan-primary);
 }
 
 .mp-footer-copy {
