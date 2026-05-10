@@ -1,12 +1,13 @@
 // ============================================================
 // 株式会社 PAAN — Unified Site Header & Footer
-// 12言語対応 (i18n.js連携)
+// v18 (2026-05-11): モバイルでハンバーガーメニュー (= 三) 対応
+//   - デスクトップ (>720px): 横並びナビ + 言語ドロップダウン右側 (= 従来通り)
+//   - モバイル (≤720px): ロゴ + 三ボタンのみ、 タップで全画面ドロワー
 // ============================================================
 
 (function() {
   'use strict';
 
-  // i18n ヘルパー (= i18n.js が読み込まれていない場合のフォールバック対応)
   function t(key, fallback) {
     if (window.PAAN && window.PAAN.i18n && window.PAAN.i18n.isReady && window.PAAN.i18n.isReady()) {
       const v = window.PAAN.i18n.t(key);
@@ -15,7 +16,6 @@
     return fallback || key;
   }
 
-  // 現在のロケール ( /en/ 等の prefix 考慮 )
   function getCurrentLocale() {
     if (window.PAAN && window.PAAN.i18n && window.PAAN.i18n.getLocale) {
       return window.PAAN.i18n.getLocale();
@@ -23,7 +23,6 @@
     return 'ja';
   }
 
-  // 現在の locale を考慮したパス生成
   function localizedPath(p) {
     const loc = getCurrentLocale();
     if (loc === 'ja') return p;
@@ -33,7 +32,6 @@
   // ---- HEADER ----
   function buildHeader() {
     const path = window.location.pathname;
-    // ロケール prefix を除いたパスでマッチング
     const cleanPath = path.replace(/^\/(ja|en|zh-CN|zh-TW|ko|es|fr|de|it|vi|id|th)(\/|$)/, '/');
     const isActive = (p) => {
       if (p === '/' && (cleanPath === '/' || cleanPath === '/index.html')) return 'active';
@@ -59,7 +57,29 @@
           </button>
           <div class="mp-locale-menu" id="mp-locale-menu" role="menu" aria-hidden="true"></div>
         </div>
+        <button type="button" class="mp-burger" id="mp-burger-btn" aria-label="Menu" aria-expanded="false" aria-controls="mp-mobile-drawer">
+          <span class="mp-burger-bar"></span>
+          <span class="mp-burger-bar"></span>
+          <span class="mp-burger-bar"></span>
+        </button>
       </header>
+
+      <div class="mp-mobile-drawer" id="mp-mobile-drawer" aria-hidden="true">
+        <div class="mp-mobile-drawer-inner">
+          <button type="button" class="mp-mobile-close" id="mp-mobile-close-btn" aria-label="Close">&times;</button>
+          <nav class="mp-mobile-nav" aria-label="Mobile navigation">
+            <a href="${localizedPath('/')}"        class="mp-mobile-link ${isActive('/')}"        data-i18n="nav.top">トップ</a>
+            <a href="${localizedPath('/mission')}" class="mp-mobile-link ${isActive('/mission')}" data-i18n="nav.mission">ミッション・理念</a>
+            <a href="${localizedPath('/brand')}"   class="mp-mobile-link ${isActive('/brand')}"   data-i18n="nav.brand">ブランド</a>
+            <a href="${localizedPath('/company')}" class="mp-mobile-link ${isActive('/company')}" data-i18n="nav.company">会社概要</a>
+            <a href="${localizedPath('/contact')}" class="mp-mobile-link ${isActive('/contact')}" data-i18n="nav.contact">お問い合わせ</a>
+          </nav>
+          <div class="mp-mobile-locale-section">
+            <div class="mp-mobile-locale-label" data-i18n="nav.language">言語 / Language</div>
+            <div class="mp-mobile-locale-grid" id="mp-mobile-locale-grid"></div>
+          </div>
+        </div>
+      </div>
     `;
   }
 
@@ -87,7 +107,7 @@
     `;
   }
 
-  // ---- LOCALE DROPDOWN INIT ----
+  // ---- LOCALE DROPDOWN INIT (デスクトップ用) ----
   function initLocaleDropdown() {
     if (!window.PAAN || !window.PAAN.i18n) return;
     const btn = document.getElementById('mp-locale-btn');
@@ -100,14 +120,12 @@
     const locales = window.PAAN.i18n.getSupportedLocales();
     const current = window.PAAN.i18n.getLocale();
 
-    // 現在ロケール表示
     const cur = META[current];
     if (cur) {
       if (flagEl) flagEl.textContent = cur.flag;
       if (nameEl) nameEl.textContent = cur.name;
     }
 
-    // メニュー populate
     menu.innerHTML = locales.map(loc => {
       const m = META[loc] || { flag: '🌐', name: loc };
       const isCur = loc === current;
@@ -120,7 +138,6 @@
       `;
     }).join('');
 
-    // ボタンクリックで開閉
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = menu.classList.toggle('is-open');
@@ -128,7 +145,6 @@
       menu.setAttribute('aria-hidden', String(!isOpen));
     });
 
-    // 外クリックで閉じる
     document.addEventListener('click', (e) => {
       if (!menu.contains(e.target) && !btn.contains(e.target)) {
         menu.classList.remove('is-open');
@@ -137,7 +153,6 @@
       }
     });
 
-    // ロケール選択
     menu.querySelectorAll('.mp-locale-item').forEach(item => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
@@ -148,6 +163,66 @@
     });
   }
 
+  // ---- MOBILE DRAWER INIT (モバイル用) ----
+  function initMobileDrawer() {
+    const burger = document.getElementById('mp-burger-btn');
+    const drawer = document.getElementById('mp-mobile-drawer');
+    const closeBtn = document.getElementById('mp-mobile-close-btn');
+    const grid = document.getElementById('mp-mobile-locale-grid');
+    if (!burger || !drawer) return;
+
+    // 言語グリッド populate
+    if (grid && window.PAAN && window.PAAN.i18n) {
+      const META = window.PAAN.i18n.LOCALE_META;
+      const locales = window.PAAN.i18n.getSupportedLocales();
+      const current = window.PAAN.i18n.getLocale();
+      grid.innerHTML = locales.map(loc => {
+        const m = META[loc] || { flag: '🌐', name: loc };
+        const isCur = loc === current;
+        return `
+          <a href="#" class="mp-mobile-locale-item${isCur ? ' is-current' : ''}" data-locale="${loc}">
+            <span class="mp-mobile-locale-flag">${m.flag}</span>
+            <span class="mp-mobile-locale-name">${m.name}</span>
+            ${isCur ? '<span class="mp-mobile-locale-check">✓</span>' : ''}
+          </a>
+        `;
+      }).join('');
+
+      grid.querySelectorAll('.mp-mobile-locale-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const loc = item.getAttribute('data-locale');
+          if (!loc || loc === current) return;
+          window.PAAN.i18n.setLocale(loc);
+        });
+      });
+    }
+
+    const open = () => {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    burger.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    // バックドロップ (= 自身) クリックで閉じる
+    drawer.addEventListener('click', (e) => {
+      if (e.target === drawer) close();
+    });
+    // ESCキーで閉じる
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('is-open')) close();
+    });
+  }
+
   // ---- INJECT ----
   function inject() {
     const headerSlot = document.getElementById('site-header');
@@ -155,7 +230,6 @@
     if (headerSlot) headerSlot.outerHTML = buildHeader();
     if (footerSlot) footerSlot.outerHTML = buildFooter();
 
-    // Scroll shadow
     const header = document.querySelector('.mp-site-header');
     if (header) {
       const onScroll = () => {
@@ -166,15 +240,15 @@
       onScroll();
     }
 
-    // i18n 適用
     if (window.PAAN && window.PAAN.i18n && window.PAAN.i18n.isReady && window.PAAN.i18n.isReady()) {
       window.PAAN.i18n.applyToDOM();
       initLocaleDropdown();
+      initMobileDrawer();
     } else {
-      // i18n.js 初期化待ち
       window.addEventListener('paan:i18n:ready', () => {
         window.PAAN.i18n.applyToDOM();
         initLocaleDropdown();
+        initMobileDrawer();
       }, { once: true });
     }
   }
