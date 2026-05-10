@@ -13,9 +13,9 @@
 
   /* === Surfaces & lines === */
   --paan-bg:        #FFFFFF;
-  --paan-card:      #FDFAFB;       /* menupaan #FDFAF7 相当 (微寒色寄り) */
+  --paan-card:      #FAFBFD;       /* 微寒色 (紺系の極淡い背景、 旧 #FDFAFB から青寄りへ) */
   --paan-line:      #E4E8F0;       /* menupaan #F0E4D9 相当 (紺系) */
-  --paan-line-2:    #E8DDD6;       /* menupaan footer border 相当 */
+  --paan-line-2:    #E0E5ED;       /* footer border 相当 (紺系統) */
 
   /* === Type colors === */
   --paan-ink:       #1A2040;       /* 本文 (= menupaan #3A1420 相当の濃紺) */
