@@ -579,6 +579,10 @@ img { max-width:100%; height:auto; display:block; }
   font-size:13.5px;
   color:var(--paan-ink-mid);
   letter-spacing:0.06em;
+  /* v23: CJKの意味単位で折り返し (= 「ジェネラルカウンセ/ル」が割れる問題対応) */
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  line-break:strict;
 }
 
 .info-val {
@@ -1433,7 +1437,7 @@ img { max-width:100%; height:auto; display:block; }
   .info-section { margin-bottom:32px; }
   .info-h { font-size:18px; }
   .info-grid { padding:4px 18px; }
-  .info-row { grid-template-columns:120px 1fr; gap:14px; padding:14px 0; font-size:12.5px; }
+  .info-row { grid-template-columns:140px 1fr; gap:12px; padding:14px 0; font-size:12.5px; }
   .info-key { font-size:12.5px; }
   .info-val { font-size:13px; }
   .section-h { font-size:19px; line-height:1.6; }
