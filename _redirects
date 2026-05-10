@@ -1,0 +1,5 @@
+# Pretty URLs (no .html extension)
+/mission   /mission.html   200
+/brand     /brand.html     200
+/company   /company.html   200
+/contact   /contact.html   200

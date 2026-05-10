@@ -1,0 +1,15 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+/style.css
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/header-footer.js
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
