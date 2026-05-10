@@ -128,12 +128,120 @@ img { max-width:100%; height:auto; display:block; }
   background:var(--paan-primary);
 }
 
-/* 右側スペーサー (LP nav 物理中央揃えの対称用)
-   v3: flex:1 でロゴ側 (= flex:1) と完全対称。 mp-lp-nav (= flex:1 + justify-content:center)
-   が画面物理中央に揃う。 ロゴ幅変化にも追随。 */
-.mp-header-spacer {
+/* 言語ドロップダウン (= 右側、 menupaan.com 完全踏襲)
+   v17 (2026-05-11): 12言語対応の locale dropdown を追加
+   ヘッダー右側に配置し、 mp-lp-nav (= 中央揃え) との左右対称を維持 */
+.mp-locale-wrapper {
+  position:relative;
   flex:1;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.mp-locale-button {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:transparent;
+  border:1px solid var(--paan-line);
+  border-radius:999px;
+  padding:6px 12px;
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:12.5px;
+  color:var(--paan-ink);
+  cursor:pointer;
+  transition:all 0.15s;
+}
+
+.mp-locale-button:hover {
+  border-color:var(--paan-primary-soft);
+  background:var(--paan-card);
+}
+
+.mp-locale-flag {
+  font-size:14px;
+  line-height:1;
+}
+
+.mp-locale-name {
+  font-weight:500;
+  letter-spacing:0.04em;
+}
+
+.mp-locale-arrow {
+  font-size:9px;
+  color:var(--paan-ink-mid);
+  margin-left:2px;
+}
+
+.mp-locale-menu {
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  min-width:280px;
+  background:#FFFFFF;
+  border:1px solid var(--paan-line);
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(26,32,64,0.10);
+  padding:6px;
+  display:none;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  z-index:1000;
+}
+
+.mp-locale-menu.is-open {
+  display:grid;
+}
+
+.mp-locale-item {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:6px;
+  text-decoration:none;
+  color:var(--paan-ink);
+  font-size:12.5px;
+  font-family:'Noto Sans JP', sans-serif;
+  letter-spacing:0.02em;
+  transition:background 0.12s;
+}
+
+.mp-locale-item:hover {
+  background:var(--paan-card);
+}
+
+.mp-locale-item.is-current {
+  background:var(--paan-card);
+  font-weight:500;
+}
+
+.mp-locale-item-flag {
+  font-size:15px;
+  line-height:1;
   flex-shrink:0;
+}
+
+.mp-locale-item-name {
+  flex:1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.mp-locale-item-check {
+  color:var(--paan-primary);
+  font-size:12px;
+  margin-left:auto;
+}
+
+@media (max-width:720px) {
+  .mp-locale-button { padding:5px 10px; font-size:11.5px; }
+  .mp-locale-name { display:none; } /* スマホでは旗のみ表示 */
+  .mp-locale-arrow { display:none; }
+  .mp-locale-menu { min-width:240px; right:-8px; }
+  .mp-locale-item { font-size:11.5px; padding:7px 8px; }
 }
 
 @media (max-width:720px) {

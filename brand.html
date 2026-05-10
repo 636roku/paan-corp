@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>ブランド | 株式会社PAAN</title>
-<meta name="description" content="株式会社PAANが運営するブランド一覧。多言語メニュー翻訳サービス「MENU-PAAN」をはじめ、PAANシリーズを開発しています。">
+<title data-i18n="page.brand.title">ブランド | 株式会社PAAN</title>
+<meta name="description" data-i18n-attr="content:page.brand.description" content="株式会社PAANが運営するブランド一覧。">
 <meta name="theme-color" content="#1A2E5C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ブランド | 株式会社PAAN">
-<meta property="og:description" content="MENU-PAAN — メニューの向こう側へ。多言語メニュー翻訳サービス、PAANシリーズ。">
+<meta property="og:title" data-i18n-attr="content:page.brand.title" content="ブランド | 株式会社PAAN">
+<meta property="og:description" data-i18n-attr="content:page.brand.description" content="MENU-PAAN — メニューの向こう側へ。">
 <meta property="og:url" content="https://paan.co.jp/brand">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 <script src="/header-footer.js" defer></script>
 </head>
 <body data-site="paan">
@@ -26,59 +27,53 @@
 
 <main class="page-wrap">
 
-  <div class="page-eyebrow">Our Brands</div>
-  <h1 class="page-title">PAAN シリーズ</h1>
+  <div class="page-eyebrow" data-i18n="page.brand.eyebrow">Our Brands</div>
+  <h1 class="page-title" data-i18n="page.brand.page_title">PAAN シリーズ</h1>
 
-  <!-- MENU-PAAN -->
   <section class="info-section">
-    <h2 class="info-h">第1弾</h2>
+    <h2 class="info-h" data-i18n="page.brand.first_h">第1弾</h2>
 
     <article class="brand-card brand-card--menupaan">
       <div class="brand-card-status">
         <span class="status-dot status-dot-live" aria-hidden="true"></span>
-        <span>2026 年 6 月 3 日 ローンチ予定</span>
+        <span data-i18n="page.brand.menupaan_status">2026 年 6 月 3 日 ローンチ予定</span>
       </div>
 
-      <h3 class="brand-card-name">MENU-PAAN</h3>
-      <p class="brand-card-tagline">メニューの向こう側へ。</p>
+      <h3 class="brand-card-name" data-i18n="page.brand.menupaan_name">MENU-PAAN</h3>
+      <p class="brand-card-tagline" data-i18n="page.brand.menupaan_tagline">メニューの向こう側へ。</p>
 
       <div class="brand-card-body">
-        <p>
-          海外旅行者と、 訪日インバウンドの双方に向けた <strong>多言語メニュー翻訳サービス</strong>。 写真 1 枚から、 文化的文脈を踏まえた料理解説と、 アレルギー・宗教対応・食事制限の自動警告を、 母語でお届けします。 既存の翻訳アプリが返す無味乾燥な「直訳」 を超え、 ユーザーの食文化に立ち戻った 「翻訳」 を。
-        </p>
+        <p data-i18n="page.brand.menupaan_desc"></p>
         <ul class="brand-features">
-          <li><strong>対応 12 言語:</strong> 日本語 / 英語 / 中国語(簡体・繁体) / 韓国語 / スペイン語 / フランス語 / ドイツ語 / イタリア語 / ベトナム語 / インドネシア語 / タイ語</li>
-          <li><strong>主要機能:</strong> メニューの自動 OCR、 文化的文脈を踏まえた料理解説、 アレルギー・宗教・食事制限の自動警告、 ペアリング推薦、 注文サポート</li>
-          <li><strong>提供形態:</strong> Web (PWA、 全デバイス対応) / iOS アプリ (順次)</li>
+          <li><strong data-i18n="page.brand.menupaan_feature_langs_label">対応 12 言語:</strong> <span data-i18n="page.brand.menupaan_feature_langs_value"></span></li>
+          <li><strong data-i18n="page.brand.menupaan_feature_func_label">主要機能:</strong> <span data-i18n="page.brand.menupaan_feature_func_value"></span></li>
+          <li><strong data-i18n="page.brand.menupaan_feature_form_label">提供形態:</strong> <span data-i18n="page.brand.menupaan_feature_form_value"></span></li>
         </ul>
       </div>
 
       <div class="brand-card-cta">
         <a href="https://www.menupaan.com" class="brand-cta-primary brand-cta-primary--menupaan" target="_blank" rel="noopener">
-          MENU-PAAN を開く
+          <span data-i18n="page.brand.menupaan_cta_open">MENU-PAAN を開く</span>
           <span class="cta-arrow" aria-hidden="true">→</span>
         </a>
-        <a href="https://www.menupaan.com/mission" class="brand-cta-secondary" target="_blank" rel="noopener">
+        <a href="https://www.menupaan.com/mission" class="brand-cta-secondary" target="_blank" rel="noopener" data-i18n="page.brand.menupaan_cta_story">
           ストーリーを読む
         </a>
       </div>
     </article>
   </section>
 
-  <!-- COMING SOON -->
   <section class="info-section">
-    <h2 class="info-h">その他の PAAN シリーズ</h2>
+    <h2 class="info-h" data-i18n="page.brand.others_h">その他の PAAN シリーズ</h2>
 
     <article class="brand-card">
       <div class="brand-card-status">
         <span class="status-dot status-dot-soon" aria-hidden="true"></span>
-        <span>開発中</span>
+        <span data-i18n="page.brand.others_status">開発中</span>
       </div>
-      <h3 class="brand-card-name-sm">PAAN シリーズ 第 2 弾以降</h3>
+      <h3 class="brand-card-name-sm" data-i18n="page.brand.others_name">PAAN シリーズ 第 2 弾以降</h3>
       <div class="brand-card-body" style="margin-top:18px;">
-        <p>
-          飲みたい一杯に偶然以外の方法でたどり着くこと。 地酒に最も合う一皿に出会うこと。 食事制限や信条のある食卓を、 もてなす側として臆さず迎えられること。 そして、 国境の向こうの料理に、 国境のこちら側からアクセスすること。 ── ミッションに掲げたこれらの場面を、 ひとつずつプロダクトで実現する <strong>PAAN シリーズ</strong>を順次展開してまいります。
-        </p>
+        <p data-i18n="page.brand.others_desc"></p>
       </div>
     </article>
   </section>

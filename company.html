@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>会社概要 | 株式会社PAAN</title>
-<meta name="description" content="株式会社PAAN (PAAN Co., Ltd.) の会社概要、 役員のご紹介。">
+<title data-i18n="page.company.title">会社概要 | 株式会社PAAN</title>
+<meta name="description" data-i18n-attr="content:page.company.description" content="株式会社PAAN (PAAN Co., Ltd.) の会社概要。">
 <meta name="theme-color" content="#1A2E5C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="会社概要 | 株式会社PAAN">
-<meta property="og:description" content="株式会社PAANの会社概要と役員のご紹介。">
+<meta property="og:title" data-i18n-attr="content:page.company.title" content="会社概要 | 株式会社PAAN">
+<meta property="og:description" data-i18n-attr="content:page.company.description" content="株式会社PAANの会社概要。">
 <meta property="og:url" content="https://paan.co.jp/company">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 <script src="/header-footer.js" defer></script>
 </head>
 <body data-site="paan">
@@ -26,76 +27,73 @@
 
 <main class="page-wrap">
 
-  <div class="page-eyebrow">Company</div>
-  <h1 class="page-title">会社概要</h1>
+  <div class="page-eyebrow" data-i18n="page.company.eyebrow">Company</div>
+  <h1 class="page-title" data-i18n="page.company.page_title">会社概要</h1>
 
-  <!-- COMPANY INFO -->
   <section class="info-section">
-    <h2 class="info-h">運営会社</h2>
+    <h2 class="info-h" data-i18n="page.company.info_h">運営会社</h2>
     <div class="info-grid">
       <div class="info-row">
-        <div class="info-key">商号</div>
-        <div class="info-val">株式会社PAAN (PAAN Co., Ltd.)</div>
+        <div class="info-key" data-i18n="page.company.info_name">商号</div>
+        <div class="info-val" data-i18n="page.company.info_name_v">株式会社PAAN (PAAN Co., Ltd.)</div>
       </div>
       <div class="info-row">
-        <div class="info-key">設立</div>
-        <div class="info-val">2026 年 6 月 3 日 (予定)</div>
+        <div class="info-key" data-i18n="page.company.info_founded">設立</div>
+        <div class="info-val" data-i18n="page.company.info_founded_v">2026 年 6 月 3 日 (予定)</div>
       </div>
       <div class="info-row">
-        <div class="info-key">代表取締役</div>
-        <div class="info-val">乾 禄三郎</div>
+        <div class="info-key" data-i18n="page.company.info_ceo">代表取締役</div>
+        <div class="info-val" data-i18n="page.company.info_ceo_v">乾 禄三郎</div>
       </div>
       <div class="info-row">
-        <div class="info-key">ジェネラルカウンセル</div>
-        <div class="info-val">由井 恒輝</div>
+        <div class="info-key" data-i18n="page.company.info_gc">ジェネラルカウンセル</div>
+        <div class="info-val" data-i18n="page.company.info_gc_v">由井 恒輝</div>
       </div>
       <div class="info-row">
-        <div class="info-key">所在地</div>
-        <div class="info-val">〒153-0061 東京都目黒区中目黒 3-5-20</div>
+        <div class="info-key" data-i18n="page.company.info_address">所在地</div>
+        <div class="info-val" data-i18n="page.company.info_address_v">〒153-0061 東京都目黒区中目黒 3-5-20</div>
       </div>
       <div class="info-row">
-        <div class="info-key">お問い合わせ</div>
-        <div class="info-val"><a href="/contact">お問い合わせフォーム</a></div>
+        <div class="info-key" data-i18n="page.company.info_contact">お問い合わせ</div>
+        <div class="info-val"><a href="/contact" data-i18n="page.company.info_contact_v">お問い合わせフォーム</a></div>
       </div>
     </div>
   </section>
 
-  <!-- BUSINESS -->
   <section class="info-section">
-    <h2 class="info-h">事業内容</h2>
+    <h2 class="info-h" data-i18n="page.company.biz_h">事業内容</h2>
     <ul class="business-list">
       <li>
-        <strong>多言語メニュー翻訳サービス</strong> 「MENU-PAAN」 の企画・開発・運営
-        <span class="business-sub">海外旅行者・訪日インバウンド向けの 12 言語対応 SaaS</span>
+        <strong data-i18n="page.company.biz_1_strong">多言語メニュー翻訳サービス</strong> <span data-i18n="page.company.biz_1_main">「MENU-PAAN」 の企画・開発・運営</span>
+        <span class="business-sub" data-i18n="page.company.biz_1_sub">海外旅行者・訪日インバウンド向けの 12 言語対応 SaaS</span>
       </li>
       <li>
-        <strong>飲食店向け業務システム</strong> の開発・提供
-        <span class="business-sub">在庫管理、 オーダー管理、 多言語メニュー等の業務支援システム</span>
+        <strong data-i18n="page.company.biz_2_strong">飲食店向け業務システム</strong> <span data-i18n="page.company.biz_2_main">の開発・提供</span>
+        <span class="business-sub" data-i18n="page.company.biz_2_sub">在庫管理、 オーダー管理、 多言語メニュー等の業務支援システム</span>
       </li>
       <li>
-        <strong>飲食店の IT 導入支援</strong>
-        <span class="business-sub">SaaS 選定・導入伴走、 オペレーション設計、 デジタル化のご相談</span>
+        <strong data-i18n="page.company.biz_3_strong">飲食店の IT 導入支援</strong>
+        <span class="business-sub" data-i18n="page.company.biz_3_sub">SaaS 選定・導入伴走、 オペレーション設計、 デジタル化のご相談</span>
       </li>
       <li>
-        <strong>食×AI領域の研究開発</strong>
-        <span class="business-sub">人工知能を用いた料理理解、 文化的文脈翻訳、 シーン特化型マッチングの研究</span>
+        <strong data-i18n="page.company.biz_4_strong">食×AI領域の研究開発</strong>
+        <span class="business-sub" data-i18n="page.company.biz_4_sub">人工知能を用いた料理理解、 文化的文脈翻訳、 シーン特化型マッチングの研究</span>
       </li>
     </ul>
   </section>
 
-  <!-- FOUNDERS / OFFICERS -->
   <section class="info-section">
-    <h2 class="info-h">役員紹介</h2>
+    <h2 class="info-h" data-i18n="page.company.founders_h">役員紹介</h2>
     <div class="founders-grid">
       <div class="founder-card">
         <div class="founder-photo-wrap">
           <img src="/images/rokusaburo_inui.jpg" alt="乾 禄三郎" class="founder-photo founder-photo--inui" loading="lazy">
         </div>
         <div class="founder-card-body">
-          <div class="founder-role">代表取締役 / Co-founder</div>
-          <div class="founder-name">乾 禄三郎</div>
-          <div class="founder-name-en">Rokusaburo INUI</div>
-          <p class="founder-bio">2015年、 慶應義塾高等学校卒。 2019年、 慶應義塾大学法学部政治学科卒業後、 外務省に国家総合職として入省。 韓国・フィリピン担当として本省勤務。 その後、 在英国日本国大使館にて外交官補および二等書記官として対外経済・外交実務に従事。 2025年6月に外務省を退職し、 1950年創業の串カツ専門店・株式会社串の坊の常務取締役に就任。 外交官、 飲食実務家としての経験から、 「MENU-PAAN」 の着想を得る。 2026年5月、 MENU-PAAN共同創業。 1996年7月生まれ。</p>
+          <div class="founder-role" data-i18n="page.company.founder_inui_role">代表取締役 / Co-founder</div>
+          <div class="founder-name" data-i18n="page.company.founder_inui_name">乾 禄三郎</div>
+          <div class="founder-name-en" data-i18n="page.company.founder_inui_name_en">Rokusaburo INUI</div>
+          <p class="founder-bio" data-i18n="page.company.founder_inui_bio"></p>
         </div>
       </div>
       <div class="founder-card">
@@ -103,10 +101,10 @@
           <img src="/images/koki_yui.jpg" alt="由井 恒輝" class="founder-photo founder-photo--yui" loading="lazy">
         </div>
         <div class="founder-card-body">
-          <div class="founder-role">ジェネラルカウンセル / Co-founder</div>
-          <div class="founder-name">由井 恒輝</div>
-          <div class="founder-name-en">Koki YUI</div>
-          <p class="founder-bio">2015年、 慶應義塾高等学校卒。 2018年、 慶應義塾大学法学部在学中に司法試験予備試験に合格し、 翌2019年に司法試験合格。 2021年の弁護士登録 (第二東京弁護士会所属) と同時に法律事務所ZeLoへ参画。 スタートアップファイナンス、 パブリックアフェアーズ、 ジェネラルコーポレートを専門領域とし、 官民双方の知見を活かしたリーガルアドバイザリーに従事。 経済産業省イノベーション・環境局 (イノベーション創出新事業推進課) での行政実務を経て、 現在はFugen法律事務所に参画。 2026年5月、 MENU-PAAN共同創業。 1996年7月生まれ。</p>
+          <div class="founder-role" data-i18n="page.company.founder_yui_role">ジェネラルカウンセル / Co-founder</div>
+          <div class="founder-name" data-i18n="page.company.founder_yui_name">由井 恒輝</div>
+          <div class="founder-name-en" data-i18n="page.company.founder_yui_name_en">Koki YUI</div>
+          <p class="founder-bio" data-i18n="page.company.founder_yui_bio"></p>
         </div>
       </div>
     </div>
