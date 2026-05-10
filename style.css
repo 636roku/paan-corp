@@ -910,8 +910,11 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .founder-photo--yui {
-  /* 顔がやや上寄り、 頭部が切れない程度 */
-  object-position:center 30%;
+  /* 元写真の被写体が小さめなので scale で軽くズームイン
+     乾さん写真と被写体サイズを揃える */
+  object-position:center 35%;
+  transform:scale(1.15);
+  transform-origin:center 35%;
 }
 
 .founder-card-body {
