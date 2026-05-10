@@ -123,8 +123,27 @@
         }
       });
     });
-    // <html lang> も同期
+    // <html lang> 同期
     document.documentElement.setAttribute('lang', state.locale);
+    // og:image を言語別に切替
+    const ogImageEl = document.querySelector('meta[property="og:image"]');
+    if (ogImageEl) {
+      ogImageEl.setAttribute('content', `https://paan.co.jp/og/og-${state.locale}.png`);
+    }
+    const twImageEl = document.querySelector('meta[name="twitter:image"]');
+    if (twImageEl) {
+      twImageEl.setAttribute('content', `https://paan.co.jp/og/og-${state.locale}.png`);
+    }
+    // og:locale 同期 (= zh-CN → zh_CN 等の正規化)
+    const ogLocaleMap = {
+      'ja': 'ja_JP', 'en': 'en_GB', 'zh-CN': 'zh_CN', 'zh-TW': 'zh_TW',
+      'ko': 'ko_KR', 'es': 'es_ES', 'fr': 'fr_FR', 'de': 'de_DE',
+      'it': 'it_IT', 'vi': 'vi_VN', 'id': 'id_ID', 'th': 'th_TH'
+    };
+    const ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+    if (ogLocaleEl) {
+      ogLocaleEl.setAttribute('content', ogLocaleMap[state.locale] || 'ja_JP');
+    }
   }
 
   /** ロケール切替 (= URL書き換え + リロード) */
