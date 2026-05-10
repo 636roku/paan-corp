@@ -1,6 +1,6 @@
 // ============================================================
 // 株式会社 PAAN — Unified Site Header & Footer
-// menupaan.com の header-footer.js 構造を踏襲、紺基調に変更
+// menupaan.com の header-footer.js 構造を完全踏襲、 紺基調に変更
 // ============================================================
 // Usage:
 //   <div id="site-header"></div>
@@ -11,7 +11,7 @@
 (function() {
   'use strict';
 
-  // ---- HEADER ----
+  // ---- HEADER (menupaan の mp-lp-nav 方式踏襲) ----
   function buildHeader() {
     const path = window.location.pathname;
     const isActive = (p) => {
@@ -22,23 +22,20 @@
 
     return `
       <header class="mp-site-header" role="banner">
-        <a href="/" class="mp-site-logo" aria-label="株式会社PAAN ホーム">
-          <span>PAAN</span>
-          <span class="mp-site-logo-sub">Co., Ltd.</span>
-        </a>
-        <nav class="mp-site-nav" aria-label="グローバルナビゲーション">
-          <a href="/mission" class="mp-site-link ${isActive('/mission')}">理念</a>
-          <a href="/brand"   class="mp-site-link ${isActive('/brand')}">ブランド</a>
-          <a href="/company" class="mp-site-link ${isActive('/company')}">会社概要</a>
-          <a href="/contact" class="mp-site-link ${isActive('/contact')}">お問い合わせ</a>
+        <a href="/" class="mp-site-logo" aria-label="株式会社PAAN ホーム">PAAN</a>
+        <nav class="mp-lp-nav" aria-label="グローバルナビゲーション">
+          <a href="/mission" class="mp-lp-link ${isActive('/mission')}">理念</a>
+          <a href="/brand"   class="mp-lp-link ${isActive('/brand')}">ブランド</a>
+          <a href="/company" class="mp-lp-link ${isActive('/company')}">会社概要</a>
+          <a href="/contact" class="mp-lp-link ${isActive('/contact')}">お問い合わせ</a>
         </nav>
+        <div class="mp-header-spacer" aria-hidden="true"></div>
       </header>
     `;
   }
 
-  // ---- FOOTER ----
+  // ---- FOOTER (menupaan の構造完全踏襲) ----
   function buildFooter() {
-    const year = new Date().getFullYear();
     return `
       <footer class="mp-site-footer" role="contentinfo">
         <a href="/" class="mp-footer-logo-link" aria-label="株式会社PAAN ホーム">
@@ -60,7 +57,7 @@
         </div>
 
         <div class="mp-footer-copy">
-          &copy; ${year} 株式会社PAAN (PAAN Co., Ltd.) All rights reserved.
+          &copy; 2026 株式会社PAAN (PAAN Co., Ltd.) · All rights reserved.
         </div>
       </footer>
     `;
@@ -73,7 +70,7 @@
     if (headerSlot) headerSlot.outerHTML = buildHeader();
     if (footerSlot) footerSlot.outerHTML = buildFooter();
 
-    // Scroll shadow
+    // Scroll shadow (menupaan踏襲)
     const header = document.querySelector('.mp-site-header');
     if (header) {
       const onScroll = () => {

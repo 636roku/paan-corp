@@ -1,31 +1,26 @@
 /* ============================================
-   PAAN Corporate Site
-   menupaan.com の構造・余白・フォントを踏襲し、
-   テーマ色だけ Royal Navy に置換。
+   PAAN Corporate Site v2
+   menupaan.com 完全踏襲、 色のみ Royal Navy 系に置換
    ============================================ */
 
 :root {
-  /* === Brand palette (Royal Navy 系) === */
-  /* menupaan の #9B1C31 (赤) → #1A2E5C (王室紺) */
-  /* menupaan の #C27680 (赤系サブ) → #6B7DA0 (紺系サブ) */
-  /* menupaan の #C9A961 (ゴールド) → #B8985A (落ち着いた金、踏襲) */
+  /* === Color tokens === */
+  /* menupaan: 主軸赤 #9B1C31 → PAAN: 主軸紺 #1A2E5C */
+  --paan-primary:      #1A2E5C;   /* 主軸 royal navy (= menupaan #9B1C31 相当) */
+  --paan-primary-deep: #0E1C3D;   /* hover 用 deep (= menupaan #7A1025 相当) */
+  --paan-primary-soft: #6B7DA0;   /* sub label 紺グレー (= menupaan #C27680 相当) */
+  --paan-gold:         #C9A961;   /* heritage gold (= menupaan diners theme と共通) */
 
-  --paan-primary:      #1A2E5C;   /* 主軸 royal navy */
-  --paan-primary-deep: #0E1C3D;   /* hover / heading */
-  --paan-primary-soft: #6B7DA0;   /* eyebrow / sub */
-  --paan-gold:         #B8985A;   /* heritage gold accent */
-  --paan-gold-soft:    #C9A961;
-
-  /* Surfaces & lines (menupaan踏襲) */
+  /* === Surfaces & lines === */
   --paan-bg:        #FFFFFF;
-  --paan-card:      #FDFAFB;       /* menupaan #FDFAF7 (温かみ) → 微寒色寄り */
-  --paan-line:      #E4E8F0;       /* menupaan #F0E4D9 → 紺系 */
-  --paan-line-2:    #ECDFD2;       /* (重要なら別キー) */
+  --paan-card:      #FDFAFB;       /* menupaan #FDFAF7 相当 (微寒色寄り) */
+  --paan-line:      #E4E8F0;       /* menupaan #F0E4D9 相当 (紺系) */
+  --paan-line-2:    #E8DDD6;       /* menupaan footer border 相当 */
 
-  /* Type colours (menupaan踏襲) */
-  --paan-ink:       #1A2040;       /* menupaan #3A1420 → 紺 */
-  --paan-ink-mid:   #5A6378;       /* menupaan #7A6968 → 紺グレー */
-  --paan-ink-soft:  #8898B2;       /* menupaan #C27680 → 紺系 */
+  /* === Type colors === */
+  --paan-ink:       #1A2040;       /* 本文 (= menupaan #3A1420 相当の濃紺) */
+  --paan-ink-mid:   #5A6378;       /* 中間 (= menupaan #7A6968 相当) */
+  --paan-ink-soft:  #8898B2;       /* 弱 (= menupaan #C27680 相当) */
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -34,7 +29,7 @@ body {
   font-family:'Noto Sans JP', -apple-system, 'Helvetica Neue', sans-serif;
   background:#FFFFFF;
   color:var(--paan-ink);
-  line-height:1.85;
+  line-height:1.8;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
@@ -49,7 +44,7 @@ a { color:inherit; text-decoration:none; }
 img { max-width:100%; height:auto; display:block; }
 
 /* ============================================
-   HEADER (menupaan踏襲、fixed + blur)
+   HEADER — menupaan.com 完全踏襲 (fixed + blur)
    ============================================ */
 .mp-site-header {
   padding:20px 32px;
@@ -74,6 +69,12 @@ img { max-width:100%; height:auto; display:block; }
   box-shadow:0 2px 12px rgba(0,0,0,0.06);
 }
 
+.mp-site-header a { text-decoration:none; color:inherit; }
+
+/* ロゴ — menupaan の MENU-PAAN 表記と完全同形式
+   v3 (2026-05-10 ろくちゃん指示「ヘッダーnavの中央揃え微調整」):
+   flex:1 を持たせて右側の mp-header-spacer (= flex:1) と対称化、
+   ロゴ幅に依存せず mp-lp-nav が画面物理中央に揃う仕組み。 */
 .mp-site-logo {
   font-family:'Marcellus', 'Noto Serif JP', serif;
   font-size:26px;
@@ -85,47 +86,39 @@ img { max-width:100%; height:auto; display:block; }
   gap:10px;
   white-space:nowrap;
   flex-shrink:0;
+  flex:1;
+  justify-content:flex-start;
 }
 
-.mp-site-logo-sub {
-  font-family:'Playfair Display', serif;
-  font-size:11px;
-  letter-spacing:0.18em;
-  font-weight:400;
-  font-style:italic;
-  color:var(--paan-ink-soft);
-}
-
-.mp-site-nav {
+/* LP ナビ (menupaan踏襲: 中央寄せ、 下線 active 表示) */
+.mp-lp-nav {
   display:flex;
-  gap:28px;
   align-items:center;
-  margin-right:0;
+  gap:28px;
+  flex:1;
+  justify-content:center;
 }
 
-.mp-site-link {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
+.mp-lp-link {
   font-size:13px;
   letter-spacing:0.06em;
-  color:var(--paan-ink-mid);
+  color:#5a6378;
   padding:6px 2px;
   position:relative;
-  transition:color 0.15s ease;
+  transition:color 0.15s;
   white-space:nowrap;
 }
 
-.mp-site-link:hover {
+.mp-lp-link:hover {
   color:var(--paan-primary);
 }
 
-.mp-site-link.active {
+.mp-lp-link.active {
   color:var(--paan-primary);
   font-weight:500;
 }
 
-.mp-site-link.active::after {
+.mp-lp-link.active::after {
   content:'';
   position:absolute;
   bottom:-2px;
@@ -135,18 +128,113 @@ img { max-width:100%; height:auto; display:block; }
   background:var(--paan-primary);
 }
 
-@media (max-width:600px) {
+/* 右側スペーサー (LP nav 物理中央揃えの対称用)
+   v3: flex:1 でロゴ側 (= flex:1) と完全対称。 mp-lp-nav (= flex:1 + justify-content:center)
+   が画面物理中央に揃う。 ロゴ幅変化にも追随。 */
+.mp-header-spacer {
+  flex:1;
+  flex-shrink:0;
+}
+
+@media (max-width:720px) {
   body { padding-top:72px; }
   html { scroll-padding-top:84px; }
   .mp-site-header { padding:14px 18px; }
-  .mp-site-logo { font-size:20px; letter-spacing:2px; gap:8px; }
-  .mp-site-logo-sub { display:none; }
-  .mp-site-nav { gap:14px; }
-  .mp-site-link { font-size:12px; }
+  .mp-site-logo { font-size:20px; letter-spacing:2px; flex:0 0 auto; }
+  .mp-lp-nav { gap:14px; flex:0 1 auto; }
+  .mp-lp-link { font-size:12px; }
+  .mp-header-spacer { display:none; }
+}
+
+@media (max-width:480px) {
+  .mp-lp-nav { gap:10px; }
+  .mp-lp-link { font-size:11.5px; }
 }
 
 /* ============================================
-   PAGE WRAP (menupaan踏襲: 48/24/40, mobile 32/22/32)
+   HERO (menupaan踏襲: 背景画像 + 白いoverlay)
+   ============================================ */
+.hero {
+  position:relative;
+  padding:24px 24px 32px;
+  text-align:center;
+  background-color:var(--paan-card);
+  background-image:url('/assets/hero/hero-london-1600.webp');
+  background-size:cover;
+  background-position:center;
+  overflow:hidden;
+}
+
+@media (max-width:480px) {
+  .hero {
+    background-image:url('/assets/hero/hero-london-800.webp');
+  }
+}
+
+@media (min-width:1280px) and (-webkit-min-device-pixel-ratio:2),
+       (min-width:1280px) and (min-resolution:192dpi) {
+  .hero {
+    background-image:url('/assets/hero/hero-london-2400.webp');
+  }
+}
+
+.hero::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.86) 50%, rgba(247,249,252,0.96) 100%);
+  z-index:1;
+}
+
+.hero > * { position:relative; z-index:2; }
+
+.hero-title {
+  font-family:'Noto Serif JP', serif;
+  font-size:30px;
+  font-weight:500;
+  color:var(--paan-primary);
+  letter-spacing:0.03em;
+  line-height:1.55;
+  margin:48px auto 16px;
+  max-width:640px;
+}
+
+.hero-sub {
+  font-family:'Noto Serif JP', serif;
+  font-size:16px;
+  font-weight:400;
+  color:var(--paan-ink-mid);
+  letter-spacing:0.04em;
+  line-height:2;
+  margin:0 auto 24px;
+  max-width:520px;
+}
+
+.hero-tagline {
+  font-family:'Noto Serif JP', serif;
+  font-size:15px;
+  color:var(--paan-primary);
+  letter-spacing:0.04em;
+  margin-bottom:36px;
+}
+
+.hero-tagline .brand {
+  font-family:'Marcellus', serif;
+  font-size:17px;
+  letter-spacing:0.18em;
+  margin-right:4px;
+}
+
+@media (max-width:720px) {
+  .hero { padding:20px 20px 28px; }
+  .hero-title { font-size:24px; line-height:1.55; margin:32px auto 14px; }
+  .hero-sub { font-size:14.5px; line-height:1.95; }
+  .hero-tagline { font-size:13px; margin-bottom:24px; }
+  .hero-tagline .brand { font-size:15px; }
+}
+
+/* ============================================
+   PAGE WRAP (menupaan踏襲: 760px / 48-24-40)
    ============================================ */
 .page-wrap {
   max-width:760px;
@@ -169,57 +257,14 @@ img { max-width:100%; height:auto; display:block; }
   font-size:30px;
   font-weight:500;
   letter-spacing:0.05em;
-  line-height:1.4;
+  line-height:1.55;
   color:var(--paan-ink);
   text-align:center;
   margin-bottom:32px;
 }
 
 /* ============================================
-   HERO (top page only) — menupaanのpage-wrapの世界観に合わせる
-   ============================================ */
-.hero-section {
-  text-align:center;
-  padding:8px 0 40px;
-  border-bottom:1px solid var(--paan-line);
-  margin-bottom:40px;
-}
-
-.hero-statement {
-  font-family:'Noto Serif JP', serif;
-  font-size:22px;
-  font-weight:500;
-  letter-spacing:0.06em;
-  line-height:1.7;
-  color:var(--paan-ink);
-  margin-bottom:24px;
-}
-
-.hero-lead {
-  font-family:'Noto Serif JP', serif;
-  font-size:14px;
-  font-weight:400;
-  letter-spacing:0.04em;
-  line-height:2.0;
-  color:var(--paan-ink-mid);
-  max-width:600px;
-  margin:0 auto;
-}
-
-.hero-divider {
-  width:40px;
-  height:1px;
-  background:var(--paan-gold);
-  margin:24px auto;
-}
-
-@media (max-width:720px) {
-  .hero-statement { font-size:18px; line-height:1.65; }
-  .hero-lead { font-size:13px; line-height:1.95; }
-}
-
-/* ============================================
-   SECTIONS (menupaan info-section踏襲)
+   SECTIONS (menupaan info-section 完全踏襲)
    ============================================ */
 .info-section {
   margin-bottom:40px;
@@ -274,7 +319,7 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 /* ============================================
-   NEWS LIST (top page)
+   NEWS LIST (info-section 内に置く想定)
    ============================================ */
 .news-list {
   list-style:none;
@@ -286,7 +331,7 @@ img { max-width:100%; height:auto; display:block; }
   grid-template-columns:120px 90px 1fr;
   gap:20px;
   align-items:center;
-  padding:18px 4px;
+  padding:16px 4px;
   border-bottom:1px solid var(--paan-line);
 }
 
@@ -322,7 +367,7 @@ img { max-width:100%; height:auto; display:block; }
 
 .news-body a {
   color:var(--paan-primary);
-  border-bottom:1px solid var(--paan-gold);
+  border-bottom:1px solid var(--paan-primary);
   padding-bottom:1px;
 }
 
@@ -336,14 +381,53 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 /* ============================================
-   MISSION PAGE (menupaan の mission-statement 風)
+   MISSION PAGE (menupaan section-eyebrow-sm/h/body 踏襲)
    ============================================ */
+.section-eyebrow-sm {
+  font-family:'Marcellus', serif;
+  font-size:12px;
+  color:var(--paan-primary-soft);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.section-h {
+  font-family:'Noto Serif JP', serif;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:0.05em;
+  line-height:1.6;
+  color:var(--paan-ink);
+  margin-bottom:24px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--paan-line);
+}
+
+.section-body p {
+  font-family:'Noto Serif JP', serif;
+  font-size:15.5px;
+  line-height:1.95;
+  letter-spacing:0.04em;
+  color:var(--paan-ink);
+  margin-bottom:20px;
+}
+
+.section-body p strong {
+  color:var(--paan-primary);
+  font-weight:500;
+}
+
+.section-body p:last-child { margin-bottom:0; }
+
+/* Mission statement card (menupaan name-meta 風) */
 .mission-statement {
+  margin:8px 0 0;
+  padding:32px 28px;
   background:var(--paan-card);
   border:1px solid var(--paan-line);
   border-radius:6px;
-  padding:40px 32px;
-  margin-bottom:40px;
+  text-align:center;
 }
 
 .mission-lead {
@@ -352,38 +436,40 @@ img { max-width:100%; height:auto; display:block; }
   font-weight:500;
   line-height:2.05;
   letter-spacing:0.06em;
-  color:var(--paan-ink);
-  text-align:center;
-  margin-bottom:28px;
+  color:var(--paan-primary);
+  margin-bottom:24px;
 }
 
 .mission-divider {
-  width:40px;
+  width:32px;
   height:1px;
-  background:var(--paan-gold);
-  margin:0 auto 28px;
+  background:var(--paan-primary-soft);
+  margin:0 auto 24px;
+  opacity:0.5;
 }
 
 .mission-body {
-  font-size:14px;
+  font-family:'Noto Serif JP', serif;
+  font-size:15px;
   letter-spacing:0.03em;
-  line-height:2.0;
+  line-height:1.95;
   color:var(--paan-ink);
   margin-bottom:18px;
+  text-align:left;
 }
 
 .mission-body:last-child { margin-bottom:0; }
 
-/* Values */
+/* Values grid (3 列 → mobile 1 列) */
 .values-grid {
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:16px;
+  gap:14px;
   margin-top:8px;
 }
 
 .value-card {
-  padding:28px 24px;
+  padding:24px 22px;
   background:var(--paan-card);
   border:1px solid var(--paan-line);
   border-radius:6px;
@@ -394,16 +480,16 @@ img { max-width:100%; height:auto; display:block; }
   font-size:13px;
   color:var(--paan-primary-soft);
   letter-spacing:0.18em;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 .value-title {
   font-family:'Noto Serif JP', serif;
-  font-size:16px;
+  font-size:15.5px;
   font-weight:500;
   letter-spacing:0.04em;
   color:var(--paan-ink);
-  margin-bottom:12px;
+  margin-bottom:10px;
   line-height:1.6;
 }
 
@@ -416,7 +502,6 @@ img { max-width:100%; height:auto; display:block; }
 
 @media (max-width:720px) {
   .values-grid { grid-template-columns:1fr; gap:12px; }
-  .value-card { padding:22px 20px; }
 }
 
 /* ============================================
@@ -426,12 +511,8 @@ img { max-width:100%; height:auto; display:block; }
   background:var(--paan-card);
   border:1px solid var(--paan-line);
   border-radius:6px;
-  padding:36px 32px;
-  margin-bottom:24px;
-}
-
-.brand-card-featured {
-  border-top:3px solid var(--paan-primary);
+  padding:32px 28px;
+  margin-bottom:20px;
 }
 
 .brand-card-status {
@@ -454,31 +535,31 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .status-dot-live {
-  background:var(--paan-gold);
-  box-shadow:0 0 0 0 rgba(184, 152, 90, 0.55);
+  background:var(--paan-primary);
+  box-shadow:0 0 0 0 rgba(26,46,92,0.55);
   animation:pulse 2.4s infinite;
 }
 
 @keyframes pulse {
-  0%   { box-shadow:0 0 0 0   rgba(184, 152, 90, 0.55); }
-  70%  { box-shadow:0 0 0 9px rgba(184, 152, 90, 0); }
-  100% { box-shadow:0 0 0 0   rgba(184, 152, 90, 0); }
+  0%   { box-shadow:0 0 0 0   rgba(26,46,92,0.55); }
+  70%  { box-shadow:0 0 0 9px rgba(26,46,92,0); }
+  100% { box-shadow:0 0 0 0   rgba(26,46,92,0); }
 }
 
 .status-dot-soon { background:var(--paan-line); border:1px solid var(--paan-ink-soft); }
 
 .brand-card-name {
   font-family:'Marcellus', serif;
-  font-size:30px;
+  font-size:28px;
   letter-spacing:0.10em;
   color:var(--paan-primary);
-  margin-bottom:8px;
+  margin-bottom:6px;
   font-weight:400;
 }
 
 .brand-card-name-sm {
   font-family:'Noto Serif JP', serif;
-  font-size:18px;
+  font-size:17px;
   letter-spacing:0.05em;
   color:var(--paan-ink);
   margin-bottom:6px;
@@ -488,35 +569,43 @@ img { max-width:100%; height:auto; display:block; }
 .brand-card-tagline {
   font-family:'Noto Serif JP', serif;
   font-size:14px;
-  letter-spacing:0.08em;
-  color:var(--paan-primary-soft);
+  letter-spacing:0.06em;
+  color:var(--paan-primary);
   font-weight:500;
-  margin-bottom:24px;
+  margin-bottom:22px;
 }
 
 .brand-card-tagline-sm {
   font-size:12.5px;
   letter-spacing:0.04em;
   color:var(--paan-ink-soft);
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 .brand-card-body {
+  font-family:'Noto Serif JP', serif;
   font-size:14px;
   line-height:1.95;
   color:var(--paan-ink);
-  margin-bottom:24px;
+  margin-bottom:22px;
+  letter-spacing:0.03em;
 }
 
-.brand-card-body p { margin-bottom:16px; }
+.brand-card-body p { margin-bottom:14px; }
 .brand-card-body p:last-child { margin-bottom:0; }
+
+.brand-card-body strong {
+  color:var(--paan-primary);
+  font-weight:500;
+}
 
 .brand-features {
   list-style:none;
   background:#FFFFFF;
-  border-left:2px solid var(--paan-gold);
+  border:1px solid var(--paan-line);
   padding:14px 18px;
   margin-top:14px;
+  border-radius:4px;
 }
 
 .brand-features li {
@@ -533,6 +622,7 @@ img { max-width:100%; height:auto; display:block; }
   margin-right:6px;
 }
 
+/* CTA — menupaan の hero-cta 踏襲 */
 .brand-card-cta {
   display:flex;
   gap:10px;
@@ -543,22 +633,27 @@ img { max-width:100%; height:auto; display:block; }
   display:inline-flex;
   align-items:center;
   gap:8px;
-  font-family:'Noto Serif JP', serif;
-  font-size:13.5px;
-  letter-spacing:0.08em;
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:13px;
+  letter-spacing:0.10em;
   color:#FFFFFF;
   background:var(--paan-primary);
-  padding:12px 24px;
-  border-radius:3px;
+  padding:14px 32px;
+  border:1.5px solid var(--paan-primary);
+  border-radius:999px;
   font-weight:500;
-  transition:background 0.15s ease;
+  transition:all 0.15s;
 }
 
-.brand-cta-primary:hover { background:var(--paan-primary-deep); }
+.brand-cta-primary:hover {
+  background:var(--paan-primary-deep);
+  border-color:var(--paan-primary-deep);
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(26,46,92,0.25);
+}
 
 .cta-arrow {
-  font-family:'Marcellus', serif;
-  transition:transform 0.15s ease;
+  transition:transform 0.15s;
 }
 
 .brand-cta-primary:hover .cta-arrow { transform:translateX(2px); }
@@ -566,29 +661,33 @@ img { max-width:100%; height:auto; display:block; }
 .brand-cta-secondary {
   display:inline-flex;
   align-items:center;
-  font-family:'Noto Serif JP', serif;
-  font-size:13.5px;
-  letter-spacing:0.08em;
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:13px;
+  letter-spacing:0.10em;
   color:var(--paan-primary);
-  background:transparent;
-  padding:12px 22px;
-  border:1px solid var(--paan-primary);
-  border-radius:3px;
+  background:#FFFFFF;
+  padding:14px 28px;
+  border:1.5px solid var(--paan-primary);
+  border-radius:999px;
   font-weight:500;
-  transition:background 0.15s ease, color 0.15s ease;
+  transition:all 0.15s;
 }
 
 .brand-cta-secondary:hover {
-  background:var(--paan-primary);
-  color:#FFFFFF;
+  background:rgba(26,46,92,0.06);
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(26,46,92,0.15);
 }
 
-.brand-card-soon {
-  background:var(--paan-card);
+@media (max-width:720px) {
+  .brand-card { padding:26px 22px; }
+  .brand-card-name { font-size:24px; }
+  .brand-card-cta { flex-direction:column; }
+  .brand-cta-primary, .brand-cta-secondary { justify-content:center; text-align:center; }
 }
 
 /* ============================================
-   FOUNDERS GRID (menupaan踏襲)
+   FOUNDERS GRID — menupaan完全踏襲
    ============================================ */
 .founders-grid {
   display:grid;
@@ -631,10 +730,18 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .founder-bio {
+  font-family:'Noto Serif JP', serif;
   font-size:13.5px;
   line-height:1.95;
   color:var(--paan-ink);
   letter-spacing:0.02em;
+}
+
+@media (max-width:720px) {
+  .founders-grid { grid-template-columns:1fr; gap:14px; }
+  .founder-card { padding:24px 22px; }
+  .founder-name { font-size:18px; }
+  .founder-bio { font-size:13px; }
 }
 
 /* ============================================
@@ -647,39 +754,25 @@ img { max-width:100%; height:auto; display:block; }
   color:var(--paan-ink-mid);
   text-align:center;
   max-width:600px;
-  margin:0 auto 36px;
+  margin:0 auto 28px;
   letter-spacing:0.03em;
 }
 
 .contact-card {
   background:var(--paan-primary);
   color:#FFFFFF;
-  padding:48px 36px;
+  padding:40px 32px;
   border-radius:6px;
   text-align:center;
-  position:relative;
-  margin-bottom:40px;
-  overflow:hidden;
-}
-
-.contact-card::before {
-  content:'';
-  position:absolute;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:50px;
-  height:2px;
-  background:var(--paan-gold);
 }
 
 .contact-card-eyebrow {
   font-family:'Marcellus', serif;
   font-size:12px;
-  color:var(--paan-gold-soft);
-  letter-spacing:0.28em;
+  color:rgba(255,255,255,0.7);
+  letter-spacing:0.22em;
   text-transform:uppercase;
-  margin-bottom:18px;
+  margin-bottom:14px;
 }
 
 .contact-email {
@@ -688,18 +781,19 @@ img { max-width:100%; height:auto; display:block; }
   font-size:24px;
   color:#FFFFFF;
   letter-spacing:0.06em;
-  border-bottom:1px solid var(--paan-gold);
+  border-bottom:1px solid rgba(255,255,255,0.5);
   padding-bottom:5px;
-  margin-bottom:24px;
-  transition:color 0.15s ease;
+  margin-bottom:20px;
+  transition:opacity 0.15s ease;
 }
 
-.contact-email:hover { color:var(--paan-gold-soft); }
+.contact-email:hover { opacity:0.8; }
 
 .contact-note {
+  font-family:'Noto Serif JP', serif;
   font-size:13px;
   line-height:1.95;
-  color:rgba(255, 255, 255, 0.78);
+  color:rgba(255,255,255,0.8);
   max-width:500px;
   margin:0 auto;
   letter-spacing:0.02em;
@@ -715,9 +809,8 @@ img { max-width:100%; height:auto; display:block; }
 .inquiry-item {
   background:var(--paan-card);
   border:1px solid var(--paan-line);
-  border-left:3px solid var(--paan-gold);
   padding:22px 22px;
-  border-radius:3px;
+  border-radius:6px;
 }
 
 .inquiry-title {
@@ -730,6 +823,7 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .inquiry-body {
+  font-family:'Noto Serif JP', serif;
   font-size:13px;
   line-height:1.95;
   color:var(--paan-ink-mid);
@@ -738,25 +832,36 @@ img { max-width:100%; height:auto; display:block; }
 
 .inquiry-body a {
   color:var(--paan-primary);
-  border-bottom:1px solid var(--paan-gold);
+  border-bottom:1px solid var(--paan-primary);
 }
 
 @media (max-width:720px) {
   .inquiry-grid { grid-template-columns:1fr; gap:10px; }
+  .contact-card { padding:32px 22px; }
+  .contact-email { font-size:18px; letter-spacing:0.04em; word-break:break-all; }
 }
 
 /* ============================================
-   FOOTER (menupaan踏襲: 白背景・中央寄せ)
+   FOOTER — menupaan.com 完全踏襲
    ============================================ */
 .mp-site-footer {
   background:#FFFFFF;
   color:var(--paan-primary);
-  padding:32px 20px 24px;
-  margin-top:64px;
-  border-top:1px solid var(--paan-line);
+  padding:24px 20px 32px;
+  margin-top:48px;
+  border-top:1px solid var(--paan-line-2);
   text-align:center;
-  font-family:'Noto Sans JP', sans-serif;
+  font-family:'Noto Sans JP', -apple-system, sans-serif;
 }
+
+.mp-site-footer a { text-decoration:none; color:inherit; }
+
+.mp-footer-logo-link {
+  display:inline-block;
+  transition:opacity 0.15s;
+}
+
+.mp-footer-logo-link:hover { opacity:0.75; }
 
 .mp-footer-logo {
   font-family:'Marcellus', serif;
@@ -772,7 +877,8 @@ img { max-width:100%; height:auto; display:block; }
   letter-spacing:0.18em;
   font-style:italic;
   color:var(--paan-primary-soft);
-  margin-bottom:14px;
+  margin-bottom:10px;
+  text-transform:uppercase;
 }
 
 .mp-footer-links {
@@ -780,14 +886,13 @@ img { max-width:100%; height:auto; display:block; }
   justify-content:center;
   gap:14px;
   font-size:12px;
-  margin-bottom:10px;
+  margin-bottom:8px;
   flex-wrap:wrap;
 }
 
 .mp-footer-link {
   color:var(--paan-primary);
   opacity:0.85;
-  transition:opacity 0.15s ease;
 }
 
 .mp-footer-link:hover {
@@ -796,8 +901,10 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-footer-cross-wrap {
-  margin-top:6px;
-  margin-bottom:10px;
+  margin-top:2px;
+  margin-bottom:8px;
+  display:flex;
+  justify-content:center;
 }
 
 .mp-footer-cross-link {
@@ -805,37 +912,20 @@ img { max-width:100%; height:auto; display:block; }
   font-size:11px;
   letter-spacing:0.10em;
   color:var(--paan-primary);
-  border:1px solid var(--paan-primary);
+  font-style:italic;
+  font-family:'Playfair Display', serif;
+  padding:6px 16px;
+  border:1px solid rgba(26,46,92,0.3);
   border-radius:999px;
-  padding:4px 14px;
-  transition:background 0.15s ease, color 0.15s ease;
+  text-decoration:none;
+  transition:all 0.2s;
+  background:#FFFFFF;
 }
 
 .mp-footer-cross-link:hover {
   color:#FFFFFF;
   background:var(--paan-primary);
-}
-
-.mp-footer-legal {
-  margin-top:10px;
-  font-size:11px;
-  color:var(--paan-ink-mid);
-}
-
-.mp-footer-legal-link {
-  color:var(--paan-ink-mid);
-  text-decoration:none;
-  white-space:nowrap;
-}
-
-.mp-footer-legal-link:hover {
-  color:var(--paan-primary);
-  text-decoration:underline;
-}
-
-.mp-footer-legal-sep {
-  color:var(--paan-line);
-  margin:0 6px;
+  border-color:var(--paan-primary);
 }
 
 .mp-footer-copy {
@@ -861,20 +951,9 @@ img { max-width:100%; height:auto; display:block; }
   .info-row { grid-template-columns:100px 1fr; gap:14px; padding:14px 0; font-size:12.5px; }
   .info-key { font-size:12.5px; }
   .info-val { font-size:13px; }
-  .founders-grid { grid-template-columns:1fr; gap:14px; }
-  .founder-card { padding:24px 22px; }
-  .founder-name { font-size:18px; }
-  .founder-bio { font-size:13px; }
-
-  .mission-statement { padding:28px 22px; }
-  .mission-lead { font-size:15px; line-height:1.95; }
+  .section-h { font-size:19px; line-height:1.6; }
+  .section-body p { font-size:14.5px; }
+  .mission-statement { padding:24px 20px; }
+  .mission-lead { font-size:15px; }
   .mission-body { font-size:13.5px; }
-
-  .brand-card { padding:26px 22px; }
-  .brand-card-name { font-size:24px; }
-  .brand-card-cta { flex-direction:column; }
-  .brand-cta-primary, .brand-cta-secondary { justify-content:center; text-align:center; }
-
-  .contact-card { padding:32px 22px; }
-  .contact-email { font-size:18px; letter-spacing:0.04em; word-break:break-all; }
 }
