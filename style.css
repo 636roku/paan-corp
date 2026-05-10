@@ -738,6 +738,18 @@ img { max-width:100%; height:auto; display:block; }
 
 .brand-cta-primary:hover .cta-arrow { transform:translateX(2px); }
 
+/* MENU-PAAN テーマカラー (= ボルドー #9B1C31) オーバーライド
+   /mission ページの MENU-PAAN プロダクト導線ボタンに適用 */
+.brand-cta-primary--menupaan {
+  background:#9B1C31;
+  border-color:#9B1C31;
+}
+.brand-cta-primary--menupaan:hover {
+  background:#7A1525;
+  border-color:#7A1525;
+  box-shadow:0 6px 18px rgba(155,28,49,0.28);
+}
+
 .brand-cta-secondary {
   display:inline-flex;
   align-items:center;
