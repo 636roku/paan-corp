@@ -891,10 +891,13 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .news-date {
-  font-family:'Marcellus', serif;
-  font-size:13.5px;
-  letter-spacing:0.10em;
+  /* v30.16: 旧 Marcellus は数字「2026.06.03」 が旧スタイル数字 (oldstyle figures) で
+     表示されて「へんてこりん」 だったため、 モダンな等幅寄りフォントに変更 */
+  font-family:'SF Mono', 'Menlo', 'Consolas', 'Roboto Mono', 'Noto Sans JP', monospace, sans-serif;
+  font-size:13px;
+  letter-spacing:0.04em;
   color:var(--paan-ink-mid);
+  font-variant-numeric:tabular-nums;
 }
 
 .news-tag {
