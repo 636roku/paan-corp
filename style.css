@@ -294,10 +294,11 @@ img { max-width:100%; height:auto; display:block; }
   position:absolute;
   top:0;
   right:0;
-  width:min(86vw, 380px);
+  /* v30: 幅縮小 min(86vw, 380px) → min(78vw, 320px) (= iPhone SE等の小画面でも背景がより見える) */
+  width:min(78vw, 320px);
   height:100vh;
   background:#FFFFFF;
-  padding:64px 28px 32px;
+  padding:64px 24px 32px;
   overflow-y:auto;
   transform:translateX(100%);
   transition:transform 0.3s cubic-bezier(.4,.0,.2,1);
@@ -439,35 +440,70 @@ img { max-width:100%; height:auto; display:block; }
 /* ============================================
    HERO (menupaan踏襲: 背景画像 + 白いoverlay)
    ============================================ */
+/* ============================================
+   HERO (v30: アイラ島写真を主役、 白文字 + 下からダークグラデーション)
+   ============================================ */
 .hero {
   position:relative;
-  padding:24px 24px 32px;
+  /* v30: テキスト位置を下寄りに (= 道の手前 = ユーザー視点) */
+  padding:0 24px;
+  min-height:560px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
   text-align:center;
-  background-color:var(--paan-card);
-  background-image:url('/assets/hero/hero-london-1600.webp');
+  background-color:var(--paan-primary-deep);
+  background-image:url('/assets/hero/hero-islay-1600.webp');
   background-size:cover;
-  background-position:center;
+  background-position:center center;
   overflow:hidden;
+}
+
+/* デスクトップ高解像度 */
+@media (min-width:1280px) {
+  .hero {
+    min-height:640px;
+    background-image:url('/assets/hero/hero-islay-2400.webp');
+  }
+}
+
+/* デスクトップ小さめ */
+@media (max-width:1024px) and (min-width:721px) {
+  .hero {
+    background-image:url('/assets/hero/hero-islay-1600.webp');
+  }
+}
+
+/* モバイル: 縦構図 4:5 画像 + 高さ調整 */
+@media (max-width:720px) {
+  .hero {
+    min-height:540px;
+    padding:0 20px;
+    /* モバイルは縦構図、 道の真ん中をフォーカス */
+    background-image:url('/assets/hero/hero-islay-mobile-1200.webp');
+    background-position:center 35%;
+  }
 }
 
 @media (max-width:480px) {
   .hero {
-    background-image:url('/assets/hero/hero-london-800.webp');
+    min-height:520px;
+    background-image:url('/assets/hero/hero-islay-mobile-800.webp');
   }
 }
 
-@media (min-width:1280px) and (-webkit-min-device-pixel-ratio:2),
-       (min-width:1280px) and (min-resolution:192dpi) {
-  .hero {
-    background-image:url('/assets/hero/hero-london-2400.webp');
-  }
-}
-
+/* v30: 下からのダークグラデーションオーバーレイ (= テキスト可読性確保、 写真の上半分はクリア) */
 .hero::before {
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.86) 50%, rgba(247,249,252,0.96) 100%);
+  background:linear-gradient(
+    180deg,
+    rgba(14,28,61,0.05) 0%,
+    rgba(14,28,61,0.15) 40%,
+    rgba(14,28,61,0.55) 75%,
+    rgba(14,28,61,0.78) 100%
+  );
   z-index:1;
 }
 
@@ -475,38 +511,45 @@ img { max-width:100%; height:auto; display:block; }
 
 .hero-title {
   font-family:'Noto Serif JP', serif;
-  font-size:30px;
+  font-size:32px;
   font-weight:500;
-  color:var(--paan-primary);
-  letter-spacing:0.03em;
+  /* v30: 紺 → 白文字 */
+  color:#FFFFFF;
+  letter-spacing:0.04em;
   line-height:1.55;
-  margin:48px auto 16px;
-  max-width:640px;
+  margin:0 auto 18px;
+  max-width:680px;
+  /* v30: 影で可読性ブースト */
+  text-shadow:0 2px 24px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .hero-sub {
   font-family:'Noto Serif JP', serif;
   font-size:16px;
   font-weight:400;
-  color:var(--paan-ink-mid);
+  /* v30: 中間グレー → 白に近い淡色 */
+  color:rgba(255,255,255,0.92);
   letter-spacing:0.04em;
   line-height:2;
-  margin:0 auto 36px;
+  margin:0 auto 48px;
   max-width:620px;
-  /* v22: 日本語の意味単位で折り返し (= 「乗り越える」が割れる問題対応)
-     keep-all で CJK の単語の途中で改行しない、
-     line-break:strict で禁則処理を厳格に、
-     text-wrap:pretty で見栄えの良い改行を優先 */
+  /* v22: CJK改行 (= 「乗り越える」割れ防止) — 維持 */
   word-break:keep-all;
   overflow-wrap:break-word;
   line-break:strict;
   text-wrap:pretty;
+  /* v30: 影 */
+  text-shadow:0 1px 16px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.35);
 }
 
 @media (max-width:720px) {
-  .hero { padding:20px 20px 28px; }
-  .hero-title { font-size:24px; line-height:1.55; margin:32px auto 14px; }
-  .hero-sub { font-size:14.5px; line-height:1.95; margin-bottom:24px; }
+  .hero-title { font-size:26px; line-height:1.55; margin:0 auto 14px; }
+  .hero-sub { font-size:14.5px; line-height:1.95; margin-bottom:36px; }
+}
+
+@media (max-width:480px) {
+  .hero-title { font-size:23px; }
+  .hero-sub { font-size:13.5px; margin-bottom:32px; }
 }
 
 /* ============================================
