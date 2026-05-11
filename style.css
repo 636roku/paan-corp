@@ -442,12 +442,15 @@ img { max-width:100%; height:auto; display:block; }
    ============================================ */
 /* ============================================
    HERO (v30: アイラ島写真を主役、 白文字 + 下からダークグラデーション)
+   v30.1: bodyのpadding-top:96px に重ねるため、 margin-top:-96px + padding-top:96px
    ============================================ */
 .hero {
   position:relative;
+  /* v30.1: body の padding-top:96px を相殺してヘッダー裏まで広げる */
+  margin-top:-96px;
+  padding:96px 24px 0;
   /* v30: テキスト位置を下寄りに (= 道の手前 = ユーザー視点) */
-  padding:0 24px;
-  min-height:560px;
+  min-height:640px;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
@@ -462,7 +465,7 @@ img { max-width:100%; height:auto; display:block; }
 /* デスクトップ高解像度 */
 @media (min-width:1280px) {
   .hero {
-    min-height:640px;
+    min-height:720px;
     background-image:url('/assets/hero/hero-islay-2400.webp');
   }
 }
@@ -477,8 +480,8 @@ img { max-width:100%; height:auto; display:block; }
 /* モバイル: 縦構図 4:5 画像 + 高さ調整 */
 @media (max-width:720px) {
   .hero {
-    min-height:540px;
-    padding:0 20px;
+    min-height:620px;
+    padding:96px 20px 0;
     /* モバイルは縦構図、 道の真ん中をフォーカス */
     background-image:url('/assets/hero/hero-islay-mobile-1200.webp');
     background-position:center 35%;
@@ -487,7 +490,7 @@ img { max-width:100%; height:auto; display:block; }
 
 @media (max-width:480px) {
   .hero {
-    min-height:520px;
+    min-height:600px;
     background-image:url('/assets/hero/hero-islay-mobile-800.webp');
   }
 }
@@ -550,6 +553,106 @@ img { max-width:100%; height:auto; display:block; }
 @media (max-width:480px) {
   .hero-title { font-size:23px; }
   .hero-sub { font-size:13.5px; margin-bottom:32px; }
+}
+
+/* ============================================
+   SUB-HERO (v30: サブページ用ヒーロー、 4ページ個別画像)
+   ============================================ */
+.sub-hero {
+  position:relative;
+  /* body padding-top:96px を相殺 */
+  margin-top:-96px;
+  padding:96px 24px 0;
+  min-height:380px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  text-align:center;
+  background-color:var(--paan-primary-deep);
+  background-size:cover;
+  background-position:center center;
+  overflow:hidden;
+}
+
+@media (min-width:1280px) {
+  .sub-hero { min-height:420px; }
+}
+
+@media (max-width:720px) {
+  .sub-hero {
+    min-height:320px;
+    padding:96px 20px 0;
+  }
+}
+
+@media (max-width:480px) {
+  .sub-hero { min-height:300px; }
+}
+
+/* ページ別背景画像 */
+.sub-hero-mission { background-image:url('/assets/hero/hero-mission-1600.webp'); }
+.sub-hero-brand   { background-image:url('/assets/hero/hero-brand-1600.webp'); }
+.sub-hero-company { background-image:url('/assets/hero/hero-company-1600.webp'); }
+.sub-hero-contact { background-image:url('/assets/hero/hero-contact-1600.webp'); }
+
+@media (max-width:720px) {
+  .sub-hero-mission { background-image:url('/assets/hero/hero-mission-800.webp'); }
+  .sub-hero-brand   { background-image:url('/assets/hero/hero-brand-800.webp'); }
+  .sub-hero-company { background-image:url('/assets/hero/hero-company-800.webp'); }
+  .sub-hero-contact { background-image:url('/assets/hero/hero-contact-800.webp'); }
+}
+
+/* グラデーション、 トップ少しも暗く (= eyebrow可読性) */
+.sub-hero::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(14,28,61,0.35) 0%,
+    rgba(14,28,61,0.15) 35%,
+    rgba(14,28,61,0.55) 75%,
+    rgba(14,28,61,0.82) 100%
+  );
+  z-index:1;
+}
+
+.sub-hero > * { position:relative; z-index:2; }
+
+.sub-hero .page-eyebrow {
+  font-family:'Marcellus', serif;
+  font-size:12px;
+  letter-spacing:0.28em;
+  /* v30: ゴールド on dark (= 上品さブースト) */
+  color:var(--paan-gold);
+  text-transform:uppercase;
+  margin:0 auto 14px;
+  text-shadow:0 1px 12px rgba(0,0,0,0.5);
+}
+
+.sub-hero .page-title {
+  font-family:'Noto Serif JP', serif;
+  font-size:30px;
+  font-weight:500;
+  color:#FFFFFF;
+  letter-spacing:0.04em;
+  line-height:1.55;
+  margin:0 auto 48px;
+  max-width:680px;
+  text-shadow:0 2px 24px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.sub-hero .page-title strong {
+  font-weight:500;
+}
+
+@media (max-width:720px) {
+  .sub-hero .page-eyebrow { font-size:11px; letter-spacing:0.24em; margin-bottom:12px; }
+  .sub-hero .page-title { font-size:24px; margin-bottom:32px; }
+}
+
+@media (max-width:480px) {
+  .sub-hero .page-title { font-size:22px; margin-bottom:28px; }
 }
 
 /* ============================================
