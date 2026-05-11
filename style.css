@@ -350,30 +350,57 @@ img { max-width:100%; height:auto; display:block; }
 /* v30.37: ドロワー内のメニュー項目を staggered で順番に登場
    ドロワー枠が動いてる途中から項目が現れ始める = 一連の流れに */
 .mp-mobile-drawer .mp-mobile-link,
-.mp-mobile-drawer .mp-mobile-locale-toggle,
-.mp-mobile-drawer .mp-mobile-locale-item {
+.mp-mobile-drawer .mp-mobile-locale-toggle {
   opacity: 0;
   transform: translateY(-4px);
   transition:
-    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.3s ease-out,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-link,
-.mp-mobile-drawer.is-open .mp-mobile-locale-toggle,
-.mp-mobile-drawer.is-open .mp-mobile-locale-item {
+.mp-mobile-drawer.is-open .mp-mobile-locale-toggle {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 順番遅延 — ドロワー枠が開き始めてから 0.15s 後に項目1番目が現れる、 以後 0.06s 間隔 */
+/* 順番遅延 — ドロワー枠が開き始めてから 0.15s 後に項目1番目が現れる、 以後 0.06s 間隔
+   nav 5項目 + トグル = 計6項目 */
 .mp-mobile-drawer.is-open .mp-mobile-link:nth-child(1)  { transition-delay: 0.15s; }
 .mp-mobile-drawer.is-open .mp-mobile-link:nth-child(2)  { transition-delay: 0.21s; }
 .mp-mobile-drawer.is-open .mp-mobile-link:nth-child(3)  { transition-delay: 0.27s; }
 .mp-mobile-drawer.is-open .mp-mobile-link:nth-child(4)  { transition-delay: 0.33s; }
 .mp-mobile-drawer.is-open .mp-mobile-link:nth-child(5)  { transition-delay: 0.39s; }
-.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(6)  { transition-delay: 0.45s; }
-.mp-mobile-drawer.is-open .mp-mobile-locale-toggle      { transition-delay: 0.51s; }
+.mp-mobile-drawer.is-open .mp-mobile-locale-toggle      { transition-delay: 0.45s; }
+
+/* v30.40: 言語アコーディオン展開時の locale-item を staggered で登場 */
+.mp-mobile-locale-item {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.25s ease-out,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* アコーディオン展開状態 (= aria-expanded=true) */
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* locale-item の staggered (= 12言語、 各40msずつ遅延) */
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(1)  { transition-delay: 0.04s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(2)  { transition-delay: 0.08s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(3)  { transition-delay: 0.12s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(4)  { transition-delay: 0.16s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(5)  { transition-delay: 0.20s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(6)  { transition-delay: 0.24s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(7)  { transition-delay: 0.28s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(8)  { transition-delay: 0.32s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(9)  { transition-delay: 0.36s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(10) { transition-delay: 0.40s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(11) { transition-delay: 0.44s; }
+.mp-mobile-locale-toggle[aria-expanded="true"] + .mp-mobile-locale-grid .mp-mobile-locale-item:nth-child(12) { transition-delay: 0.48s; }
 
 /* reduced-motion: アニメ無効 */
 @media (prefers-reduced-motion: reduce) {

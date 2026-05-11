@@ -79,15 +79,36 @@
     });
 
     document.querySelectorAll('.info-section, .section, .message-article').forEach(el => {
-      // v30.37: 初期viewport内にすでに入ってる要素は即revealed (= 黒チラつき防止)
+      el.classList.add('anim-reveal');
+      // v30.40: 初期viewport 内にいる要素は、 ページロード時に遅延 fade-in (= hero画像と並行で美しく登場)
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('revealed');
+        // hero画像が0.5秒くらいでフェード始まるので、 本文は0.6-1.0秒で順次登場
+        // 要素の画面位置に応じて、 上にあるほど早く、 下にあるほど遅く
+        const delay = 0.6 + (rect.top / window.innerHeight) * 0.3;
+        el.style.transitionDelay = `${delay}s`;
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          el.classList.add('revealed');
+        }));
         return;
       }
-      el.classList.add('anim-reveal');
       observer.observe(el);
     });
+
+    // v30.40: フッターも遅れて fade-in (= 本文よりさらに後)
+    const footer = document.querySelector('.mp-site-footer');
+    if (footer) {
+      footer.classList.add('anim-reveal');
+      const rect = footer.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        footer.style.transitionDelay = '1.0s';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          footer.classList.add('revealed');
+        }));
+      } else {
+        observer.observe(footer);
+      }
+    }
   }
 
   // ============================================
