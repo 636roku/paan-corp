@@ -582,13 +582,36 @@ img { max-width:100%; height:auto; display:block; }
 
 @media (max-width:720px) {
   .sub-hero {
-    min-height:620px;
-    padding:96px 20px 0;
+    /* v30.5: モバイルは画像本来の比率 (= 3:2 横長) を尊重。
+       コンテナ高さ = 画面幅 × 2/3 (= 画像高さ) + テキスト余白180px。
+       画面幅375px → 画像高さ250px + テキスト180px = 430px、 引き伸ばし無し */
+    min-height:0;
+    height:calc(100vw / 1.5 + 180px);
+    padding:96px 20px 24px;
+    /* 画像は画面幅基準で表示 (= 横にフィット、 縦は自動 = 引き伸ばし無し) */
+    background-size:100% auto;
+    background-repeat:no-repeat;
+    background-position:top center;
+    background-color:var(--paan-primary-deep);
+  }
+
+  /* グラデーションもモバイル用に調整: 画像下端から下を濃く */
+  .sub-hero::before {
+    background:linear-gradient(
+      180deg,
+      rgba(14,28,61,0.10) 0%,
+      rgba(14,28,61,0.05) 40%,
+      rgba(14,28,61,0.60) 65%,
+      rgba(14,28,61,0.92) 85%,
+      rgba(14,28,61,0.98) 100%
+    );
   }
 }
 
 @media (max-width:480px) {
-  .sub-hero { min-height:600px; }
+  .sub-hero {
+    height:calc(100vw / 1.5 + 160px);
+  }
 }
 
 /* ページ別背景画像 */
