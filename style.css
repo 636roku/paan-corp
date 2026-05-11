@@ -923,10 +923,12 @@ img { max-width:100%; height:auto; display:block; }
 .tag-story   { background:transparent; color:var(--paan-ink-mid); border:1px solid var(--paan-ink-mid); }
 
 .news-body {
-  font-size:14px;
+  /* v30.28: 旧 Noto Sans JP は人工的すぎたため、 サイト全体のセリフ系統に統一 */
+  font-family:'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  font-size:14.5px;
   color:var(--paan-ink);
   letter-spacing:0.02em;
-  line-height:1.75;
+  line-height:1.85;
 }
 
 .news-body a {
