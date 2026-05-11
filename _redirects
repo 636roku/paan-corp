@@ -3,11 +3,18 @@
 /brand     /brand.html     200
 /company   /company.html   200
 /contact   /contact.html   200
+/message   /message.html   200
+/privacy   /privacy.html   200
+/terms     /terms.html     200
+/cookie    /cookie.html    200
 
 # Multilingual URL routing (i18n.js handles the actual translation client-side)
-# /en/mission → serves mission.html, i18n.js detects 'en' from URL path
 /:lang/            /index.html     200
 /:lang/mission     /mission.html   200
 /:lang/brand       /brand.html     200
 /:lang/company     /company.html   200
 /:lang/contact     /contact.html   200
+/:lang/message     /message.html   200
+/:lang/privacy     /privacy.html   200
+/:lang/terms       /terms.html     200
+/:lang/cookie      /cookie.html    200

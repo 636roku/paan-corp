@@ -104,6 +104,15 @@
           <a href="${localizedPath('/contact')}" class="mp-footer-link" data-i18n="nav.contact">お問い合わせ</a>
         </div>
 
+        <!-- v30.31: 法的書類リンク -->
+        <div class="mp-footer-legal">
+          <a href="/privacy" class="mp-footer-legal-link" data-i18n="nav.privacy">プライバシーポリシー</a>
+          <span class="mp-footer-legal-sep">·</span>
+          <a href="/terms" class="mp-footer-legal-link" data-i18n="nav.terms">サイト利用規約</a>
+          <span class="mp-footer-legal-sep">·</span>
+          <a href="/cookie" class="mp-footer-legal-link" data-i18n="nav.cookie">クッキーポリシー</a>
+        </div>
+
         <div class="mp-footer-copy" data-i18n="meta.copyright">
           &copy; 2026 株式会社PAAN (PAAN Co., Ltd.) · All rights reserved.
         </div>

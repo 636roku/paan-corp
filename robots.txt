@@ -1,0 +1,7 @@
+# robots.txt — paan.co.jp
+# Allow all crawlers, link to sitemap
+
+User-agent: *
+Allow: /
+
+Sitemap: https://paan.co.jp/sitemap.xml

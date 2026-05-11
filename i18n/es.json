@@ -11,7 +11,11 @@
     "brand": "Marcas",
     "company": "Empresa",
     "contact": "Contacto",
-    "language": "Idioma / Language"
+    "language": "Idioma / Language",
+    "message": "Mensaje",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Uso",
+    "cookie": "Política de Cookies"
   },
   "page": {
     "top": {
@@ -96,7 +100,7 @@
       "biz_h": "Actividad",
       "biz_1_strong": "Productos multilingües de experiencia gastronómica",
       "biz_1_main": " — planificación, desarrollo y operación",
-      "biz_1_sub": "A través de la comida, cruzamos los muros del idioma y la cultura. La Serie PAAN — al servicio tanto del viajero como del restaurante.",
+      "biz_1_sub": "Con la fuerza de la tecnología y la IA, a través de la comida, cruzamos los muros del idioma y la cultura. La Serie PAAN — al servicio tanto del viajero como del restaurante.",
       "biz_2_strong": "Una plataforma digital para restaurantes",
       "biz_2_main": " — desarrollo y provisión",
       "biz_2_sub": "Menús multilingües, gestión de pedidos, comprensión del cliente — el cimiento de una operación restaurantera que responde a comensales venidos de más allá de las fronteras.",
@@ -114,7 +118,13 @@
       "founder_yui_role": "General Counsel / Cofundador",
       "founder_yui_name": "Koki YUI",
       "founder_yui_name_en": "由井 恒輝",
-      "founder_yui_bio": "Nacido en julio de 1996. Graduado de la Keio Senior High School en 2015. Mientras estudiaba en la Facultad de Derecho de la Universidad Keio, aprobó el examen preliminar de la barra en 2018, y el examen de la barra al año siguiente.\n\nAl inscribirse como abogado (Colegio de Abogados Daini Tokyo) en 2021, se incorporó al despacho de abogados ZeLo, especializándose en financiación de startups, asuntos públicos y derecho corporativo general, ofreciendo asesoramiento jurídico con perspectiva tanto pública como privada. Tras ejercer en la Oficina de Innovación y Política Ambiental del Ministerio de Economía, Comercio e Industria (Sección de Innovación y Desarrollo de Nuevos Negocios), se incorporó al despacho Fugen Law Office.\n\nEn junio de 2026, cofundó PAAN Co., Ltd."
+      "founder_yui_bio": "Nacido en julio de 1996. Graduado de la Keio Senior High School en 2015. Mientras estudiaba en la Facultad de Derecho de la Universidad Keio, aprobó el examen preliminar de la barra en 2018, y el examen de la barra al año siguiente.\n\nAl inscribirse como abogado (Colegio de Abogados Daini Tokyo) en 2021, se incorporó al despacho de abogados ZeLo, especializándose en financiación de startups, asuntos públicos y derecho corporativo general, ofreciendo asesoramiento jurídico con perspectiva tanto pública como privada. Tras ejercer en la Oficina de Innovación y Política Ambiental del Ministerio de Economía, Comercio e Industria (Sección de Innovación y Desarrollo de Nuevos Negocios), se incorporó al despacho Fugen Law Office.\n\nEn junio de 2026, cofundó PAAN Co., Ltd.",
+      "info_capital": "Capital social",
+      "info_capital_v": "1.000.000 JPY",
+      "info_fiscal": "Ejercicio fiscal",
+      "info_fiscal_v": "Del 1 de junio al 31 de mayo del año siguiente",
+      "message_cta_eyebrow": "Message from CEO",
+      "message_cta_label": "Leer el mensaje →"
     },
     "contact": {
       "title": "PAAN",
@@ -134,6 +144,16 @@
       "inquiry_4_title": "Consultas sobre productos",
       "inquiry_4_body": "Para consultas relacionadas con nuestros productos, contáctenos en la dirección de correo electrónico indicada arriba."
     },
-    "_title": "PAAN"
+    "_title": "PAAN",
+    "message": {
+      "title": "PAAN",
+      "description": "Un mensaje de Rokusaburo Inui, CEO de PAAN Co., Ltd., sobre la fundación de la empresa y el camino por delante.",
+      "eyebrow": "Message from CEO",
+      "page_title": "Mensaje del CEO",
+      "body": "Tras dejar el Ministerio de Asuntos Exteriores, entré en la empresa que mi abuelo y mi padre habían sostenido a lo largo del tiempo, pasando del mundo de la diplomacia al de la restauración. Y aun así, mi voluntad de ser útil a Japón y al mundo no cambió en absoluto. Si las personas del mundo pudieran encontrarse de manera más profunda, el mundo, sin duda, se haría más rico. Es algo de lo que he estado convencido.\n\nUna de las respuestas a esa convicción fue <strong>un puente entre culturas, trazado a través de la comida</strong>.\n\nUn lugar donde, más allá de las fronteras y del idioma, una sola fuente une cultura con cultura. Responder, plato a plato, a los muros y a las distancias que se alzan antes de la comida. De este anhelo nació PAAN Co., Ltd.\n\nPartiendo de nuestro primer producto, daremos forma, uno tras otro, a la <strong>Serie PAAN</strong>.\n\nSolo, no habría llegado a este lugar. Mi cofundador, Koki Yui. Como abogado, como emprendedor y, sobre todo, como amigo — el primero en abrazar mi visión. Fue su convicción y su aliento lo que me permitió dar este primer paso.\n\nApenas hemos comenzado a caminar. Pero el camino por delante es claro. <strong>Cruzando los muros del idioma y de la cultura, abrimos el camino hacia los platos aún por descubrir</strong> — y para ello, daremos forma a un producto tras otro.\n\n<strong>A todos los que disfrutan de la comida, que puedan encontrarse con el plato que aún no han descubierto</strong>. A través de la comida, hacia un mundo donde personas y personas, culturas y culturas, se encuentren un paso más profundamente.",
+      "signature_role": "Director Ejecutivo",
+      "signature_name": "Rokusaburo Inui",
+      "back_to_company": "← Volver a Empresa"
+    }
   }
 }

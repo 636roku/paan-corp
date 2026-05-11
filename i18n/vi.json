@@ -11,7 +11,11 @@
     "brand": "Thương hiệu",
     "company": "Công ty",
     "contact": "Liên hệ",
-    "language": "Ngôn ngữ / Language"
+    "language": "Ngôn ngữ / Language",
+    "message": "Lời nhắn",
+    "privacy": "Chính sách Bảo mật",
+    "terms": "Điều khoản Sử dụng",
+    "cookie": "Chính sách Cookie"
   },
   "page": {
     "top": {
@@ -96,7 +100,7 @@
       "biz_h": "Lĩnh vực kinh doanh",
       "biz_1_strong": "Sản phẩm trải nghiệm ẩm thực đa ngôn ngữ",
       "biz_1_main": " — hoạch định, phát triển và vận hành",
-      "biz_1_sub": "Qua ẩm thực, chúng tôi vượt qua bức tường ngôn ngữ và văn hóa. Chuỗi PAAN — đồng hành cùng cả lữ khách và nhà hàng.",
+      "biz_1_sub": "Bằng sức mạnh của công nghệ và AI, qua ẩm thực, chúng tôi vượt qua bức tường ngôn ngữ và văn hóa. Chuỗi PAAN — đồng hành cùng cả lữ khách và nhà hàng.",
       "biz_2_strong": "Nền tảng số dành cho nhà hàng",
       "biz_2_main": " — phát triển và cung cấp",
       "biz_2_sub": "Thực đơn đa ngôn ngữ, quản lý đặt món, thấu hiểu khách hàng — nền tảng cho hoạt động nhà hàng đón tiếp khách vượt biên giới.",
@@ -114,7 +118,13 @@
       "founder_yui_role": "General Counsel / Đồng sáng lập",
       "founder_yui_name": "Koki YUI",
       "founder_yui_name_en": "由井 恒輝",
-      "founder_yui_bio": "Sinh tháng 7 năm 1996. Tốt nghiệp Trường Trung học Keio năm 2015. Trong thời gian học tại Khoa Luật, Đại học Keio, đã đậu kỳ thi sơ tuyển luật sư năm 2018 và kỳ thi luật sư vào năm sau.\n\nKhi đăng ký hành nghề luật sư (Đoàn Luật sư Daini Tokyo) năm 2021, đồng thời gia nhập Văn phòng Luật ZeLo, chuyên các lĩnh vực tài chính start-up, đối ngoại công, và pháp luật doanh nghiệp tổng quát, cung cấp tư vấn pháp lý dựa trên kinh nghiệm cả khu vực công và tư. Sau thời gian công tác tại Cục Đổi mới và Chính sách Môi trường, Bộ Kinh tế, Thương mại và Công nghiệp (Văn phòng Phát triển Đổi mới và Kinh doanh mới), đã gia nhập Văn phòng Luật Fugen.\n\nTháng 6 năm 2026, đồng sáng lập PAAN Co., Ltd."
+      "founder_yui_bio": "Sinh tháng 7 năm 1996. Tốt nghiệp Trường Trung học Keio năm 2015. Trong thời gian học tại Khoa Luật, Đại học Keio, đã đậu kỳ thi sơ tuyển luật sư năm 2018 và kỳ thi luật sư vào năm sau.\n\nKhi đăng ký hành nghề luật sư (Đoàn Luật sư Daini Tokyo) năm 2021, đồng thời gia nhập Văn phòng Luật ZeLo, chuyên các lĩnh vực tài chính start-up, đối ngoại công, và pháp luật doanh nghiệp tổng quát, cung cấp tư vấn pháp lý dựa trên kinh nghiệm cả khu vực công và tư. Sau thời gian công tác tại Cục Đổi mới và Chính sách Môi trường, Bộ Kinh tế, Thương mại và Công nghiệp (Văn phòng Phát triển Đổi mới và Kinh doanh mới), đã gia nhập Văn phòng Luật Fugen.\n\nTháng 6 năm 2026, đồng sáng lập PAAN Co., Ltd.",
+      "info_capital": "Vốn điều lệ",
+      "info_capital_v": "1.000.000 JPY",
+      "info_fiscal": "Năm tài chính",
+      "info_fiscal_v": "Từ ngày 1 tháng 6 đến ngày 31 tháng 5 năm sau",
+      "message_cta_eyebrow": "Message from CEO",
+      "message_cta_label": "Đọc lời nhắn →"
     },
     "contact": {
       "title": "PAAN",
@@ -134,6 +144,16 @@
       "inquiry_4_title": "Câu hỏi về sản phẩm",
       "inquiry_4_body": "Đối với các câu hỏi liên quan đến sản phẩm của chúng tôi, vui lòng liên hệ với chúng tôi qua địa chỉ email nêu trên."
     },
-    "_title": "PAAN"
+    "_title": "PAAN",
+    "message": {
+      "title": "PAAN",
+      "description": "Lời nhắn từ Rokusaburo Inui, Giám đốc điều hành PAAN Co., Ltd., về sự thành lập công ty và con đường phía trước.",
+      "eyebrow": "Message from CEO",
+      "page_title": "Lời nhắn từ Giám đốc điều hành",
+      "body": "Rời Bộ Ngoại giao, tôi đã gia nhập công ty mà ông và cha tôi đã gìn giữ qua bao năm, chuyển từ thế giới ngoại giao sang thế giới ẩm thực. Vậy mà, mong muốn được phụng sự Nhật Bản, và phụng sự thế giới của tôi, không hề thay đổi. Nếu con người trên khắp thế giới có thể gặp gỡ nhau sâu hơn, thế giới này, chắc chắn, sẽ trở nên giàu có hơn. Đó là điều tôi đã luôn tin tưởng.\n\nMột trong những câu trả lời cho niềm tin đó, chính là <strong>một cây cầu giữa các nền văn hóa, được dựng nên qua ẩm thực</strong>.\n\nMột nơi mà, vượt qua biên giới, vượt qua ngôn ngữ, một đĩa thức ăn duy nhất khiến văn hóa gặp gỡ văn hóa. Đáp lại, từng sản phẩm một, những bức tường và những khoảng cách đứng trước bữa ăn. Từ niềm khao khát ấy, PAAN Co., Ltd. đã ra đời.\n\nBắt đầu từ sản phẩm đầu tiên, chúng tôi sẽ lần lượt định hình <strong>Chuỗi PAAN</strong>.\n\nMột mình, tôi đã không thể đến được nơi này. Người đồng sáng lập của tôi, Koki Yui. Là luật sư, là nhà sáng nghiệp, và trên hết là một người bạn — người đầu tiên đón nhận tầm nhìn của tôi. Chính niềm tin và sự khích lệ của anh ấy đã giúp tôi bước được bước đầu tiên này.\n\nChúng tôi mới chỉ vừa bắt đầu bước đi. Nhưng con đường phía trước đã rõ ràng. <strong>Vượt qua những bức tường ngôn ngữ và văn hóa, chúng tôi mở lối đến những món ăn chưa từng biết</strong> — và vì thế, chúng tôi sẽ định hình từng sản phẩm một.\n\n<strong>Gửi đến tất cả những ai yêu thích ẩm thực, mong các bạn gặp được món ăn mà mình chưa từng khám phá</strong>. Qua ẩm thực, hướng tới một thế giới nơi con người với con người, văn hóa với văn hóa, gặp gỡ nhau sâu hơn một bước.",
+      "signature_role": "Giám đốc điều hành",
+      "signature_name": "Rokusaburo Inui",
+      "back_to_company": "← Quay lại Về công ty"
+    }
   }
 }

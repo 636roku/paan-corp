@@ -722,6 +722,8 @@ img { max-width:100%; height:auto; display:block; }
 .sub-hero-brand   { background-image:url('/assets/hero/hero-brand-1600.webp'); }
 .sub-hero-company { background-image:url('/assets/hero/hero-company-1600.webp'); }
 .sub-hero-contact { background-image:url('/assets/hero/hero-contact-1600.webp'); }
+/* v30.31: 代表メッセージは brand と同じ朝焼け感の画像 (= 新しい一歩の象徴) */
+.sub-hero-message { background-image:url('/assets/hero/hero-brand-1600.webp'); }
 
 /* モバイル用 (= デスクトップと同じ3:2画像、 ファイルサイズ小さめの800版に切替) */
 @media (max-width:720px) {
@@ -729,6 +731,7 @@ img { max-width:100%; height:auto; display:block; }
   .sub-hero-brand   { background-image:url('/assets/hero/hero-brand-800.webp'); }
   .sub-hero-company { background-image:url('/assets/hero/hero-company-800.webp'); }
   .sub-hero-contact { background-image:url('/assets/hero/hero-contact-800.webp'); }
+  .sub-hero-message { background-image:url('/assets/hero/hero-brand-800.webp'); }
 }
 
 /* v30.2: グラデーションを底からより濃く (= タイトル可読性確保) */
@@ -1777,4 +1780,158 @@ img { max-width:100%; height:auto; display:block; }
   .info-val { font-size:13px; }
   .section-h { font-size:19px; line-height:1.6; }
   .section-body p { font-size:14.5px; }
+}
+
+/* ============================================
+   MESSAGE PAGE (v30.31) — 代表メッセージ
+   ============================================ */
+.message-article {
+  max-width:720px;
+  margin:0 auto;
+  padding:8px 0 0;
+}
+
+.message-body {
+  font-family:'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  font-size:15.5px;
+  line-height:2.1;
+  color:var(--paan-ink);
+  letter-spacing:0.03em;
+  /* i18n辞書の \n\n を段落区切りとして表示 */
+  white-space:pre-line;
+  text-wrap:pretty;
+}
+
+.message-body strong {
+  font-weight:500;
+  color:var(--paan-primary);
+}
+
+.message-signature {
+  margin-top:60px;
+  padding-top:30px;
+  border-top:1px solid var(--paan-line);
+  text-align:right;
+}
+
+.message-signature-role {
+  font-family:'Noto Serif JP', serif;
+  font-size:13px;
+  color:var(--paan-ink-mid);
+  letter-spacing:0.1em;
+  margin-bottom:6px;
+}
+
+.message-signature-name {
+  font-family:'Noto Serif JP', serif;
+  font-size:20px;
+  font-weight:500;
+  color:var(--paan-ink);
+  letter-spacing:0.06em;
+}
+
+.message-back {
+  margin-top:48px;
+  padding-top:28px;
+  border-top:1px solid var(--paan-line);
+  text-align:center;
+}
+
+.message-back a {
+  font-family:'Noto Serif JP', serif;
+  font-size:13.5px;
+  color:var(--paan-primary);
+  letter-spacing:0.06em;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color 0.18s;
+  padding-bottom:2px;
+}
+
+.message-back a:hover {
+  border-bottom-color:var(--paan-primary);
+}
+
+@media (max-width:720px) {
+  .message-body { font-size:14.5px; line-height:2.0; }
+  .message-signature-name { font-size:18px; }
+  .message-signature { margin-top:48px; padding-top:24px; }
+}
+
+/* ============================================
+   MESSAGE CTA (v30.31) — 会社概要から代表メッセージへの導線
+   ============================================ */
+.message-cta {
+  margin-top:40px;
+  text-align:center;
+}
+
+.message-cta-link {
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  padding:24px 48px;
+  background:var(--paan-card);
+  border:1px solid var(--paan-line);
+  border-radius:6px;
+  text-decoration:none;
+  transition:background 0.18s, border-color 0.18s, transform 0.18s;
+}
+
+.message-cta-link:hover {
+  background:#FFFFFF;
+  border-color:var(--paan-primary);
+  transform:translateY(-1px);
+}
+
+.message-cta-eyebrow {
+  font-family:'Marcellus', serif;
+  font-size:11.5px;
+  letter-spacing:0.22em;
+  color:var(--paan-primary-soft);
+  text-transform:uppercase;
+}
+
+.message-cta-label {
+  font-family:'Noto Serif JP', serif;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:0.06em;
+  color:var(--paan-primary);
+}
+
+@media (max-width:720px) {
+  .message-cta-link { padding:20px 32px; }
+  .message-cta-label { font-size:14px; }
+}
+
+/* ============================================
+   FOOTER LEGAL LINKS (v30.31)
+   ============================================ */
+.mp-footer-legal {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:4px 8px;
+  margin-top:8px;
+  margin-bottom:12px;
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:11.5px;
+  color:var(--paan-ink-mid);
+}
+
+.mp-footer-legal-link {
+  color:var(--paan-ink-mid);
+  text-decoration:none;
+  transition:color 0.18s;
+}
+
+.mp-footer-legal-link:hover {
+  color:var(--paan-primary);
+}
+
+.mp-footer-legal-sep {
+  color:var(--paan-line-2);
 }

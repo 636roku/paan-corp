@@ -11,7 +11,11 @@
     "brand": "Merek",
     "company": "Perusahaan",
     "contact": "Kontak",
-    "language": "Bahasa / Language"
+    "language": "Bahasa / Language",
+    "message": "Pesan",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Ketentuan Penggunaan",
+    "cookie": "Kebijakan Cookie"
   },
   "page": {
     "top": {
@@ -96,7 +100,7 @@
       "biz_h": "Lingkup usaha",
       "biz_1_strong": "Produk pengalaman kuliner multibahasa",
       "biz_1_main": " — perencanaan, pengembangan, dan operasional",
-      "biz_1_sub": "Melalui makanan, kami melampaui tembok bahasa dan budaya. Seri PAAN — menopang baik pengembara maupun restoran.",
+      "biz_1_sub": "Dengan kekuatan teknologi dan AI, melalui makanan, kami melampaui tembok bahasa dan budaya. Seri PAAN — menopang baik pengembara maupun restoran.",
       "biz_2_strong": "Platform digital untuk restoran",
       "biz_2_main": " — pengembangan dan penyediaan",
       "biz_2_sub": "Menu multibahasa, manajemen pesanan, pemahaman pelanggan — fondasi operasional restoran yang menjawab tamu dari seberang batas.",
@@ -114,7 +118,13 @@
       "founder_yui_role": "General Counsel / Pendiri Bersama",
       "founder_yui_name": "Koki YUI",
       "founder_yui_name_en": "由井 恒輝",
-      "founder_yui_bio": "Lahir Juli 1996. Lulus dari Keio Senior High School tahun 2015. Saat menempuh studi di Fakultas Hukum Universitas Keio, lulus ujian persiapan bar pada 2018, dan ujian bar pada tahun berikutnya.\n\nDengan pendaftaran sebagai pengacara (Daini Tokyo Bar Association) pada 2021, bergabung dengan Kantor Hukum ZeLo, mengkhususkan diri dalam pembiayaan start-up, public affairs, dan hukum korporat umum, memberikan layanan hukum dengan wawasan dari sektor publik maupun swasta. Setelah menjabat di Biro Inovasi dan Kebijakan Lingkungan Kementerian Ekonomi, Perdagangan dan Industri (Bagian Inovasi dan Pengembangan Bisnis Baru), bergabung dengan Kantor Hukum Fugen.\n\nPada Juni 2026, turut mendirikan PAAN Co., Ltd."
+      "founder_yui_bio": "Lahir Juli 1996. Lulus dari Keio Senior High School tahun 2015. Saat menempuh studi di Fakultas Hukum Universitas Keio, lulus ujian persiapan bar pada 2018, dan ujian bar pada tahun berikutnya.\n\nDengan pendaftaran sebagai pengacara (Daini Tokyo Bar Association) pada 2021, bergabung dengan Kantor Hukum ZeLo, mengkhususkan diri dalam pembiayaan start-up, public affairs, dan hukum korporat umum, memberikan layanan hukum dengan wawasan dari sektor publik maupun swasta. Setelah menjabat di Biro Inovasi dan Kebijakan Lingkungan Kementerian Ekonomi, Perdagangan dan Industri (Bagian Inovasi dan Pengembangan Bisnis Baru), bergabung dengan Kantor Hukum Fugen.\n\nPada Juni 2026, turut mendirikan PAAN Co., Ltd.",
+      "info_capital": "Modal dasar",
+      "info_capital_v": "JPY 1.000.000",
+      "info_fiscal": "Tahun fiskal",
+      "info_fiscal_v": "Dari 1 Juni hingga 31 Mei tahun berikutnya",
+      "message_cta_eyebrow": "Message from CEO",
+      "message_cta_label": "Baca pesan →"
     },
     "contact": {
       "title": "PAAN",
@@ -134,6 +144,16 @@
       "inquiry_4_title": "Pertanyaan terkait produk",
       "inquiry_4_body": "Untuk pertanyaan terkait produk kami, mohon hubungi kami melalui alamat email di atas."
     },
-    "_title": "PAAN"
+    "_title": "PAAN",
+    "message": {
+      "title": "PAAN",
+      "description": "Pesan dari Rokusaburo Inui, CEO PAAN Co., Ltd., tentang pendirian perusahaan dan perjalanan ke depan.",
+      "eyebrow": "Message from CEO",
+      "page_title": "Pesan dari CEO",
+      "body": "Setelah meninggalkan Kementerian Luar Negeri, saya bergabung dengan perusahaan yang telah dijaga oleh kakek dan ayah saya selama bertahun-tahun, berpindah dari dunia diplomasi ke dunia kuliner. Namun demikian, hasrat saya untuk berguna bagi Jepang dan dunia tidaklah berubah sedikit pun. Bila orang-orang di dunia dapat saling bertemu lebih dalam, dunia, niscaya akan menjadi lebih kaya. Itulah yang telah saya yakini.\n\nSalah satu jawaban atas keyakinan itu adalah <strong>jembatan antara kebudayaan, yang dibangun melalui makanan</strong>.\n\nSebuah tempat di mana, melampaui batas-batas negara dan melampaui bahasa, satu hidangan saja mempertemukan budaya dengan budaya. Menjawab, satu produk demi satu produk, tembok-tembok dan jarak-jarak yang berdiri sebelum santapan. Dari kerinduan inilah, PAAN Co., Ltd. lahir.\n\nDimulai dari produk pertama kami, kami akan memberi bentuk, satu demi satu, kepada <strong>Seri PAAN</strong>.\n\nSendirian, saya tidak akan dapat sampai di tempat ini. Mitra pendiri saya, Koki Yui. Sebagai pengacara, sebagai pengusaha, dan yang terutama sebagai sahabat — orang pertama yang merangkul visi saya. Keyakinan dan dukungannyalah yang memungkinkan saya mengambil langkah pertama ini.\n\nKami baru saja mulai berjalan. Namun jalan yang membentang di depan sudah jelas. <strong>Melampaui tembok bahasa dan budaya, kami membuka jalan menuju hidangan yang belum terlihat</strong> — dan untuk itu, kami akan memberi bentuk pada satu produk demi satu produk.\n\n<strong>Kepada semua yang menikmati makanan, semoga Anda bertemu dengan hidangan yang belum pernah Anda temui</strong>. Melalui makanan, menuju dunia di mana manusia dengan manusia, budaya dengan budaya, bertemu selangkah lebih dalam.",
+      "signature_role": "Direktur Utama",
+      "signature_name": "Rokusaburo Inui",
+      "back_to_company": "← Kembali ke Tentang Perusahaan"
+    }
   }
 }

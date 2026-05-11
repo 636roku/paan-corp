@@ -11,7 +11,11 @@
     "brand": "Brands",
     "company": "Company",
     "contact": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "message": "Message",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "cookie": "Cookie Policy"
   },
   "page": {
     "top": {
@@ -96,7 +100,7 @@
       "biz_h": "Business",
       "biz_1_strong": "Multilingual food-experience products",
       "biz_1_main": " — planning, development, and operation",
-      "biz_1_sub": "Through food, we cross the walls of language and culture. The PAAN Series — supporting both travellers and restaurants.",
+      "biz_1_sub": "With the power of technology and AI, through food, we cross the walls of language and culture. The PAAN Series — supporting both travellers and restaurants.",
       "biz_2_strong": "A digital platform for restaurants",
       "biz_2_main": " — development and provision",
       "biz_2_sub": "Multilingual menus, order management, customer insight — the foundation for restaurant operations that respond to guests from across borders.",
@@ -114,7 +118,13 @@
       "founder_yui_role": "General Counsel / Co-founder",
       "founder_yui_name": "Koki YUI",
       "founder_yui_name_en": "由井 恒輝",
-      "founder_yui_bio": "Born July 1996. Graduated from Keio Senior High School in 2015. While studying at the Faculty of Law, Keio University, passed the preliminary bar examination in 2018, and the bar examination the following year.\n\nUpon registration as a lawyer (Daini Tokyo Bar Association) in 2021, joined ZeLo, Law Office, specialising in start-up finance, public affairs and general corporate matters, providing legal advisory drawing on both public- and private-sector insight. After serving in the Innovation and Environmental Policy Bureau of the Ministry of Economy, Trade and Industry (Innovation and New Business Development Office), joined Fugen Law Office.\n\nIn June 2026, co-founded PAAN Co., Ltd."
+      "founder_yui_bio": "Born July 1996. Graduated from Keio Senior High School in 2015. While studying at the Faculty of Law, Keio University, passed the preliminary bar examination in 2018, and the bar examination the following year.\n\nUpon registration as a lawyer (Daini Tokyo Bar Association) in 2021, joined ZeLo, Law Office, specialising in start-up finance, public affairs and general corporate matters, providing legal advisory drawing on both public- and private-sector insight. After serving in the Innovation and Environmental Policy Bureau of the Ministry of Economy, Trade and Industry (Innovation and New Business Development Office), joined Fugen Law Office.\n\nIn June 2026, co-founded PAAN Co., Ltd.",
+      "info_capital": "Capital",
+      "info_capital_v": "JPY 1,000,000",
+      "info_fiscal": "Fiscal Year",
+      "info_fiscal_v": "From 1 June to 31 May of the following year",
+      "message_cta_eyebrow": "Message from CEO",
+      "message_cta_label": "Read the message →"
     },
     "contact": {
       "title": "PAAN",
@@ -134,6 +144,16 @@
       "inquiry_4_title": "Product enquiries",
       "inquiry_4_body": "For enquiries about our products, please contact us at the email address above."
     },
-    "_title": "PAAN"
+    "_title": "PAAN",
+    "message": {
+      "title": "PAAN",
+      "description": "A message from Rokusaburo Inui, CEO of PAAN Co., Ltd., on the founding of the company and the journey ahead.",
+      "eyebrow": "Message from CEO",
+      "page_title": "Message from the CEO",
+      "body": "I stepped down from the Ministry of Foreign Affairs and joined the company that my grandfather and father had carried forward, moving from diplomacy into the world of food and dining. And yet, my wish to be of service to Japan and to the world remained entirely unchanged. If the people of the world could meet one another more deeply, surely the world would become richer for it. That is what I had come to believe.\n\nOne answer to that conviction was <strong>a bridge between cultures, drawn through food</strong>.\n\nA place where, beyond borders and beyond language, culture meets culture through a single dish. To respond, one product at a time, to the many walls and many distances that stand before the meal. It is from this aspiration that PAAN Co., Ltd. was born.\n\nBeginning with our first product, we will give shape, one by one, to the <strong>PAAN Series</strong>.\n\nAlone, I could not have reached this place. My co-founder, Koki Yui. As a lawyer, as an entrepreneur, and above all as a friend — the first to embrace my vision. It was his conviction and encouragement that allowed me to take this first step.\n\nWe have only just begun to walk. But the road ahead is clear. <strong>Crossing the walls of language and culture, we open the path to dishes yet undiscovered</strong> — and to that end, we will give shape to one product after another.\n\n<strong>To all who delight in food, may you meet the dish you have yet to discover</strong>. Through food, towards a world where people and people, culture and culture, meet one step more deeply.",
+      "signature_role": "CEO",
+      "signature_name": "Rokusaburo Inui",
+      "back_to_company": "← Back to Company"
+    }
   }
 }
