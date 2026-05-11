@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -57,6 +57,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
+<!-- v30.33: hero image preload for LCP -->
+<link rel="preload" as="image" type="image/avif" href="/assets/hero/hero-brand-1600.avif" media="(min-width:721px)">
+<link rel="preload" as="image" type="image/avif" href="/assets/hero/hero-brand-mobile-1200.avif" media="(max-width:720px)">
+<link rel="preload" as="image" type="image/webp" href="/assets/hero/hero-brand-1600.webp" media="(min-width:721px)">
+<link rel="preload" as="image" type="image/webp" href="/assets/hero/hero-brand-mobile-1200.webp" media="(max-width:720px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -64,6 +69,7 @@
 <link rel="stylesheet" href="/style.css">
 <script src="/i18n.js" defer></script>
 <script src="/header-footer.js" defer></script>
+<script src="/paan-anim.js" defer></script>
 <!-- v30.31: JSON-LD Organization for Google Knowledge Panel -->
 <script type="application/ld+json">
 {
@@ -109,8 +115,26 @@
 
 <!-- HERO (v30: アイラ島 夕陽の海岸 = brand) -->
 <section class="sub-hero sub-hero-brand">
+  <picture class="hero-bg">
+    <source type="image/avif" media="(min-width:1280px)" srcset="/assets/hero/hero-brand-1600.avif">
+    <source type="image/avif" media="(min-width:721px)" srcset="/assets/hero/hero-brand-1600.avif">
+    <source type="image/avif" media="(min-width:481px)" srcset="/assets/hero/hero-brand-mobile-1200.avif">
+    <source type="image/avif" srcset="/assets/hero/hero-brand-mobile-800.avif">
+    <source type="image/webp" media="(min-width:1280px)" srcset="/assets/hero/hero-brand-1600.webp">
+    <source type="image/webp" media="(min-width:721px)" srcset="/assets/hero/hero-brand-1600.webp">
+    <source type="image/webp" media="(min-width:481px)" srcset="/assets/hero/hero-brand-mobile-1200.webp">
+    <source type="image/webp" srcset="/assets/hero/hero-brand-mobile-800.webp">
+    <img src="/assets/hero/hero-brand-1600.webp"
+         alt=""
+         loading="eager"
+         fetchpriority="high"
+         decoding="async"
+         class="hero-bg-img">
+  </picture>
+  <div class="hero-content">
   <div class="page-eyebrow" data-i18n="page.brand.eyebrow">Our Brands</div>
   <h1 class="page-title" data-i18n="page.brand.page_title">PAAN シリーズ</h1>
+  </div>
 </section>
 
 <main class="page-wrap">
