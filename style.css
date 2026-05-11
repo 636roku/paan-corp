@@ -303,8 +303,8 @@ img { max-width:100%; height:auto; display:block; }
   right:0;
   /* v30.12: MENU-PAAN .mp-gear-menu 完全踏襲
      min-width:260px / max-width:calc(100vw - 28px) / padding:8px 0 / border-radius:10px */
-  /* v30.13: 幅を固定 (= 言語アコーディオン開閉でパネル幅が変動するのを防止) */
-  width:280px;
+  /* v30.14: 幅を更にコンパクト (= 280px → 240px) */
+  width:240px;
   max-width:calc(100vw - 28px);
   max-height:calc(100vh - 100px);
   background:#FFFFFF;
@@ -443,9 +443,9 @@ img { max-width:100%; height:auto; display:block; }
 .mp-mobile-locale-item {
   display:flex;
   align-items:center;
-  gap:6px;
-  /* v30.12: padding-left:14px / padding-right:8px / font-size:12px (MENU-PAAN準拠) */
-  padding:9px 8px 9px 14px;
+  gap:5px;
+  /* v30.14: padding 14px/8px → 10px/6px、 gap 6px → 5px (= 240px幅に収める) */
+  padding:9px 6px 9px 10px;
   border-radius:0;
   text-decoration:none;
   color:var(--paan-ink);
