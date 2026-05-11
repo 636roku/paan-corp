@@ -301,18 +301,19 @@ img { max-width:100%; height:auto; display:block; }
   position:absolute;
   top:0;
   right:0;
-  width:min(86vw, 380px);
+  /* v30.11: MENU-PAAN同等のコンパクトサイズに調整 */
+  width:min(78vw, 320px);
   max-height:calc(100vh - 96px);
   background:#FFFFFF;
-  padding:20px 24px 28px;
+  padding:8px 18px 16px;
   overflow-y:auto;
   transform:translateY(-12px);
   opacity:0;
   transition:transform 0.25s cubic-bezier(.4,.0,.2,1), opacity 0.2s ease;
-  box-shadow:0 8px 32px rgba(26,32,64,0.12), 0 2px 8px rgba(26,32,64,0.06);
-  border-bottom-left-radius:8px;
+  box-shadow:0 8px 24px rgba(26,32,64,0.10);
   border:1px solid var(--paan-line);
   border-top:0;
+  border-bottom-left-radius:6px;
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-drawer-inner {
@@ -329,18 +330,19 @@ img { max-width:100%; height:auto; display:block; }
   display:flex;
   flex-direction:column;
   gap:0;
-  margin-bottom:4px;
+  margin-bottom:0;
 }
 
 .mp-mobile-link {
   display:block;
-  padding:14px 4px;
+  /* v30.11: padding 14px → 9px、 font 15px → 13.5px (= MENU-PAAN準拠) */
+  padding:9px 2px;
   font-family:'Noto Sans JP', sans-serif;
-  font-size:15px;
+  font-size:13.5px;
   font-weight:500;
   color:var(--paan-ink);
   text-decoration:none;
-  letter-spacing:0.04em;
+  letter-spacing:0.02em;
   border-bottom:1px solid var(--paan-line);
   transition:color 0.15s;
 }
@@ -355,27 +357,27 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-mobile-locale-section {
-  margin-top:8px;
+  margin-top:0;
   padding-top:0;
   border-top:0;
 }
 
-/* v30.10: 言語アコーディオントグルボタン */
+/* v30.11: 言語アコーディオントグル MENU-PAAN準拠サイズに */
 .mp-mobile-locale-toggle {
   display:flex;
   align-items:center;
   justify-content:space-between;
   width:100%;
-  padding:14px 4px;
+  padding:9px 2px;
   background:transparent;
   border:0;
   border-bottom:1px solid var(--paan-line);
   cursor:pointer;
   font-family:'Noto Sans JP', sans-serif;
-  font-size:15px;
+  font-size:13.5px;
   font-weight:500;
   color:var(--paan-ink);
-  letter-spacing:0.04em;
+  letter-spacing:0.02em;
   text-align:left;
   transition:color 0.15s;
 }
@@ -385,15 +387,16 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-mobile-locale-toggle-label {
-  font-family:'Marcellus', 'Noto Sans JP', serif;
-  font-size:13px;
-  letter-spacing:0.16em;
-  color:var(--paan-ink-mid);
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:13.5px;
+  letter-spacing:0.02em;
+  color:var(--paan-ink);
   text-transform:none;
+  font-weight:500;
 }
 
 .mp-mobile-locale-toggle-chevron {
-  font-size:12px;
+  font-size:10px;
   color:var(--paan-ink-mid);
   transition:transform 0.2s ease;
 }
@@ -403,16 +406,15 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-mobile-locale-label {
-  /* 旧表記 (= ラベル) - もう不要だが互換のため残置 */
   display:none;
 }
 
-/* v30.10: アコーディオン本体: 初期は閉じてる */
+/* v30.11: アコーディオン本体: コンパクト */
 .mp-mobile-locale-grid {
   display:none;
   grid-template-columns:1fr 1fr;
-  gap:4px;
-  padding:14px 0 4px;
+  gap:2px;
+  padding:8px 0 4px;
 }
 
 .mp-mobile-locale-grid.is-expanded {
@@ -422,12 +424,13 @@ img { max-width:100%; height:auto; display:block; }
 .mp-mobile-locale-item {
   display:flex;
   align-items:center;
-  gap:8px;
-  padding:10px 10px;
-  border-radius:6px;
+  gap:6px;
+  /* v30.11: 言語アイテムもコンパクト化 (= MENU-PAAN準拠) */
+  padding:7px 8px;
+  border-radius:4px;
   text-decoration:none;
   color:var(--paan-ink);
-  font-size:13px;
+  font-size:12px;
   font-family:'Noto Sans JP', sans-serif;
   transition:background 0.12s;
 }
@@ -443,7 +446,7 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-mobile-locale-flag {
-  font-size:16px;
+  font-size:14px;
   line-height:1;
   flex-shrink:0;
 }
@@ -457,7 +460,7 @@ img { max-width:100%; height:auto; display:block; }
 
 .mp-mobile-locale-check {
   color:var(--paan-primary);
-  font-size:12px;
+  font-size:11px;
   margin-left:auto;
 }
 
