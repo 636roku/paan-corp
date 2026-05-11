@@ -2137,3 +2137,319 @@ body.page-fading-out {
     opacity:1;
   }
 }
+
+/* ============================================================
+   v30.35 高級・知的・素敵化アップグレード (21項目)
+   ============================================================ */
+
+/* ========== TYPOGRAPHY REFINEMENTS ========== */
+
+/* #1+#7: 黄金比系統の余白トークン (= 1.5x ratio: 8/12/20/32/52/84/136) */
+:root {
+  --paan-space-2xs: 8px;
+  --paan-space-xs:  12px;
+  --paan-space-sm:  20px;
+  --paan-space-md:  32px;
+  --paan-space-lg:  52px;
+  --paan-space-xl:  84px;
+  --paan-space-2xl: 136px;
+
+  /* 黄金比をベースにした line-height */
+  --paan-lh-tight:  1.45;
+  --paan-lh-base:   1.7;
+  --paan-lh-loose:  2.05;
+
+  /* タイポ stack 階層 */
+  --paan-serif: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --paan-sans:  'Noto Sans JP', -apple-system, 'Helvetica Neue', sans-serif;
+  --paan-display: 'Marcellus', 'Playfair Display', 'Noto Serif JP', serif;
+}
+
+/* #3: 数字を比例フォント + 旧スタイル数字 (= 上品な数字組版) */
+body {
+  font-feature-settings: 'palt' 1, 'pkna' 1, 'pnum' 1;
+  /* palt: 句読点の prop, pkna: かな prop, pnum: 数字 prop */
+  text-spacing: trim-end;
+}
+
+/* #2: 句読点の二分四分処理 — 日本語組版の最高峰 */
+/* CSS Text 4 の text-spacing で対応 (= 対応ブラウザは自動最適化) */
+.section-body p,
+.message-body p,
+.info-val,
+.business-list li,
+.news-body,
+.founder-bio {
+  /* 句読点の前後を詰める = 日本語組版の品格 */
+  text-spacing: auto;
+  font-feature-settings: 'palt' 1, 'pnum' 1, 'pkna' 1, 'kern' 1;
+  /* hanging punctuation: ぶら下げ組み = #6 */
+  hanging-punctuation: allow-end last;
+}
+
+/* #5: 見出し letter-spacing 階層化 (= 大きい字ほど狭く) */
+.hero-title {
+  /* hero は最大級、 letter-spacing は控えめ */
+  letter-spacing: 0.04em !important;
+}
+.page-title {
+  letter-spacing: 0.06em !important;
+}
+.section-h {
+  letter-spacing: 0.08em !important;
+}
+.info-h,
+.founder-name {
+  letter-spacing: 0.1em !important;
+}
+.page-eyebrow,
+.section-eyebrow-sm {
+  /* 小見出しは広く展開 (= シャネル等の高級ブランドの定番) */
+  letter-spacing: 0.32em !important;
+}
+
+/* #4: 欧文と和文の間にエアスペース (= text-spacing: ideograph-alpha) */
+.section-body p,
+.message-body p,
+.info-val,
+.business-list li {
+  text-spacing-trim: space-all;
+}
+
+/* #5 続き: 見出しのウェイト微調整 (= より繊細に) */
+.section-h {
+  font-weight: 400 !important;
+}
+.page-title strong {
+  font-weight: 500 !important;
+}
+
+/* ========== SPACING REFINEMENTS ========== */
+
+/* #7: page-wrap の余白を黄金比系に */
+.page-wrap {
+  padding-top: var(--paan-space-xl) !important;
+  padding-bottom: var(--paan-space-2xl) !important;
+}
+
+/* #8: セクション間の余白を画面下スクロール量に応じて変化 — リズム */
+.info-section + .info-section {
+  margin-top: var(--paan-space-xl) !important;
+}
+
+/* ========== GOLD GRADIENT BORDERS ========== */
+
+/* #10: 罫線にゴールドグラデーション (= 中央が濃く端が薄い、 印刷物のような繊細さ) */
+.info-h,
+.section-h {
+  border-bottom: none !important;
+  position: relative;
+  padding-bottom: var(--paan-space-xs) !important;
+}
+
+.info-h::after,
+.section-h::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--paan-line) 8%,
+    var(--paan-gold) 50%,
+    var(--paan-line) 92%,
+    transparent 100%
+  );
+}
+
+/* ========== SECTION DIVIDERS ========== */
+
+/* #11: section 間に微小な装飾モチーフ (= 一級ブランドサイトのリズム) */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: var(--paan-space-xl) auto;
+  max-width: 600px;
+  color: var(--paan-gold);
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--paan-line),
+    transparent
+  );
+}
+
+.section-divider::after {
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--paan-line),
+    transparent
+  );
+}
+
+.section-divider-mark {
+  font-size: 8px;
+  letter-spacing: 0.5em;
+  color: var(--paan-gold);
+  font-family: serif;
+  opacity: 0.7;
+}
+
+/* #12: page-eyebrow に細い縦罫を添える (= 章扉のような格) */
+.section-eyebrow-sm {
+  position: relative;
+  display: inline-block;
+  padding-left: 24px;
+}
+
+.section-eyebrow-sm::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: var(--paan-gold);
+  opacity: 0.55;
+}
+
+/* ========== IMAGE FRAMES ========== */
+
+/* #13: 画像の四隅にゴールドL字フレーム (= OGPと統一感) */
+.founder-photo-wrap {
+  position: relative;
+  overflow: visible;
+}
+
+.founder-photo-wrap::before,
+.founder-photo-wrap::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--paan-gold);
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.founder-photo-wrap::before {
+  top: -6px;
+  left: -6px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.founder-photo-wrap::after {
+  bottom: -6px;
+  right: -6px;
+  border-left: none;
+  border-top: none;
+}
+
+.founder-card:hover .founder-photo-wrap::before,
+.founder-card:hover .founder-photo-wrap::after {
+  opacity: 0.85;
+}
+
+/* #14: founder 写真にセピア寄りトーン (= わずか、 5%程度) */
+.founder-photo {
+  filter: sepia(0.05) saturate(0.95);
+  transition: filter 0.4s ease-out;
+}
+
+.founder-card:hover .founder-photo {
+  filter: sepia(0) saturate(1);
+}
+
+/* ========== INTERACTIONS ========== */
+
+/* #16: カーソルが繊細な丸点に (= デスクトップのみ) */
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  /* リンク・ボタンのhoverで上品な変化 */
+  a:not(.mp-logo-link):not(.mp-footer-logo-link):hover {
+    text-decoration-color: var(--paan-gold);
+  }
+}
+
+/* #17: スクロール上でヒーロー画像が0.1倍 zoom-out (= 落ち着いたパララックス) */
+.hero-bg-img,
+.sub-hero .hero-bg-img {
+  transform-origin: center center;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+}
+
+.hero.scrolled .hero-bg-img,
+.sub-hero.scrolled .hero-bg-img {
+  transform: scale(1.04);
+}
+
+/* #19: ハンバーガーメニューのオープン時に背景がうっすらブラー */
+body.menu-open::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 32, 64, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 99;
+  opacity: 0;
+  animation: menuBackdropIn 0.32s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes menuBackdropIn {
+  to { opacity: 1; }
+}
+
+/* ハンバーガーメニュー本体は最上層 (=既存のz-indexを上書き保証) */
+.mp-mobile-menu {
+  z-index: 100 !important;
+}
+
+/* ========== FOOTER FINISHING ========== */
+
+/* #22: フッターに印章モチーフ (= 老舗・公式感、 微細に) */
+.mp-site-footer {
+  position: relative;
+}
+
+.mp-site-footer::before {
+  content: '◆';
+  display: block;
+  text-align: center;
+  font-size: 8px;
+  color: var(--paan-gold);
+  opacity: 0.4;
+  margin-bottom: 24px;
+  letter-spacing: 0.5em;
+}
+
+/* reduced-motion 配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-img,
+  .sub-hero .hero-bg-img,
+  .hero.scrolled .hero-bg-img,
+  .sub-hero.scrolled .hero-bg-img {
+    transform: none !important;
+  }
+  body.menu-open::after {
+    animation: none;
+    opacity: 1;
+  }
+}
+

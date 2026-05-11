@@ -130,6 +130,82 @@
     initHeroText();
     initScrollReveal();
     initPageTransitionFade();
+    initHeroParallax();
+    initMenuBackdrop();
+    initHapticFeedback();
+  }
+
+  // ============================================
+  // #17: ヒーロー画像 zoom-out パララックス
+  // スクロール量に応じて画像が 1.04倍 にゆっくり拡大
+  // ============================================
+  function initHeroParallax() {
+    if (reduceMotion) return;
+
+    const heroSections = document.querySelectorAll('.hero, .sub-hero');
+    if (!heroSections.length) return;
+
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        heroSections.forEach(hero => {
+          // スクロール量が hero 高さの 30% を超えたら scrolled クラス付与
+          if (scrollY > hero.offsetHeight * 0.3) {
+            hero.classList.add('scrolled');
+          } else {
+            hero.classList.remove('scrolled');
+          }
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // ============================================
+  // #19: ハンバーガーメニューオープン検知 → backdrop blur
+  // ============================================
+  function initMenuBackdrop() {
+    // モバイルメニューの開閉を MutationObserver で検知
+    const observer = new MutationObserver(() => {
+      const mobileMenu = document.querySelector('.mp-mobile-menu');
+      if (!mobileMenu) return;
+      // 表示中かどうか判定 (= display や class名から)
+      const isOpen =
+        mobileMenu.classList.contains('open') ||
+        mobileMenu.classList.contains('is-open') ||
+        mobileMenu.getAttribute('aria-hidden') === 'false' ||
+        getComputedStyle(mobileMenu).display !== 'none';
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    // body 全体を監視 (= header-footer.js が動的にメニュー挿入する可能性)
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class', 'aria-hidden', 'style'],
+      subtree: true,
+      childList: true,
+    });
+  }
+
+  // ============================================
+  // #20: 触感フィードバック (= モバイル haptic)
+  // リンクタップ時に軽くバイブ (= 対応端末のみ)
+  // ============================================
+  function initHapticFeedback() {
+    if (!('vibrate' in navigator)) return;
+    if (reduceMotion) return;
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a, button');
+      if (!link) return;
+      // 微弱な振動 (= 10ms、 ほぼ知覚しないレベル)
+      try { navigator.vibrate(8); } catch (err) { /* iOS は無視 */ }
+    });
   }
 
   // ============================================
