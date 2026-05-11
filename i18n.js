@@ -28,7 +28,7 @@
     'de':    { flag: '🇩🇪', name: 'Deutsch' },
     'it':    { flag: '🇮🇹', name: 'Italiano' },
     'vi':    { flag: '🇻🇳', name: 'Tiếng Việt' },
-    'id':    { flag: '🇮🇩', name: 'Bahasa Indonesia' },
+    'id':    { flag: '🇮🇩', name: 'Indonesia' },
     'th':    { flag: '🇹🇭', name: 'ภาษาไทย' }
   };
 

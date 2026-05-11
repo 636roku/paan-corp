@@ -303,9 +303,9 @@ img { max-width:100%; height:auto; display:block; }
   right:0;
   /* v30.12: MENU-PAAN .mp-gear-menu 完全踏襲
      min-width:260px / max-width:calc(100vw - 28px) / padding:8px 0 / border-radius:10px */
-  min-width:260px;
+  /* v30.13: 幅を固定 (= 言語アコーディオン開閉でパネル幅が変動するのを防止) */
+  width:280px;
   max-width:calc(100vw - 28px);
-  width:auto;
   max-height:calc(100vh - 100px);
   background:#FFFFFF;
   padding:8px 0;
