@@ -931,12 +931,21 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 @media (max-width:720px) {
+  /* v30.17: モバイル時は「日付+タグ」 を1行目、 本文を2行目に
+     縦方向の節約 (= 旧3行: 日付→タグ→本文 → 新2行: [日付タグ]→本文) */
   .news-item {
-    grid-template-columns:1fr;
-    gap:6px;
+    grid-template-columns:auto auto 1fr;
+    grid-template-areas:
+      "date tag spacer"
+      "body body body";
+    column-gap:12px;
+    row-gap:8px;
     padding:14px 4px;
+    align-items:center;
   }
-  .news-tag { justify-self:start; }
+  .news-date { grid-area:date; }
+  .news-tag { grid-area:tag; justify-self:start; }
+  .news-body { grid-area:body; }
 }
 
 /* ============================================
