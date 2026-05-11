@@ -2547,3 +2547,192 @@ body.menu-open::after {
   }
 }
 
+
+/* ============================================================
+   v30.41 上品な追加アニメ 6項目セット
+   ============================================================ */
+
+/* ----- #1: リンク hover で下線が左から右にスーッと伸びる ----- */
+.section-body p a,
+.info-val a,
+.business-list a,
+.contact-card a,
+.contact-email,
+.message-back a {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(to right, currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease-out;
+}
+
+.section-body p a:hover,
+.info-val a:hover,
+.business-list a:hover,
+.contact-card a:hover,
+.contact-email:hover,
+.message-back a:hover {
+  background-size: 100% 1px;
+}
+
+/* contact-email は既に下線あるので、 hover時のゴールド色変化のみ */
+.contact-email {
+  background: none;
+  transition: border-color 0.3s ease-out, opacity 0.2s ease;
+}
+.contact-email:hover {
+  border-bottom-color: var(--paan-gold);
+  opacity: 1;
+}
+
+/* ----- #3: founder写真 Ken Burns効果 (= 微小なズーム + パン、 静止画が生きる) ----- */
+.founder-photo {
+  /* 既存の filter は維持、 transform 追加 */
+  transform: scale(1.0);
+  transition: transform 12s ease-out, filter 0.4s ease-out;
+}
+
+/* hover時 (= 写真にカーソルが乗った時) は通常 transform を Ken Burns 起動 */
+.founder-card:hover .founder-photo {
+  transform: scale(1.06) translate(-1%, -0.5%);
+}
+
+/* スクロール reveal で見えた時、 自動的に Ken Burns が動き出す */
+.founder-card.revealed .founder-photo {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  100% { transform: scale(1.05) translate(-1%, -1%); }
+}
+
+/* ----- #4: 見出しの下線 (=ゴールドグラデ) が viewport in 時に左→右に描画 ----- */
+.info-h::after,
+.section-h::after {
+  /* 既存のグラデ罫線、 初期は幅 0 から開始 */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.0s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+/* セクションが revealed (= viewport in) になったら下線が伸びる */
+.info-section.revealed .info-h::after,
+.section.revealed .section-h::after {
+  transform: scaleX(1);
+}
+
+/* JS無効時のフォールバック: 即表示 */
+.no-js .info-h::after,
+.no-js .section-h::after {
+  transform: scaleX(1);
+  transition: none;
+}
+
+/* ----- #10: section-divider ◆ が viewport in 時に透明→ゴールド ----- */
+.section-divider .section-divider-mark {
+  opacity: 0;
+  transition: opacity 1.2s ease-out 0.3s;
+}
+
+/* セクションが revealed になった隣の divider も発光 */
+.section.revealed + .section-divider .section-divider-mark,
+.info-section.revealed + .section-divider .section-divider-mark {
+  opacity: 0.7;
+}
+
+/* 単独で divider が viewport にある場合 (= IntersectionObserver の対象に追加) */
+.section-divider.revealed .section-divider-mark {
+  opacity: 0.7;
+}
+
+.no-js .section-divider .section-divider-mark {
+  opacity: 0.7;
+  transition: none;
+}
+
+/* ----- #11: brand カード hover時、 ゴールド枠が外側からスッと出る ----- */
+.brand-card {
+  position: relative;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.brand-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  pointer-events: none;
+  transition: border-color 0.5s ease-out, inset 0.4s ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 46, 92, 0.10);
+  }
+
+  .brand-card:hover::after {
+    inset: -5px;
+    border-color: var(--paan-gold);
+    opacity: 0.5;
+  }
+}
+
+/* ----- #12: page-eyebrow の縦罫が中央起点で上下に伸びる ----- */
+.section-eyebrow-sm {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-left: 24px;
+}
+
+.section-eyebrow-sm::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  background: var(--paan-gold);
+  opacity: 0.55;
+  /* 中央起点で上下に伸ばす */
+  transform-origin: center center;
+  transform: translateY(-50%) scaleY(0);
+  height: 14px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.section.revealed .section-eyebrow-sm::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+.no-js .section-eyebrow-sm::before {
+  transform: translateY(-50%) scaleY(1);
+  transition: none;
+}
+
+/* reduce-motion 対応 */
+@media (prefers-reduced-motion: reduce) {
+  .founder-photo,
+  .founder-card.revealed .founder-photo {
+    animation: none !important;
+    transform: none !important;
+  }
+  .info-h::after,
+  .section-h::after {
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
+  .section-eyebrow-sm::before {
+    transform: translateY(-50%) scaleY(1) !important;
+    transition: none !important;
+  }
+  .section-divider .section-divider-mark {
+    opacity: 0.7;
+    transition: none;
+  }
+}
+
