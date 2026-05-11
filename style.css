@@ -1417,6 +1417,8 @@ img { max-width:100%; height:auto; display:block; }
   overflow-wrap:break-word;
   line-break:auto;
   text-wrap:pretty;
+  /* v30.4: i18n辞書の \n\n を段落区切りとして表示 */
+  white-space:pre-line;
 }
 
 @media (max-width:720px) {
