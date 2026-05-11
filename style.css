@@ -557,13 +557,15 @@ img { max-width:100%; height:auto; display:block; }
 
 /* ============================================
    SUB-HERO (v30: サブページ用ヒーロー、 4ページ個別画像)
+   v30.2: 高さをトップヒーローと同等に拡大、 可読性改善
    ============================================ */
 .sub-hero {
   position:relative;
   /* body padding-top:96px を相殺 */
   margin-top:-96px;
   padding:96px 24px 0;
-  min-height:380px;
+  /* v30.2: トップヒーローと同等の存在感 */
+  min-height:640px;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
@@ -575,18 +577,18 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 @media (min-width:1280px) {
-  .sub-hero { min-height:420px; }
+  .sub-hero { min-height:720px; }
 }
 
 @media (max-width:720px) {
   .sub-hero {
-    min-height:320px;
+    min-height:620px;
     padding:96px 20px 0;
   }
 }
 
 @media (max-width:480px) {
-  .sub-hero { min-height:300px; }
+  .sub-hero { min-height:600px; }
 }
 
 /* ページ別背景画像 */
@@ -602,17 +604,17 @@ img { max-width:100%; height:auto; display:block; }
   .sub-hero-contact { background-image:url('/assets/hero/hero-contact-800.webp'); }
 }
 
-/* グラデーション、 トップ少しも暗く (= eyebrow可読性) */
+/* v30.2: グラデーションを底からより濃く (= タイトル可読性確保) */
 .sub-hero::before {
   content:'';
   position:absolute;
   inset:0;
   background:linear-gradient(
     180deg,
-    rgba(14,28,61,0.35) 0%,
-    rgba(14,28,61,0.15) 35%,
-    rgba(14,28,61,0.55) 75%,
-    rgba(14,28,61,0.82) 100%
+    rgba(14,28,61,0.18) 0%,
+    rgba(14,28,61,0.10) 35%,
+    rgba(14,28,61,0.60) 70%,
+    rgba(14,28,61,0.85) 100%
   );
   z-index:1;
 }
@@ -621,25 +623,26 @@ img { max-width:100%; height:auto; display:block; }
 
 .sub-hero .page-eyebrow {
   font-family:'Marcellus', serif;
-  font-size:12px;
+  font-size:13px;
   letter-spacing:0.28em;
   /* v30: ゴールド on dark (= 上品さブースト) */
   color:var(--paan-gold);
   text-transform:uppercase;
-  margin:0 auto 14px;
-  text-shadow:0 1px 12px rgba(0,0,0,0.5);
+  margin:0 auto 18px;
+  text-shadow:0 1px 12px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.4);
 }
 
 .sub-hero .page-title {
   font-family:'Noto Serif JP', serif;
-  font-size:30px;
+  font-size:32px;
   font-weight:500;
   color:#FFFFFF;
   letter-spacing:0.04em;
   line-height:1.55;
   margin:0 auto 48px;
   max-width:680px;
-  text-shadow:0 2px 24px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.3);
+  /* v30.2: 影を強化、 屋根や暗いエリアでも読めるように */
+  text-shadow:0 2px 24px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4);
 }
 
 .sub-hero .page-title strong {
@@ -647,12 +650,13 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 @media (max-width:720px) {
-  .sub-hero .page-eyebrow { font-size:11px; letter-spacing:0.24em; margin-bottom:12px; }
-  .sub-hero .page-title { font-size:24px; margin-bottom:32px; }
+  .sub-hero .page-eyebrow { font-size:11px; letter-spacing:0.24em; margin-bottom:14px; }
+  .sub-hero .page-title { font-size:26px; margin-bottom:36px; }
 }
 
 @media (max-width:480px) {
-  .sub-hero .page-title { font-size:22px; margin-bottom:28px; }
+  .sub-hero .page-eyebrow { font-size:10.5px; }
+  .sub-hero .page-title { font-size:23px; margin-bottom:32px; }
 }
 
 /* ============================================
