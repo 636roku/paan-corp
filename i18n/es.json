@@ -15,7 +15,7 @@
   },
   "page": {
     "top": {
-      "title": "PAAN Co., Ltd. — Abrir el camino hacia los platos aún por descubrir",
+      "title": "PAAN",
       "description": "Sitio web corporativo de PAAN Co., Ltd. Tendiendo puentes culturales a través de la comida, con la fuerza de la tecnología y la inteligencia artificial.",
       "hero_title": "Abrir el camino hacia los platos aún por descubrir.",
       "hero_sub": "El plato que deseamos saborear, la bebida que anhelamos, el aroma que queremos sentir, la mesa que queremos tocar.<br>Los muros de lengua y cultura entre ellos los superaremos con la fuerza de la tecnología y la inteligencia artificial.",
@@ -28,7 +28,7 @@
       "news_2026_04_18_story": "En el Shinkansen de vuelta, tras una excursión de un día a Iwase, prefectura de Toyama. Los cofundadores decidieron fundar PAAN Co., Ltd."
     },
     "mission": {
-      "title": "Misión | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Abrir el camino hacia los platos aún por descubrir. Los restaurantes han cruzado fronteras, pero los platos no. Tendiendo puentes culturales a través de la comida.",
       "eyebrow": "Our Mission",
       "page_title": "Abrir el camino hacia los platos aún por descubrir.",
@@ -53,7 +53,7 @@
       "first_p3": "Este es el <strong>primer paso</strong> de nuestra visión más amplia. Superando las barreras del idioma y la cultura, abrimos el camino hacia los platos que aún no conoces."
     },
     "brand": {
-      "title": "Producto | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Productos de PAAN Co., Ltd. Preparamos una serie de productos específicos para cada escena, con el fin de realizar encuentros — entre personas, entre culturas — a través de la comida.",
       "eyebrow": "Our Brands",
       "page_title": "La serie PAAN",
@@ -76,7 +76,7 @@
       "others_desc": "Noches en que uno halla la copa que anhela. Encuentros con el plato que mejor combina con el sake local. Noches en que uno recibe, sin titubeos, la mesa marcada por la restricción dietética o la convicción. Y la bienvenida que merece el huésped que ha cruzado nuestro umbral. ── La <strong>Serie PAAN</strong>, que materializa una a una, mediante productos, las escenas establecidas en nuestra misión, se desplegará a su debido tiempo."
     },
     "company": {
-      "title": "Empresa | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Información corporativa y directivos de PAAN Co., Ltd.",
       "eyebrow": "Company",
       "page_title": "Empresa",
@@ -117,7 +117,7 @@
       "founder_yui_bio": "Nacido en julio de 1996. Se graduó del Keio Senior High School en 2015. Durante sus estudios en la Universidad de Keio, Facultad de Derecho, aprobó el examen preliminar de la judicatura en 2018 y el examen de la judicatura en 2019.\n\nTras su inscripción como abogado en 2021 (Colegio de Abogados Daini Tokyo), se incorporó al despacho ZeLo, especializándose en financiación de start-ups, asuntos públicos y derecho corporativo general, prestando asesoramiento legal basado en su experiencia tanto en el sector privado como público. Después de servir en el Buró de Innovación y Medio Ambiente (División de Promoción de Innovación y Nuevos Negocios) del Ministerio de Economía, Comercio e Industria, se incorporó a Fugen Law Office, donde ejerce actualmente.\n\nCofundó PAAN Co., Ltd. en junio de 2026."
     },
     "contact": {
-      "title": "Contacto | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Contacte con PAAN Co., Ltd. para alianzas, prensa, empleo y más.",
       "eyebrow": "Contact",
       "page_title": "Contacto",
@@ -133,6 +133,7 @@
       "inquiry_3_body": "Buscamos compañeros en ingeniería, diseño, desarrollo de negocio y operaciones. Le rogamos incluya un breve recorrido profesional con su consulta.",
       "inquiry_4_title": "Consultas sobre productos",
       "inquiry_4_body": "Para consultas relacionadas con nuestros productos, contáctenos en la dirección de correo electrónico indicada arriba."
-    }
+    },
+    "_title": "PAAN"
   }
 }

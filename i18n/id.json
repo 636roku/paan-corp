@@ -15,7 +15,7 @@
   },
   "page": {
     "top": {
-      "title": "PAAN Co., Ltd. — Membuka jalan menuju hidangan yang belum tersingkap",
+      "title": "PAAN",
       "description": "Situs perusahaan PAAN Co., Ltd. Membangun jembatan budaya melalui makanan, dengan kekuatan teknologi dan kecerdasan buatan.",
       "hero_title": "Membuka jalan menuju hidangan yang belum tersingkap.",
       "hero_sub": "Hidangan yang ingin kita cicipi, anggur yang kita rindukan, aroma yang ingin kita rasakan, meja yang ingin kita sentuh.<br>Tembok bahasa dan budaya di antaranya akan kita seberangi dengan kekuatan teknologi dan kecerdasan buatan.",
@@ -28,7 +28,7 @@
       "news_2026_04_18_story": "Di kereta Shinkansen dalam perjalanan pulang, setelah perjalanan sehari ke Iwase, prefektur Toyama. Para pendiri bersama memutuskan untuk mendirikan PAAN Co., Ltd."
     },
     "mission": {
-      "title": "Misi | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Membuka jalan menuju hidangan yang belum tersingkap. Restoran telah melintasi batas, namun hidangan belum. Membangun jembatan budaya melalui makanan.",
       "eyebrow": "Our Mission",
       "page_title": "Membuka jalan menuju hidangan yang belum tersingkap.",
@@ -53,7 +53,7 @@
       "first_p3": "Ini adalah <strong>langkah pertama</strong> dari visi besar kami. Melampaui hambatan bahasa dan budaya, kami membuka jalan menuju hidangan yang belum pernah Anda jumpai."
     },
     "brand": {
-      "title": "Produk | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Produk PAAN Co., Ltd. Kami sedang menyiapkan serangkaian produk khas adegan untuk mewujudkan pertemuan — antara orang dengan orang, antara budaya dengan budaya — melalui makanan.",
       "eyebrow": "Our Brands",
       "page_title": "Seri PAAN",
@@ -76,7 +76,7 @@
       "others_desc": "Malam-malam ketika seseorang menemukan gelas yang dirindukan. Pertemuan dengan hidangan yang paling cocok dengan sake setempat. Malam-malam ketika seseorang menerima, tanpa ragu, meja yang ditandai pembatasan diet atau keyakinan. Dan sambutan yang sepatutnya bagi tamu yang telah melangkahi ambang pintu kita. ── <strong>Seri PAAN</strong>, yang mewujudkan satu per satu lewat produk adegan-adegan yang ditetapkan dalam misi kami, akan dipaparkan pada waktunya."
     },
     "company": {
-      "title": "Perusahaan | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Informasi perusahaan dan jajaran direksi PAAN Co., Ltd.",
       "eyebrow": "Company",
       "page_title": "Perusahaan",
@@ -117,7 +117,7 @@
       "founder_yui_bio": "Lahir pada Juli 1996. Lulus dari Keio Senior High School pada 2015. Saat menempuh studi di Fakultas Hukum Universitas Keio, ia lulus ujian pendahuluan profesi hukum pada 2018 dan ujian profesi hukum pada 2019.\n\nSetelah dilantik sebagai pengacara pada 2021 (Daini Tokyo Bar Association), ia bergabung dengan firma hukum ZeLo, dengan spesialisasi pada pendanaan start-up, urusan publik, dan hukum korporasi umum, serta memberikan nasihat hukum berlandaskan pengalaman sektor swasta dan publik. Setelah bertugas di Biro Inovasi dan Lingkungan (Divisi Promosi Inovasi dan Bisnis Baru) Kementerian Ekonomi, Perdagangan dan Industri, ia bergabung dengan Fugen Law Office, tempat ia berpraktik saat ini.\n\nSalah satu pendiri PAAN Co., Ltd. pada Juni 2026."
     },
     "contact": {
-      "title": "Kontak | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Hubungi PAAN Co., Ltd. untuk kemitraan, pers, karier, dan lainnya.",
       "eyebrow": "Contact",
       "page_title": "Kontak",
@@ -133,6 +133,7 @@
       "inquiry_3_body": "Kami merekrut rekan untuk teknik, desain, pengembangan bisnis, dan operasional. Mohon sertakan latar belakang singkat saat menghubungi kami.",
       "inquiry_4_title": "Pertanyaan terkait produk",
       "inquiry_4_body": "Untuk pertanyaan terkait produk kami, mohon hubungi kami melalui alamat email di atas."
-    }
+    },
+    "_title": "PAAN"
   }
 }

@@ -15,7 +15,7 @@
   },
   "page": {
     "top": {
-      "title": "PAAN Co., Ltd. — Mở con đường dẫn đến những món ăn còn chưa được khám phá",
+      "title": "PAAN",
       "description": "Trang web doanh nghiệp của PAAN Co., Ltd. Bắc nhịp cầu văn hóa qua ẩm thực, bằng sức mạnh của công nghệ và trí tuệ nhân tạo.",
       "hero_title": "Mở con đường dẫn đến những món ăn còn chưa được khám phá.",
       "hero_sub": "Món ăn ta muốn nếm thử, ly rượu ta khao khát, hương thơm ta muốn cảm nhận, bàn tiệc ta muốn chạm tới.<br>Bức tường ngôn ngữ và văn hóa giữa chúng, ta sẽ vượt qua bằng sức mạnh của công nghệ và trí tuệ nhân tạo.",
@@ -28,7 +28,7 @@
       "news_2026_04_18_story": "Trên chuyến tàu Shinkansen trở về, sau chuyến đi trong ngày đến Iwase, tỉnh Toyama. Các đồng sáng lập đã quyết định thành lập PAAN Co., Ltd."
     },
     "mission": {
-      "title": "Sứ mệnh | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Mở con đường dẫn đến những món ăn còn chưa được khám phá. Nhà hàng đã vượt biên giới, nhưng món ăn thì chưa. Bắc nhịp cầu văn hóa qua ẩm thực.",
       "eyebrow": "Our Mission",
       "page_title": "Mở con đường dẫn đến những món ăn còn chưa được khám phá.",
@@ -53,7 +53,7 @@
       "first_p3": "Đây là <strong>bước đầu tiên</strong> của tầm nhìn lớn của chúng tôi. Vượt qua rào cản ngôn ngữ và văn hóa, chúng tôi mở ra con đường đến những món ăn bạn chưa từng biết."
     },
     "brand": {
-      "title": "Sản phẩm | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Sản phẩm của PAAN Co., Ltd. Chúng tôi đang chuẩn bị một loạt sản phẩm đặc thù theo bối cảnh để hiện thực hóa cuộc hạnh ngộ — giữa người với người, giữa văn hóa với văn hóa — qua ẩm thực.",
       "eyebrow": "Our Brands",
       "page_title": "Series PAAN",
@@ -76,7 +76,7 @@
       "others_desc": "Những đêm tìm được ly rượu khao khát. Những lần gặp gỡ món ăn hợp nhất với sake địa phương. Những đêm đón tiếp, không một chút ngần ngại, bàn tiệc đầy ràng buộc ăn uống hay niềm tin riêng. Và sự tiếp đón xứng đáng với vị khách đã bước qua ngưỡng cửa của chúng ta. ── <strong>Series PAAN</strong>, lần lượt hiện thực hóa từng bối cảnh đã đặt ra trong sứ mệnh thông qua các sản phẩm, sẽ được triển khai theo thời gian."
     },
     "company": {
-      "title": "Công ty | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Thông tin công ty và ban lãnh đạo PAAN Co., Ltd.",
       "eyebrow": "Company",
       "page_title": "Công ty",
@@ -117,7 +117,7 @@
       "founder_yui_bio": "Sinh tháng 7 năm 1996. Tốt nghiệp Trường Trung học Phổ thông Keio năm 2015. Trong thời gian học tại Khoa Luật, Đại học Keio, ông đã đỗ kỳ thi sơ bộ ngành luật năm 2018 và kỳ thi tư pháp năm 2019.\n\nSau khi được kết nạp vào Đoàn Luật sư năm 2021 (Đoàn Luật sư Daini Tokyo), ông gia nhập hãng luật ZeLo, chuyên về tài chính cho start-up, các vấn đề công và luật doanh nghiệp tổng quát, cung cấp tư vấn pháp lý dựa trên kinh nghiệm cả khu vực tư và công. Sau thời gian công tác tại Cục Đổi mới và Môi trường (Vụ Thúc đẩy Đổi mới và Kinh doanh Mới) thuộc Bộ Kinh tế, Thương mại và Công nghiệp, ông gia nhập Fugen Law Office, nơi ông hiện đang hành nghề.\n\nĐồng sáng lập PAAN Co., Ltd. vào tháng 6 năm 2026."
     },
     "contact": {
-      "title": "Liên hệ | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Liên hệ PAAN Co., Ltd. để hợp tác, báo chí, tuyển dụng và các vấn đề khác.",
       "eyebrow": "Contact",
       "page_title": "Liên hệ",
@@ -133,6 +133,7 @@
       "inquiry_3_body": "Chúng tôi đang tuyển kỹ sư, nhà thiết kế, phát triển kinh doanh và vận hành. Vui lòng đính kèm tóm tắt quá trình công tác khi liên hệ.",
       "inquiry_4_title": "Câu hỏi về sản phẩm",
       "inquiry_4_body": "Đối với các câu hỏi liên quan đến sản phẩm của chúng tôi, vui lòng liên hệ với chúng tôi qua địa chỉ email nêu trên."
-    }
+    },
+    "_title": "PAAN"
   }
 }

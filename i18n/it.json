@@ -15,7 +15,7 @@
   },
   "page": {
     "top": {
-      "title": "PAAN Co., Ltd. — Aprire la via verso piatti ancora da scoprire",
+      "title": "PAAN",
       "description": "Sito aziendale di PAAN Co., Ltd. Costruire ponti culturali attraverso la cucina, con la forza della tecnologia e dell'intelligenza artificiale.",
       "hero_title": "Aprire la via verso piatti ancora da scoprire.",
       "hero_sub": "Il piatto che desideriamo gustare, il vino che bramiamo bere, l'aroma che vogliamo sentire, la tavola che vogliamo toccare.<br>I muri di lingua e cultura tra di essi, li valicheremo con la forza della tecnologia e dell'intelligenza artificiale.",
@@ -28,7 +28,7 @@
       "news_2026_04_18_story": "Sullo Shinkansen del ritorno, dopo una gita di un giorno a Iwase, nella prefettura di Toyama. I co-fondatori decisero di fondare PAAN Co., Ltd."
     },
     "mission": {
-      "title": "Missione | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Aprire la via verso piatti ancora da scoprire. I ristoranti hanno varcato i confini, ma i piatti no. Costruire ponti culturali attraverso la cucina.",
       "eyebrow": "Our Mission",
       "page_title": "Aprire la via verso piatti ancora da scoprire.",
@@ -53,7 +53,7 @@
       "first_p3": "Questo è il <strong>primo passo</strong> della nostra visione più ampia. Superando le barriere della lingua e della cultura, apriamo la strada verso i piatti che non avete ancora scoperto."
     },
     "brand": {
-      "title": "Prodotto | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Prodotti di PAAN Co., Ltd. Stiamo preparando una serie di prodotti specifici per ogni scena, per realizzare incontri — tra persone, tra culture — attraverso la cucina.",
       "eyebrow": "Our Brands",
       "page_title": "La serie PAAN",
@@ -76,7 +76,7 @@
       "others_desc": "Sere in cui si trova il bicchiere bramato. Incontri con il piatto che meglio si abbina al sake locale. Sere in cui si accoglie, senza esitazione, la tavola segnata da restrizione alimentare o convinzione. E l'accoglienza che spetta all'ospite che ha varcato la nostra soglia. ── La <strong>Serie PAAN</strong>, che realizza una a una, attraverso prodotti, le scene poste nella nostra missione, si dispiegherà a tempo debito."
     },
     "company": {
-      "title": "Azienda | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Informazioni aziendali e dirigenti di PAAN Co., Ltd.",
       "eyebrow": "Company",
       "page_title": "Azienda",
@@ -117,7 +117,7 @@
       "founder_yui_bio": "Nato nel luglio 1996. Diplomato alla Keio Senior High School nel 2015. Durante gli studi presso la Facoltà di Giurisprudenza dell'Università Keio, ha superato l'esame preliminare per l'abilitazione forense nel 2018 e l'esame di abilitazione forense nel 2019.\n\nCon l'iscrizione all'albo degli avvocati nel 2021 (Daini Tokyo Bar Association), è entrato nello studio legale ZeLo, specializzandosi in finanza per start-up, public affairs e diritto societario generale, fornendo consulenza legale fondata sull'esperienza maturata sia nel settore privato sia in quello pubblico. Dopo aver prestato servizio presso l'Ufficio per l'Innovazione e l'Ambiente (Divisione per la Promozione dell'Innovazione e delle Nuove Imprese) del Ministero dell'Economia, del Commercio e dell'Industria, è entrato nello studio Fugen Law Office, dove esercita attualmente.\n\nCo-fondatore di PAAN Co., Ltd. nel giugno 2026."
     },
     "contact": {
-      "title": "Contatti | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Contattate PAAN Co., Ltd. per partnership, stampa, carriera e altro.",
       "eyebrow": "Contact",
       "page_title": "Contatti",
@@ -133,6 +133,7 @@
       "inquiry_3_body": "Stiamo cercando colleghe e colleghi per ingegneria, design, sviluppo del business e operazioni. Allegate alla vostra richiesta un breve percorso.",
       "inquiry_4_title": "Richieste relative ai prodotti",
       "inquiry_4_body": "Per richieste relative ai nostri prodotti, vi preghiamo di contattarci all'indirizzo email sopra indicato."
-    }
+    },
+    "_title": "PAAN"
   }
 }

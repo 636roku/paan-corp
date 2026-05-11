@@ -15,7 +15,7 @@
   },
   "page": {
     "top": {
-      "title": "PAAN Co., Ltd. — Den Weg zu noch unentdeckten Speisen öffnen",
+      "title": "PAAN",
       "description": "Unternehmenswebsite von PAAN Co., Ltd. Brücken zwischen Kulturen durch das Essen schlagen, mit der Kraft von Technologie und künstlicher Intelligenz.",
       "hero_title": "Den Weg zu noch unentdeckten Speisen öffnen.",
       "hero_sub": "Das Gericht, das wir kosten möchten, der Wein, nach dem wir uns sehnen, der Duft, den wir spüren wollen, der Tisch, an dem wir Platz nehmen wollen.<br>Die Mauern aus Sprache und Kultur, die zwischen ihnen stehen, überwinden wir mit der Kraft von Technologie und künstlicher Intelligenz.",
@@ -28,7 +28,7 @@
       "news_2026_04_18_story": "Im Shinkansen auf der Heimfahrt, nach einem Tagesausflug nach Iwase in der Präfektur Toyama. Die Mitgründer fassten den Entschluss, die PAAN Co., Ltd. zu gründen."
     },
     "mission": {
-      "title": "Mission | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Den Weg zu noch unentdeckten Speisen öffnen. Restaurants haben Grenzen überschritten, die Gerichte selbst noch nicht. Brücken zwischen Kulturen — durch das Essen.",
       "eyebrow": "Our Mission",
       "page_title": "Den Weg zu noch unentdeckten Speisen öffnen.",
@@ -53,7 +53,7 @@
       "first_p3": "Dies ist der <strong>erste Schritt</strong> unserer größeren Vision. Sprach- und Kulturgrenzen überschreitend öffnen wir den Weg zu Gerichten, die Sie noch nicht entdeckt haben."
     },
     "brand": {
-      "title": "Produkt | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Produkte von PAAN Co., Ltd. Wir bereiten eine Reihe szenenspezifischer Produkte vor, um Begegnungen — zwischen Menschen, zwischen Kulturen — durch das Essen zu verwirklichen.",
       "eyebrow": "Our Brands",
       "page_title": "Die PAAN-Reihe",
@@ -76,7 +76,7 @@
       "others_desc": "Abende, an denen man das Glas findet, nach dem man sich sehnt. Begegnungen mit dem Gericht, das am besten zum lokalen Sake passt. Abende, an denen man den Tisch, geprägt von Ernährungsbeschränkung oder Überzeugung, ohne Zögern als Gastgeber empfängt. Und der Empfang, der dem Gast gebührt, der die Schwelle überschritten hat. ── Die <strong>PAAN-Reihe</strong>, die die in unserer Mission gesetzten Szenen Stück für Stück durch Produkte verwirklicht, wird sich zu gegebener Zeit entfalten."
     },
     "company": {
-      "title": "Unternehmen | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Unternehmensinformationen und Vorstand der PAAN Co., Ltd.",
       "eyebrow": "Company",
       "page_title": "Unternehmen",
@@ -117,7 +117,7 @@
       "founder_yui_bio": "Geboren im Juli 1996. Abschluss an der Keio Senior High School 2015. Während seines Studiums an der Juristischen Fakultät der Universität Keio bestand er 2018 die Vorprüfung zum Anwaltsexamen und 2019 das Anwaltsexamen.\n\nMit der Zulassung zur Rechtsanwaltschaft im Jahr 2021 (Daini Tokyo Bar Association) trat er der Kanzlei ZeLo bei, mit Schwerpunkt auf Start-up-Finanzierung, Public Affairs und allgemeinem Gesellschaftsrecht, und beriet auf Grundlage seiner Erfahrung in privatem und öffentlichem Sektor. Nach einer Tätigkeit im Bureau für Innovation und Umwelt (Abteilung für Innovationsförderung und neue Geschäftsfelder) des Ministeriums für Wirtschaft, Handel und Industrie wechselte er zur Kanzlei Fugen Law Office, wo er derzeit tätig ist.\n\nMitbegründer der PAAN Co., Ltd. im Juni 2026."
     },
     "contact": {
-      "title": "Kontakt | PAAN Co., Ltd.",
+      "title": "PAAN",
       "description": "Kontaktieren Sie PAAN Co., Ltd. für Partnerschaften, Presse, Karriere und mehr.",
       "eyebrow": "Contact",
       "page_title": "Kontakt",
@@ -133,6 +133,7 @@
       "inquiry_3_body": "Wir suchen Kolleginnen und Kollegen in den Bereichen Engineering, Design, Geschäftsentwicklung und Operations. Bitte fügen Sie Ihrer Anfrage eine kurze Vita bei.",
       "inquiry_4_title": "Anfragen zu Produkten",
       "inquiry_4_body": "Für Anfragen zu unseren Produkten kontaktieren Sie uns bitte unter der oben angegebenen E-Mail-Adresse."
-    }
+    },
+    "_title": "PAAN"
   }
 }
