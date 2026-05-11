@@ -647,6 +647,8 @@ img { max-width:100%; height:auto; display:block; }
 
 .sub-hero .page-title strong {
   font-weight:500;
+  /* v30.3: main内の .page-title strong = 紺(--paan-primary) を上書き、 ヒーロー内では白 */
+  color:#FFFFFF;
 }
 
 @media (max-width:720px) {
@@ -1408,10 +1410,13 @@ img { max-width:100%; height:auto; display:block; }
   line-height:1.95;
   color:var(--paan-ink);
   letter-spacing:0.02em;
-  /* v27: CJK改行対応 */
-  word-break:keep-all;
+  /* v30: 自然な禁則処理に戻す (= 句点ごとの強制改行を解消)
+     word-break:keep-all は長文bioでは句点を境界扱いし、 各文ごとに改行されて読みにくい
+     overflow-wrap:break-word のみで自然な折り返し、 text-wrap:pretty で見栄え最適化 */
+  word-break:normal;
   overflow-wrap:break-word;
-  line-break:strict;
+  line-break:auto;
+  text-wrap:pretty;
 }
 
 @media (max-width:720px) {
