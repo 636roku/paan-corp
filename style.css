@@ -637,6 +637,7 @@ img { max-width:100%; height:auto; display:block; }
 .tag-release { background:var(--paan-primary); color:#FFFFFF; }
 .tag-product { background:var(--paan-gold); color:#FFFFFF; }
 .tag-info    { background:var(--paan-card); color:var(--paan-primary); border:1px solid var(--paan-line); }
+.tag-story   { background:transparent; color:var(--paan-ink-mid); border:1px solid var(--paan-ink-mid); }
 
 .news-body {
   font-size:14px;
