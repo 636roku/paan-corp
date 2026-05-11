@@ -210,8 +210,13 @@
       burger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     };
+    // v30.9: バーガーをトグル化 (= MENU-PAAN風、 もう一度タップで閉じる)
+    const toggle = () => {
+      if (drawer.classList.contains('is-open')) close();
+      else open();
+    };
 
-    burger.addEventListener('click', open);
+    burger.addEventListener('click', toggle);
     if (closeBtn) closeBtn.addEventListener('click', close);
     // バックドロップ (= 自身) クリックで閉じる
     drawer.addEventListener('click', (e) => {
@@ -220,6 +225,10 @@
     // ESCキーで閉じる
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && drawer.classList.contains('is-open')) close();
+    });
+    // v30.9: ナビリンクタップ後にメニューを閉じる (= ドロップダウン式UX)
+    drawer.querySelectorAll('.mp-mobile-link').forEach(link => {
+      link.addEventListener('click', close);
     });
   }
 

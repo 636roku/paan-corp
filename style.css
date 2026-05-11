@@ -273,16 +273,21 @@ img { max-width:100%; height:auto; display:block; }
   transform:translateY(-9px) rotate(-45deg);
 }
 
+/* v30.9: MENU-PAAN風のドロップダウン式ハンバーガー
+   元: 右からスライドイン + 暗オーバーレイ + 320px幅
+   新: ヘッダー直下から下方向にドロップダウン + 半透明白背景 + 全幅 */
 .mp-mobile-drawer {
   display:none;
   position:fixed;
-  inset:0;
-  background:rgba(26,32,64,0.45);
-  backdrop-filter:blur(2px);
-  -webkit-backdrop-filter:blur(2px);
+  top:96px; /* ヘッダー高さ分下から開始 */
+  left:0;
+  right:0;
+  bottom:auto;
+  max-height:calc(100vh - 96px);
+  background:transparent;
   z-index:9999;
   opacity:0;
-  transition:opacity 0.25s ease;
+  transition:opacity 0.2s ease;
 }
 
 .mp-mobile-drawer.is-open {
@@ -291,47 +296,37 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-mobile-drawer-inner {
-  position:absolute;
-  top:0;
-  right:0;
-  /* v30: 幅縮小 min(86vw, 380px) → min(78vw, 320px) (= iPhone SE等の小画面でも背景がより見える) */
-  width:min(78vw, 320px);
-  height:100vh;
-  background:#FFFFFF;
-  padding:64px 24px 32px;
+  position:relative;
+  top:auto;
+  right:auto;
+  width:100%;
+  height:auto;
+  max-height:calc(100vh - 96px);
+  background:rgba(255,255,255,0.98);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  padding:24px 24px 32px;
   overflow-y:auto;
-  transform:translateX(100%);
-  transition:transform 0.3s cubic-bezier(.4,.0,.2,1);
-  box-shadow:-8px 0 32px rgba(26,32,64,0.12);
+  transform:translateY(-12px);
+  transition:transform 0.25s cubic-bezier(.4,.0,.2,1);
+  box-shadow:0 8px 24px rgba(26,32,64,0.08);
+  border-bottom:1px solid var(--paan-line);
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-drawer-inner {
-  transform:translateX(0);
+  transform:translateY(0);
 }
 
+/* v30.9: クローズボタンは表示不要 (= ハンバーガー自体がトグル化) */
 .mp-mobile-close {
-  position:absolute;
-  top:18px;
-  right:20px;
-  width:36px;
-  height:36px;
-  background:transparent;
-  border:0;
-  font-size:28px;
-  line-height:1;
-  color:var(--paan-ink);
-  cursor:pointer;
-  padding:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:none;
 }
 
 .mp-mobile-nav {
   display:flex;
   flex-direction:column;
   gap:0;
-  margin-bottom:36px;
+  margin-bottom:8px;
 }
 
 .mp-mobile-link {
@@ -846,6 +841,12 @@ img { max-width:100%; height:auto; display:block; }
   margin-bottom:48px;
 }
 
+/* v30.8: page-wrap内の最後のセクションは下マージン削除 (= page-wrapのpadding-bottomで足りる) */
+.page-wrap > .section:last-child,
+.page-wrap > .info-section:last-child {
+  margin-bottom:0;
+}
+
 .section-eyebrow-sm {
   font-family:'Marcellus', serif;
   font-size:12px;
@@ -1327,6 +1328,14 @@ img { max-width:100%; height:auto; display:block; }
   letter-spacing:0.02em;
 }
 
+/* v30.8: タイトル後半の span (= 「の企画・開発・運営」 等) を strong と同じ太字・色に統一 */
+.business-list li > span:not(.business-sub) {
+  color:var(--paan-primary);
+  font-weight:500;
+  font-size:15px;
+  letter-spacing:0.02em;
+}
+
 .business-sub {
   display:block;
   margin-top:4px;
@@ -1343,6 +1352,7 @@ img { max-width:100%; height:auto; display:block; }
 @media (max-width:720px) {
   .business-list li { font-size:13.5px; padding:14px 0 14px 18px; }
   .business-list li strong { font-size:14px; }
+  .business-list li > span:not(.business-sub) { font-size:14px; }
   .business-sub { font-size:12px; }
 }
 
@@ -1556,7 +1566,8 @@ img { max-width:100%; height:auto; display:block; }
   background:#FFFFFF;
   color:var(--paan-primary);
   padding:24px 20px 32px;
-  margin-top:48px;
+  /* v30.9: フッター上余白を 48px → 24px に削減 (= page-wrap末尾の余白とのコンボで広すぎたため) */
+  margin-top:24px;
   border-top:1px solid var(--paan-line-2);
   text-align:center;
   font-family:'Noto Sans JP', -apple-system, sans-serif;
