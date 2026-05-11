@@ -15,35 +15,46 @@
 
   // Step 1: <html> から no-js クラスを即削除 (= JS有効を CSS に通知)
   document.documentElement.classList.remove('no-js');
-  document.documentElement.classList.add('js-on');
 
   // prefers-reduced-motion 検出 (= 動きが苦手な人/低スペック端末)
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ============================================
-  // Step 2: hero画像 fade-in
+  // Step 2: hero画像 fade-in (= まだロード中の場合のみ演出を付加)
   // ============================================
   function initHeroFadeIn() {
     const heroImg = document.querySelector('.hero-bg-img');
     if (!heroImg) return;
+
+    // すでに画像読み込み完了 → 何もしない (= デフォルト opacity:1 のまま表示)
+    if (heroImg.complete && heroImg.naturalWidth > 0) {
+      heroImg.classList.add('loaded');
+      // この時 .js-on クラスはまだないので opacity:1 のまま
+      return;
+    }
 
     if (reduceMotion) {
       heroImg.classList.add('loaded');
       return;
     }
 
-    // すでにロード完了してたら即追加
-    if (heroImg.complete && heroImg.naturalWidth > 0) {
+    // 画像がまだロード中 → js-on クラスを付けて opacity:0 → load 完了で opacity:1 にフェード
+    document.documentElement.classList.add('js-on');
+
+    heroImg.addEventListener('load', () => {
       heroImg.classList.add('loaded');
-    } else {
-      heroImg.addEventListener('load', () => {
+    });
+    heroImg.addEventListener('error', () => {
+      // エラー時もとりあえず表示 (= フォールバック)
+      heroImg.classList.add('loaded');
+    });
+
+    // 安全策: 3秒経っても load イベントが来なかったら強制表示
+    setTimeout(() => {
+      if (!heroImg.classList.contains('loaded')) {
         heroImg.classList.add('loaded');
-      });
-      heroImg.addEventListener('error', () => {
-        // エラー時もとりあえず表示 (= フォールバック)
-        heroImg.classList.add('loaded');
-      });
-    }
+      }
+    }, 3000);
   }
 
   // ============================================
@@ -118,6 +129,41 @@
     initHeroFadeIn();
     initHeroText();
     initScrollReveal();
+    initPageTransitionFade();
+  }
+
+  // ============================================
+  // ページ遷移フェード (=View Transitions API 非対応時のフォールバック)
+  // Safari 17以前等で「バチっと消える」 のを防ぐ
+  // ============================================
+  function initPageTransitionFade() {
+    if (reduceMotion) return;
+
+    // View Transitions API 対応してれば CSS が担当するのでスキップ
+    if ('startViewTransition' in document) return;
+
+    // リンククリック時に手動でフェードアウト
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      // 外部リンク、 同一ページ内アンカー、 メールリンク等はスキップ
+      if (href.startsWith('http') && !href.startsWith(window.location.origin)) return;
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if (link.target === '_blank') return;
+      if (link.hasAttribute('download')) return;
+      // 修飾キー押下時 (= 新タブで開く意図) はスキップ
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+
+      e.preventDefault();
+      document.body.classList.add('page-fading-out');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 280);
+    });
   }
 
   // DOMContentLoaded 前なら待つ、 後なら即実行

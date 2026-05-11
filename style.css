@@ -577,19 +577,18 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .hero-bg-img {
-  /* v30.33: fade-in アニメーション (= パッと切替を滑らかに) */
-  opacity:0;
+  /* v30.34: デフォルトで表示 (= JSがdeferで遅れても青背景に取り残されない) */
+  opacity:1;
   transition:opacity 0.6s ease-out;
 }
 
-.hero-bg-img.loaded {
-  opacity:1;
+/* v30.34: JS が動いて、 画像がまだロードされてない時だけ非表示にする */
+.js-on .hero-bg-img:not(.loaded) {
+  opacity:0;
 }
 
-/* 画像読込前 (= JS無し or 遅延ロード時) もOpacity:1で表示 (= no-jsフォールバック) */
-.no-js .hero-bg-img {
+.js-on .hero-bg-img.loaded {
   opacity:1;
-  transition:none;
 }
 
 /* hero-content は picture の上に重ねる */
@@ -720,17 +719,17 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .sub-hero .hero-bg-img {
-  opacity:0;
+  /* v30.34: デフォルト表示、 JS進入時のみ fade-in 演出 */
+  opacity:1;
   transition:opacity 0.6s ease-out;
 }
 
-.sub-hero .hero-bg-img.loaded {
-  opacity:1;
+.js-on .sub-hero .hero-bg-img:not(.loaded) {
+  opacity:0;
 }
 
-.no-js .sub-hero .hero-bg-img {
+.js-on .sub-hero .hero-bg-img.loaded {
   opacity:1;
-  transition:none;
 }
 
 .sub-hero .hero-content {
@@ -2079,4 +2078,62 @@ a {
 }
 .fade-in-img.loaded {
   opacity:1;
+}
+
+/* ============================================
+   v30.34 ページ遷移フェード (= View Transitions API)
+   - 対応ブラウザ: Chrome 111+, Edge 111+, Safari 18+
+   - 非対応ブラウザでは何も起きない (= 通常遷移、 ユーザーは違和感なし)
+   ============================================ */
+@view-transition {
+  navigation: auto;
+}
+
+/* デフォルトの View Transition を上書き */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-old(root) {
+  animation-name: page-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: page-fade-in;
+}
+
+@keyframes page-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* reduced-motion なら遷移アニメ無効 */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* v30.34: ページ遷移フェードアウト用 (= View Transitions非対応ブラウザ用 fallback) */
+body {
+  transition:opacity 0.28s ease-out;
+}
+
+body.page-fading-out {
+  opacity:0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body, body.page-fading-out {
+    transition:none;
+    opacity:1;
+  }
 }
