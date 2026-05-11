@@ -582,31 +582,34 @@ img { max-width:100%; height:auto; display:block; }
 
 @media (max-width:720px) {
   .sub-hero {
-    /* v30.6: モバイル専用縦長画像 (= 4:5、 トップヒーローと統一) + cover で引き伸ばし無し */
-    min-height:620px;
-    aspect-ratio:auto;
+    /* v30.7: モバイルでも3:2横長を維持 (= 元画像の比率そのまま)
+       aspect-ratio:3/2 + cover で画像は引き伸ばし無しで画面幅にフィット
+       画面幅375px → 高さ250px、 ヘッダー裏まで広げて見かけ高さ346px */
+    min-height:0;
     height:auto;
-    padding:96px 20px 0;
+    aspect-ratio:3/2;
+    padding:96px 16px 20px;
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
   }
 
-  /* モバイル用グラデーション: 上少し暗くしてeyebrowを読みやすく、 下を濃くしてtitleを読みやすく */
+  /* モバイル用グラデーション: 上はクリア、 下を濃くしてテキスト可読性確保 */
   .sub-hero::before {
     background:linear-gradient(
       180deg,
-      rgba(14,28,61,0.25) 0%,
+      rgba(14,28,61,0.10) 0%,
       rgba(14,28,61,0.10) 35%,
-      rgba(14,28,61,0.55) 70%,
-      rgba(14,28,61,0.82) 100%
+      rgba(14,28,61,0.50) 65%,
+      rgba(14,28,61,0.80) 100%
     );
   }
 }
 
 @media (max-width:480px) {
   .sub-hero {
-    min-height:600px;
+    aspect-ratio:3/2;
+    min-height:0;
   }
 }
 
@@ -616,19 +619,12 @@ img { max-width:100%; height:auto; display:block; }
 .sub-hero-company { background-image:url('/assets/hero/hero-company-1600.webp'); }
 .sub-hero-contact { background-image:url('/assets/hero/hero-contact-1600.webp'); }
 
-/* モバイル用 縦長画像 (= 4:5、 デスクトップ指定を上書き) */
+/* モバイル用 (= デスクトップと同じ3:2画像、 ファイルサイズ小さめの800版に切替) */
 @media (max-width:720px) {
-  .sub-hero-mission { background-image:url('/assets/hero/hero-mission-mobile-1200.webp'); }
-  .sub-hero-brand   { background-image:url('/assets/hero/hero-brand-mobile-1200.webp'); }
-  .sub-hero-company { background-image:url('/assets/hero/hero-company-mobile-1200.webp'); }
-  .sub-hero-contact { background-image:url('/assets/hero/hero-contact-mobile-1200.webp'); }
-}
-
-@media (max-width:480px) {
-  .sub-hero-mission { background-image:url('/assets/hero/hero-mission-mobile-800.webp'); }
-  .sub-hero-brand   { background-image:url('/assets/hero/hero-brand-mobile-800.webp'); }
-  .sub-hero-company { background-image:url('/assets/hero/hero-company-mobile-800.webp'); }
-  .sub-hero-contact { background-image:url('/assets/hero/hero-contact-mobile-800.webp'); }
+  .sub-hero-mission { background-image:url('/assets/hero/hero-mission-800.webp'); }
+  .sub-hero-brand   { background-image:url('/assets/hero/hero-brand-800.webp'); }
+  .sub-hero-company { background-image:url('/assets/hero/hero-company-800.webp'); }
+  .sub-hero-contact { background-image:url('/assets/hero/hero-contact-800.webp'); }
 }
 
 /* v30.2: グラデーションを底からより濃く (= タイトル可読性確保) */
@@ -679,13 +675,14 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 @media (max-width:720px) {
-  .sub-hero .page-eyebrow { font-size:11px; letter-spacing:0.24em; margin-bottom:14px; }
-  .sub-hero .page-title { font-size:26px; margin-bottom:36px; }
+  .sub-hero .page-eyebrow { font-size:11px; letter-spacing:0.22em; margin-bottom:10px; }
+  /* v30.7: 3:2比モバイル時、 高さ250px内にテキスト収めるためコンパクト化 */
+  .sub-hero .page-title { font-size:21px; margin-bottom:16px; }
 }
 
 @media (max-width:480px) {
-  .sub-hero .page-eyebrow { font-size:10.5px; }
-  .sub-hero .page-title { font-size:23px; margin-bottom:32px; }
+  .sub-hero .page-eyebrow { font-size:10px; margin-bottom:8px; }
+  .sub-hero .page-title { font-size:18px; margin-bottom:14px; }
 }
 
 /* ============================================
