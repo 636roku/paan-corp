@@ -273,51 +273,54 @@ img { max-width:100%; height:auto; display:block; }
   transform:translateY(-9px) rotate(-45deg);
 }
 
-/* v30.9: MENU-PAAN風のドロップダウン式ハンバーガー
-   元: 右からスライドイン + 暗オーバーレイ + 320px幅
-   新: ヘッダー直下から下方向にドロップダウン + 半透明白背景 + 全幅 */
+/* v30.10: MENU-PAAN完全踏襲のハンバーガー
+   - ヘッダー直下、 右側に寄せた縦長パネル (= 全幅ではない)
+   - 背景白 + 控えめshadow
+   - 言語セクションはアコーディオン (= 初期は閉じて、 タップで展開) */
 .mp-mobile-drawer {
   display:none;
   position:fixed;
-  top:96px; /* ヘッダー高さ分下から開始 */
+  top:96px;
   left:0;
   right:0;
-  bottom:auto;
-  max-height:calc(100vh - 96px);
+  bottom:0;
   background:transparent;
   z-index:9999;
   opacity:0;
   transition:opacity 0.2s ease;
+  pointer-events:none;
 }
 
 .mp-mobile-drawer.is-open {
   display:block;
   opacity:1;
+  pointer-events:auto;
 }
 
 .mp-mobile-drawer-inner {
-  position:relative;
-  top:auto;
-  right:auto;
-  width:100%;
-  height:auto;
+  position:absolute;
+  top:0;
+  right:0;
+  width:min(86vw, 380px);
   max-height:calc(100vh - 96px);
-  background:rgba(255,255,255,0.98);
-  backdrop-filter:saturate(160%) blur(14px);
-  -webkit-backdrop-filter:saturate(160%) blur(14px);
-  padding:24px 24px 32px;
+  background:#FFFFFF;
+  padding:20px 24px 28px;
   overflow-y:auto;
   transform:translateY(-12px);
-  transition:transform 0.25s cubic-bezier(.4,.0,.2,1);
-  box-shadow:0 8px 24px rgba(26,32,64,0.08);
-  border-bottom:1px solid var(--paan-line);
+  opacity:0;
+  transition:transform 0.25s cubic-bezier(.4,.0,.2,1), opacity 0.2s ease;
+  box-shadow:0 8px 32px rgba(26,32,64,0.12), 0 2px 8px rgba(26,32,64,0.06);
+  border-bottom-left-radius:8px;
+  border:1px solid var(--paan-line);
+  border-top:0;
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-drawer-inner {
   transform:translateY(0);
+  opacity:1;
 }
 
-/* v30.9: クローズボタンは表示不要 (= ハンバーガー自体がトグル化) */
+/* v30.10: クローズボタンは表示不要 */
 .mp-mobile-close {
   display:none;
 }
@@ -326,12 +329,12 @@ img { max-width:100%; height:auto; display:block; }
   display:flex;
   flex-direction:column;
   gap:0;
-  margin-bottom:8px;
+  margin-bottom:4px;
 }
 
 .mp-mobile-link {
   display:block;
-  padding:14px 0;
+  padding:14px 4px;
   font-family:'Noto Sans JP', sans-serif;
   font-size:15px;
   font-weight:500;
@@ -353,23 +356,67 @@ img { max-width:100%; height:auto; display:block; }
 
 .mp-mobile-locale-section {
   margin-top:8px;
-  padding-top:24px;
-  border-top:1px solid var(--paan-line-2, #E0E5ED);
+  padding-top:0;
+  border-top:0;
+}
+
+/* v30.10: 言語アコーディオントグルボタン */
+.mp-mobile-locale-toggle {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:14px 4px;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--paan-line);
+  cursor:pointer;
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:15px;
+  font-weight:500;
+  color:var(--paan-ink);
+  letter-spacing:0.04em;
+  text-align:left;
+  transition:color 0.15s;
+}
+
+.mp-mobile-locale-toggle:hover {
+  color:var(--paan-primary);
+}
+
+.mp-mobile-locale-toggle-label {
+  font-family:'Marcellus', 'Noto Sans JP', serif;
+  font-size:13px;
+  letter-spacing:0.16em;
+  color:var(--paan-ink-mid);
+  text-transform:none;
+}
+
+.mp-mobile-locale-toggle-chevron {
+  font-size:12px;
+  color:var(--paan-ink-mid);
+  transition:transform 0.2s ease;
+}
+
+.mp-mobile-locale-toggle[aria-expanded="true"] .mp-mobile-locale-toggle-chevron {
+  transform:rotate(180deg);
 }
 
 .mp-mobile-locale-label {
-  font-family:'Marcellus', serif;
-  font-size:11px;
-  letter-spacing:0.18em;
-  color:var(--paan-ink-mid);
-  text-transform:uppercase;
-  margin-bottom:14px;
+  /* 旧表記 (= ラベル) - もう不要だが互換のため残置 */
+  display:none;
 }
 
+/* v30.10: アコーディオン本体: 初期は閉じてる */
 .mp-mobile-locale-grid {
-  display:grid;
+  display:none;
   grid-template-columns:1fr 1fr;
   gap:4px;
+  padding:14px 0 4px;
+}
+
+.mp-mobile-locale-grid.is-expanded {
+  display:grid;
 }
 
 .mp-mobile-locale-item {

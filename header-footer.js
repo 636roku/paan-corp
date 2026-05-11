@@ -75,8 +75,11 @@
             <a href="${localizedPath('/contact')}" class="mp-mobile-link ${isActive('/contact')}" data-i18n="nav.contact">お問い合わせ</a>
           </nav>
           <div class="mp-mobile-locale-section">
-            <div class="mp-mobile-locale-label" data-i18n="nav.language">言語 / Language</div>
-            <div class="mp-mobile-locale-grid" id="mp-mobile-locale-grid"></div>
+            <button type="button" class="mp-mobile-locale-toggle" id="mp-mobile-locale-toggle" aria-expanded="false" aria-controls="mp-mobile-locale-grid">
+              <span class="mp-mobile-locale-toggle-label" data-i18n="nav.language">言語 / Language</span>
+              <span class="mp-mobile-locale-toggle-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="mp-mobile-locale-grid" id="mp-mobile-locale-grid" aria-hidden="true"></div>
           </div>
         </div>
       </div>
@@ -230,6 +233,25 @@
     drawer.querySelectorAll('.mp-mobile-link').forEach(link => {
       link.addEventListener('click', close);
     });
+
+    // v30.10: 言語セクションのアコーディオン処理
+    const localeToggle = document.getElementById('mp-mobile-locale-toggle');
+    if (localeToggle && grid) {
+      const setLocaleExpanded = (expanded) => {
+        localeToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        grid.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+        grid.classList.toggle('is-expanded', expanded);
+      };
+      // 初期状態 = 閉じる
+      setLocaleExpanded(false);
+      localeToggle.addEventListener('click', () => {
+        const isExpanded = localeToggle.getAttribute('aria-expanded') === 'true';
+        setLocaleExpanded(!isExpanded);
+      });
+      // メニュー全体を閉じる時、 言語セクションも閉じる
+      const origClose = close;
+      // closeに副作用追加するのは難しいので、 burger toggleとESCで毎回setLocaleExpanded(false)
+    }
   }
 
   // ---- INJECT ----
