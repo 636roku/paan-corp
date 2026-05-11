@@ -866,9 +866,11 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .info-val {
-  font-size:14px;
+  /* v30.29: 旧 Noto Sans (ボディ継承) → セリフ統一で温かみUP */
+  font-family:'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  font-size:14.5px;
   color:var(--paan-ink);
-  line-height:1.75;
+  line-height:1.85;
   letter-spacing:0.02em;
 }
 
@@ -1416,9 +1418,10 @@ img { max-width:100%; height:auto; display:block; }
   position:relative;
   padding:18px 0 18px 22px;
   border-bottom:1px solid var(--paan-line);
-  font-family:'Noto Sans JP', sans-serif;
+  /* v30.29: Noto Sans → Noto Serif でセリフ統一 */
+  font-family:'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   font-size:14.5px;
-  line-height:1.7;
+  line-height:1.85;
   color:var(--paan-ink);
 }
 
