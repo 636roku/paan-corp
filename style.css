@@ -259,7 +259,8 @@ img { max-width:100%; height:auto; display:block; }
   height:2px;
   background:var(--paan-primary);
   border-radius:2px;
-  transition:transform 0.25s ease, opacity 0.25s ease;
+  /* v30.36: 時間延長 + cubic-bezier で上品な変形 */
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.25s ease;
 }
 
 /* 開いた状態 (= ✕ 形に変形、 closeBtn を別途置くので任意) */
@@ -306,9 +307,7 @@ img { max-width:100%; height:auto; display:block; }
   position:absolute;
   top:0;
   right:0;
-  /* v30.12: MENU-PAAN .mp-gear-menu 完全踏襲
-     min-width:260px / max-width:calc(100vw - 28px) / padding:8px 0 / border-radius:10px */
-  /* v30.14: 幅を更にコンパクト (= 280px → 240px) */
+  /* v30.36: MENU-PAAN .mp-gear-menu 踏襲 + 上品なslideアニメ */
   width:240px;
   max-width:calc(100vw - 28px);
   max-height:calc(100vh - 70px);
@@ -316,18 +315,64 @@ img { max-width:100%; height:auto; display:block; }
   padding:8px 0;
   overflow-y:auto;
   overflow-x:hidden;
-  transform:translateY(-4px);
-  opacity:0;
-  transition:transform 0.18s ease-out, opacity 0.18s ease-out;
-  box-shadow:0 10px 32px rgba(26,46,92,0.15);
+  /* v30.36: 開閉アニメをより美しく
+     - 右上からすべり込むような動き (= translateY + translateX + scale)
+     - 0.35秒、 cubic-bezier(0.16, 1, 0.3, 1) で上品なオーバーシュート風 */
+  transform-origin: top right;
+  transform: translateY(-12px) scale(0.97);
+  opacity: 0;
+  transition:
+    transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.28s ease-out;
+  box-shadow:0 12px 36px rgba(26, 46, 92, 0.18), 0 2px 8px rgba(26, 46, 92, 0.08);
   border:1px solid var(--paan-line);
   border-radius:10px;
   box-sizing:border-box;
+  /* v30.36: 中身の項目を staggered で順番に登場させるための準備 */
+  --stagger-base: 0.12s;
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-drawer-inner {
-  transform:translateY(0);
-  opacity:1;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* v30.36: ドロワー内のメニュー項目を staggered で順番に登場 */
+.mp-mobile-drawer .mp-mobile-link,
+.mp-mobile-drawer .mp-mobile-locale-toggle,
+.mp-mobile-drawer .mp-mobile-locale-item {
+  opacity: 0;
+  transform: translateX(8px);
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mp-mobile-drawer.is-open .mp-mobile-link,
+.mp-mobile-drawer.is-open .mp-mobile-locale-toggle,
+.mp-mobile-drawer.is-open .mp-mobile-locale-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 順番遅延 (= 各項目を 50ms ずつ遅らせる) */
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(1)         { transition-delay: 0.12s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(2)         { transition-delay: 0.17s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(3)         { transition-delay: 0.22s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(4)         { transition-delay: 0.27s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(5)         { transition-delay: 0.32s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(6)         { transition-delay: 0.37s; }
+.mp-mobile-drawer.is-open .mp-mobile-locale-toggle             { transition-delay: 0.42s; }
+
+/* reduced-motion: アニメ無効 */
+@media (prefers-reduced-motion: reduce) {
+  .mp-mobile-drawer-inner,
+  .mp-mobile-drawer .mp-mobile-link,
+  .mp-mobile-drawer .mp-mobile-locale-toggle,
+  .mp-mobile-drawer .mp-mobile-locale-item {
+    transition: none !important;
+    transform: none !important;
+  }
 }
 
 /* v30.10: クローズボタンは表示不要 */
@@ -641,7 +686,12 @@ img { max-width:100%; height:auto; display:block; }
   z-index:1;
 }
 
-.hero > * { position:relative; z-index:2; }
+/* v30.36: .hero > * は hero-content と ::before のみに適用 (= picture を除外)
+   旧 .hero > * { position:relative; z-index:2 } は picture の position:absolute を潰してた */
+.hero > .hero-content {
+  position:relative;
+  z-index:2;
+}
 
 .hero-title {
   font-family:'Noto Serif JP', serif;
@@ -1861,8 +1911,8 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .message-signature {
-  margin-top:60px;
-  padding-top:30px;
+  margin-top:40px;
+  padding-top:24px;
   border-top:1px solid var(--paan-line);
   text-align:right;
 }
@@ -1884,8 +1934,8 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .message-back {
-  margin-top:48px;
-  padding-top:28px;
+  margin-top:32px;
+  padding-top:20px;
   border-top:1px solid var(--paan-line);
   text-align:center;
 }
@@ -2226,15 +2276,20 @@ body {
 
 /* ========== SPACING REFINEMENTS ========== */
 
-/* #7: page-wrap の余白を黄金比系に */
+/* #7: page-wrap の余白を黄金比系に (= v30.35過剰だったので詰めた) */
 .page-wrap {
-  padding-top: var(--paan-space-xl) !important;
-  padding-bottom: var(--paan-space-2xl) !important;
+  padding-top: 48px !important;
+  padding-bottom: 64px !important;
 }
 
-/* #8: セクション間の余白を画面下スクロール量に応じて変化 — リズム */
+/* #8: セクション間の余白 */
 .info-section + .info-section {
-  margin-top: var(--paan-space-xl) !important;
+  margin-top: 40px !important;
+}
+
+/* section-divider 自体の上下マージン (= 過剰だった) */
+.section-divider {
+  margin: 32px auto !important;
 }
 
 /* ========== GOLD GRADIENT BORDERS ========== */
@@ -2267,14 +2322,14 @@ body {
 
 /* ========== SECTION DIVIDERS ========== */
 
-/* #11: section 間に微小な装飾モチーフ (= 一級ブランドサイトのリズム) */
+/* #11: section 間に微小な装飾モチーフ (= 控えめに) */
 .section-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin: var(--paan-space-xl) auto;
-  max-width: 600px;
+  gap: 14px;
+  margin: 20px auto;
+  max-width: 480px;
   color: var(--paan-gold);
 }
 
@@ -2432,10 +2487,10 @@ body.menu-open::after {
   content: '◆';
   display: block;
   text-align: center;
-  font-size: 8px;
+  font-size: 7px;
   color: var(--paan-gold);
-  opacity: 0.4;
-  margin-bottom: 24px;
+  opacity: 0.35;
+  margin-bottom: 14px;
   letter-spacing: 0.5em;
 }
 
