@@ -20,44 +20,6 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ============================================
-  // Step 2: hero画像 fade-in (= まだロード中の場合のみ演出を付加)
-  // ============================================
-  function initHeroFadeIn() {
-    const heroImg = document.querySelector('.hero-bg-img');
-    if (!heroImg) return;
-
-    // すでに画像読み込み完了 → 何もしない (= デフォルト opacity:1 のまま表示)
-    if (heroImg.complete && heroImg.naturalWidth > 0) {
-      heroImg.classList.add('loaded');
-      // この時 .js-on クラスはまだないので opacity:1 のまま
-      return;
-    }
-
-    if (reduceMotion) {
-      heroImg.classList.add('loaded');
-      return;
-    }
-
-    // 画像がまだロード中 → js-on クラスを付けて opacity:0 → load 完了で opacity:1 にフェード
-    document.documentElement.classList.add('js-on');
-
-    heroImg.addEventListener('load', () => {
-      heroImg.classList.add('loaded');
-    });
-    heroImg.addEventListener('error', () => {
-      // エラー時もとりあえず表示 (= フォールバック)
-      heroImg.classList.add('loaded');
-    });
-
-    // 安全策: 3秒経っても load イベントが来なかったら強制表示
-    setTimeout(() => {
-      if (!heroImg.classList.contains('loaded')) {
-        heroImg.classList.add('loaded');
-      }
-    }, 3000);
-  }
-
-  // ============================================
   // Step 3: ヒーロー内テキスト staggered fade-in
   // ============================================
   function initHeroText() {
@@ -150,9 +112,11 @@
   //   - LCP より所作の美しさを優先 (= 高級ブランド戦略)
   // ============================================
   function initHeroFadeIn() {
-    // reduce-motion でも fade-in は静かなので、 すべての環境で実行 (= ただし時間短縮)
     const heroImg = document.querySelector('.hero-bg-img, .sub-hero .hero-bg-img');
     if (!heroImg) return;
+
+    // v30.39: HTML onload属性で既に revealed 済みならスキップ
+    if (heroImg.classList.contains('revealed')) return;
 
     function reveal() {
       heroImg.classList.add('revealed');
