@@ -301,19 +301,23 @@ img { max-width:100%; height:auto; display:block; }
   position:absolute;
   top:0;
   right:0;
-  /* v30.11: MENU-PAAN同等のコンパクトサイズに調整 */
-  width:min(78vw, 320px);
-  max-height:calc(100vh - 96px);
+  /* v30.12: MENU-PAAN .mp-gear-menu 完全踏襲
+     min-width:260px / max-width:calc(100vw - 28px) / padding:8px 0 / border-radius:10px */
+  min-width:260px;
+  max-width:calc(100vw - 28px);
+  width:auto;
+  max-height:calc(100vh - 100px);
   background:#FFFFFF;
-  padding:8px 18px 16px;
+  padding:8px 0;
   overflow-y:auto;
-  transform:translateY(-12px);
+  overflow-x:hidden;
+  transform:translateY(-4px);
   opacity:0;
-  transition:transform 0.25s cubic-bezier(.4,.0,.2,1), opacity 0.2s ease;
-  box-shadow:0 8px 24px rgba(26,32,64,0.10);
+  transition:transform 0.18s ease-out, opacity 0.18s ease-out;
+  box-shadow:0 10px 32px rgba(26,46,92,0.15);
   border:1px solid var(--paan-line);
-  border-top:0;
-  border-bottom-left-radius:6px;
+  border-radius:10px;
+  box-sizing:border-box;
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-drawer-inner {
@@ -334,26 +338,30 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-mobile-link {
+  /* v30.12: MENU-PAAN .mp-gear-item 完全踏襲
+     padding:10px 18px / font-size:13px / 区切り線なし (= hover背景のみ) */
   display:block;
-  /* v30.11: padding 14px → 9px、 font 15px → 13.5px (= MENU-PAAN準拠) */
-  padding:9px 2px;
+  padding:10px 18px;
   font-family:'Noto Sans JP', sans-serif;
-  font-size:13.5px;
-  font-weight:500;
+  font-size:13px;
+  font-weight:400;
   color:var(--paan-ink);
   text-decoration:none;
   letter-spacing:0.02em;
-  border-bottom:1px solid var(--paan-line);
-  transition:color 0.15s;
+  border-bottom:0;
+  transition:background 0.12s, color 0.12s;
+  box-sizing:border-box;
 }
 
 .mp-mobile-link:hover {
+  background:#F5F7FB;
   color:var(--paan-primary);
 }
 
 .mp-mobile-link.active {
+  background:#F5F7FB;
   color:var(--paan-primary);
-  font-weight:600;
+  font-weight:500;
 }
 
 .mp-mobile-locale-section {
@@ -362,43 +370,46 @@ img { max-width:100%; height:auto; display:block; }
   border-top:0;
 }
 
-/* v30.11: 言語アコーディオントグル MENU-PAAN準拠サイズに */
+/* v30.12: 言語アコーディオントグル MENU-PAAN .mp-gear-lang-summary 準拠
+   = .mp-gear-item と同じパディング 10px 18px、 font-size 13px */
 .mp-mobile-locale-toggle {
   display:flex;
   align-items:center;
   justify-content:space-between;
   width:100%;
-  padding:9px 2px;
+  padding:10px 18px;
   background:transparent;
   border:0;
-  border-bottom:1px solid var(--paan-line);
+  border-top:1px solid var(--paan-line);
   cursor:pointer;
   font-family:'Noto Sans JP', sans-serif;
-  font-size:13.5px;
-  font-weight:500;
+  font-size:13px;
+  font-weight:400;
   color:var(--paan-ink);
   letter-spacing:0.02em;
   text-align:left;
-  transition:color 0.15s;
+  transition:background 0.12s, color 0.12s;
+  box-sizing:border-box;
 }
 
 .mp-mobile-locale-toggle:hover {
+  background:#F5F7FB;
   color:var(--paan-primary);
 }
 
 .mp-mobile-locale-toggle-label {
   font-family:'Noto Sans JP', sans-serif;
-  font-size:13.5px;
+  font-size:13px;
   letter-spacing:0.02em;
-  color:var(--paan-ink);
-  text-transform:none;
-  font-weight:500;
+  color:inherit;
+  flex:1;
 }
 
 .mp-mobile-locale-toggle-chevron {
-  font-size:10px;
+  font-size:11px;
   color:var(--paan-ink-mid);
-  transition:transform 0.2s ease;
+  transition:transform 0.15s ease;
+  margin-left:8px;
 }
 
 .mp-mobile-locale-toggle[aria-expanded="true"] .mp-mobile-locale-toggle-chevron {
@@ -409,40 +420,50 @@ img { max-width:100%; height:auto; display:block; }
   display:none;
 }
 
-/* v30.11: アコーディオン本体: コンパクト */
+/* v30.12: アコーディオン本体 MENU-PAAN .mp-gear-lang-list 準拠
+   2列grid + 紺の薄背景 + fadeInアニメ */
 .mp-mobile-locale-grid {
   display:none;
   grid-template-columns:1fr 1fr;
-  gap:2px;
-  padding:8px 0 4px;
+  gap:0;
+  background:#F5F7FB;
+  border-top:1px solid var(--paan-line);
+  animation:paanLangFadeIn 0.18s ease-out;
 }
 
 .mp-mobile-locale-grid.is-expanded {
   display:grid;
 }
 
+@keyframes paanLangFadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
 .mp-mobile-locale-item {
   display:flex;
   align-items:center;
   gap:6px;
-  /* v30.11: 言語アイテムもコンパクト化 (= MENU-PAAN準拠) */
-  padding:7px 8px;
-  border-radius:4px;
+  /* v30.12: padding-left:14px / padding-right:8px / font-size:12px (MENU-PAAN準拠) */
+  padding:9px 8px 9px 14px;
+  border-radius:0;
   text-decoration:none;
   color:var(--paan-ink);
   font-size:12px;
   font-family:'Noto Sans JP', sans-serif;
-  transition:background 0.12s;
+  transition:background 0.12s, color 0.12s;
 }
 
 .mp-mobile-locale-item:hover,
 .mp-mobile-locale-item:active {
-  background:var(--paan-card);
+  background:rgba(26,46,92,0.05);
+  color:var(--paan-primary);
 }
 
 .mp-mobile-locale-item.is-current {
-  background:var(--paan-card);
+  color:var(--paan-primary);
   font-weight:500;
+  background:rgba(26,46,92,0.04);
 }
 
 .mp-mobile-locale-flag {
