@@ -132,13 +132,47 @@
   // 起動
   // ============================================
   function init() {
-    // v30.37: initHeroFadeIn は削除 (= CSS で常に opacity:1、 JS制御による黒チラつきを根絶)
+    initHeroFadeIn();
     initHeroText();
     initScrollReveal();
     initPageTransitionFade();
     initHeroParallax();
     initMenuBackdrop();
     initHapticFeedback();
+  }
+
+  // ============================================
+  // v30.38: hero画像 — 毎回必ずフェードイン演出
+  //   ロジック:
+  //   - CSS デフォルト opacity:0
+  //   - 画像 load 完了で revealed クラス付与 → 1.0秒フェードイン
+  //   - 「電気がつくようにバチっと表示」 を避けて 「作品が現れる」 所作に
+  //   - LCP より所作の美しさを優先 (= 高級ブランド戦略)
+  // ============================================
+  function initHeroFadeIn() {
+    // reduce-motion でも fade-in は静かなので、 すべての環境で実行 (= ただし時間短縮)
+    const heroImg = document.querySelector('.hero-bg-img, .sub-hero .hero-bg-img');
+    if (!heroImg) return;
+
+    function reveal() {
+      heroImg.classList.add('revealed');
+    }
+
+    // 既にload完了済みなら次フレームでreveal (= 描画が落ち着いてから)
+    if (heroImg.complete && heroImg.naturalWidth > 0) {
+      requestAnimationFrame(() => requestAnimationFrame(reveal));
+      return;
+    }
+
+    heroImg.addEventListener('load', reveal, { once: true });
+    heroImg.addEventListener('error', reveal, { once: true });
+
+    // 安全策: 4秒経過しても load イベントが来なければ強制表示
+    setTimeout(() => {
+      if (!heroImg.classList.contains('revealed')) {
+        reveal();
+      }
+    }, 4000);
   }
 
   // ============================================

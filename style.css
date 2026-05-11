@@ -633,13 +633,16 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .hero-bg-img {
-  /* v30.37: 画像は常に opacity:1 で表示 (= JS制御による黒チラつきを根絶)
-     preload で先読みされてるので、 ブラウザがレンダー時には大抵すでに画像が届いてる */
-  opacity:1;
-  transition:opacity 0.4s ease-out;
+  /* v30.38: 毎回必ずフェードイン演出
+     高級ブランド (Loro Piana, Hermès, Aesop 等) の手法 ──
+     「電気がつくようにバチっと出る」 のではなく、 「作品が静かに現れる」 所作 */
+  opacity:0;
+  transition:opacity 1.0s ease-out;
 }
 
-/* v30.37: hero-bg-img の意図的な fade-out は不要、 ロジック簡素化 */
+.hero-bg-img.revealed {
+  opacity:1;
+}
 
 /* hero-content は picture の上に重ねる */
 .hero-content {
@@ -774,9 +777,13 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .sub-hero .hero-bg-img {
-  /* v30.37: 常時表示 (= 黒チラつき防止) */
+  /* v30.38: 毎回必ずフェードイン */
+  opacity:0;
+  transition:opacity 1.0s ease-out;
+}
+
+.sub-hero .hero-bg-img.revealed {
   opacity:1;
-  transition:opacity 0.4s ease-out;
 }
 
 .sub-hero .hero-content {
