@@ -1158,6 +1158,10 @@ img { max-width:100%; height:auto; display:block; }
   color:var(--paan-ink-mid);
   letter-spacing:0.02em;
   line-height:1.7;
+  /* v27: CJK の単語の途中で改行しない (= 「シーン特/化型」 が割れる問題対応) */
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  line-break:strict;
 }
 
 @media (max-width:720px) {
@@ -1254,6 +1258,10 @@ img { max-width:100%; height:auto; display:block; }
   line-height:1.95;
   color:var(--paan-ink);
   letter-spacing:0.02em;
+  /* v27: CJK改行対応 */
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  line-break:strict;
 }
 
 @media (max-width:720px) {
