@@ -68,7 +68,7 @@
         <div class="mp-mobile-drawer-inner">
           <button type="button" class="mp-mobile-close" id="mp-mobile-close-btn" aria-label="Close">&times;</button>
           <nav class="mp-mobile-nav" aria-label="Mobile navigation">
-            <a href="${localizedPath('/')}"        class="mp-mobile-link ${isActive('/')}"        data-i18n="nav.top"><span class="mp-mobile-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></span>トップ</a>
+            <a href="${localizedPath('/')}"        class="mp-mobile-link ${isActive('/')}"><span class="mp-mobile-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></span><span data-i18n="nav.top">トップ</span></a>
             <a href="${localizedPath('/mission')}" class="mp-mobile-link ${isActive('/mission')}" data-i18n="nav.mission">ミッション・理念</a>
             <a href="${localizedPath('/brand')}"   class="mp-mobile-link ${isActive('/brand')}"   data-i18n="nav.brand">ブランド</a>
             <a href="${localizedPath('/company')}" class="mp-mobile-link ${isActive('/company')}" data-i18n="nav.company">会社概要</a>

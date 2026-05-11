@@ -280,7 +280,8 @@ img { max-width:100%; height:auto; display:block; }
 .mp-mobile-drawer {
   display:none;
   position:fixed;
-  top:96px;
+  /* v30.19: ヘッダー直下にぴったり配置 (= 旧96pxは隙間が出ていたため) */
+  top:64px;
   left:0;
   right:0;
   bottom:0;
@@ -289,6 +290,10 @@ img { max-width:100%; height:auto; display:block; }
   opacity:0;
   transition:opacity 0.2s ease;
   pointer-events:none;
+}
+
+@media (max-width:480px) {
+  .mp-mobile-drawer { top:60px; }
 }
 
 .mp-mobile-drawer.is-open {
@@ -306,7 +311,7 @@ img { max-width:100%; height:auto; display:block; }
   /* v30.14: 幅を更にコンパクト (= 280px → 240px) */
   width:240px;
   max-width:calc(100vw - 28px);
-  max-height:calc(100vh - 100px);
+  max-height:calc(100vh - 70px);
   background:#FFFFFF;
   padding:8px 0;
   overflow-y:auto;
@@ -1569,6 +1574,14 @@ img { max-width:100%; height:auto; display:block; }
   text-wrap:pretty;
   /* v30.4: i18n辞書の \n\n を段落区切りとして表示 */
   white-space:pre-line;
+}
+
+/* v30.21: 長い固有名詞・役職を改行禁止にする塊 (= founder bio用)
+   例: 「1950年創業の串カツ専門店・株式会社串の坊」 が中途で改行されないように
+   親 .founder-bio が white-space:pre-line だが、 子要素で nowrap を明示すれば上書きされる */
+.founder-bio .nobr {
+  white-space:nowrap;
+  display:inline;
 }
 
 @media (max-width:720px) {
