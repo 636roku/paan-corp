@@ -117,6 +117,12 @@
     });
 
     document.querySelectorAll('.info-section, .section, .message-article').forEach(el => {
+      // v30.37: 初期viewport内にすでに入ってる要素は即revealed (= 黒チラつき防止)
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('revealed');
+        return;
+      }
       el.classList.add('anim-reveal');
       observer.observe(el);
     });
@@ -126,7 +132,7 @@
   // 起動
   // ============================================
   function init() {
-    initHeroFadeIn();
+    // v30.37: initHeroFadeIn は削除 (= CSS で常に opacity:1、 JS制御による黒チラつきを根絶)
     initHeroText();
     initScrollReveal();
     initPageTransitionFade();

@@ -25,6 +25,11 @@
 
 * { margin:0; padding:0; box-sizing:border-box; }
 
+/* v30.37: html背景を明示 (=ページ遷移時の黒チラつき防止) */
+html {
+  background:#FFFFFF;
+}
+
 body {
   font-family:'Noto Sans JP', -apple-system, 'Helvetica Neue', sans-serif;
   background:#FFFFFF;
@@ -279,18 +284,16 @@ img { max-width:100%; height:auto; display:block; }
    - 背景白 + 控えめshadow
    - 言語セクションはアコーディオン (= 初期は閉じて、 タップで展開) */
 .mp-mobile-drawer {
-  display:none;
+  /* v30.37: 外側コンテナは即時表示/非表示。 アニメは drawer-inner で担当 */
   position:fixed;
-  /* v30.19: ヘッダー直下にぴったり配置 (= 旧96pxは隙間が出ていたため) */
   top:64px;
   left:0;
   right:0;
   bottom:0;
   background:transparent;
   z-index:9999;
-  opacity:0;
-  transition:opacity 0.2s ease;
   pointer-events:none;
+  /* 閉じてる時は内側がアニメ後に invisible になるので、 クリックを透過 */
 }
 
 @media (max-width:480px) {
@@ -298,8 +301,6 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .mp-mobile-drawer.is-open {
-  display:block;
-  opacity:1;
   pointer-events:auto;
 }
 
@@ -307,7 +308,7 @@ img { max-width:100%; height:auto; display:block; }
   position:absolute;
   top:0;
   right:0;
-  /* v30.36: MENU-PAAN .mp-gear-menu 踏襲 + 上品なslideアニメ */
+  /* v30.37: 上品な開閉アニメ */
   width:240px;
   max-width:calc(100vw - 28px);
   max-height:calc(100vh - 70px);
@@ -315,54 +316,64 @@ img { max-width:100%; height:auto; display:block; }
   padding:8px 0;
   overflow-y:auto;
   overflow-x:hidden;
-  /* v30.36: 開閉アニメをより美しく
-     - 右上からすべり込むような動き (= translateY + translateX + scale)
-     - 0.35秒、 cubic-bezier(0.16, 1, 0.3, 1) で上品なオーバーシュート風 */
-  transform-origin: top right;
-  transform: translateY(-12px) scale(0.97);
+  /* 動きの起点を右上 = 「メニューアイコンから生まれる」 ように
+     初期 opacity:0 + translateY(-8px) + scale(0.96)
+     開く時 (= is-open) はゆっくりふわっと開く (0.45秒)
+     閉じる時 (= is-open外す) は素早く消える (0.22秒) */
+  transform-origin: 100% 0;
+  transform: translateY(-8px) scale(0.96);
   opacity: 0;
+  visibility: hidden;
   transition:
-    transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.28s ease-out;
-  box-shadow:0 12px 36px rgba(26, 46, 92, 0.18), 0 2px 8px rgba(26, 46, 92, 0.08);
+    transform 0.22s cubic-bezier(0.4, 0, 1, 1),
+    opacity 0.18s ease-out,
+    visibility 0s linear 0.22s;
+  box-shadow:0 14px 40px rgba(26, 46, 92, 0.18), 0 2px 10px rgba(26, 46, 92, 0.08);
   border:1px solid var(--paan-line);
   border-radius:10px;
   box-sizing:border-box;
-  /* v30.36: 中身の項目を staggered で順番に登場させるための準備 */
-  --stagger-base: 0.12s;
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-drawer-inner {
   transform: translateY(0) scale(1);
   opacity: 1;
+  visibility: visible;
+  /* 開く時はゆっくり、 上品なオーバーシュート風 cubic-bezier */
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.28s ease-out,
+    visibility 0s linear 0s;
 }
 
-/* v30.36: ドロワー内のメニュー項目を staggered で順番に登場 */
+/* v30.37: ドロワー閉じる時もアニメを保持 (=is-open外しでcubic-bezier効く) */
+
+/* v30.37: ドロワー内のメニュー項目を staggered で順番に登場
+   ドロワー枠が動いてる途中から項目が現れ始める = 一連の流れに */
 .mp-mobile-drawer .mp-mobile-link,
 .mp-mobile-drawer .mp-mobile-locale-toggle,
 .mp-mobile-drawer .mp-mobile-locale-item {
   opacity: 0;
-  transform: translateX(8px);
+  transform: translateY(-4px);
   transition:
-    opacity 0.3s ease-out,
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .mp-mobile-drawer.is-open .mp-mobile-link,
 .mp-mobile-drawer.is-open .mp-mobile-locale-toggle,
 .mp-mobile-drawer.is-open .mp-mobile-locale-item {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
-/* 順番遅延 (= 各項目を 50ms ずつ遅らせる) */
-.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(1)         { transition-delay: 0.12s; }
-.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(2)         { transition-delay: 0.17s; }
-.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(3)         { transition-delay: 0.22s; }
-.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(4)         { transition-delay: 0.27s; }
-.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(5)         { transition-delay: 0.32s; }
-.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(6)         { transition-delay: 0.37s; }
-.mp-mobile-drawer.is-open .mp-mobile-locale-toggle             { transition-delay: 0.42s; }
+/* 順番遅延 — ドロワー枠が開き始めてから 0.15s 後に項目1番目が現れる、 以後 0.06s 間隔 */
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(1)  { transition-delay: 0.15s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(2)  { transition-delay: 0.21s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(3)  { transition-delay: 0.27s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(4)  { transition-delay: 0.33s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(5)  { transition-delay: 0.39s; }
+.mp-mobile-drawer.is-open .mp-mobile-link:nth-child(6)  { transition-delay: 0.45s; }
+.mp-mobile-drawer.is-open .mp-mobile-locale-toggle      { transition-delay: 0.51s; }
 
 /* reduced-motion: アニメ無効 */
 @media (prefers-reduced-motion: reduce) {
@@ -622,19 +633,13 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .hero-bg-img {
-  /* v30.34: デフォルトで表示 (= JSがdeferで遅れても青背景に取り残されない) */
+  /* v30.37: 画像は常に opacity:1 で表示 (= JS制御による黒チラつきを根絶)
+     preload で先読みされてるので、 ブラウザがレンダー時には大抵すでに画像が届いてる */
   opacity:1;
-  transition:opacity 0.6s ease-out;
+  transition:opacity 0.4s ease-out;
 }
 
-/* v30.34: JS が動いて、 画像がまだロードされてない時だけ非表示にする */
-.js-on .hero-bg-img:not(.loaded) {
-  opacity:0;
-}
-
-.js-on .hero-bg-img.loaded {
-  opacity:1;
-}
+/* v30.37: hero-bg-img の意図的な fade-out は不要、 ロジック簡素化 */
 
 /* hero-content は picture の上に重ねる */
 .hero-content {
@@ -769,17 +774,9 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .sub-hero .hero-bg-img {
-  /* v30.34: デフォルト表示、 JS進入時のみ fade-in 演出 */
+  /* v30.37: 常時表示 (= 黒チラつき防止) */
   opacity:1;
-  transition:opacity 0.6s ease-out;
-}
-
-.js-on .sub-hero .hero-bg-img:not(.loaded) {
-  opacity:0;
-}
-
-.js-on .sub-hero .hero-bg-img.loaded {
-  opacity:1;
+  transition:opacity 0.4s ease-out;
 }
 
 .sub-hero .hero-content {
@@ -2276,10 +2273,18 @@ body {
 
 /* ========== SPACING REFINEMENTS ========== */
 
-/* #7: page-wrap の余白を黄金比系に (= v30.35過剰だったので詰めた) */
+/* #7: page-wrap の余白 (= v30.37 更に詰めた、 フッターと本文の隙間最小化) */
 .page-wrap {
-  padding-top: 48px !important;
-  padding-bottom: 64px !important;
+  padding-top: 40px !important;
+  padding-bottom: 32px !important;
+}
+
+/* モバイルではさらに詰める */
+@media (max-width: 720px) {
+  .page-wrap {
+    padding-top: 28px !important;
+    padding-bottom: 20px !important;
+  }
 }
 
 /* #8: セクション間の余白 */
