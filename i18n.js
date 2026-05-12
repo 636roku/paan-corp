@@ -103,23 +103,37 @@
     return val;
   }
 
-  /** v33: 翻訳文字列の sanitizer
-   *  許可タグ: <br>, <br/>, <wbr>, <wbr/> のみ。 他の HTMLタグはエンティティエスケープ
-   *  狙い: 将来クラウドソース翻訳・CMS連携時の XSS 防止
-   *  既存挙動互換: 改行候補制御 (<br>, <wbr>) は維持
+  /** v33.1: 翻訳文字列の sanitizer
+   *  許可タグ: <br>, <wbr>, <strong>...</strong>, <p>...</p>, <span class="nobr">...</span> のみ
+   *  他の HTMLタグ・属性は全てエンティティエスケープ
+   *  狙い: XSS 防止しつつ、 i18n JSON で実際に使ってる組版タグは維持
+   *
+   *  v33 初版で <strong>, <p>, <span class="nobr"> をエスケープしてしまい、
+   *  会社役員 bio やミッション本文等で生タグが表示される事故が発生したため拡張。
+   *
+   *  なぜホワイトリスト方式 (= ブラウザの DOMParser や DOMPurify を使わない):
+   *  - 外部ライブラリを追加せず軽量に保つ
+   *  - i18n JSON の中身は我々がコントロール下に置く前提、 タグ集合は有限
+   *  - 将来クラウドソース翻訳 / CMS 連携時の防御を維持
    */
   function sanitizeI18n(str) {
     if (typeof str !== 'string') return str;
-    // まず全てのタグをエスケープ
+    // ステップ1: &, <, > のみエスケープ (= タグ外の "/' は無害なので触らない、
+    //   17キーで仏伊文中の "/' が &#39; / &quot; に化けて見苦しかったため)
     const escaped = str
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-    // <br>, <br/>, <br /> と <wbr>, <wbr/>, <wbr /> のみ復元
+      .replace(/>/g, '&gt;');
+    // ステップ2: 許可タグのみエスケープ解除
     return escaped
-      .replace(/&lt;(br|wbr)\s*\/?&gt;/gi, '<$1>');
+      // 自己閉じタグ: <br>, <br/>, <br />, <wbr>, <wbr/>, <wbr />
+      .replace(/&lt;(br|wbr)\s*\/?&gt;/gi, '<$1>')
+      // 開始タグ + 閉じタグ (属性なし): <strong>, </strong>, <p>, </p>
+      .replace(/&lt;(\/?)(strong|p)&gt;/gi, '<$1$2>')
+      // 改行禁止用 span: <span class="nobr">...</span> のみ厳格に許可
+      // " はステップ1でエスケープしてないので、 そのまま class="nobr" でマッチ
+      .replace(/&lt;span class="nobr"&gt;/g, '<span class="nobr">')
+      .replace(/&lt;\/span&gt;/g, '</span>');
   }
 
   /** data-i18n 属性付き要素を一括翻訳 */

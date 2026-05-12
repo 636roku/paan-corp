@@ -1,5 +1,5 @@
 /**
- * paan-anim.js (v33)
+ * paan-anim.js (v33.1)
  *
  * 軽量UXアニメーション (=3G環境でも快適に動くよう設計):
  *   1. <html class="no-js"> を即削除 → CSS制御開始
