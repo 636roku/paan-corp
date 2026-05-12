@@ -2734,3 +2734,42 @@ body.menu-open::after {
   }
 }
 
+
+/* ============================================
+   v31.1 ページ遷移時のハンバーガー残像完全解消
+   ============================================ */
+
+/* リンクタップ時、 drawer を transition 無しで即消す
+   (= page-fading-out も drawer-instant-hide も両方カバー) */
+body.page-fading-out .mp-mobile-drawer,
+body.page-fading-out .mp-mobile-drawer-inner,
+body.page-fading-out .mp-mobile-drawer-inner *,
+body.page-fading-out .mp-mobile-link,
+body.page-fading-out .mp-mobile-locale-toggle,
+body.page-fading-out .mp-mobile-locale-item,
+body.page-fading-out .mp-mobile-locale-grid,
+body.drawer-instant-hide .mp-mobile-drawer,
+body.drawer-instant-hide .mp-mobile-drawer-inner,
+body.drawer-instant-hide .mp-mobile-drawer-inner *,
+body.drawer-instant-hide .mp-mobile-link,
+body.drawer-instant-hide .mp-mobile-locale-toggle,
+body.drawer-instant-hide .mp-mobile-locale-item,
+body.drawer-instant-hide .mp-mobile-locale-grid {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* drawer を即非表示 */
+body.page-fading-out .mp-mobile-drawer,
+body.drawer-instant-hide .mp-mobile-drawer {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* backdrop blur も即消す */
+body.page-fading-out::after,
+body.drawer-instant-hide::after {
+  display: none !important;
+}
+

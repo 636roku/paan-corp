@@ -253,6 +253,8 @@
     };
 
     // すべてのブラウザでリンククリック時に drawer を即閉じる (= 遷移時の残像防止)
+    const supportsViewTransitions = 'startViewTransition' in document;
+
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a');
       if (!link) return;
@@ -264,8 +266,17 @@
       if (link.hasAttribute('download')) return;
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
 
-      // drawer を即閉じる
+      // v31.1: drawer を即閉じる
       closeDrawerIfOpen();
+
+      // v31.1: drawer を transition なしで即非表示にするためのクラス付与
+      // (= View Transitions API でも非対応でも、 ハンバーガーは即消す)
+      document.body.classList.add('drawer-instant-hide');
+
+      // View Transitions API 非対応の場合のみ body フェードアウト
+      if (!supportsViewTransitions) {
+        document.body.classList.add('page-fading-out');
+      }
     }, true); // capture phase で先に処理
 
     // 以下は View Transitions API 非対応ブラウザ用 fade-out
