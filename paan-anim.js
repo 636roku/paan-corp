@@ -115,7 +115,7 @@
   // 起動
   // ============================================
   function init() {
-    initHeroFadeIn();
+    // v30.42: initHeroFadeIn は削除 (= CSS @keyframes で確実に毎回 fade-in)
     initHeroText();
     initScrollReveal();
     initPageTransitionFade();
@@ -238,25 +238,49 @@
   // Safari 17以前等で「バチっと消える」 のを防ぐ
   // ============================================
   function initPageTransitionFade() {
-    if (reduceMotion) return;
+    // v30.42: drawer閉じる処理は全ブラウザ共通で必要なので、 reduceMotion / View Transitions の判定より前に
+    const closeDrawerIfOpen = () => {
+      const openDrawer = document.querySelector('.mp-mobile-drawer.is-open');
+      if (openDrawer) {
+        openDrawer.classList.remove('is-open');
+        openDrawer.setAttribute('aria-hidden', 'true');
+      }
+      const burgerBtn = document.querySelector('.mp-mobile-burger[aria-expanded="true"]');
+      if (burgerBtn) {
+        burgerBtn.setAttribute('aria-expanded', 'false');
+      }
+      document.body.classList.remove('menu-open');
+    };
 
-    // View Transitions API 対応してれば CSS が担当するのでスキップ
-    if ('startViewTransition' in document) return;
-
-    // リンククリック時に手動でフェードアウト
+    // すべてのブラウザでリンククリック時に drawer を即閉じる (= 遷移時の残像防止)
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a');
       if (!link) return;
-
       const href = link.getAttribute('href');
       if (!href) return;
-
-      // 外部リンク、 同一ページ内アンカー、 メールリンク等はスキップ
       if (href.startsWith('http') && !href.startsWith(window.location.origin)) return;
       if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
       if (link.target === '_blank') return;
       if (link.hasAttribute('download')) return;
-      // 修飾キー押下時 (= 新タブで開く意図) はスキップ
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+
+      // drawer を即閉じる
+      closeDrawerIfOpen();
+    }, true); // capture phase で先に処理
+
+    // 以下は View Transitions API 非対応ブラウザ用 fade-out
+    if (reduceMotion) return;
+    if ('startViewTransition' in document) return;
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href) return;
+      if (href.startsWith('http') && !href.startsWith(window.location.origin)) return;
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if (link.target === '_blank') return;
+      if (link.hasAttribute('download')) return;
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
 
       e.preventDefault();

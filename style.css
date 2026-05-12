@@ -660,15 +660,17 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .hero-bg-img {
-  /* v30.38: 毎回必ずフェードイン演出
-     高級ブランド (Loro Piana, Hermès, Aesop 等) の手法 ──
-     「電気がつくようにバチっと出る」 のではなく、 「作品が静かに現れる」 所作 */
+  /* v30.42: keyframeアニメで fade-in
+     - キャッシュ取得時も初回ロード時も、 ブラウザがHTMLパースした時点でアニメ開始
+     - JS不要、 確実に毎回ふわっと現れる
+     - opacity:0 で取り残されるリスクなし (= アニメは必ず完了する) */
   opacity:0;
-  transition:opacity 1.0s ease-out;
+  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
 }
 
-.hero-bg-img.revealed {
-  opacity:1;
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* hero-content は picture の上に重ねる */
@@ -804,13 +806,9 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .sub-hero .hero-bg-img {
-  /* v30.38: 毎回必ずフェードイン */
+  /* v30.42: keyframeアニメで fade-in */
   opacity:0;
-  transition:opacity 1.0s ease-out;
-}
-
-.sub-hero .hero-bg-img.revealed {
-  opacity:1;
+  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
 }
 
 .sub-hero .hero-content {
