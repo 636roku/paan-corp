@@ -18,7 +18,7 @@
   "page": {
     "top": {
       "title": "PAAN",
-      "description": "Trang web doanh nghiệp của PAAN Co., Ltd. Bắc nhịp cầu văn hóa qua ẩm thực, bằng sức mạnh của công nghệ và trí tuệ nhân tạo.",
+      "description": "Trang web doanh nghiệp của PAAN Co., Ltd. Mở đường đến những món ăn chưa được khám phá, vượt qua bức tường ngôn ngữ và văn hóa. Đồng sáng lập bởi Rokusaburo Inui (Giám đốc đại diện) và Koki Yui (Tổng cố vấn pháp lý) ngày 3 tháng 6 năm 2026.",
       "hero_title": "Mở con đường dẫn đến những món ăn còn chưa được khám phá.",
       "hero_sub": "Món ăn ta muốn nếm thử, ly rượu ta khao khát, hương thơm ta muốn cảm nhận, bàn tiệc ta muốn chạm tới.<br>Bức tường ngôn ngữ và văn hóa giữa chúng, ta sẽ vượt qua bằng sức mạnh của công nghệ và trí tuệ nhân tạo.",
       "news_h": "Thông báo",
@@ -107,7 +107,7 @@
       "founder_inui_role": "Tổng giám đốc đại diện / Đồng sáng lập",
       "founder_inui_name": "Rokusaburo INUI",
       "founder_inui_name_en": "乾 禄三郎",
-      "founder_inui_bio": "Sinh tháng 7 năm 1996. Tốt nghiệp Trường Trung học Phổ thông Keio năm 2015 và tốt nghiệp Khoa Luật (Khoa học Chính trị), Đại học Keio năm 2019. Gia nhập Bộ Ngoại giao Nhật Bản với tư cách công chức cấp cao, công tác tại các Vụ phụ trách Hàn Quốc và Philippines tại trụ sở chính, sau đó được cử đến Đại sứ quán Nhật Bản tại Vương quốc Anh với chức vụ Tùy viên rồi Bí thư thứ hai, phụ trách các vấn đề kinh tế và ngoại giao.\n\nTháng 6 năm 2025, ông rời Bộ và đảm nhận chức vụ Giám đốc Điều hành (đời thứ tư) tại Kushinobo Co., Ltd., một tập đoàn chuyên về kushikatsu được thành lập năm 1950. Kinh nghiệm với tư cách nhà ngoại giao và nhà kinh doanh ẩm thực đã dẫn dắt ý tưởng kinh doanh của công ty.\n\nĐồng sáng lập PAAN Co., Ltd. vào tháng 6 năm 2026.",
+      "founder_inui_bio": "Sinh tháng 7 năm 1996. Tốt nghiệp Trường Trung học Phổ thông Keio năm 2015 và tốt nghiệp Khoa Luật (Khoa học Chính trị), Đại học Keio năm 2019. Gia nhập Bộ Ngoại giao Nhật Bản với tư cách công chức cấp cao (Sōgō-shoku, trước đây là Hạng I), công tác tại các Vụ phụ trách Hàn Quốc và Philippines tại trụ sở chính, sau đó được cử đến Đại sứ quán Nhật Bản tại Vương quốc Anh với chức vụ Tùy viên rồi Bí thư thứ hai, phụ trách các vấn đề kinh tế và ngoại giao.\n\nTháng 6 năm 2025, ông rời Bộ và đảm nhận chức vụ Giám đốc Điều hành (đời thứ tư) tại Kushinobo Co., Ltd., một tập đoàn chuyên về kushikatsu được thành lập năm 1950. Kinh nghiệm với tư cách nhà ngoại giao và nhà kinh doanh ẩm thực đã dẫn dắt ý tưởng kinh doanh của công ty.\n\nĐồng sáng lập PAAN Co., Ltd. vào tháng 6 năm 2026.",
       "founder_yui_role": "General Counsel / Đồng sáng lập",
       "founder_yui_name": "Koki YUI",
       "founder_yui_name_en": "由井 恒輝",
@@ -154,5 +154,19 @@
     "btn_all": "Chấp nhận tất cả",
     "learn_more": "Chính sách cookie",
     "reset_link": "Thay đổi tùy chọn cookie"
+  },
+  "seo": {
+    "titles": {
+      "index": "PAAN Co., Ltd.",
+      "mission": "Sứ mệnh | PAAN Co., Ltd.",
+      "brand": "Sản phẩm | PAAN Co., Ltd.",
+      "company": "Công ty | PAAN Co., Ltd.",
+      "message": "Thông điệp Giám đốc | PAAN Co., Ltd.",
+      "contact": "Liên hệ | PAAN Co., Ltd.",
+      "privacy": "Bảo mật | PAAN Co., Ltd.",
+      "terms": "Điều khoản | PAAN Co., Ltd.",
+      "cookie": "Cookie | PAAN Co., Ltd."
+    },
+    "keywords": "PAAN Co Ltd, Rokusaburo Inui, Koki Yui, MENU-PAAN, dịch thực đơn nhà hàng, du lịch Nhật Bản, startup Tokyo"
   }
 }

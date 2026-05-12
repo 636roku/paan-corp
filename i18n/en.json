@@ -18,7 +18,7 @@
   "page": {
     "top": {
       "title": "PAAN",
-      "description": "Corporate site of PAAN Co., Ltd. Bridging cultures through food, with the power of technology and artificial intelligence.",
+      "description": "PAAN Co., Ltd. corporate website. Opening the path to dishes yet undiscovered, beyond the walls of language and culture. Co-founded by Rokusaburo Inui (Representative Director) and Koki Yui (General Counsel) on 3 June 2026.",
       "hero_title": "Opening the path to dishes yet undiscovered.",
       "hero_sub": "The dishes we wish to taste, the drinks we long for, the aromas we wish to feel, the tables we wish to touch.<br>The walls of language and culture between them, we shall surmount with technology and artificial intelligence.",
       "news_h": "News",
@@ -107,7 +107,7 @@
       "founder_inui_role": "Representative Director / Co-founder",
       "founder_inui_name": "Rokusaburo INUI",
       "founder_inui_name_en": "乾 禄三郎",
-      "founder_inui_bio": "Born in July 1996. Graduated from Keio Senior High School in 2015 and from Keio University, Faculty of Law (Political Science), in 2019. Joined the Ministry of Foreign Affairs of Japan as a career-track officer, serving on the Korea and Philippines desks at headquarters, before being posted to the Embassy of Japan in the United Kingdom as Attaché and later Second Secretary, where he handled economic and diplomatic affairs.\n\nIn June 2025, he left the Ministry to take up the position of Managing Director (fourth generation) at Kushinobo Co., Ltd., a kushikatsu specialist restaurant group founded in 1950. His experience as a diplomat and as a restaurateur led to the conception of the Company's business.\n\nCo-founded PAAN Co., Ltd. in June 2026.",
+      "founder_inui_bio": "Born in July 1996. Graduated from Keio Senior High School in 2015 and from Keio University, Faculty of Law (Political Science), in 2019. Joined the Ministry of Foreign Affairs of Japan as a career-track officer (Sōgō-shoku, formerly Class I), serving on the Korea and Philippines desks at headquarters, before being posted to the Embassy of Japan in the United Kingdom as Attaché and later Second Secretary, where he handled economic and diplomatic affairs.\n\nIn June 2025, he left the Ministry to take up the position of Managing Director (fourth generation) at Kushinobo Co., Ltd., a kushikatsu specialist restaurant group founded in 1950. His experience as a diplomat and as a restaurateur led to the conception of the Company's business.\n\nCo-founded PAAN Co., Ltd. in June 2026.",
       "founder_yui_role": "General Counsel / Co-founder",
       "founder_yui_name": "Koki YUI",
       "founder_yui_name_en": "由井 恒輝",
@@ -154,5 +154,19 @@
     "btn_all": "Accept all",
     "learn_more": "Cookie policy",
     "reset_link": "Change your cookie preferences"
+  },
+  "seo": {
+    "titles": {
+      "index": "PAAN Co., Ltd.",
+      "mission": "Mission | PAAN Co., Ltd.",
+      "brand": "Products | PAAN Co., Ltd.",
+      "company": "Company | PAAN Co., Ltd.",
+      "message": "CEO's Message | PAAN Co., Ltd.",
+      "contact": "Contact | PAAN Co., Ltd.",
+      "privacy": "Privacy Policy | PAAN Co., Ltd.",
+      "terms": "Terms of Service | PAAN Co., Ltd.",
+      "cookie": "Cookie Policy | PAAN Co., Ltd."
+    },
+    "keywords": "PAAN Co Ltd, PAAN, Rokusaburo Inui, Koki Yui, MENU-PAAN, restaurant menu translation, inbound tourism Japan, food tech, Keio, MOFA Japan, Tokyo startup"
   }
 }

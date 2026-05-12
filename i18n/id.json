@@ -18,7 +18,7 @@
   "page": {
     "top": {
       "title": "PAAN",
-      "description": "Situs perusahaan PAAN Co., Ltd. Membangun jembatan budaya melalui makanan, dengan kekuatan teknologi dan kecerdasan buatan.",
+      "description": "Situs perusahaan PAAN Co., Ltd. Membuka jalan ke hidangan yang belum ditemukan, melampaui tembok bahasa dan budaya. Didirikan bersama oleh Rokusaburo Inui (Direktur Perwakilan) dan Koki Yui (General Counsel) pada 3 Juni 2026.",
       "hero_title": "Membuka jalan menuju hidangan yang belum tersingkap.",
       "hero_sub": "Hidangan yang ingin kita cicipi, anggur yang kita rindukan, aroma yang ingin kita rasakan, meja yang ingin kita sentuh.<br>Tembok bahasa dan budaya di antaranya akan kita seberangi dengan kekuatan teknologi dan kecerdasan buatan.",
       "news_h": "Pengumuman",
@@ -107,7 +107,7 @@
       "founder_inui_role": "Direktur Perwakilan / Pendiri Bersama",
       "founder_inui_name": "Rokusaburo INUI",
       "founder_inui_name_en": "乾 禄三郎",
-      "founder_inui_bio": "Lahir pada Juli 1996. Lulus dari Keio Senior High School pada 2015 dan dari Fakultas Hukum (Ilmu Politik), Universitas Keio pada 2019. Bergabung dengan Kementerian Luar Negeri Jepang sebagai pejabat karir, bertugas pada Divisi Korea dan Filipina di kantor pusat, kemudian ditempatkan di Kedutaan Besar Jepang di Britania Raya sebagai Atase dan kemudian Sekretaris Kedua, menangani urusan ekonomi dan diplomatik.\n\nPada Juni 2025, ia meninggalkan Kementerian untuk menjabat sebagai Direktur Pengelola (generasi keempat) di Kushinobo Co., Ltd., grup spesialis kushikatsu yang didirikan pada 1950. Pengalamannya sebagai diplomat dan pelaku usaha kuliner menjadi inspirasi konsep bisnis perusahaan.\n\nSalah satu pendiri PAAN Co., Ltd. pada Juni 2026.",
+      "founder_inui_bio": "Lahir pada Juli 1996. Lulus dari Keio Senior High School pada 2015 dan dari Fakultas Hukum (Ilmu Politik), Universitas Keio pada 2019. Bergabung dengan Kementerian Luar Negeri Jepang sebagai pejabat karir (Sōgō-shoku, sebelumnya Kelas I), bertugas pada Divisi Korea dan Filipina di kantor pusat, kemudian ditempatkan di Kedutaan Besar Jepang di Britania Raya sebagai Atase dan kemudian Sekretaris Kedua, menangani urusan ekonomi dan diplomatik.\n\nPada Juni 2025, ia meninggalkan Kementerian untuk menjabat sebagai Direktur Pengelola (generasi keempat) di Kushinobo Co., Ltd., grup spesialis kushikatsu yang didirikan pada 1950. Pengalamannya sebagai diplomat dan pelaku usaha kuliner menjadi inspirasi konsep bisnis perusahaan.\n\nSalah satu pendiri PAAN Co., Ltd. pada Juni 2026.",
       "founder_yui_role": "General Counsel / Pendiri Bersama",
       "founder_yui_name": "Koki YUI",
       "founder_yui_name_en": "由井 恒輝",
@@ -154,5 +154,19 @@
     "btn_all": "Terima semua",
     "learn_more": "Kebijakan cookie",
     "reset_link": "Ubah preferensi cookie"
+  },
+  "seo": {
+    "titles": {
+      "index": "PAAN Co., Ltd.",
+      "mission": "Misi | PAAN Co., Ltd.",
+      "brand": "Produk | PAAN Co., Ltd.",
+      "company": "Perusahaan | PAAN Co., Ltd.",
+      "message": "Pesan CEO | PAAN Co., Ltd.",
+      "contact": "Kontak | PAAN Co., Ltd.",
+      "privacy": "Privasi | PAAN Co., Ltd.",
+      "terms": "Ketentuan Layanan | PAAN Co., Ltd.",
+      "cookie": "Cookie | PAAN Co., Ltd."
+    },
+    "keywords": "PAAN Co Ltd, Rokusaburo Inui, Koki Yui, MENU-PAAN, terjemahan menu restoran, pariwisata Jepang, startup Tokyo"
   }
 }

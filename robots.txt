@@ -1,7 +1,41 @@
-# robots.txt — paan.co.jp
-# Allow all crawlers, link to sitemap
+# robots.txt — paan.co.jp (v34)
+# SEO クローラー最適化
 
 User-agent: *
+Allow: /
+# Draft Legal ページはクロール対象外 (= 由井GCレビュー前)
+Disallow: /privacy
+Disallow: /terms
+Disallow: /cookie
+# 国別の Legal も除外
+Disallow: /*/privacy
+Disallow: /*/terms
+Disallow: /*/cookie
+
+# 主要 SEO クローラー
+User-agent: Googlebot
+Allow: /
+Disallow: /privacy
+Disallow: /terms
+Disallow: /cookie
+
+User-agent: Bingbot
+Allow: /
+Disallow: /privacy
+Disallow: /terms
+Disallow: /cookie
+
+# AI クローラー (= GPT/Claude/Perplexity 等の学習許可)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://paan.co.jp/sitemap.xml

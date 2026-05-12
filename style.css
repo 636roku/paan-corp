@@ -642,9 +642,10 @@ img { max-width:100%; height:auto; display:block; }
   flex-direction:column;
   justify-content:flex-end;
   text-align:center;
-  /* v31.3: プレースホルダを白に (= 暗さチラつき防止)
-     画像は ::before のオーバーレイと一緒に fade-in で現れる */
-  background-color:#FFFFFF;
+  /* v34: プレースホルダを Royal Navy 暗系に統一
+     旧 #FFFFFF (v31.3): 画像 fade-in 中に白が透けて「白フラッシュ」感が出てた
+     新 #0E1C3D: 画像と同系色なので fade-in が静かに収まる */
+  background-color: #0E1C3D;
   overflow:hidden;
 }
 
@@ -661,12 +662,10 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .hero-bg-img {
-  /* v30.42: keyframeアニメで fade-in
-     - キャッシュ取得時も初回ロード時も、 ブラウザがHTMLパースした時点でアニメ開始
-     - JS不要、 確実に毎回ふわっと現れる
-     - opacity:0 で取り残されるリスクなし (= アニメは必ず完了する) */
+  /* v34: シンプル fade-in、 0.6s
+     Royal Navy 暗背景の上に画像が静かに現れる */
   opacity:0;
-  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
+  animation: heroFadeIn 0.6s ease-out forwards;
 }
 
 @keyframes heroFadeIn {
@@ -709,8 +708,9 @@ img { max-width:100%; height:auto; display:block; }
   }
 }
 
-/* v31.3: 下からのダークグラデーションオーバーレイ
-   画像と同じタイミングで fade-in、 暗さチラつき防止 */
+/* v34: 下からのダークグラデーションオーバーレイ
+   常時表示 (= アニメなし)、 画像が上から fade-in してくる土台
+   旧 v31.3 では画像と同期して fade-in させてたが、 シンプル化のため固定 */
 .hero::before {
   content:'';
   position:absolute;
@@ -723,9 +723,7 @@ img { max-width:100%; height:auto; display:block; }
     rgba(14,28,61,0.78) 100%
   );
   z-index:1;
-  /* hero画像と同じ keyframe、 同じタイミングで現れる */
-  opacity:0;
-  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
+  pointer-events:none;
 }
 
 /* v30.36: .hero > * は hero-content と ::before のみに適用 (= picture を除外)
@@ -793,8 +791,8 @@ img { max-width:100%; height:auto; display:block; }
   flex-direction:column;
   justify-content:flex-end;
   text-align:center;
-  /* v31.3: プレースホルダを白に (= 暗さチラつき防止) */
-  background-color:#FFFFFF;
+  /* v34: プレースホルダを Royal Navy 暗に統一 (= 白フラッシュ防止) */
+  background-color: #0E1C3D;
   overflow:hidden;
 }
 
@@ -811,9 +809,9 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .sub-hero .hero-bg-img {
-  /* v30.42: keyframeアニメで fade-in */
+  /* v34: シンプル fade-in、 0.6s */
   opacity:0;
-  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
+  animation: heroFadeIn 0.6s ease-out forwards;
 }
 
 .sub-hero .hero-content {
@@ -857,15 +855,14 @@ img { max-width:100%; height:auto; display:block; }
   }
 }
 
-/* v30.33: sub-hero の背景画像は picture/img が担当 (= LCP最適化、 fade-in対応) */
-/* v31.3: sub-hero の背景色プレースホルダも白に (= 暗さチラつき防止) */
+/* v34: sub-hero の背景色プレースホルダも Royal Navy 暗に統一 (= 白フラッシュ防止) */
 .sub-hero-mission,
 .sub-hero-brand,
 .sub-hero-message,
 .sub-hero-company,
-.sub-hero-contact { background-color:#FFFFFF; }
+.sub-hero-contact { background-color: #0E1C3D; }
 
-/* v30.2: グラデーションを底からより濃く (= タイトル可読性確保) */
+/* v34: グラデーションオーバーレイ常時表示 (= アニメなし、 シンプル化) */
 .sub-hero::before {
   content:'';
   position:absolute;
@@ -878,9 +875,7 @@ img { max-width:100%; height:auto; display:block; }
     rgba(14,28,61,0.85) 100%
   );
   z-index:1;
-  /* v31.3: 画像と同期 fade-in */
-  opacity:0;
-  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
+  pointer-events:none;
 }
 
 .sub-hero > * { position:relative; z-index:2; }
@@ -2101,11 +2096,11 @@ img { max-width:100%; height:auto; display:block; }
   animation: heroTextIn 0.9s ease-out forwards;
 }
 
-/* staggered delays — 画像が現れた後 (= 1.0s完了) にテキストが順次登場 */
-.hero-content .hero-title         { animation-delay: 0.8s; }
-.hero-content .hero-sub           { animation-delay: 0.95s; }
-.sub-hero .page-eyebrow           { animation-delay: 0.8s; }
-.sub-hero .page-title             { animation-delay: 0.95s; }
+/* staggered delays (v34: 画像 0.6s 完了直後にテキスト登場) */
+.hero-content .hero-title         { animation-delay: 0.5s; }
+.hero-content .hero-sub           { animation-delay: 0.65s; }
+.sub-hero .page-eyebrow           { animation-delay: 0.5s; }
+.sub-hero .page-title             { animation-delay: 0.65s; }
 
 /* 旧 .anim-hero-text クラス (= 後方互換) */
 .anim-hero-text {
