@@ -708,9 +708,10 @@ img { max-width:100%; height:auto; display:block; }
   }
 }
 
-/* v34: 下からのダークグラデーションオーバーレイ
-   常時表示 (= アニメなし)、 画像が上から fade-in してくる土台
-   旧 v31.3 では画像と同期して fade-in させてたが、 シンプル化のため固定 */
+/* v34.3: 下からのダークグラデーションオーバーレイ
+   - 画像が現れた後 (0.4s delay) に暗グラデが上から乗ってくる
+   - 旧 v34: 0s から opacity:1 → 画像 fade 中に 「暗背景+暗グラデ+薄画像」 で黒ちらつき発生
+   - 新 v34.3: 画像が出揃ったタイミングで暗グラデが重なる → 黒ちらつき解消 */
 .hero::before {
   content:'';
   position:absolute;
@@ -724,6 +725,13 @@ img { max-width:100%; height:auto; display:block; }
   );
   z-index:1;
   pointer-events:none;
+  opacity:0;
+  animation: heroOverlayIn 0.5s ease-out 0.4s forwards;
+}
+
+@keyframes heroOverlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* v30.36: .hero > * は hero-content と ::before のみに適用 (= picture を除外)
@@ -862,7 +870,7 @@ img { max-width:100%; height:auto; display:block; }
 .sub-hero-company,
 .sub-hero-contact { background-color: #0E1C3D; }
 
-/* v34: グラデーションオーバーレイ常時表示 (= アニメなし、 シンプル化) */
+/* v34.3: sub-hero グラデーション、 画像が見え始めてから乗せる (黒ちらつき防止) */
 .sub-hero::before {
   content:'';
   position:absolute;
@@ -876,6 +884,8 @@ img { max-width:100%; height:auto; display:block; }
   );
   z-index:1;
   pointer-events:none;
+  opacity:0;
+  animation: heroOverlayIn 0.5s ease-out 0.4s forwards;
 }
 
 .sub-hero > * { position:relative; z-index:2; }
@@ -2096,11 +2106,11 @@ img { max-width:100%; height:auto; display:block; }
   animation: heroTextIn 0.9s ease-out forwards;
 }
 
-/* staggered delays (v34: 画像 0.6s 完了直後にテキスト登場) */
-.hero-content .hero-title         { animation-delay: 0.5s; }
-.hero-content .hero-sub           { animation-delay: 0.65s; }
-.sub-hero .page-eyebrow           { animation-delay: 0.5s; }
-.sub-hero .page-title             { animation-delay: 0.65s; }
+/* staggered delays (v34.3: 画像 0.6s → 暗グラデ 0.4-0.9s → テキスト 0.7s/0.85s の3段階) */
+.hero-content .hero-title         { animation-delay: 0.7s; }
+.hero-content .hero-sub           { animation-delay: 0.85s; }
+.sub-hero .page-eyebrow           { animation-delay: 0.7s; }
+.sub-hero .page-title             { animation-delay: 0.85s; }
 
 /* 旧 .anim-hero-text クラス (= 後方互換) */
 .anim-hero-text {
