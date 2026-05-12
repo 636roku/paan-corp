@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "株式会社PAAN",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "未だ見ぬ料理への道を拓く。",
     "copyright": "© 2026 株式会社PAAN (PAAN Co., Ltd.) · All rights reserved."
   },
@@ -12,7 +11,6 @@
     "company": "会社概要",
     "contact": "お問い合わせ",
     "language": "言語 / Language",
-    "message": "代表メッセージ",
     "privacy": "プライバシーポリシー",
     "terms": "サイト利用規約",
     "cookie": "クッキーポリシー"
@@ -53,7 +51,6 @@
       "first_h": "最初の挑戦は、 メニューの向こう側。",
       "first_p1": "メニューの向こう側 ── それは、 言葉では届かない料理の世界です。",
       "first_p2": "世界中に溢れる「読めない」 「わからない」 のもやもやを、 テクノロジーと人工知能の力で取り払います。 ただの直訳ではなく、 ユーザーの母語の食文化に立ち戻った「翻訳」 をお届けします。 文化的文脈を踏まえた解説と、 イメージ画像。 メニューを撮影するだけで、 すぐに目の前へ。",
-      "first_cta": "",
       "first_p3": "これは、 私たちの大きな構想の<strong>最初の一歩</strong>。 言葉と文化の壁を越え、 未だ見ぬ料理への道を拓く。"
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "人工知能を用いた料理理解、 文化的文脈翻訳",
       "menupaan_feature_form_label": "想定提供形態",
       "menupaan_feature_form_value": "Web (PWA) およびモバイルアプリケーション",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "PAAN シリーズ",
       "others_status": "開発中",
       "others_name": "PAAN シリーズ 第 2 弾以降",
@@ -105,10 +100,8 @@
       "biz_2_main": "の開発・提供",
       "biz_2_sub": "多言語メニュー、 オーダー管理、 顧客理解 ── 国境を越えた来客に応える店舗運営の基盤。",
       "biz_3_strong": "食 × AI の研究開発",
-      "biz_3_main": "",
       "biz_3_sub": "料理の文化的文脈の理解、 視覚と言葉を結ぶ翻訳、 食習慣の機械理解。 食領域における人工知能の応用研究。",
       "biz_4_strong": "飲食店向け IT 導入支援",
-      "biz_4_main": "",
       "biz_4_sub": "飲食店の課題に寄り添う、 小規模な IT 導入のご相談を承ります。",
       "founders_h": "役員紹介",
       "founder_inui_role": "代表取締役 / Co-founder",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "1996年7月生まれ。 2015年、 慶應義塾高等学校卒。 2018年、 慶應義塾大学法学部在学中に司法試験予備試験に合格し、 翌年に司法試験合格。\n\n2021年の弁護士登録 (第二東京弁護士会所属) と同時に法律事務所ZeLoへ参画。 スタートアップファイナンス、 パブリックアフェアーズ、 ジェネラルコーポレートを専門領域とし、 官民双方の知見を活かしたリーガルアドバイザリーに従事。 経済産業省イノベーション・環境局 (イノベーション創出新事業推進課) での行政実務を経て、 Fugen法律事務所に参画。\n\n2026年6月、 株式会社PAAN共同創業。",
       "info_capital": "資本金",
       "info_capital_v": "100 万円",
-      "info_fiscal": "事業年度",
-      "info_fiscal_v": "毎年 6 月 1 日から翌年 5 月 31 日まで",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "代表メッセージを読む →"
     },

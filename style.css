@@ -2533,8 +2533,9 @@ body.menu-open::after {
   to { opacity: 1; }
 }
 
-/* ハンバーガーメニュー本体は最上層 (=既存のz-indexを上書き保証) */
-.mp-mobile-menu {
+/* ハンバーガーメニュー本体は最上層 (=既存のz-indexを上書き保証)
+   v32: クラス名を実装に合わせて .mp-mobile-menu → .mp-mobile-drawer に修正 */
+.mp-mobile-drawer {
   z-index: 100 !important;
 }
 

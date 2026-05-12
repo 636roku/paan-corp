@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN 株式會社",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "開拓通往未知美味之路。",
     "copyright": "© 2026 PAAN 株式會社 (PAAN Co., Ltd.) · All rights reserved."
   },
@@ -12,7 +11,6 @@
     "company": "公司簡介",
     "contact": "聯絡我們",
     "language": "語言 / Language",
-    "message": "代表致辭",
     "privacy": "隱私政策",
     "terms": "網站使用條款",
     "cookie": "Cookie 政策"
@@ -53,7 +51,6 @@
       "first_h": "首戰之地,在菜單的彼岸。",
       "first_p1": "菜單的另一側 ── 那是言語無法抵達的料理的世界。",
       "first_p2": "我們以技術與人工智慧的力量,化解蔓延世界的「看不懂」「不明白」的茫然。 不只是字面直譯,而是回歸使用者母語飲食文化的「翻譯」。 附以基於文化背景的說明、參考圖片。 只需拍下菜單,料理便呈現眼前。",
-      "first_cta": "",
       "first_p3": "這只是我們宏大構想的<strong>第一步</strong>。 跨越語言與文化的壁壘,開啟通往未知美味之路。"
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "基於人工智慧的料理理解、文化背景翻譯",
       "menupaan_feature_form_label": "預期提供形態",
       "menupaan_feature_form_value": "Web (PWA) 及行動應用",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "PAAN 系列",
       "others_status": "開發中",
       "others_name": "PAAN 系列 第 2 彈及以後",
@@ -105,10 +100,8 @@
       "biz_2_main": "的開發與提供",
       "biz_2_sub": "多語言菜單、訂單管理、顧客洞察 ── 應對跨越國境的來客,建構店鋪營運的基石。",
       "biz_3_strong": "食 × AI 領域的研究開發",
-      "biz_3_main": "",
       "biz_3_sub": "料理的文化背景理解、連結視覺與語言的翻譯、飲食習慣的機器理解。 食領域中人工智慧的應用研究。",
       "biz_4_strong": "面向餐飲店的 IT 導入支援",
-      "biz_4_main": "",
       "biz_4_sub": "貼近餐飲店的實際需求,承接小規模 IT 導入的諮詢。",
       "founders_h": "董事介紹",
       "founder_inui_role": "代表董事 / Co-founder",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "1996年7月出生。 2015年從慶應義塾高中畢業。 2018年在慶應義塾大學法學部就讀期間通過司法考試預備考試,翌年通過司法考試。\n\n2021年取得律師資格(隸屬第二東京律師協會),同時加入ZeLo律師事務所。 以創業融資、公共事務、綜合法務為專業領域,憑藉官民雙方的知識從事法務諮詢。 在經濟產業省創新與環境局(創新創出新事業推進課)的行政實務經歷後,加入Fugen律師事務所。\n\n2026年6月,共同創業株式會社PAAN。",
       "info_capital": "資本額",
       "info_capital_v": "100 萬日圓",
-      "info_fiscal": "會計年度",
-      "info_fiscal_v": "每年 6 月 1 日至翌年 5 月 31 日",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "閱讀代表致辭 →"
     },

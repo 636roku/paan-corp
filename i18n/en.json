@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN Co., Ltd.",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "Opening the path to dishes yet undiscovered.",
     "copyright": "© 2026 PAAN Co., Ltd. · All rights reserved."
   },
@@ -12,7 +11,6 @@
     "company": "Company",
     "contact": "Contact",
     "language": "Language",
-    "message": "Message",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "cookie": "Cookie Policy"
@@ -53,7 +51,6 @@
       "first_h": "Our first challenge: beyond the menu.",
       "first_p1": "The other side of the menu — it is a world of dishes that words alone cannot reach.",
       "first_p2": "We dissolve the \"I cannot read it\", \"I do not understand it\" — the unease that flows through the world — with the power of technology and AI. Not a mere literal translation, but a \"translation\" rooted in the food culture of the user's mother tongue. Cultural context with each explanation, and illustrative images. All from a single photo of the menu — right there, before you.",
-      "first_cta": "",
       "first_p3": "This is the <strong>first step</strong> of our larger vision. Crossing the walls of language and culture, we open the road to dishes yet to be seen."
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "AI-driven understanding of dishes, cultural-context translation",
       "menupaan_feature_form_label": "Format envisaged",
       "menupaan_feature_form_value": "Web (PWA) and mobile applications",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "PAAN Series",
       "others_status": "In development",
       "others_name": "PAAN Series, second product and beyond",
@@ -105,10 +100,8 @@
       "biz_2_main": " — development and provision",
       "biz_2_sub": "Multilingual menus, order management, customer insight — the foundation for restaurant operations that respond to guests from across borders.",
       "biz_3_strong": "Research and development at the intersection of food and AI",
-      "biz_3_main": "",
       "biz_3_sub": "Understanding the cultural context of dishes, translation that bridges image and language, and machine understanding of food habits — applied AI research in the realm of food.",
       "biz_4_strong": "IT introduction support for restaurants",
-      "biz_4_main": "",
       "biz_4_sub": "We accept consultations for small-scale IT introductions tailored to the needs of restaurants.",
       "founders_h": "Officers",
       "founder_inui_role": "Representative Director / Co-founder",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "Born July 1996. Graduated from Keio Senior High School in 2015. While studying at the Faculty of Law, Keio University, passed the preliminary bar examination in 2018, and the bar examination the following year.\n\nUpon registration as a lawyer (Daini Tokyo Bar Association) in 2021, joined ZeLo, Law Office, specialising in start-up finance, public affairs and general corporate matters, providing legal advisory drawing on both public- and private-sector insight. After serving in the Innovation and Environmental Policy Bureau of the Ministry of Economy, Trade and Industry (Innovation and New Business Development Office), joined Fugen Law Office.\n\nIn June 2026, co-founded PAAN Co., Ltd.",
       "info_capital": "Capital",
       "info_capital_v": "JPY 1,000,000",
-      "info_fiscal": "Fiscal Year",
-      "info_fiscal_v": "From 1 June to 31 May of the following year",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "Read the message →"
     },

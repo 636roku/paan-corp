@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN Co., Ltd.",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "Membuka jalan menuju hidangan yang belum tersingkap.",
     "copyright": "© 2026 PAAN Co., Ltd. · Hak cipta dilindungi."
   },
@@ -12,7 +11,6 @@
     "company": "Perusahaan",
     "contact": "Kontak",
     "language": "Bahasa / Language",
-    "message": "Pesan",
     "privacy": "Kebijakan Privasi",
     "terms": "Ketentuan Penggunaan",
     "cookie": "Kebijakan Cookie"
@@ -53,7 +51,6 @@
       "first_h": "Tantangan pertama kami: melampaui menu.",
       "first_p1": "Sisi lain dari menu ── itu adalah dunia hidangan yang tak terjangkau oleh kata-kata saja.",
       "first_p2": "Kami melarutkan kegamangan \"tidak bisa membacanya\", \"tidak memahaminya\" — kegelisahan yang mengalir di seluruh dunia — dengan kekuatan teknologi dan kecerdasan buatan. Bukan sekadar terjemahan harfiah, melainkan \"terjemahan\" yang berakar pada budaya kuliner bahasa ibu pengguna. Penjelasan dengan konteks budaya, dan gambar referensi. Semuanya hanya dari satu foto menu — tepat di hadapan Anda.",
-      "first_cta": "",
       "first_p3": "Ini adalah <strong>langkah pertama</strong> dari visi besar kami. Melampaui tembok bahasa dan budaya, kami membuka jalan menuju hidangan yang belum terlihat."
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "Pemahaman hidangan berbasis AI, terjemahan dalam konteks budaya",
       "menupaan_feature_form_label": "Format yang direncanakan",
       "menupaan_feature_form_value": "Web (PWA) dan aplikasi mobile",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "Seri PAAN",
       "others_status": "Dalam pengembangan",
       "others_name": "Seri PAAN, produk kedua dan seterusnya",
@@ -105,10 +100,8 @@
       "biz_2_main": " — pengembangan dan penyediaan",
       "biz_2_sub": "Menu multibahasa, manajemen pesanan, pemahaman pelanggan — fondasi operasional restoran yang menjawab tamu dari seberang batas.",
       "biz_3_strong": "Penelitian dan pengembangan di persimpangan kuliner dan AI",
-      "biz_3_main": "",
       "biz_3_sub": "Pemahaman konteks budaya hidangan, terjemahan yang menjembatani citra dan kata, pemahaman mesin atas kebiasaan kuliner — penelitian terapan AI di ranah kuliner.",
       "biz_4_strong": "Dukungan implementasi TI untuk restoran",
-      "biz_4_main": "",
       "biz_4_sub": "Mendekati kebutuhan restoran, kami menerima konsultasi untuk implementasi TI skala kecil.",
       "founders_h": "Direksi",
       "founder_inui_role": "Direktur Perwakilan / Pendiri Bersama",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "Lahir Juli 1996. Lulus dari Keio Senior High School tahun 2015. Saat menempuh studi di Fakultas Hukum Universitas Keio, lulus ujian persiapan bar pada 2018, dan ujian bar pada tahun berikutnya.\n\nDengan pendaftaran sebagai pengacara (Daini Tokyo Bar Association) pada 2021, bergabung dengan Kantor Hukum ZeLo, mengkhususkan diri dalam pembiayaan start-up, public affairs, dan hukum korporat umum, memberikan layanan hukum dengan wawasan dari sektor publik maupun swasta. Setelah menjabat di Biro Inovasi dan Kebijakan Lingkungan Kementerian Ekonomi, Perdagangan dan Industri (Bagian Inovasi dan Pengembangan Bisnis Baru), bergabung dengan Kantor Hukum Fugen.\n\nPada Juni 2026, turut mendirikan PAAN Co., Ltd.",
       "info_capital": "Modal dasar",
       "info_capital_v": "JPY 1.000.000",
-      "info_fiscal": "Tahun fiskal",
-      "info_fiscal_v": "Dari 1 Juni hingga 31 Mei tahun berikutnya",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "Baca pesan →"
     },

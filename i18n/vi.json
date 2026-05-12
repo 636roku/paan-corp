@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN Co., Ltd.",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "Mở con đường dẫn đến những món ăn còn chưa được khám phá.",
     "copyright": "© 2026 PAAN Co., Ltd. · Bảo lưu mọi quyền."
   },
@@ -12,7 +11,6 @@
     "company": "Công ty",
     "contact": "Liên hệ",
     "language": "Ngôn ngữ / Language",
-    "message": "Lời nhắn",
     "privacy": "Chính sách Bảo mật",
     "terms": "Điều khoản Sử dụng",
     "cookie": "Chính sách Cookie"
@@ -53,7 +51,6 @@
       "first_h": "Thử thách đầu tiên: phía bên kia của thực đơn.",
       "first_p1": "Phía bên kia của thực đơn ── đó là một thế giới món ăn mà lời nói không thể chạm tới.",
       "first_p2": "Chúng tôi xóa tan nỗi \"không đọc được\", \"không hiểu\" — sự mơ hồ lan tỏa khắp thế giới — bằng sức mạnh của công nghệ và trí tuệ nhân tạo. Không chỉ là dịch nghĩa đơn thuần, mà là một \"bản dịch\" trở về với văn hóa ẩm thực của tiếng mẹ đẻ người dùng. Lời giải thích theo bối cảnh văn hóa, cùng hình ảnh minh họa. Tất cả chỉ từ một bức ảnh chụp thực đơn — hiện ngay trước mắt bạn.",
-      "first_cta": "",
       "first_p3": "Đây là <strong>bước đầu tiên</strong> của tầm nhìn lớn của chúng tôi. Vượt qua những bức tường ngôn ngữ và văn hóa, chúng tôi mở lối đến những món ăn chưa từng biết."
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "Hiểu món ăn bằng trí tuệ nhân tạo, dịch thuật theo bối cảnh văn hóa",
       "menupaan_feature_form_label": "Hình thức dự kiến",
       "menupaan_feature_form_value": "Web (PWA) và ứng dụng di động",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "Series PAAN",
       "others_status": "Đang phát triển",
       "others_name": "Series PAAN, sản phẩm thứ hai trở đi",
@@ -105,10 +100,8 @@
       "biz_2_main": " — phát triển và cung cấp",
       "biz_2_sub": "Thực đơn đa ngôn ngữ, quản lý đặt món, thấu hiểu khách hàng — nền tảng cho hoạt động nhà hàng đón tiếp khách vượt biên giới.",
       "biz_3_strong": "Nghiên cứu và phát triển nơi giao thoa giữa ẩm thực và AI",
-      "biz_3_main": "",
       "biz_3_sub": "Hiểu bối cảnh văn hóa của món ăn, dịch thuật nối kết hình ảnh và lời nói, máy hiểu thói quen ẩm thực — nghiên cứu ứng dụng AI trong lĩnh vực ẩm thực.",
       "biz_4_strong": "Hỗ trợ ứng dụng CNTT cho nhà hàng",
-      "biz_4_main": "",
       "biz_4_sub": "Lắng nghe nhu cầu của nhà hàng, chúng tôi tiếp nhận các yêu cầu tư vấn ứng dụng CNTT quy mô nhỏ.",
       "founders_h": "Ban lãnh đạo",
       "founder_inui_role": "Tổng giám đốc đại diện / Đồng sáng lập",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "Sinh tháng 7 năm 1996. Tốt nghiệp Trường Trung học Keio năm 2015. Trong thời gian học tại Khoa Luật, Đại học Keio, đã đậu kỳ thi sơ tuyển luật sư năm 2018 và kỳ thi luật sư vào năm sau.\n\nKhi đăng ký hành nghề luật sư (Đoàn Luật sư Daini Tokyo) năm 2021, đồng thời gia nhập Văn phòng Luật ZeLo, chuyên các lĩnh vực tài chính start-up, đối ngoại công, và pháp luật doanh nghiệp tổng quát, cung cấp tư vấn pháp lý dựa trên kinh nghiệm cả khu vực công và tư. Sau thời gian công tác tại Cục Đổi mới và Chính sách Môi trường, Bộ Kinh tế, Thương mại và Công nghiệp (Văn phòng Phát triển Đổi mới và Kinh doanh mới), đã gia nhập Văn phòng Luật Fugen.\n\nTháng 6 năm 2026, đồng sáng lập PAAN Co., Ltd.",
       "info_capital": "Vốn điều lệ",
       "info_capital_v": "1.000.000 JPY",
-      "info_fiscal": "Năm tài chính",
-      "info_fiscal_v": "Từ ngày 1 tháng 6 đến ngày 31 tháng 5 năm sau",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "Đọc lời nhắn →"
     },

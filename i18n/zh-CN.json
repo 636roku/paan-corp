@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN 株式会社",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "开拓通往尚未邂逅之美味的道路。",
     "copyright": "© 2026 PAAN 株式会社 (PAAN Co., Ltd.) · All rights reserved."
   },
@@ -12,7 +11,6 @@
     "company": "公司概要",
     "contact": "联系我们",
     "language": "语言 / Language",
-    "message": "代表致辞",
     "privacy": "隐私政策",
     "terms": "网站使用条款",
     "cookie": "Cookie 政策"
@@ -53,7 +51,6 @@
       "first_h": "首战之地,在菜单的彼岸。",
       "first_p1": "菜单的另一侧 ── 那是言语无法抵达的料理的世界。",
       "first_p2": "我们以技术与人工智能的力量,化解蔓延世界的「看不懂」「不明白」的茫然。 不只是字面直译,而是回归用户母语饮食文化的「翻译」。 附以基于文化背景的说明、参考图片。 只需拍下菜单,料理便呈现眼前。",
-      "first_cta": "",
       "first_p3": "这只是我们宏大构想的<strong>第一步</strong>。 跨越语言与文化的壁垒,开启通往未知美味之路。"
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "基于人工智能的料理理解、文化背景翻译",
       "menupaan_feature_form_label": "预期提供形态",
       "menupaan_feature_form_value": "Web (PWA) 及移动应用",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "PAAN 系列",
       "others_status": "开发中",
       "others_name": "PAAN 系列 第 2 弹及以后",
@@ -105,10 +100,8 @@
       "biz_2_main": "的开发与提供",
       "biz_2_sub": "多语言菜单、订单管理、顾客洞察 ── 应对跨越国境的来客,构建店铺运营的基石。",
       "biz_3_strong": "食 × AI 领域的研究开发",
-      "biz_3_main": "",
       "biz_3_sub": "料理的文化背景理解、连接视觉与语言的翻译、饮食习惯的机器理解。 食领域中人工智能的应用研究。",
       "biz_4_strong": "面向餐饮店的 IT 导入支援",
-      "biz_4_main": "",
       "biz_4_sub": "贴近餐饮店的实际需求,承接小规模 IT 导入的咨询。",
       "founders_h": "董事介绍",
       "founder_inui_role": "代表董事 / Co-founder",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "1996年7月出生。 2015年从庆应义塾高中毕业。 2018年在庆应义塾大学法学部就读期间通过司法考试预备考试,翌年通过司法考试。\n\n2021年取得律师资格(隶属第二东京律师协会),同时加入ZeLo律师事务所。 以创业融资、公共事务、综合法务为专业领域,凭借官民双方的知识从事法务咨询。 在经济产业省创新与环境局(创新创出新事业推进课)的行政实务经历后,加入Fugen律师事务所。\n\n2026年6月,共同创业株式会社PAAN。",
       "info_capital": "资本金",
       "info_capital_v": "100 万日元",
-      "info_fiscal": "会计年度",
-      "info_fiscal_v": "每年 6 月 1 日至翌年 5 月 31 日",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "阅读代表致辞 →"
     },

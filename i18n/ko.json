@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN 주식회사",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "아직 만나지 못한 요리로 향하는 길을 열다.",
     "copyright": "© 2026 PAAN 주식회사 (PAAN Co., Ltd.) · All rights reserved."
   },
@@ -12,7 +11,6 @@
     "company": "회사 소개",
     "contact": "문의",
     "language": "언어 / Language",
-    "message": "대표 메시지",
     "privacy": "개인정보처리방침",
     "terms": "사이트 이용약관",
     "cookie": "쿠키 정책"
@@ -53,7 +51,6 @@
       "first_h": "첫 번째 도전은, 메뉴의 너머.",
       "first_p1": "메뉴의 너머 ── 그것은, 말로는 닿을 수 없는 요리의 세계입니다.",
       "first_p2": "세계에 흐르는 \"읽을 수 없다\", \"이해할 수 없다\"는 막연함을, 기술과 인공지능의 힘으로 풀어드립니다. 단순한 직역이 아닌, 사용자 모국어의 음식 문화에 입각한 \"번역\"을 제공합니다. 문화적 맥락을 담은 해설과 이미지. 메뉴를 촬영하는 것만으로, 바로 눈앞에.",
-      "first_cta": "",
       "first_p3": "이것은 우리의 큰 구상의 <strong>첫 걸음</strong>입니다. 언어와 문화의 벽을 넘어, 미처 만나지 못한 요리로의 길을 엽니다."
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "인공지능을 활용한 요리 이해, 문화적 맥락 번역",
       "menupaan_feature_form_label": "제공 예정 형태",
       "menupaan_feature_form_value": "Web (PWA) 및 모바일 애플리케이션",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "PAAN 시리즈",
       "others_status": "개발 중",
       "others_name": "PAAN 시리즈 제 2 탄 이후",
@@ -105,10 +100,8 @@
       "biz_2_main": "의 개발·제공",
       "biz_2_sub": "다국어 메뉴, 주문 관리, 고객 이해 ── 국경을 넘어온 손님에 응하는 매장 운영의 기반.",
       "biz_3_strong": "식 × AI 연구개발",
-      "biz_3_main": "",
       "biz_3_sub": "요리의 문화적 맥락 이해, 시각과 언어를 잇는 번역, 식습관의 기계 이해. 식 영역에서의 인공지능 응용 연구.",
       "biz_4_strong": "음식점 IT 도입 지원",
-      "biz_4_main": "",
       "biz_4_sub": "음식점의 과제에 다가서는, 소규모 IT 도입 상담을 받아드립니다.",
       "founders_h": "임원 소개",
       "founder_inui_role": "대표이사 / Co-founder",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "1996년 7월생. 2015년 게이오 의숙고등학교 졸업. 2018년, 게이오 의숙대학 법학부 재학 중 사법시험 예비시험에 합격, 다음해 사법시험 합격.\n\n2021년 변호사 등록(제2 도쿄 변호사회 소속)과 동시에 법률사무소 ZeLo에 참여. 스타트업 파이낸스, 퍼블릭 어페어스, 제너럴 코퍼레이트를 전문 영역으로, 관민 양측의 지견을 살린 리걸 어드바이저리에 종사. 경제산업성 이노베이션·환경국(이노베이션 창출 신사업 추진과)에서의 행정 실무를 거쳐, Fugen 법률사무소에 참여.\n\n2026년 6월, 주식회사 PAAN 공동 창업.",
       "info_capital": "자본금",
       "info_capital_v": "100만 엔",
-      "info_fiscal": "사업연도",
-      "info_fiscal_v": "매년 6월 1일부터 다음해 5월 31일까지",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "대표 메시지 읽기 →"
     },

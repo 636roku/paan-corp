@@ -1,4 +1,13 @@
-# Pretty URLs (no .html extension)
+# ============================================================
+# paan.co.jp Netlify _redirects (v32)
+#
+# v32 変更:
+#   - :lang プレースホルダ → 12言語明示
+#   - 旧: /:lang/* は /xyz/ のような不正パスも 200 で返してた (= SEO duplicate content リスク)
+#   - 新: 12言語のみマッチ、 それ以外は Netlify が 404 を返す
+# ============================================================
+
+# ---- ja (default = ルート扱い、 prefix なし) ----
 /mission   /mission.html   200
 /brand     /brand.html     200
 /company   /company.html   200
@@ -8,13 +17,135 @@
 /terms     /terms.html     200
 /cookie    /cookie.html    200
 
-# Multilingual URL routing (i18n.js handles the actual translation client-side)
-/:lang/            /index.html     200
-/:lang/mission     /mission.html   200
-/:lang/brand       /brand.html     200
-/:lang/company     /company.html   200
-/:lang/contact     /contact.html   200
-/:lang/message     /message.html   200
-/:lang/privacy     /privacy.html   200
-/:lang/terms       /terms.html     200
-/:lang/cookie      /cookie.html    200
+# ---- 12 言語 prefix 付きルーティング ----
+# en
+/en               /index.html     200
+/en/              /index.html     200
+/en/mission       /mission.html   200
+/en/brand         /brand.html     200
+/en/company       /company.html   200
+/en/contact       /contact.html   200
+/en/message       /message.html   200
+/en/privacy       /privacy.html   200
+/en/terms         /terms.html     200
+/en/cookie        /cookie.html    200
+
+# zh-CN
+/zh-CN            /index.html     200
+/zh-CN/           /index.html     200
+/zh-CN/mission    /mission.html   200
+/zh-CN/brand      /brand.html     200
+/zh-CN/company    /company.html   200
+/zh-CN/contact    /contact.html   200
+/zh-CN/message    /message.html   200
+/zh-CN/privacy    /privacy.html   200
+/zh-CN/terms      /terms.html     200
+/zh-CN/cookie     /cookie.html    200
+
+# zh-TW
+/zh-TW            /index.html     200
+/zh-TW/           /index.html     200
+/zh-TW/mission    /mission.html   200
+/zh-TW/brand      /brand.html     200
+/zh-TW/company    /company.html   200
+/zh-TW/contact    /contact.html   200
+/zh-TW/message    /message.html   200
+/zh-TW/privacy    /privacy.html   200
+/zh-TW/terms      /terms.html     200
+/zh-TW/cookie     /cookie.html    200
+
+# ko
+/ko               /index.html     200
+/ko/              /index.html     200
+/ko/mission       /mission.html   200
+/ko/brand         /brand.html     200
+/ko/company       /company.html   200
+/ko/contact       /contact.html   200
+/ko/message       /message.html   200
+/ko/privacy       /privacy.html   200
+/ko/terms         /terms.html     200
+/ko/cookie        /cookie.html    200
+
+# es
+/es               /index.html     200
+/es/              /index.html     200
+/es/mission       /mission.html   200
+/es/brand         /brand.html     200
+/es/company       /company.html   200
+/es/contact       /contact.html   200
+/es/message       /message.html   200
+/es/privacy       /privacy.html   200
+/es/terms         /terms.html     200
+/es/cookie        /cookie.html    200
+
+# fr
+/fr               /index.html     200
+/fr/              /index.html     200
+/fr/mission       /mission.html   200
+/fr/brand         /brand.html     200
+/fr/company       /company.html   200
+/fr/contact       /contact.html   200
+/fr/message       /message.html   200
+/fr/privacy       /privacy.html   200
+/fr/terms         /terms.html     200
+/fr/cookie        /cookie.html    200
+
+# de
+/de               /index.html     200
+/de/              /index.html     200
+/de/mission       /mission.html   200
+/de/brand         /brand.html     200
+/de/company       /company.html   200
+/de/contact       /contact.html   200
+/de/message       /message.html   200
+/de/privacy       /privacy.html   200
+/de/terms         /terms.html     200
+/de/cookie        /cookie.html    200
+
+# it
+/it               /index.html     200
+/it/              /index.html     200
+/it/mission       /mission.html   200
+/it/brand         /brand.html     200
+/it/company       /company.html   200
+/it/contact       /contact.html   200
+/it/message       /message.html   200
+/it/privacy       /privacy.html   200
+/it/terms         /terms.html     200
+/it/cookie        /cookie.html    200
+
+# vi
+/vi               /index.html     200
+/vi/              /index.html     200
+/vi/mission       /mission.html   200
+/vi/brand         /brand.html     200
+/vi/company       /company.html   200
+/vi/contact       /contact.html   200
+/vi/message       /message.html   200
+/vi/privacy       /privacy.html   200
+/vi/terms         /terms.html     200
+/vi/cookie        /cookie.html    200
+
+# id
+/id               /index.html     200
+/id/              /index.html     200
+/id/mission       /mission.html   200
+/id/brand         /brand.html     200
+/id/company       /company.html   200
+/id/contact       /contact.html   200
+/id/message       /message.html   200
+/id/privacy       /privacy.html   200
+/id/terms         /terms.html     200
+/id/cookie        /cookie.html    200
+
+# th
+/th               /index.html     200
+/th/              /index.html     200
+/th/mission       /mission.html   200
+/th/brand         /brand.html     200
+/th/company       /company.html   200
+/th/contact       /contact.html   200
+/th/message       /message.html   200
+/th/privacy       /privacy.html   200
+/th/terms         /terms.html     200
+/th/cookie        /cookie.html    200

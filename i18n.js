@@ -144,6 +144,18 @@
     if (ogLocaleEl) {
       ogLocaleEl.setAttribute('content', ogLocaleMap[state.locale] || 'ja_JP');
     }
+
+    // v32: legal 文書の翻訳予告バナー制御
+    // ja 以外のロケールで /privacy, /terms, /cookie を開いた時、 上部に予告を表示
+    // (= 現状 noindex の Draft 状態。 由井GCレビュー後に多言語翻訳予定)
+    const translationNotice = document.querySelector('.legal-translation-notice');
+    if (translationNotice) {
+      if (state.locale !== DEFAULT_LOCALE) {
+        translationNotice.classList.add('is-visible');
+      } else {
+        translationNotice.classList.remove('is-visible');
+      }
+    }
   }
 
   /** ロケール切替 (= URL書き換え + リロード) */

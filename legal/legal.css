@@ -1,181 +1,256 @@
 /* ============================================================
- * MENU-PAAN — Legal pages (terms / privacy / tokushoho)
- * Phase 12.28 v27 (2026-04-27)
- * シンプルで読みやすいレガル文書のスタイル
+ * paan.co.jp — Legal pages (privacy / terms / cookie)
+ * v32 (2026-05-12): MENU-PAANからのコピペを paan.co.jp 仕様にリブランド
+ *   - Royal Navy #1A2E5C 基調 (style.css の --paan-* トークンを継承)
+ *   - 白背景 + 青系罫線 (旧 MENU-PAAN のクリーム色 #FAF6F0 → 純白に置換)
+ *   - 本文書体: Noto Serif JP (コーポレートサイト本文と統一)
+ *   - 翻訳予告バナー: 上品な薄青背景 + Royal Navy 罫線 (旧 黄色警告調を廃止)
+ *
+ * ⚠️ Draft フェーズ:
+ *   - 由井GCレビュー前。 noindex/nofollow 状態
+ *   - 翻訳予告バナーは i18n.js が ja 以外で表示制御する (= v32 で連携実装)
  * ============================================================ */
 
+/* style.css の :root トークンをそのまま継承して使う前提だが、
+   legal.css が単独 import される場面でも破綻しないよう、 ローカル変数で受ける */
 :root {
-  --legal-bg: #FAF6F0;
-  --legal-text: #1a1410;
-  --legal-muted: #6b5e54;
-  --legal-border: #E8DDD0;
-  --legal-accent: #1a2040;
-}
-
-body {
-  margin: 0;
-  background: var(--legal-bg);
-  color: var(--legal-text);
-  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+  --legal-bg:      #FFFFFF;                 /* 白基調 (= style.css --paan-bg と同義) */
+  --legal-surface: var(--paan-card, #FAFBFD); /* カード内側、 微寒色 */
+  --legal-text:    var(--paan-ink, #1A2040);
+  --legal-muted:   var(--paan-ink-mid, #5A6378);
+  --legal-border:  var(--paan-line, #E4E8F0);
+  --legal-accent:  var(--paan-primary, #1A2E5C); /* Royal Navy */
+  --legal-accent-deep: var(--paan-primary-deep, #0E1C3D);
 }
 
 .legal-section {
-  padding: 32px 16px 64px;
+  padding: 32px 16px 80px;
 }
 
 .legal-inner {
   max-width: 760px;
   margin: 0 auto;
-  background: #fff;
-  padding: 32px 28px;
-  border-radius: 12px;
+  background: #FFFFFF;
+  padding: 40px 36px;
   border: 1px solid var(--legal-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 0 rgba(26, 32, 64, 0.02);
 }
 
 .legal-head {
-  margin-bottom: 28px;
-  padding-bottom: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 22px;
   border-bottom: 1px solid var(--legal-border);
 }
 
 .legal-head .eyebrow {
-  font-family: 'Marcellus', serif;
+  font-family: 'Marcellus', 'Playfair Display', serif;
   font-size: 11px;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--legal-muted);
-  margin-bottom: 8px;
+  color: var(--legal-accent);
+  margin-bottom: 10px;
+  opacity: 0.85;
 }
 
-.legal-head h1 {
+.legal-head h1,
+.legal-head .section-title {
   font-family: 'Noto Serif JP', 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
   margin: 0 0 8px;
   color: var(--legal-accent);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
 }
 
 .legal-head .legal-meta {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--legal-muted);
+  letter-spacing: 0.02em;
 }
 
+/* 本文 (= .legal-prose または .legal-content どちらでも) */
+.legal-prose,
+.legal-content {
+  font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--legal-text);
+}
+
+.legal-prose h2,
 .legal-content h2 {
   font-family: 'Noto Serif JP', serif;
   font-size: 17px;
   font-weight: 600;
-  margin: 28px 0 10px;
+  margin: 32px 0 12px;
   color: var(--legal-accent);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
+.legal-prose h3,
 .legal-content h3 {
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 600;
-  margin: 18px 0 6px;
+  margin: 20px 0 8px;
   color: var(--legal-text);
 }
 
+.legal-prose p,
 .legal-content p {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 }
 
+.legal-prose .legal-intro,
+.legal-content .legal-intro {
+  font-size: 15px;
+  color: var(--legal-text);
+  margin-bottom: 24px;
+}
+
+.legal-prose .legal-footer,
+.legal-content .legal-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--legal-border);
+  font-size: 13.5px;
+  color: var(--legal-muted);
+  letter-spacing: 0.02em;
+}
+
+.legal-prose ul,
+.legal-prose ol,
 .legal-content ul,
 .legal-content ol {
-  margin: 0 0 14px;
-  padding-left: 22px;
+  margin: 0 0 16px;
+  padding-left: 24px;
 }
 
+.legal-prose li,
 .legal-content li {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
+.legal-prose a,
 .legal-content a {
   color: var(--legal-accent);
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: opacity 0.2s ease-out, color 0.2s ease-out;
 }
 
-.legal-content a:hover { opacity: 0.7; }
+.legal-prose a:hover,
+.legal-content a:hover {
+  color: var(--legal-accent-deep);
+  opacity: 0.85;
+}
 
+.legal-prose table,
 .legal-content table {
   width: 100%;
   border-collapse: collapse;
-  margin: 14px 0;
+  margin: 18px 0;
   font-size: 14px;
 }
 
+.legal-prose th,
+.legal-prose td,
 .legal-content th,
 .legal-content td {
-  padding: 10px 12px;
+  padding: 11px 14px;
   border: 1px solid var(--legal-border);
   text-align: left;
   vertical-align: top;
 }
 
+.legal-prose th,
 .legal-content th {
-  background: var(--legal-bg);
+  background: var(--legal-surface);
   font-weight: 600;
   width: 36%;
   white-space: nowrap;
+  color: var(--legal-accent);
 }
 
+.legal-prose code,
 .legal-content code {
-  background: var(--legal-bg);
+  background: var(--legal-surface);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 13px;
-  font-family: 'Menlo', 'Monaco', monospace;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  color: var(--legal-accent-deep);
 }
 
+.legal-prose blockquote,
 .legal-content blockquote {
   border-left: 3px solid var(--legal-accent);
-  margin: 14px 0;
-  padding: 6px 14px;
+  margin: 16px 0;
+  padding: 8px 16px;
   color: var(--legal-muted);
-  background: var(--legal-bg);
+  background: var(--legal-surface);
   border-radius: 0 6px 6px 0;
 }
 
 @media (max-width: 600px) {
-  .legal-inner {
-    padding: 22px 18px;
+  .legal-section {
+    padding: 24px 12px 64px;
   }
-  .legal-head h1 { font-size: 20px; }
-  .legal-content h2 { font-size: 15.5px; }
+  .legal-inner {
+    padding: 28px 22px;
+    border-radius: 10px;
+  }
+  .legal-head h1,
+  .legal-head .section-title { font-size: 22px; }
+  .legal-prose h2,
+  .legal-content h2 { font-size: 16px; }
+  .legal-prose,
+  .legal-content { font-size: 14.5px; }
+  .legal-prose table,
   .legal-content table { font-size: 13px; }
+  .legal-prose th,
+  .legal-prose td,
   .legal-content th,
-  .legal-content td { padding: 8px 10px; }
+  .legal-content td { padding: 9px 11px; }
 }
 
 /* ============================================================
-   Phase 12.30 v95.7+ v298-15+ (2026-04-30):
-   翻訳予告バナー
-   - ja 以外のロケールで legal 文書を開いた時に上部に表示
-   - 「現在この文書は日本語のみ。 launch 後に翻訳版を提供予定」
-   - 12 言語の翻訳前段階で、 ユーザー透明性確保 + 法務リスク低減
+   翻訳予告バナー (= ja 以外のロケールで表示)
+   v32: i18n.js の applyToDOM 内で locale が ja 以外なら .is-visible 付与
+   - 旧 黄色警告調を廃止、 上品な薄青背景 + Royal Navy アクセント
 ============================================================ */
 .legal-translation-notice {
-  display: none; /* JS で言語判定後に block にする */
-  margin: 0 0 24px;
-  padding: 14px 18px;
-  background: #FFF8E1;
-  border-left: 4px solid #B8860B;
+  display: none; /* デフォルト非表示、 JS で .is-visible 付与時のみ表示 */
+  margin: 0 0 28px;
+  padding: 16px 20px;
+  background: #F4F7FC;                          /* Royal Navy 系の極淡背景 */
+  border-left: 3px solid var(--legal-accent);   /* #1A2E5C アクセント */
   border-radius: 4px;
+  font-family: 'Noto Sans JP', -apple-system, sans-serif;
   font-size: 13.5px;
-  line-height: 1.6;
-  color: #5D4E2C;
+  line-height: 1.7;
+  color: var(--legal-text);
 }
+
+.legal-translation-notice.is-visible {
+  display: block;
+}
+
 .legal-translation-notice strong {
   display: block;
   margin-bottom: 4px;
-  color: #3D2E1C;
+  color: var(--legal-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
+
 .legal-translation-notice a {
-  color: #1a2040;
+  color: var(--legal-accent);
   text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-translation-notice a:hover {
+  color: var(--legal-accent-deep);
 }

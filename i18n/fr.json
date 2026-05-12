@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN Co., Ltd.",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "Ouvrir le chemin vers les plats encore inconnus.",
     "copyright": "© 2026 PAAN Co., Ltd. · Tous droits réservés."
   },
@@ -12,7 +11,6 @@
     "company": "Entreprise",
     "contact": "Contact",
     "language": "Langue / Language",
-    "message": "Message",
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions d'Utilisation",
     "cookie": "Politique de Cookies"
@@ -53,7 +51,6 @@
       "first_h": "Notre premier défi : par-delà le menu.",
       "first_p1": "L'autre côté de la carte — c'est un monde de plats que les mots seuls ne peuvent atteindre.",
       "first_p2": "Nous dissipons l'inquiétude du « je ne peux pas le lire », « je ne comprends pas » — ce malaise qui traverse le monde — par la force de la technologie et de l'intelligence artificielle. Pas une simple traduction littérale, mais une « traduction » ancrée dans la culture gastronomique de la langue maternelle de l'utilisateur. Des explications contextualisées culturellement, et des images de référence. Le tout depuis une simple photo de la carte — là, sous vos yeux.",
-      "first_cta": "",
       "first_p3": "C'est le <strong>premier pas</strong> de notre vision plus large. Franchissant les murs de la langue et de la culture, nous ouvrons la voie aux plats encore à découvrir."
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "Compréhension des plats par l'IA, traduction selon le contexte culturel",
       "menupaan_feature_form_label": "Format envisagé",
       "menupaan_feature_form_value": "Web (PWA) et applications mobiles",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "Série PAAN",
       "others_status": "En développement",
       "others_name": "Série PAAN, deuxième produit et au-delà",
@@ -105,10 +100,8 @@
       "biz_2_main": " — développement et mise à disposition",
       "biz_2_sub": "Cartes multilingues, gestion des commandes, compréhension du client — le socle d'une exploitation restaurantière à la mesure d'une clientèle venue d'au-delà des frontières.",
       "biz_3_strong": "Recherche et développement à la croisée de la gastronomie et de l'IA",
-      "biz_3_main": "",
       "biz_3_sub": "Compréhension du contexte culturel des plats, traduction reliant l'image et le mot, compréhension automatique des habitudes alimentaires — recherche appliquée d'IA dans le domaine de la cuisine.",
       "biz_4_strong": "Accompagnement à l'introduction de l'informatique dans les restaurants",
-      "biz_4_main": "",
       "biz_4_sub": "À l'écoute des besoins du restaurant, nous recevons les demandes d'introduction informatique à petite échelle.",
       "founders_h": "Dirigeants",
       "founder_inui_role": "Directeur Représentant / Cofondateur",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "Né en juillet 1996. Diplômé du Keio Senior High School en 2015. Pendant ses études à la Faculté de droit de l'Université Keio, a réussi l'examen préliminaire du barreau en 2018, puis l'examen du barreau l'année suivante.\n\nLors de son inscription comme avocat (Barreau Daini Tokyo) en 2021, a rejoint le cabinet d'avocats ZeLo, se spécialisant dans le financement des start-ups, les affaires publiques et le droit corporate général, offrant un conseil juridique nourri à la fois de l'expérience publique et privée. Après avoir exercé au Bureau de l'innovation et de la politique environnementale du Ministère de l'Économie, du Commerce et de l'Industrie (Section innovation et développement de nouvelles activités), a rejoint le cabinet Fugen Law Office.\n\nEn juin 2026, cofonde PAAN Co., Ltd.",
       "info_capital": "Capital social",
       "info_capital_v": "1 000 000 JPY",
-      "info_fiscal": "Exercice fiscal",
-      "info_fiscal_v": "Du 1er juin au 31 mai de l'année suivante",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "Lire le message →"
     },

@@ -1,14 +1,20 @@
 /**
- * paan-anim.js (v30.33)
+ * paan-anim.js (v32)
  *
  * 軽量UXアニメーション (=3G環境でも快適に動くよう設計):
  *   1. <html class="no-js"> を即削除 → CSS制御開始
- *   2. hero画像読込完了で .loaded クラス → fade-in
- *   3. ヒーロー内テキスト staggered fade-in (= eyebrow → title → sub)
+ *   2. hero画像 fade-in は CSS @keyframes heroFadeIn (= v30.42以降JS不要)
+ *   3. hero内テキスト staggered fade-in は CSS @keyframes heroTextIn (= v31.2以降JS不要)
  *   4. IntersectionObserver でセクションのスクロール reveal
- *   5. prefers-reduced-motion 対応 (= アクセシビリティ)
+ *   5. ハンバーガー backdrop blur (= v32でクラス名修正、 ようやく動作)
+ *   6. ページ遷移フェード + drawer-instant-hide
+ *   7. ヒーローパララックス + haptic feedback
+ *   8. prefers-reduced-motion 対応 (= アクセシビリティ)
  *
- * サイズ目標: ~2KB gzipped、 描画コスト最小 (=transform/opacityのみ使用)
+ * v32 修正:
+ *   - initMenuBackdrop: .mp-mobile-menu → .mp-mobile-drawer (= 実際のクラス名)
+ *   - closeDrawerIfOpen: .mp-mobile-burger → .mp-burger (= 実際のクラス名)
+ *   - initHeroText / initHeroFadeIn 削除 (= CSS keyframe移行後の残骸)
  */
 (function() {
   'use strict';
@@ -21,29 +27,9 @@
 
   // ============================================
   // Step 3: ヒーロー内テキスト staggered fade-in
+  //   → v31.2 で CSS @keyframes に置き換え、 JS関数は不要に
+  //   → v32 でデッドコード削除
   // ============================================
-  function initHeroText() {
-    if (reduceMotion) return;
-
-    // index.html: .hero-title, .hero-sub
-    // sub-hero: .page-eyebrow, .page-title
-    const selectors = [
-      '.hero-content .hero-title',
-      '.hero-content .hero-sub',
-      '.sub-hero .page-eyebrow',
-      '.sub-hero .page-title',
-    ];
-
-    let index = 0;
-    selectors.forEach(sel => {
-      document.querySelectorAll(sel).forEach(el => {
-        el.classList.add('anim-hero-text');
-        // 順番に 0.15秒ずつ遅延
-        el.style.animationDelay = `${0.4 + index * 0.15}s`;
-        index++;
-      });
-    });
-  }
 
   // ============================================
   // Step 4: スクロール reveal (= IntersectionObserver)
@@ -122,40 +108,10 @@
   }
 
   // ============================================
-  // v30.38: hero画像 — 毎回必ずフェードイン演出
-  //   ロジック:
-  //   - CSS デフォルト opacity:0
-  //   - 画像 load 完了で revealed クラス付与 → 1.0秒フェードイン
-  //   - 「電気がつくようにバチっと表示」 を避けて 「作品が現れる」 所作に
-  //   - LCP より所作の美しさを優先 (= 高級ブランド戦略)
+  // v30.38: hero画像のフェードイン
+  //   → v30.42 で CSS @keyframes heroFadeIn に置き換え、 JS関数は不要に
+  //   → v32 でデッドコード削除
   // ============================================
-  function initHeroFadeIn() {
-    const heroImg = document.querySelector('.hero-bg-img, .sub-hero .hero-bg-img');
-    if (!heroImg) return;
-
-    // v30.39: HTML onload属性で既に revealed 済みならスキップ
-    if (heroImg.classList.contains('revealed')) return;
-
-    function reveal() {
-      heroImg.classList.add('revealed');
-    }
-
-    // 既にload完了済みなら次フレームでreveal (= 描画が落ち着いてから)
-    if (heroImg.complete && heroImg.naturalWidth > 0) {
-      requestAnimationFrame(() => requestAnimationFrame(reveal));
-      return;
-    }
-
-    heroImg.addEventListener('load', reveal, { once: true });
-    heroImg.addEventListener('error', reveal, { once: true });
-
-    // 安全策: 4秒経過しても load イベントが来なければ強制表示
-    setTimeout(() => {
-      if (!heroImg.classList.contains('revealed')) {
-        reveal();
-      }
-    }, 4000);
-  }
 
   // ============================================
   // #17: ヒーロー画像 zoom-out パララックス
@@ -192,16 +148,15 @@
   // #19: ハンバーガーメニューオープン検知 → backdrop blur
   // ============================================
   function initMenuBackdrop() {
+    // v32: 実際の class は .mp-mobile-drawer (旧コードの .mp-mobile-menu は誤り、 一度も動作してなかった)
     // モバイルメニューの開閉を MutationObserver で検知
     const observer = new MutationObserver(() => {
-      const mobileMenu = document.querySelector('.mp-mobile-menu');
-      if (!mobileMenu) return;
-      // 表示中かどうか判定 (= display や class名から)
+      const mobileDrawer = document.querySelector('.mp-mobile-drawer');
+      if (!mobileDrawer) return;
+      // 表示中かどうか判定 (= is-open クラスが付くと開いてる、 header-footer.js の実装に合わせる)
       const isOpen =
-        mobileMenu.classList.contains('open') ||
-        mobileMenu.classList.contains('is-open') ||
-        mobileMenu.getAttribute('aria-hidden') === 'false' ||
-        getComputedStyle(mobileMenu).display !== 'none';
+        mobileDrawer.classList.contains('is-open') ||
+        mobileDrawer.getAttribute('aria-hidden') === 'false';
       document.body.classList.toggle('menu-open', isOpen);
     });
 
@@ -242,7 +197,7 @@
         openDrawer.classList.remove('is-open');
         openDrawer.setAttribute('aria-hidden', 'true');
       }
-      const burgerBtn = document.querySelector('.mp-mobile-burger[aria-expanded="true"]');
+      const burgerBtn = document.querySelector('.mp-burger[aria-expanded="true"]');
       if (burgerBtn) {
         burgerBtn.setAttribute('aria-expanded', 'false');
       }

@@ -1,7 +1,6 @@
 {
   "meta": {
     "site_name": "PAAN Co., Ltd.",
-    "site_name_en": "PAAN Co., Ltd.",
     "tagline": "Den Weg zu noch unentdeckten Speisen öffnen.",
     "copyright": "© 2026 PAAN Co., Ltd. · Alle Rechte vorbehalten."
   },
@@ -12,7 +11,6 @@
     "company": "Unternehmen",
     "contact": "Kontakt",
     "language": "Sprache / Language",
-    "message": "Botschaft",
     "privacy": "Datenschutzerklärung",
     "terms": "Nutzungsbedingungen",
     "cookie": "Cookie-Richtlinie"
@@ -53,7 +51,6 @@
       "first_h": "Unsere erste Herausforderung: jenseits der Speisekarte.",
       "first_p1": "Die andere Seite der Speisekarte — sie ist eine Welt von Gerichten, die Worte allein nicht erreichen.",
       "first_p2": "Mit der Kraft von Technologie und künstlicher Intelligenz lösen wir das „Ich kann es nicht lesen\", „Ich verstehe es nicht\" — jenes Unbehagen, das die Welt durchzieht — auf. Keine bloße wörtliche Übersetzung, sondern eine „Übersetzung\", die in der Esskultur der Muttersprache des Nutzers verwurzelt ist. Kulturell kontextualisierte Erklärungen und veranschaulichende Bilder. Alles aus einem einzigen Foto der Speisekarte — direkt vor Ihren Augen.",
-      "first_cta": "",
       "first_p3": "Dies ist der <strong>erste Schritt</strong> unserer größeren Vision. Sprach- und Kulturgrenzen überschreitend öffnen wir den Weg zu noch unentdeckten Gerichten."
     },
     "brand": {
@@ -72,8 +69,6 @@
       "menupaan_feature_func_value": "KI-gestütztes Verständnis von Gerichten, Übersetzung im kulturellen Kontext",
       "menupaan_feature_form_label": "Vorgesehenes Format",
       "menupaan_feature_form_value": "Web (PWA) und mobile Anwendungen",
-      "menupaan_cta_open": "",
-      "menupaan_cta_story": "",
       "others_h": "PAAN-Reihe",
       "others_status": "In Entwicklung",
       "others_name": "PAAN-Reihe, zweites Produkt und folgende",
@@ -105,10 +100,8 @@
       "biz_2_main": " — Entwicklung und Bereitstellung",
       "biz_2_sub": "Mehrsprachige Speisekarten, Bestellverwaltung, Kundenverständnis — das Fundament für einen Restaurantbetrieb, der Gästen aus aller Welt gerecht wird.",
       "biz_3_strong": "Forschung und Entwicklung an der Schnittstelle von Esskultur und KI",
-      "biz_3_main": "",
       "biz_3_sub": "Verständnis des kulturellen Kontexts von Gerichten, Übersetzung zwischen Bild und Wort, maschinelles Verständnis von Essgewohnheiten — angewandte KI-Forschung im Bereich der Esskultur.",
       "biz_4_strong": "IT-Einführungsunterstützung für Restaurants",
-      "biz_4_main": "",
       "biz_4_sub": "Den Anliegen der Restaurants zugewandt, nehmen wir Beratungen zur Einführung kleinerer IT-Vorhaben entgegen.",
       "founders_h": "Vorstand",
       "founder_inui_role": "Vertretungsberechtigter Direktor / Mitgründer",
@@ -121,8 +114,6 @@
       "founder_yui_bio": "Geboren im Juli 1996. 2015 Abschluss an der Keio Senior High School. Während des Studiums an der Juristischen Fakultät der Keio-Universität 2018 die Vorprüfung zur Anwaltsprüfung und im Folgejahr die Anwaltsprüfung bestanden.\n\nMit der Registrierung als Rechtsanwalt (Daini Tokyo Anwaltsverband) im Jahr 2021 wechselte er zur Kanzlei ZeLo, spezialisiert auf Start-up-Finanzierung, Public Affairs und General Corporate, und beriet rechtlich auf der Grundlage öffentlicher wie privater Erfahrung. Nach Tätigkeit im Büro für Innovation und Umweltpolitik des Ministeriums für Wirtschaft, Handel und Industrie (Abteilung für Innovation und Erschließung neuer Geschäftsfelder) wechselte er zur Kanzlei Fugen Law Office.\n\nIm Juni 2026 Mitgründer der PAAN Co., Ltd.",
       "info_capital": "Stammkapital",
       "info_capital_v": "1.000.000 JPY",
-      "info_fiscal": "Geschäftsjahr",
-      "info_fiscal_v": "Vom 1. Juni bis zum 31. Mai des Folgejahres",
       "message_cta_eyebrow": "Message from CEO",
       "message_cta_label": "Botschaft lesen →"
     },
