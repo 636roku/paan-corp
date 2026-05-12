@@ -6,13 +6,14 @@
  *
  * バージョン管理: CACHE_VERSION を更新すれば旧キャッシュは自動破棄
  */
-const CACHE_VERSION = 'paan-v34-1';
+const CACHE_VERSION = 'paan-v34-2';
 const CACHE_NAME = `paan-cache-${CACHE_VERSION}`;
 
 // プリキャッシュ対象 (= 初回訪問時に取得しておきたいもの)
 const PRECACHE_URLS = [
   '/',
   '/style.css',
+  '/cookie-consent.css',
   '/i18n.js',
   '/header-footer.js',
   '/paan-anim.js',

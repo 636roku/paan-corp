@@ -12,6 +12,9 @@
 /style.css
   Cache-Control: public, max-age=86400, must-revalidate
 
+/cookie-consent.css
+  Cache-Control: public, max-age=86400, must-revalidate
+
 /header-footer.js
   Cache-Control: public, max-age=86400, must-revalidate
 

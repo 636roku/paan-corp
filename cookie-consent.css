@@ -1,0 +1,175 @@
+/* ============================================================
+ * cookie-consent.css (v34.2)
+ *
+ * 独立 CSS ファイルとして分離。 理由:
+ * - style.css 全体に問題があっても banner だけは確実に動く
+ * - SW キャッシュ・CDN キャッシュも別管理で安定
+ * - banner だけのスタイルを debug しやすい
+ *
+ * 重要: var(--paan-*) のフォールバック値を必ず指定
+ *   万一 style.css が読まれなかった場合でも banner は破綻しない
+ * ============================================================ */
+
+.paan-cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9000;
+  background: #FFFFFF;
+  border: 1px solid var(--paan-line, #E4E8F0);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(26, 32, 64, 0.12), 0 2px 8px rgba(26, 32, 64, 0.06);
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--paan-ink, #1A2040);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  pointer-events: none;
+  /* セーフティ: max-width で画面いっぱい時の見栄え */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.paan-cookie-banner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.paan-cookie-banner.is-hiding {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.paan-cookie-banner-inner {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.paan-cookie-banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.paan-cookie-banner-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--paan-primary, #1A2E5C);
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.paan-cookie-banner-body {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--paan-ink-mid, #5A6378);
+  margin: 0 0 4px;
+}
+
+.paan-cookie-banner-policy {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--paan-primary, #1A2E5C);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease-out;
+}
+
+.paan-cookie-banner-policy:hover {
+  opacity: 0.75;
+}
+
+.paan-cookie-banner-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.paan-cookie-banner-btn {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out, transform 0.15s ease-out;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.paan-cookie-banner-btn:hover {
+  transform: translateY(-1px);
+}
+
+.paan-cookie-banner-btn:active {
+  transform: translateY(0);
+}
+
+.paan-cookie-banner-btn-secondary {
+  background: transparent;
+  border-color: var(--paan-line, #E4E8F0);
+  color: var(--paan-ink-mid, #5A6378);
+}
+
+.paan-cookie-banner-btn-secondary:hover {
+  border-color: var(--paan-primary-soft, #8B92A8);
+  color: var(--paan-primary, #1A2E5C);
+  background: var(--paan-card, #FAFBFD);
+}
+
+.paan-cookie-banner-btn-primary {
+  background: var(--paan-primary, #1A2E5C);
+  color: #FFFFFF;
+  border-color: var(--paan-primary, #1A2E5C);
+}
+
+.paan-cookie-banner-btn-primary:hover {
+  background: var(--paan-primary-deep, #0E1C3D);
+  border-color: var(--paan-primary-deep, #0E1C3D);
+}
+
+/* モバイル: 縦積みレイアウト */
+@media (max-width: 720px) {
+  .paan-cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border-radius: 10px;
+  }
+  .paan-cookie-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 18px;
+    gap: 14px;
+  }
+  .paan-cookie-banner-actions {
+    width: 100%;
+    gap: 8px;
+  }
+  .paan-cookie-banner-btn {
+    flex: 1;
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+}
+
+/* reduced-motion 配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .paan-cookie-banner {
+    transition: opacity 0.15s linear;
+    transform: none !important;
+  }
+  .paan-cookie-banner-btn {
+    transition: background 0.15s linear, border-color 0.15s linear, color 0.15s linear;
+    transform: none !important;
+  }
+}
