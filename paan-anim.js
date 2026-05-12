@@ -80,12 +80,10 @@
 
     document.querySelectorAll('.info-section, .section, .message-article').forEach(el => {
       // v31.2: anim-reveal クラスは既にHTMLに付与済み (=チラつき防止)
-      // 初期viewport 内にいる要素は、 ページロード時に遅延 fade-in (= hero画像と並行で美しく登場)
+      // v31.3: 画像 fade完了 (=1.0s) 後に本文が順次登場、 上にあるほど早く、 下にあるほど遅く
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
-        // hero画像が0.5秒くらいでフェード始まるので、 本文は0.6-1.0秒で順次登場
-        // 要素の画面位置に応じて、 上にあるほど早く、 下にあるほど遅く
-        const delay = 0.6 + (rect.top / window.innerHeight) * 0.3;
+        const delay = 1.1 + (rect.top / window.innerHeight) * 0.4;
         el.style.transitionDelay = `${delay}s`;
         requestAnimationFrame(() => requestAnimationFrame(() => {
           el.classList.add('revealed');
@@ -101,7 +99,7 @@
       footer.classList.add('anim-reveal');
       const rect = footer.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
-        footer.style.transitionDelay = '1.0s';
+        footer.style.transitionDelay = '1.6s';
         requestAnimationFrame(() => requestAnimationFrame(() => {
           footer.classList.add('revealed');
         }));

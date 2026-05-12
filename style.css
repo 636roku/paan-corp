@@ -642,8 +642,9 @@ img { max-width:100%; height:auto; display:block; }
   flex-direction:column;
   justify-content:flex-end;
   text-align:center;
-  /* v30.33: 画像主要色 (#809397) でプレースホルダ、 画像DL完了で滑らかに切替 */
-  background-color:#5A6970;
+  /* v31.3: プレースホルダを白に (= 暗さチラつき防止)
+     画像は ::before のオーバーレイと一緒に fade-in で現れる */
+  background-color:#FFFFFF;
   overflow:hidden;
 }
 
@@ -708,7 +709,8 @@ img { max-width:100%; height:auto; display:block; }
   }
 }
 
-/* v30: 下からのダークグラデーションオーバーレイ (= テキスト可読性確保、 写真の上半分はクリア) */
+/* v31.3: 下からのダークグラデーションオーバーレイ
+   画像と同じタイミングで fade-in、 暗さチラつき防止 */
 .hero::before {
   content:'';
   position:absolute;
@@ -721,6 +723,9 @@ img { max-width:100%; height:auto; display:block; }
     rgba(14,28,61,0.78) 100%
   );
   z-index:1;
+  /* hero画像と同じ keyframe、 同じタイミングで現れる */
+  opacity:0;
+  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
 }
 
 /* v30.36: .hero > * は hero-content と ::before のみに適用 (= picture を除外)
@@ -788,8 +793,8 @@ img { max-width:100%; height:auto; display:block; }
   flex-direction:column;
   justify-content:flex-end;
   text-align:center;
-  /* v30.33: 画像主要色プレースホルダ (= サブクラスで上書き) */
-  background-color:#5A6970;
+  /* v31.3: プレースホルダを白に (= 暗さチラつき防止) */
+  background-color:#FFFFFF;
   overflow:hidden;
 }
 
@@ -853,12 +858,12 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 /* v30.33: sub-hero の背景画像は picture/img が担当 (= LCP最適化、 fade-in対応) */
-/* 各ページの背景色プレースホルダ (= 画像の主要色、 切替時のチラつき緩和) */
-.sub-hero-mission { background-color:#56697A; }
-.sub-hero-brand   { background-color:#52606C; }
-.sub-hero-message { background-color:#52606C; }
-.sub-hero-company { background-color:#3A6090; }
-.sub-hero-contact { background-color:#56697A; }
+/* v31.3: sub-hero の背景色プレースホルダも白に (= 暗さチラつき防止) */
+.sub-hero-mission,
+.sub-hero-brand,
+.sub-hero-message,
+.sub-hero-company,
+.sub-hero-contact { background-color:#FFFFFF; }
 
 /* v30.2: グラデーションを底からより濃く (= タイトル可読性確保) */
 .sub-hero::before {
@@ -873,6 +878,9 @@ img { max-width:100%; height:auto; display:block; }
     rgba(14,28,61,0.85) 100%
   );
   z-index:1;
+  /* v31.3: 画像と同期 fade-in */
+  opacity:0;
+  animation: heroFadeIn 1.0s ease-out 0.05s forwards;
 }
 
 .sub-hero > * { position:relative; z-index:2; }
@@ -2093,11 +2101,11 @@ img { max-width:100%; height:auto; display:block; }
   animation: heroTextIn 0.9s ease-out forwards;
 }
 
-/* staggered delays */
-.hero-content .hero-title         { animation-delay: 0.4s; }
-.hero-content .hero-sub           { animation-delay: 0.55s; }
-.sub-hero .page-eyebrow           { animation-delay: 0.4s; }
-.sub-hero .page-title             { animation-delay: 0.55s; }
+/* staggered delays — 画像が現れた後 (= 1.0s完了) にテキストが順次登場 */
+.hero-content .hero-title         { animation-delay: 0.8s; }
+.hero-content .hero-sub           { animation-delay: 0.95s; }
+.sub-hero .page-eyebrow           { animation-delay: 0.8s; }
+.sub-hero .page-title             { animation-delay: 0.95s; }
 
 /* 旧 .anim-hero-text クラス (= 後方互換) */
 .anim-hero-text {
