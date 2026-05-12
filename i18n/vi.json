@@ -146,5 +146,13 @@
       "signature_name": "Rokusaburo Inui",
       "back_to_company": "← Quay lại Về công ty"
     }
+  },
+  "cookie_banner": {
+    "title": "Về việc sử dụng cookie",
+    "body": "Chúng tôi sử dụng cookie để cải thiện chất lượng dịch vụ. Bạn có thể chỉ chấp nhận cookie thiết yếu, hoặc cho phép tất cả cookie.",
+    "btn_essential": "Chỉ thiết yếu",
+    "btn_all": "Chấp nhận tất cả",
+    "learn_more": "Chính sách cookie",
+    "reset_link": "Thay đổi tùy chọn cookie"
   }
 }

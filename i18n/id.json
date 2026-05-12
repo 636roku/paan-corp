@@ -146,5 +146,13 @@
       "signature_name": "Rokusaburo Inui",
       "back_to_company": "← Kembali ke Tentang Perusahaan"
     }
+  },
+  "cookie_banner": {
+    "title": "Tentang penggunaan cookie",
+    "body": "Kami menggunakan cookie untuk meningkatkan kualitas layanan. Anda dapat menerima hanya cookie esensial, atau mengizinkan semua cookie.",
+    "btn_essential": "Hanya esensial",
+    "btn_all": "Terima semua",
+    "learn_more": "Kebijakan cookie",
+    "reset_link": "Ubah preferensi cookie"
   }
 }

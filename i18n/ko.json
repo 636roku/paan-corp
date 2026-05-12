@@ -146,5 +146,13 @@
       "signature_name": "이누이 로쿠사부로",
       "back_to_company": "← 회사 개요로 돌아가기"
     }
+  },
+  "cookie_banner": {
+    "title": "쿠키 사용에 관하여",
+    "body": "본 사이트는 서비스 품질 향상을 위해 쿠키를 사용할 수 있습니다. 필수 쿠키만 사용하시거나, 모든 쿠키를 허용하실 수 있습니다.",
+    "btn_essential": "필수만",
+    "btn_all": "모두 허용",
+    "learn_more": "쿠키 정책",
+    "reset_link": "쿠키 설정 변경"
   }
 }

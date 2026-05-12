@@ -146,5 +146,13 @@
       "signature_name": "Rokusaburo Inui",
       "back_to_company": "← Back to Company"
     }
+  },
+  "cookie_banner": {
+    "title": "About our use of cookies",
+    "body": "We use cookies to improve the quality of our service. You may choose to accept only essential cookies, or to allow all cookies.",
+    "btn_essential": "Essential only",
+    "btn_all": "Accept all",
+    "learn_more": "Cookie policy",
+    "reset_link": "Change your cookie preferences"
   }
 }

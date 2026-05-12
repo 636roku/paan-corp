@@ -146,5 +146,13 @@
       "signature_name": "乾 禄三郎",
       "back_to_company": "← 返回公司概要"
     }
+  },
+  "cookie_banner": {
+    "title": "关于 Cookie 的使用",
+    "body": "本网站可能会使用 Cookie 以提升服务质量。 您可以选择仅接受必要 Cookie, 或允许全部 Cookie。",
+    "btn_essential": "仅必要",
+    "btn_all": "全部接受",
+    "learn_more": "Cookie 政策",
+    "reset_link": "更改 Cookie 设置"
   }
 }

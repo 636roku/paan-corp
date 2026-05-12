@@ -1,7 +1,7 @@
 # ============================================================
-# paan.co.jp Netlify _redirects (v32)
+# paan.co.jp Netlify _redirects (v33)
 #
-# v32 変更:
+# v33 変更:
 #   - :lang プレースホルダ → 12言語明示
 #   - 旧: /:lang/* は /xyz/ のような不正パスも 200 で返してた (= SEO duplicate content リスク)
 #   - 新: 12言語のみマッチ、 それ以外は Netlify が 404 を返す

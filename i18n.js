@@ -103,13 +103,33 @@
     return val;
   }
 
+  /** v33: 翻訳文字列の sanitizer
+   *  許可タグ: <br>, <br/>, <wbr>, <wbr/> のみ。 他の HTMLタグはエンティティエスケープ
+   *  狙い: 将来クラウドソース翻訳・CMS連携時の XSS 防止
+   *  既存挙動互換: 改行候補制御 (<br>, <wbr>) は維持
+   */
+  function sanitizeI18n(str) {
+    if (typeof str !== 'string') return str;
+    // まず全てのタグをエスケープ
+    const escaped = str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+    // <br>, <br/>, <br /> と <wbr>, <wbr/>, <wbr /> のみ復元
+    return escaped
+      .replace(/&lt;(br|wbr)\s*\/?&gt;/gi, '<$1>');
+  }
+
   /** data-i18n 属性付き要素を一括翻訳 */
   function applyToDOM() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const translated = t(key);
       if (translated !== key) {
-        el.innerHTML = translated;
+        // v33: sanitize して <br>/<wbr> のみ許可、 他はエスケープ
+        el.innerHTML = sanitizeI18n(translated);
       }
     });
     // data-i18n-attr (= 属性翻訳: 例 data-i18n-attr="title:tooltip.help")
@@ -119,6 +139,7 @@
         const [attr, key] = pair.split(':').map(s => s.trim());
         if (attr && key) {
           const translated = t(key);
+          // 属性は textContent 相当なので、 setAttribute だけで安全 (= タグ展開されない)
           if (translated !== key) el.setAttribute(attr, translated);
         }
       });

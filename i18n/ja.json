@@ -146,5 +146,13 @@
       "signature_name": "乾 禄三郎",
       "back_to_company": "← 会社概要へ戻る"
     }
+  },
+  "cookie_banner": {
+    "title": "Cookie の使用について",
+    "body": "本サイトでは、 サービス品質の改善のため Cookie を利用することがあります。 必須 Cookie のみご使用の場合と、 全 Cookie を許可される場合をお選びいただけます。",
+    "btn_essential": "必須のみ",
+    "btn_all": "全て許可",
+    "learn_more": "クッキーポリシー",
+    "reset_link": "Cookie の設定を変更する"
   }
 }

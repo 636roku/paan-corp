@@ -146,5 +146,13 @@
       "signature_name": "乾 祿三郎",
       "back_to_company": "← 返回公司概要"
     }
+  },
+  "cookie_banner": {
+    "title": "關於 Cookie 的使用",
+    "body": "本網站可能會使用 Cookie 以提升服務品質。 您可以選擇僅接受必要 Cookie, 或允許全部 Cookie。",
+    "btn_essential": "僅必要",
+    "btn_all": "全部接受",
+    "learn_more": "Cookie 政策",
+    "reset_link": "變更 Cookie 設定"
   }
 }

@@ -6,7 +6,7 @@
  *
  * バージョン管理: CACHE_VERSION を更新すれば旧キャッシュは自動破棄
  */
-const CACHE_VERSION = 'paan-v32';
+const CACHE_VERSION = 'paan-v33';
 const CACHE_NAME = `paan-cache-${CACHE_VERSION}`;
 
 // プリキャッシュ対象 (= 初回訪問時に取得しておきたいもの)
@@ -16,6 +16,7 @@ const PRECACHE_URLS = [
   '/i18n.js',
   '/header-footer.js',
   '/paan-anim.js',
+  '/cookie-consent.js',
   '/i18n/ja.json',
   // hero画像はpreloadで先読みされるので SW プリキャッシュからは外す (= 帯域競合回避)
 ];
