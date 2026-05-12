@@ -79,8 +79,8 @@
     });
 
     document.querySelectorAll('.info-section, .section, .message-article').forEach(el => {
-      el.classList.add('anim-reveal');
-      // v30.40: 初期viewport 内にいる要素は、 ページロード時に遅延 fade-in (= hero画像と並行で美しく登場)
+      // v31.2: anim-reveal クラスは既にHTMLに付与済み (=チラつき防止)
+      // 初期viewport 内にいる要素は、 ページロード時に遅延 fade-in (= hero画像と並行で美しく登場)
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         // hero画像が0.5秒くらいでフェード始まるので、 本文は0.6-1.0秒で順次登場
@@ -115,8 +115,7 @@
   // 起動
   // ============================================
   function init() {
-    // v30.42: initHeroFadeIn は削除 (= CSS @keyframes で確実に毎回 fade-in)
-    initHeroText();
+    // v31.2: initHeroText は削除 (= CSS @keyframes で確実に毎回 fade-in)
     initScrollReveal();
     initPageTransitionFade();
     initHeroParallax();

@@ -2082,7 +2082,24 @@ img { max-width:100%; height:auto; display:block; }
   }
 }
 
-/* ----- ヒーロー内テキスト staggered fade-in ----- */
+/* ----- ヒーロー内テキスト staggered fade-in (= v31.2 CSS only)
+   JS依存をなくして HTMLパース時点でアニメ確実発動、 戻り時の一瞬チラつき解消 ----- */
+.hero-content .hero-title,
+.hero-content .hero-sub,
+.sub-hero .page-eyebrow,
+.sub-hero .page-title {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: heroTextIn 0.9s ease-out forwards;
+}
+
+/* staggered delays */
+.hero-content .hero-title         { animation-delay: 0.4s; }
+.hero-content .hero-sub           { animation-delay: 0.55s; }
+.sub-hero .page-eyebrow           { animation-delay: 0.4s; }
+.sub-hero .page-title             { animation-delay: 0.55s; }
+
+/* 旧 .anim-hero-text クラス (= 後方互換) */
 .anim-hero-text {
   opacity:0;
   transform:translateY(8px);
