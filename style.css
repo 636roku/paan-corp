@@ -1714,11 +1714,15 @@ img { max-width:100%; height:auto; display:block; }
   letter-spacing:0.02em;
   /* v30: 自然な禁則処理に戻す (= 句点ごとの強制改行を解消)
      word-break:keep-all は長文bioでは句点を境界扱いし、 各文ごとに改行されて読みにくい
-     overflow-wrap:break-word のみで自然な折り返し、 text-wrap:pretty で見栄え最適化 */
+     overflow-wrap:break-word のみで自然な折り返し */
   word-break:normal;
   overflow-wrap:break-word;
   line-break:auto;
-  text-wrap:pretty;
+  /* v35.1: text-wrap:pretty を撤去
+     pretty は最終行のバランス取りで右端に余白を残す挙動があり、
+     ろくちゃん要望の「幅いっぱい綺麗に改行」 が満たせなかった
+     default (auto) で全幅を使いきる折り返しに戻す */
+  text-wrap:auto;
   /* v30.4: i18n辞書の \n\n を段落区切りとして表示 */
   white-space:pre-line;
 }
