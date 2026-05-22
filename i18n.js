@@ -163,11 +163,11 @@
     // og:image を言語別に切替
     const ogImageEl = document.querySelector('meta[property="og:image"]');
     if (ogImageEl) {
-      ogImageEl.setAttribute('content', `https://paan.co.jp/og/og-${state.locale}.png`);
+      ogImageEl.setAttribute('content', `https://www.paan.co.jp/og/og-${state.locale}.png`);
     }
     const twImageEl = document.querySelector('meta[name="twitter:image"]');
     if (twImageEl) {
-      twImageEl.setAttribute('content', `https://paan.co.jp/og/og-${state.locale}.png`);
+      twImageEl.setAttribute('content', `https://www.paan.co.jp/og/og-${state.locale}.png`);
     }
     // og:locale 同期 (= zh-CN → zh_CN 等の正規化)
     const ogLocaleMap = {

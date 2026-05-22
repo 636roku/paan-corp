@@ -38,4 +38,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://paan.co.jp/sitemap.xml
+Sitemap: https://www.paan.co.jp/sitemap.xml
