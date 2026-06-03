@@ -1426,6 +1426,19 @@ img { max-width:100%; height:auto; display:block; }
 
 .status-dot-soon { background:var(--paan-line); border:1px solid var(--paan-ink-soft); }
 
+/* v38.1: プロダクトA「テスト中」 を赤で強調 (= 進行中の活気) */
+.brand-card-status--testing { color:#9B1C31; }
+.status-dot-testing {
+  background:#9B1C31;
+  box-shadow:0 0 0 0 rgba(155,28,49,0.55);
+  animation:pulse-testing 2.4s infinite;
+}
+@keyframes pulse-testing {
+  0%   { box-shadow:0 0 0 0   rgba(155,28,49,0.55); }
+  70%  { box-shadow:0 0 0 9px rgba(155,28,49,0); }
+  100% { box-shadow:0 0 0 0   rgba(155,28,49,0); }
+}
+
 .brand-card-name {
   font-family:'Marcellus', serif;
   font-size:28px;
