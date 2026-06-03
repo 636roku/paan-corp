@@ -1073,6 +1073,8 @@ img { max-width:100%; height:auto; display:block; }
   color:var(--paan-ink);
   letter-spacing:0.02em;
   line-height:1.85;
+  /* v37: i18n辞書の \n を改行として表示 (= 4/18 ストーリーの2行表示) */
+  white-space:pre-line;
 }
 
 .news-body a {
@@ -1150,6 +1152,33 @@ img { max-width:100%; height:auto; display:block; }
 }
 
 .section-body p:last-child { margin-bottom:0; }
+
+/* v37: PAAN の由来 3項目リスト (= 汎/Pan/擬音) */
+.name-origin-list {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+.name-origin-list li {
+  font-family:'Noto Serif JP', serif;
+  font-size:15px;
+  line-height:1.9;
+  letter-spacing:0.04em;
+  color:var(--paan-ink);
+  padding:14px 0 14px 28px;
+  position:relative;
+  border-bottom:1px solid var(--paan-line);
+}
+.name-origin-list li:last-child { border-bottom:none; }
+.name-origin-list li::before {
+  content:'◆';
+  position:absolute;
+  left:0;
+  top:14px;
+  color:var(--paan-gold, #C9A24B);
+  font-size:11px;
+  line-height:1.9;
+}
 
 /* page-title 内の strong (= 強調) */
 .page-title strong {

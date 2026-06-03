@@ -7,7 +7,7 @@
   "nav": {
     "top": "Inicio",
     "mission": "Misión",
-    "brand": "Marcas",
+    "brand": "Productos",
     "company": "Empresa",
     "contact": "Contacto",
     "language": "Idioma / Language",
@@ -24,10 +24,10 @@
       "news_h": "Noticias",
       "news_tag_release": "Constitución",
       "news_tag_info": "Aviso",
-      "news_2026_06_03_release": "Se constituirá PAAN Co., Ltd.",
+      "news_2026_06_03_release": "Se ha constituido PAAN Co., Ltd.",
       "news_2026_05_10_info": "Nuestra web corporativa ya está en línea.",
       "news_tag_story": "Historia",
-      "news_2026_04_18_story": "En el Hokuriku Shinkansen de vuelta, tras una excursión de un día a Iwase, prefectura de Toyama. Los cofundadores decidieron fundar PAAN Co., Ltd."
+      "news_2026_04_18_story": "En el viaje de regreso a bordo del Shinkansen de Hokuriku, tras una excursión de un día a Iwase, Toyama.\nLos cofundadores Rokusaburo Inui y Koki Yui decidieron constituir PAAN Co., Ltd."
     },
     "mission": {
       "title": "PAAN",
@@ -51,7 +51,14 @@
       "first_h": "Nuestro primer reto: más allá del menú.",
       "first_p1": "El otro lado del menú — es un mundo de platos que las palabras por sí solas no alcanzan.",
       "first_p2": "Disolvemos la inquietud del \"no puedo leerlo\", \"no lo comprendo\" — esa zozobra que recorre el mundo — con la fuerza de la tecnología y la inteligencia artificial. No una mera traducción literal, sino una \"traducción\" arraigada en la cultura gastronómica de la lengua materna del usuario. Explicaciones contextualizadas culturalmente, e imágenes de referencia. Todo con solo una fotografía del menú — ahí, ante tus ojos.",
-      "first_p3": "Este es el <strong>primer paso</strong> de nuestra visión más amplia. Cruzando los muros del idioma y la cultura, abrimos el camino hacia los platos aún por descubrir."
+      "first_p3": "Este es el <strong>primer paso</strong> de nuestra visión más amplia. Cruzando los muros del idioma y la cultura, abrimos el camino hacia los platos aún por descubrir.",
+      "name_eyebrow": "The Name",
+      "name_h": "El origen del nombre PAAN",
+      "name_p1": "La comida es la más universal de las experiencias: une a las personas más allá de la nacionalidad, el idioma y la cultura. Queremos cumplir el papel de derribar, con un ligero \"paan\", los muros que se alzan en su umbral.",
+      "name_origin1": "El \"汎 (han)\" oriental: extenderse por todas partes, llegar a todo lugar",
+      "name_origin2": "El \"Pan\" occidental: que todo lo abarca",
+      "name_origin3": "Y la onomatopeya fugaz de un muro que cae con ligereza",
+      "name_p2": "Estos son los anhelos que hemos depositado en el nombre PAAN."
     },
     "brand": {
       "title": "PAAN",
@@ -59,7 +66,7 @@
       "eyebrow": "Our Brands",
       "page_title": "La serie PAAN",
       "first_h": "Producto",
-      "menupaan_status": "En desarrollo",
+      "menupaan_status": "En pruebas",
       "menupaan_name": "Producto A",
       "menupaan_desc": "Pedir con confianza en cualquier restaurante de tu viaje. Una app para el Consumer.",
       "menupaan_feature_form_label": "Formato previsto",

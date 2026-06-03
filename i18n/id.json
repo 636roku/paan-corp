@@ -7,7 +7,7 @@
   "nav": {
     "top": "Beranda",
     "mission": "Misi",
-    "brand": "Merek",
+    "brand": "Produk",
     "company": "Perusahaan",
     "contact": "Kontak",
     "language": "Bahasa / Language",
@@ -24,10 +24,10 @@
       "news_h": "Pengumuman",
       "news_tag_release": "Pendirian",
       "news_tag_info": "Pengumuman",
-      "news_2026_06_03_release": "PAAN Co., Ltd. akan didirikan.",
+      "news_2026_06_03_release": "PAAN Co., Ltd. telah didirikan.",
       "news_2026_05_10_info": "Situs perusahaan kami telah resmi diluncurkan.",
       "news_tag_story": "Cerita",
-      "news_2026_04_18_story": "Di kereta Hokuriku Shinkansen dalam perjalanan pulang, setelah perjalanan sehari ke Iwase, prefektur Toyama. Para pendiri bersama memutuskan untuk mendirikan PAAN Co., Ltd."
+      "news_2026_04_18_story": "Dalam perjalanan pulang dengan Shinkansen Hokuriku, seusai perjalanan sehari ke Iwase, Toyama.\nPara pendiri Rokusaburo Inui dan Koki Yui memutuskan untuk mendirikan PAAN Co., Ltd."
     },
     "mission": {
       "title": "PAAN",
@@ -51,7 +51,14 @@
       "first_h": "Tantangan pertama kami: melampaui menu.",
       "first_p1": "Sisi lain dari menu ── itu adalah dunia hidangan yang tak terjangkau oleh kata-kata saja.",
       "first_p2": "Kami melarutkan kegamangan \"tidak bisa membacanya\", \"tidak memahaminya\" — kegelisahan yang mengalir di seluruh dunia — dengan kekuatan teknologi dan kecerdasan buatan. Bukan sekadar terjemahan harfiah, melainkan \"terjemahan\" yang berakar pada budaya kuliner bahasa ibu pengguna. Penjelasan dengan konteks budaya, dan gambar referensi. Semuanya hanya dari satu foto menu — tepat di hadapan Anda.",
-      "first_p3": "Ini adalah <strong>langkah pertama</strong> dari visi besar kami. Melampaui tembok bahasa dan budaya, kami membuka jalan menuju hidangan yang belum terlihat."
+      "first_p3": "Ini adalah <strong>langkah pertama</strong> dari visi besar kami. Melampaui tembok bahasa dan budaya, kami membuka jalan menuju hidangan yang belum terlihat.",
+      "name_eyebrow": "The Name",
+      "name_h": "Asal usul nama PAAN",
+      "name_p1": "Makanan adalah pengalaman yang paling universal — menghubungkan manusia melampaui kebangsaan, bahasa, dan budaya. Kami ingin berperan menyingkirkan, dengan satu \"paan\" yang ringan, tembok yang berdiri di ambang pintunya.",
+      "name_origin1": "\"汎 (han)\" dari Timur — menyebar luas, menjangkau ke mana-mana",
+      "name_origin2": "\"Pan\" dari Barat — merangkul segalanya",
+      "name_origin3": "Dan onomatope sekejap dari tembok yang runtuh dengan ringan",
+      "name_p2": "Itulah harapan yang kami sematkan dalam nama PAAN."
     },
     "brand": {
       "title": "PAAN",
@@ -59,7 +66,7 @@
       "eyebrow": "Our Brands",
       "page_title": "Seri PAAN",
       "first_h": "Produk",
-      "menupaan_status": "Sedang dikembangkan",
+      "menupaan_status": "Dalam pengujian",
       "menupaan_name": "Produk A",
       "menupaan_desc": "Memesan dengan percaya diri di restoran mana pun dalam perjalanan. Aplikasi untuk Consumer.",
       "menupaan_feature_form_label": "Format yang direncanakan",

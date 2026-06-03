@@ -7,7 +7,7 @@
   "nav": {
     "top": "Home",
     "mission": "Mission",
-    "brand": "Brands",
+    "brand": "Products",
     "company": "Company",
     "contact": "Contact",
     "language": "Language",
@@ -24,10 +24,10 @@
       "news_h": "News",
       "news_tag_release": "Founding",
       "news_tag_info": "News",
-      "news_2026_06_03_release": "PAAN Co., Ltd. will be founded.",
+      "news_2026_06_03_release": "PAAN Co., Ltd. was established.",
       "news_2026_05_10_info": "Our corporate website is now live.",
       "news_tag_story": "Story",
-      "news_2026_04_18_story": "On the Hokuriku Shinkansen home, returning from a day trip to Iwase, Toyama. The co-founders resolved to establish PAAN Co., Ltd."
+      "news_2026_04_18_story": "On the return journey aboard the Hokuriku Shinkansen, after a day trip to Iwase, Toyama.\nRokusaburo Inui and Koki Yui, the co-founders, resolved to establish PAAN Co., Ltd."
     },
     "mission": {
       "title": "PAAN",
@@ -51,7 +51,14 @@
       "first_h": "Our first challenge: beyond the menu.",
       "first_p1": "The other side of the menu — it is a world of dishes that words alone cannot reach.",
       "first_p2": "We dissolve the \"I cannot read it\", \"I do not understand it\" — the unease that flows through the world — with the power of technology and AI. Not a mere literal translation, but a \"translation\" rooted in the food culture of the user's mother tongue. Cultural context with each explanation, and illustrative images. All from a single photo of the menu — right there, before you.",
-      "first_p3": "This is the <strong>first step</strong> of our larger vision. Crossing the walls of language and culture, we open the road to dishes yet to be seen."
+      "first_p3": "This is the <strong>first step</strong> of our larger vision. Crossing the walls of language and culture, we open the road to dishes yet to be seen.",
+      "name_eyebrow": "The Name",
+      "name_h": "The Origin of the Name PAAN",
+      "name_p1": "Food is the most universal of experiences — connecting people across nationality, language, and culture. We want to play the part of sweeping away, with a light \"paan,\" the walls that stand at its threshold.",
+      "name_origin1": "The Eastern \"汎 (han)\" — to spread far and wide, to reach everywhere",
+      "name_origin2": "The Western \"Pan\" — encompassing all",
+      "name_origin3": "And the fleeting onomatopoeia of a wall coming lightly down",
+      "name_p2": "These are the thoughts we have woven into the name PAAN."
     },
     "brand": {
       "title": "PAAN",
@@ -59,7 +66,7 @@
       "eyebrow": "Our Brands",
       "page_title": "The PAAN Series",
       "first_h": "Product",
-      "menupaan_status": "In development",
+      "menupaan_status": "In testing",
       "menupaan_name": "Product A",
       "menupaan_desc": "Order with confidence at any restaurant on your travels. A Consumer-facing app.",
       "menupaan_feature_form_label": "Format envisaged",

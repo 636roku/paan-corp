@@ -7,7 +7,7 @@
   "nav": {
     "top": "Trang chủ",
     "mission": "Sứ mệnh",
-    "brand": "Thương hiệu",
+    "brand": "Sản phẩm",
     "company": "Công ty",
     "contact": "Liên hệ",
     "language": "Ngôn ngữ / Language",
@@ -24,10 +24,10 @@
       "news_h": "Thông báo",
       "news_tag_release": "Thành lập",
       "news_tag_info": "Thông báo",
-      "news_2026_06_03_release": "PAAN Co., Ltd. dự kiến được thành lập.",
+      "news_2026_06_03_release": "Công ty PAAN Co., Ltd. đã được thành lập.",
       "news_2026_05_10_info": "Trang web doanh nghiệp của chúng tôi đã chính thức ra mắt.",
       "news_tag_story": "Câu chuyện",
-      "news_2026_04_18_story": "Trên chuyến tàu Hokuriku Shinkansen trở về, sau chuyến đi trong ngày đến Iwase, tỉnh Toyama. Các đồng sáng lập đã quyết định thành lập PAAN Co., Ltd."
+      "news_2026_04_18_story": "Trên chuyến tàu Shinkansen Hokuriku trở về, sau chuyến đi trong ngày đến Iwase, Toyama.\nHai nhà đồng sáng lập Rokusaburo Inui và Koki Yui đã quyết định thành lập Công ty PAAN Co., Ltd."
     },
     "mission": {
       "title": "PAAN",
@@ -51,7 +51,14 @@
       "first_h": "Thử thách đầu tiên: phía bên kia của thực đơn.",
       "first_p1": "Phía bên kia của thực đơn ── đó là một thế giới món ăn mà lời nói không thể chạm tới.",
       "first_p2": "Chúng tôi xóa tan nỗi \"không đọc được\", \"không hiểu\" — sự mơ hồ lan tỏa khắp thế giới — bằng sức mạnh của công nghệ và trí tuệ nhân tạo. Không chỉ là dịch nghĩa đơn thuần, mà là một \"bản dịch\" trở về với văn hóa ẩm thực của tiếng mẹ đẻ người dùng. Lời giải thích theo bối cảnh văn hóa, cùng hình ảnh minh họa. Tất cả chỉ từ một bức ảnh chụp thực đơn — hiện ngay trước mắt bạn.",
-      "first_p3": "Đây là <strong>bước đầu tiên</strong> của tầm nhìn lớn của chúng tôi. Vượt qua những bức tường ngôn ngữ và văn hóa, chúng tôi mở lối đến những món ăn chưa từng biết."
+      "first_p3": "Đây là <strong>bước đầu tiên</strong> của tầm nhìn lớn của chúng tôi. Vượt qua những bức tường ngôn ngữ và văn hóa, chúng tôi mở lối đến những món ăn chưa từng biết.",
+      "name_eyebrow": "The Name",
+      "name_h": "Nguồn gốc tên gọi PAAN",
+      "name_p1": "Ẩm thực là trải nghiệm phổ quát nhất — kết nối con người vượt qua quốc tịch, ngôn ngữ và văn hóa. Chúng tôi muốn đóng vai trò xoá đi, bằng một tiếng \"páan\" nhẹ nhàng, những bức tường chắn ngang ngưỡng cửa ấy.",
+      "name_origin1": "Chữ \"Phiếm (汎)\" phương Đông — lan toả khắp nơi, vươn tới mọi chốn",
+      "name_origin2": "Tiền tố \"Pan\" phương Tây — bao trùm tất cả",
+      "name_origin3": "Và tiếng tượng thanh thoáng qua của bức tường nhẹ nhàng đổ xuống",
+      "name_p2": "Đó là những tâm niệm chúng tôi gửi gắm vào cái tên PAAN."
     },
     "brand": {
       "title": "PAAN",
@@ -59,7 +66,7 @@
       "eyebrow": "Our Brands",
       "page_title": "Series PAAN",
       "first_h": "Sản phẩm",
-      "menupaan_status": "Đang phát triển",
+      "menupaan_status": "Đang thử nghiệm",
       "menupaan_name": "Sản phẩm A",
       "menupaan_desc": "Tự tin gọi món tại bất kỳ nhà hàng nào trên hành trình. Ứng dụng dành cho Consumer.",
       "menupaan_feature_form_label": "Hình thức dự kiến",

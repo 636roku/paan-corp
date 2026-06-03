@@ -7,7 +7,7 @@
   "nav": {
     "top": "首頁",
     "mission": "使命與理念",
-    "brand": "品牌",
+    "brand": "產品",
     "company": "公司簡介",
     "contact": "聯絡我們",
     "language": "語言 / Language",
@@ -24,10 +24,10 @@
       "news_h": "公告",
       "news_tag_release": "成立",
       "news_tag_info": "公告",
-      "news_2026_06_03_release": "PAAN 株式會社即將成立。",
+      "news_2026_06_03_release": "株式會社PAAN 已正式成立。",
       "news_2026_05_10_info": "企業官方網站正式公開。",
       "news_tag_story": "故事",
-      "news_2026_04_18_story": "從富山縣岩瀨町一日遊歸途的北陸新幹線上,共同創辦人決意成立 PAAN 株式會社。"
+      "news_2026_04_18_story": "在北陸新幹線的歸途、 結束富山縣岩瀨町的一日遊之時。\n共同創辦人乾 祿三郎與由井 恒輝、 決意創立株式會社PAAN。"
     },
     "mission": {
       "title": "PAAN",
@@ -51,7 +51,14 @@
       "first_h": "首戰之地,在菜單的彼岸。",
       "first_p1": "菜單的另一側 ── 那是言語無法抵達的料理的世界。",
       "first_p2": "我們以技術與人工智慧的力量,化解蔓延世界的「看不懂」「不明白」的茫然。 不只是字面直譯,而是回歸使用者母語飲食文化的「翻譯」。 附以基於文化背景的說明、參考圖片。 只需拍下菜單,料理便呈現眼前。",
-      "first_p3": "這只是我們宏大構想的<strong>第一步</strong>。 跨越語言與文化的壁壘,開啟通往未知美味之路。"
+      "first_p3": "這只是我們宏大構想的<strong>第一步</strong>。 跨越語言與文化的壁壘,開啟通往未知美味之路。",
+      "name_eyebrow": "The Name",
+      "name_h": "PAAN 名稱的由來",
+      "name_p1": "美食是超越國籍、 語言與文化、 連接人與人的最普遍的體驗。 我們希望以一聲輕快的「啪」、 掃除擋在其入口的壁壘。",
+      "name_origin1": "東方的「汎 (fàn)」 — 普遍、 廣為傳布",
+      "name_origin2": "西方的「Pan」 — 包容一切",
+      "name_origin3": "以及、 輕快掃除語言之壁的、 一瞬擬聲",
+      "name_p2": "我們將這樣的心意、 寄託於 PAAN 之名。"
     },
     "brand": {
       "title": "PAAN",
@@ -59,7 +66,7 @@
       "eyebrow": "Our Brands",
       "page_title": "PAAN 系列",
       "first_h": "產品",
-      "menupaan_status": "開發中",
+      "menupaan_status": "測試中",
       "menupaan_name": "產品A",
       "menupaan_desc": "在旅途中的餐廳、 充滿自信地點餐。 面向 Consumer 的應用。",
       "menupaan_feature_form_label": "預期提供形態",
