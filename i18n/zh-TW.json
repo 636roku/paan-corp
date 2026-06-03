@@ -38,7 +38,7 @@
       "question_h": "餐廳已跨越國界。然而,料理呢?",
       "question_p1": "米其林、Tabelog、TripAdvisor。 ── 餐廳的「資訊」用了一百年的時間,傳遍全世界。 然而,<strong>料理本身,卻尚未跨越</strong>。",
       "question_p2": "即便置身於異國之中,仍在菜單前駐足不前。 點了自己熟悉的料理,直到看到鄰桌的盤子,才恍然大悟。 ── 我們,真的邂逅了心中所盼的料理了嗎?",
-      "regrets_eyebrow": "Various Regrets",
+      "regrets_eyebrow": "What We Miss",
       "regrets_h": "佇立在用餐之前的,各式各樣的遺憾。",
       "story1_lead": "期盼已久的海外旅行,第一天的晚餐。",
       "story1_p": "鼓起勇氣走進旅遊指南上推薦的店。 打開菜單。 ── 想像不出端上來的會是什麼。 最終,半信半疑地點了菜。 端上來的料理與想像完全不同,只能苦笑。 看到鄰桌的盤子,才喃喃自語:「原來我想吃的是那個啊。」",
@@ -50,8 +50,7 @@
       "first_eyebrow": "Our First Product",
       "first_h": "首戰之地,在菜單的彼岸。",
       "first_p1": "菜單的另一側 ── 那是言語無法抵達的料理的世界。",
-      "first_p2": "我們以技術與人工智慧的力量,化解蔓延世界的「看不懂」「不明白」的茫然。 不只是字面直譯,而是回歸使用者母語飲食文化的「翻譯」。 附以基於文化背景的說明、參考圖片。 只需拍下菜單,料理便呈現眼前。",
-      "first_p3": "這只是我們宏大構想的<strong>第一步</strong>。 跨越語言與文化的壁壘,開啟通往未知美味之路。",
+      "first_p2": "無論走進世界何處的餐廳、 只需拍下菜單。 懷著自信、 點下心中所想的那道菜。",
       "name_eyebrow": "The Name",
       "name_h": "PAAN 名稱的由來",
       "name_p1": "美食是超越國籍、 語言與文化、 連接人與人的最普遍的體驗。 我們希望以一聲輕快的「啪」、 掃除擋在其入口的壁壘。",
@@ -75,7 +74,11 @@
       "others_name": "產品B",
       "others_desc": "自信地迎接踏入店門的外國客人。 面向 Restaurant 的應用。",
       "others_feature_form_label": "預計提供形態",
-      "others_feature_form_value": "iOS (後續陸續支援 Android)"
+      "others_feature_form_value": "iOS (後續陸續支援 Android)",
+      "menupaan_feature_launch_label": "預計公開",
+      "menupaan_feature_launch_value": "2026 年 7 月底",
+      "others_feature_launch_label": "預計公開",
+      "others_feature_launch_value": "2026 年 8 月底"
     },
     "company": {
       "title": "PAAN",

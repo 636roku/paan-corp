@@ -38,7 +38,7 @@
       "question_h": "Nhà hàng đã vượt biên giới. Nhưng còn món ăn?",
       "question_p1": "Michelin, Tabelog, TripAdvisor. — Trải qua một thế kỷ, \"thông tin\" về nhà hàng đã lan tỏa khắp thế giới. Vậy nhưng, <strong>chính món ăn vẫn chưa vượt qua biên giới</strong>.",
       "question_p2": "Dù đứng ngay tại nơi đó, ta vẫn dừng bước trước thực đơn. Gọi món mình đã biết, rồi nhìn sang đĩa của bàn bên cạnh mới chợt nhận ra. ── Liệu ta có thực sự gặp được những món ăn mình hằng mong?",
-      "regrets_eyebrow": "Various Regrets",
+      "regrets_eyebrow": "What We Miss",
       "regrets_h": "Những tiếc nuối đứng chắn trước bữa ăn.",
       "story1_lead": "Chuyến du lịch nước ngoài mong chờ từ lâu — bữa tối ngày đầu tiên.",
       "story1_p": "Bạn lấy hết can đảm bước vào nhà hàng có trong sách hướng dẫn. Mở thực đơn ra. ── Bạn không thể hình dung món ăn sẽ ra sao. Cuối cùng, nửa tin nửa ngờ, bạn gọi món. Món đem ra khác hẳn tưởng tượng — bạn chỉ biết cười khổ. Nhìn sang đĩa của bàn bên cạnh, bạn thì thầm: \"đó mới là món tôi muốn ăn.\"",
@@ -50,8 +50,7 @@
       "first_eyebrow": "Our First Product",
       "first_h": "Thử thách đầu tiên: phía bên kia của thực đơn.",
       "first_p1": "Phía bên kia của thực đơn ── đó là một thế giới món ăn mà lời nói không thể chạm tới.",
-      "first_p2": "Chúng tôi xóa tan nỗi \"không đọc được\", \"không hiểu\" — sự mơ hồ lan tỏa khắp thế giới — bằng sức mạnh của công nghệ và trí tuệ nhân tạo. Không chỉ là dịch nghĩa đơn thuần, mà là một \"bản dịch\" trở về với văn hóa ẩm thực của tiếng mẹ đẻ người dùng. Lời giải thích theo bối cảnh văn hóa, cùng hình ảnh minh họa. Tất cả chỉ từ một bức ảnh chụp thực đơn — hiện ngay trước mắt bạn.",
-      "first_p3": "Đây là <strong>bước đầu tiên</strong> của tầm nhìn lớn của chúng tôi. Vượt qua những bức tường ngôn ngữ và văn hóa, chúng tôi mở lối đến những món ăn chưa từng biết.",
+      "first_p2": "Tại bất kỳ nhà hàng nào trên thế giới, chỉ cần chụp ảnh thực đơn. Tự tin gọi đúng món ăn bạn đã hình dung.",
       "name_eyebrow": "The Name",
       "name_h": "Nguồn gốc tên gọi PAAN",
       "name_p1": "Ẩm thực là trải nghiệm phổ quát nhất — kết nối con người vượt qua quốc tịch, ngôn ngữ và văn hóa. Chúng tôi muốn đóng vai trò xoá đi, bằng một tiếng \"páan\" nhẹ nhàng, những bức tường chắn ngang ngưỡng cửa ấy.",
@@ -75,7 +74,11 @@
       "others_name": "Sản phẩm B",
       "others_desc": "Tự tin chào đón những vị khách nước ngoài bước qua cánh cửa. Ứng dụng dành cho Restaurant.",
       "others_feature_form_label": "Hình thức cung cấp dự kiến",
-      "others_feature_form_value": "iOS (sẽ hỗ trợ Android tiếp theo)"
+      "others_feature_form_value": "iOS (sẽ hỗ trợ Android tiếp theo)",
+      "menupaan_feature_launch_label": "Dự kiến ra mắt",
+      "menupaan_feature_launch_value": "Cuối tháng 7 năm 2026",
+      "others_feature_launch_label": "Dự kiến ra mắt",
+      "others_feature_launch_value": "Cuối tháng 8 năm 2026"
     },
     "company": {
       "title": "PAAN",

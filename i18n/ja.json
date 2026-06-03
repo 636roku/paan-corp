@@ -38,7 +38,7 @@
       "question_h": "レストランは国境を越えた。 けれど、 料理は。",
       "question_p1": "ミシュラン、 食べログ、 TripAdvisor。 ── レストランの「情報」 は、 100年をかけて世界に広がりました。 けれど、 <strong>料理そのものは、 まだ越えていない</strong>のではないか。",
       "question_p2": "現地に立ってみても、 メニューの前で立ち止まる。 知っている料理を頼み、 隣の客の皿を見て気づく。 ── 私たちは、 本当に望んだ料理に出会えているのだろうか。",
-      "regrets_eyebrow": "Various Regrets",
+      "regrets_eyebrow": "What We Miss",
       "regrets_h": "食事の前にある、 さまざまな悔しさ。",
       "story1_lead": "待ちに待った海外旅行、 最初の日のディナー。",
       "story1_p": "ガイドブックに載っているお店に、 勇気を出して入る。 メニューを開く。 ── 出てくる料理がイメージできない。 結局、 半信半疑で注文する。 イメージと違う料理が出てきて苦笑い。 隣の客の皿を見て、 「あれが食べたかったなあ」 とポツリと漏らす。",
@@ -50,8 +50,7 @@
       "first_eyebrow": "Our First Product",
       "first_h": "最初の挑戦は、 メニューの向こう側。",
       "first_p1": "メニューの向こう側 ── それは、 言葉では届かない料理の世界です。",
-      "first_p2": "世界中に溢れる「読めない」 「わからない」 のもやもやを、 テクノロジーと人工知能の力で取り払います。 ただの直訳ではなく、 ユーザーの母語の食文化に立ち戻った「翻訳」 をお届けします。 文化的文脈を踏まえた解説と、 イメージ画像。 メニューを撮影するだけで、 すぐに目の前へ。",
-      "first_p3": "これは、 私たちの大きな構想の<strong>最初の一歩</strong>。 言葉と文化の壁を越え、 未だ見ぬ料理への道を拓く。",
+      "first_p2": "世界のどこのレストランに行っても、 メニューを撮影するだけ。 イメージ通りの料理を、 自信とともに注文する。",
       "name_eyebrow": "The Name",
       "name_h": "PAAN の由来",
       "name_p1": "料理は、 国籍も言語も文化も越えて、 人と人をつなぐ、 最も普遍的な体験。 その入口に立ちはだかる壁を、 「パーン」 と軽やかに取り払うための役割を果たしたい。",
@@ -75,7 +74,11 @@
       "others_name": "プロダクトB",
       "others_desc": "暖簾をくぐった外国のお客様を、 自信をもってお迎えする。 Restaurant 向けアプリ。",
       "others_feature_form_label": "想定提供形態",
-      "others_feature_form_value": "iOS (順次 Android 対応予定)"
+      "others_feature_form_value": "iOS (順次 Android 対応予定)",
+      "menupaan_feature_launch_label": "公開予定",
+      "menupaan_feature_launch_value": "2026 年 7 月末",
+      "others_feature_launch_label": "公開予定",
+      "others_feature_launch_value": "2026 年 8 月末"
     },
     "company": {
       "title": "PAAN",

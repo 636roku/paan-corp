@@ -38,7 +38,7 @@
       "question_h": "Restoran telah melintasi batas. Tetapi hidangan?",
       "question_p1": "Michelin, Tabelog, TripAdvisor. — Selama seabad, \"informasi\" tentang restoran telah menyebar ke seluruh dunia. Namun, <strong>hidangannya sendiri belum melintasinya</strong>.",
       "question_p2": "Bahkan saat berdiri di tempat itu sendiri, kita terhenti di depan menu. Kita memesan yang sudah dikenal, dan baru menyadari ketika melihat piring di meja sebelah. ── Apakah kita benar-benar bertemu dengan hidangan yang kita dambakan?",
-      "regrets_eyebrow": "Various Regrets",
+      "regrets_eyebrow": "What We Miss",
       "regrets_h": "Berbagai penyesalan yang hadir sebelum santapan.",
       "story1_lead": "Perjalanan ke luar negeri yang lama dinanti — makan malam pada hari pertama.",
       "story1_p": "Anda mengumpulkan keberanian dan masuk ke restoran yang tercantum dalam buku panduan. Anda membuka menu. ── Anda tidak dapat membayangkan hidangan yang akan datang. Akhirnya, dengan setengah ragu, Anda memesan. Hidangan yang datang sama sekali berbeda dari yang dibayangkan — Anda hanya bisa tersenyum kecut. Melihat piring di meja sebelah, Anda bergumam: \"itu yang ingin saya makan.\"",
@@ -50,8 +50,7 @@
       "first_eyebrow": "Our First Product",
       "first_h": "Tantangan pertama kami: melampaui menu.",
       "first_p1": "Sisi lain dari menu ── itu adalah dunia hidangan yang tak terjangkau oleh kata-kata saja.",
-      "first_p2": "Kami melarutkan kegamangan \"tidak bisa membacanya\", \"tidak memahaminya\" — kegelisahan yang mengalir di seluruh dunia — dengan kekuatan teknologi dan kecerdasan buatan. Bukan sekadar terjemahan harfiah, melainkan \"terjemahan\" yang berakar pada budaya kuliner bahasa ibu pengguna. Penjelasan dengan konteks budaya, dan gambar referensi. Semuanya hanya dari satu foto menu — tepat di hadapan Anda.",
-      "first_p3": "Ini adalah <strong>langkah pertama</strong> dari visi besar kami. Melampaui tembok bahasa dan budaya, kami membuka jalan menuju hidangan yang belum terlihat.",
+      "first_p2": "Di restoran mana pun di dunia, cukup foto menunya. Pesan hidangan yang Anda bayangkan, dengan percaya diri.",
       "name_eyebrow": "The Name",
       "name_h": "Asal usul nama PAAN",
       "name_p1": "Makanan adalah pengalaman yang paling universal — menghubungkan manusia melampaui kebangsaan, bahasa, dan budaya. Kami ingin berperan menyingkirkan, dengan satu \"paan\" yang ringan, tembok yang berdiri di ambang pintunya.",
@@ -75,7 +74,11 @@
       "others_name": "Produk B",
       "others_desc": "Menyambut tamu internasional yang melangkah masuk dengan penuh percaya diri. Aplikasi untuk Restaurant.",
       "others_feature_form_label": "Bentuk penyediaan yang direncanakan",
-      "others_feature_form_value": "iOS (dukungan Android direncanakan secara bertahap)"
+      "others_feature_form_value": "iOS (dukungan Android direncanakan secara bertahap)",
+      "menupaan_feature_launch_label": "Rencana rilis",
+      "menupaan_feature_launch_value": "Akhir Juli 2026",
+      "others_feature_launch_label": "Rencana rilis",
+      "others_feature_launch_value": "Akhir Agustus 2026"
     },
     "company": {
       "title": "PAAN",

@@ -38,7 +38,7 @@
       "question_h": "Los restaurantes han cruzado fronteras. Pero ¿los platos?",
       "question_p1": "Michelin, Tabelog, TripAdvisor. — A lo largo de un siglo, la \"información\" sobre restaurantes se ha extendido por el mundo. Y sin embargo, <strong>los platos mismos aún no han cruzado</strong>.",
       "question_p2": "Aun estando en el lugar mismo, se detiene uno ante el menú. Pide lo que ya conoce y, al mirar el plato de la mesa de al lado, comprende. ── ¿Estamos verdaderamente encontrándonos con los platos que anhelamos?",
-      "regrets_eyebrow": "Various Regrets",
+      "regrets_eyebrow": "What We Miss",
       "regrets_h": "Los muchos pesares que aguardan antes de la comida.",
       "story1_lead": "El viaje al extranjero tan esperado, la cena de la primera noche.",
       "story1_p": "Reúnes el valor para entrar en el restaurante que aparece en la guía. Abres el menú. ── No logras imaginar qué llegará a la mesa. Al final, medio dudando, pides. El plato que llega no se parece en nada a lo que imaginabas — esbozas una sonrisa irónica. Miras el plato de la mesa de al lado y murmuras: \"eso era lo que quería comer\".",
@@ -50,8 +50,7 @@
       "first_eyebrow": "Our First Product",
       "first_h": "Nuestro primer reto: más allá del menú.",
       "first_p1": "El otro lado del menú — es un mundo de platos que las palabras por sí solas no alcanzan.",
-      "first_p2": "Disolvemos la inquietud del \"no puedo leerlo\", \"no lo comprendo\" — esa zozobra que recorre el mundo — con la fuerza de la tecnología y la inteligencia artificial. No una mera traducción literal, sino una \"traducción\" arraigada en la cultura gastronómica de la lengua materna del usuario. Explicaciones contextualizadas culturalmente, e imágenes de referencia. Todo con solo una fotografía del menú — ahí, ante tus ojos.",
-      "first_p3": "Este es el <strong>primer paso</strong> de nuestra visión más amplia. Cruzando los muros del idioma y la cultura, abrimos el camino hacia los platos aún por descubrir.",
+      "first_p2": "En cualquier restaurante del mundo, basta con fotografiar el menú. Pide con confianza el plato que imaginabas.",
       "name_eyebrow": "The Name",
       "name_h": "El origen del nombre PAAN",
       "name_p1": "La comida es la más universal de las experiencias: une a las personas más allá de la nacionalidad, el idioma y la cultura. Queremos cumplir el papel de derribar, con un ligero \"paan\", los muros que se alzan en su umbral.",
@@ -75,7 +74,11 @@
       "others_name": "Producto B",
       "others_desc": "Recibir con confianza a los clientes extranjeros que cruzan tu puerta. Una app para el Restaurant.",
       "others_feature_form_label": "Plataforma prevista",
-      "others_feature_form_value": "iOS (compatibilidad con Android prevista progresivamente)"
+      "others_feature_form_value": "iOS (compatibilidad con Android prevista progresivamente)",
+      "menupaan_feature_launch_label": "Lanzamiento previsto",
+      "menupaan_feature_launch_value": "Finales de julio de 2026",
+      "others_feature_launch_label": "Lanzamiento previsto",
+      "others_feature_launch_value": "Finales de agosto de 2026"
     },
     "company": {
       "title": "PAAN",

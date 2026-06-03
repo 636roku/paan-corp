@@ -38,7 +38,7 @@
       "question_h": "Restaurants have crossed borders. But dishes?",
       "question_p1": "Michelin, Tabelog, TripAdvisor. — Over a hundred years, the \"information\" about restaurants has spread across the world. And yet, <strong>the dishes themselves have not yet crossed over</strong>.",
       "question_p2": "Even when you stand in the place itself, you halt before the menu. You order something you already know — and only when you glance at the next table's plate do you realise. ── Are we truly meeting the dishes we longed for?",
-      "regrets_eyebrow": "Various Regrets",
+      "regrets_eyebrow": "What We Miss",
       "regrets_h": "The many regrets that stand before the meal.",
       "story1_lead": "The long-awaited overseas trip — and the very first dinner.",
       "story1_p": "You gather your courage and step into a restaurant featured in the guidebook. You open the menu. ── You cannot picture what will arrive. In the end, half-doubting, you order. The dish that comes is nothing like you imagined — a wry smile escapes you. Glancing at the next table's plate, you murmur, \"that's what I really wanted to eat.\"",
@@ -50,8 +50,7 @@
       "first_eyebrow": "Our First Product",
       "first_h": "Our first challenge: beyond the menu.",
       "first_p1": "The other side of the menu — it is a world of dishes that words alone cannot reach.",
-      "first_p2": "We dissolve the \"I cannot read it\", \"I do not understand it\" — the unease that flows through the world — with the power of technology and AI. Not a mere literal translation, but a \"translation\" rooted in the food culture of the user's mother tongue. Cultural context with each explanation, and illustrative images. All from a single photo of the menu — right there, before you.",
-      "first_p3": "This is the <strong>first step</strong> of our larger vision. Crossing the walls of language and culture, we open the road to dishes yet to be seen.",
+      "first_p2": "At any restaurant anywhere in the world, simply photograph the menu. Order the dish you envisioned, with confidence.",
       "name_eyebrow": "The Name",
       "name_h": "The Origin of the Name PAAN",
       "name_p1": "Food is the most universal of experiences — connecting people across nationality, language, and culture. We want to play the part of sweeping away, with a light \"paan,\" the walls that stand at its threshold.",
@@ -75,7 +74,11 @@
       "others_name": "Product B",
       "others_desc": "Welcome international guests with confidence the moment they step through your doors. A Restaurant-facing app.",
       "others_feature_form_label": "Planned platform",
-      "others_feature_form_value": "iOS (Android support planned subsequently)"
+      "others_feature_form_value": "iOS (Android support planned subsequently)",
+      "menupaan_feature_launch_label": "Planned launch",
+      "menupaan_feature_launch_value": "Late July 2026",
+      "others_feature_launch_label": "Planned launch",
+      "others_feature_launch_value": "Late August 2026"
     },
     "company": {
       "title": "PAAN",

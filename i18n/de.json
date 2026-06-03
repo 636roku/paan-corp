@@ -38,7 +38,7 @@
       "question_h": "Restaurants haben Grenzen überschritten. Doch die Gerichte?",
       "question_p1": "Michelin, Tabelog, TripAdvisor. — In hundert Jahren hat sich die „Information\" über Restaurants über die Welt verbreitet. Doch <strong>die Gerichte selbst haben noch nicht den Schritt getan</strong>.",
       "question_p2": "Selbst vor Ort hält man inne vor der Speisekarte. Man bestellt, was man kennt — und erst der Blick auf den Teller am Nebentisch lässt einen begreifen. ── Begegnen wir wirklich den Gerichten, nach denen wir uns gesehnt haben?",
-      "regrets_eyebrow": "Various Regrets",
+      "regrets_eyebrow": "What We Miss",
       "regrets_h": "Die vielen Bedauern, die vor dem Mahl stehen.",
       "story1_lead": "Die lang ersehnte Auslandsreise — das Abendessen am allerersten Abend.",
       "story1_p": "Sie fassen Mut und betreten das im Reiseführer empfohlene Restaurant. Sie schlagen die Karte auf. ── Sie können sich nicht vorstellen, was am Ende auf dem Tisch landet. Schließlich bestellen Sie halb zweifelnd. Das Gericht, das kommt, gleicht in nichts dem, was Sie sich vorgestellt hatten — ein wehmütiges Lächeln entgleitet Ihnen. Beim Blick auf den Teller am Nebentisch murmeln Sie: „Das hätte ich essen wollen.\"",
@@ -50,8 +50,7 @@
       "first_eyebrow": "Our First Product",
       "first_h": "Unsere erste Herausforderung: jenseits der Speisekarte.",
       "first_p1": "Die andere Seite der Speisekarte — sie ist eine Welt von Gerichten, die Worte allein nicht erreichen.",
-      "first_p2": "Mit der Kraft von Technologie und künstlicher Intelligenz lösen wir das „Ich kann es nicht lesen\", „Ich verstehe es nicht\" — jenes Unbehagen, das die Welt durchzieht — auf. Keine bloße wörtliche Übersetzung, sondern eine „Übersetzung\", die in der Esskultur der Muttersprache des Nutzers verwurzelt ist. Kulturell kontextualisierte Erklärungen und veranschaulichende Bilder. Alles aus einem einzigen Foto der Speisekarte — direkt vor Ihren Augen.",
-      "first_p3": "Dies ist der <strong>erste Schritt</strong> unserer größeren Vision. Sprach- und Kulturgrenzen überschreitend öffnen wir den Weg zu noch unentdeckten Gerichten.",
+      "first_p2": "In jedem Restaurant der Welt genügt ein Foto der Speisekarte. Bestellen Sie das Gericht, das Sie sich vorgestellt haben — mit Selbstvertrauen.",
       "name_eyebrow": "The Name",
       "name_h": "Die Herkunft des Namens PAAN",
       "name_p1": "Essen ist die universellste aller Erfahrungen — es verbindet Menschen über Nationalität, Sprache und Kultur hinweg. Wir möchten die Rolle übernehmen, mit einem leichten „paan\" die Mauern hinwegzufegen, die an seiner Schwelle stehen.",
@@ -75,7 +74,11 @@
       "others_name": "Produkt B",
       "others_desc": "Internationale Gäste, die Ihre Tür durchschreiten, mit Selbstvertrauen empfangen. Eine App für das Restaurant.",
       "others_feature_form_label": "Geplante Plattform",
-      "others_feature_form_value": "iOS (Android-Unterstützung in Folge geplant)"
+      "others_feature_form_value": "iOS (Android-Unterstützung in Folge geplant)",
+      "menupaan_feature_launch_label": "Geplanter Start",
+      "menupaan_feature_launch_value": "Ende Juli 2026",
+      "others_feature_launch_label": "Geplanter Start",
+      "others_feature_launch_value": "Ende August 2026"
     },
     "company": {
       "title": "PAAN",
