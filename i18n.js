@@ -15,6 +15,7 @@
 
   const SUPPORTED_LOCALES = ['ja', 'en', 'zh-CN', 'zh-TW', 'ko', 'es', 'fr', 'de', 'it', 'vi', 'id', 'th'];
   const DEFAULT_LOCALE = 'ja';
+  const FALLBACK_LOCALE = 'en'; // 表示フォールバック (対応外ブラウザ言語/辞書読込失敗時)。ルートURL実体=DEFAULT_LOCALE(ja)とは別役割
   const LOCALE_STORAGE_KEY = 'paan_locale';
 
   const LOCALE_META = {
@@ -58,7 +59,7 @@
       const short = lang.split('-')[0];
       if (SUPPORTED_LOCALES.includes(short)) return short;
     }
-    return DEFAULT_LOCALE;
+    return FALLBACK_LOCALE;
   }
 
   /** ロケール決定 */
@@ -223,8 +224,8 @@
       state.dict = await loadDict(state.locale);
     } catch (e) {
       console.error('[i18n] Failed to load dict, falling back to ja:', e);
-      state.locale = DEFAULT_LOCALE;
-      try { state.dict = await loadDict(DEFAULT_LOCALE); } catch (e2) {}
+      state.locale = FALLBACK_LOCALE;
+      try { state.dict = await loadDict(FALLBACK_LOCALE); } catch (e2) {}
     }
     state.ready = true;
     applyToDOM();
