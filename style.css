@@ -1364,8 +1364,8 @@ img { max-width:100%; height:auto; display:block; }
   background:var(--paan-card);
   border:1px solid var(--paan-line);
   border-radius:6px;
-  padding:32px 28px;
-  margin-bottom:20px;
+  padding:16px 28px;
+  margin-bottom:14px;
 }
 
 /* MENU-PAAN テーマカラーバリアント (= ボルドー基調)
@@ -1404,7 +1404,7 @@ img { max-width:100%; height:auto; display:block; }
   letter-spacing:0.18em;
   text-transform:uppercase;
   color:var(--paan-ink-mid);
-  margin-bottom:18px;
+  margin-bottom:9px;
 }
 
 .status-dot {
@@ -1478,13 +1478,13 @@ img { max-width:100%; height:auto; display:block; }
 .brand-card-body {
   font-family:'Noto Serif JP', serif;
   font-size:14px;
-  line-height:1.95;
+  line-height:1.7;
   color:var(--paan-ink);
-  margin-bottom:22px;
+  margin-bottom:0;
   letter-spacing:0.03em;
 }
 
-.brand-card-body p { margin-bottom:14px; }
+.brand-card-body p { margin-bottom:10px; }
 .brand-card-body p:last-child { margin-bottom:0; }
 
 .brand-card-body strong {
@@ -1496,16 +1496,16 @@ img { max-width:100%; height:auto; display:block; }
   list-style:none;
   background:#FFFFFF;
   border:1px solid var(--paan-line);
-  padding:14px 18px;
-  margin-top:14px;
+  padding:12px 18px;
+  margin-top:10px;
   border-radius:4px;
 }
 
 .brand-features li {
   font-size:13px;
-  line-height:1.95;
+  line-height:1.7;
   color:var(--paan-ink-mid);
-  padding:3px 0;
+  padding:2px 0;
   letter-spacing:0.02em;
 }
 
