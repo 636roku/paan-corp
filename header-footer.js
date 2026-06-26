@@ -51,7 +51,7 @@
         </nav>
         <div class="mp-locale-wrapper">
           <button type="button" class="mp-locale-button" id="mp-locale-btn" aria-haspopup="true" aria-expanded="false">
-            <span class="mp-locale-flag" id="mp-locale-current-flag">🇯🇵</span>
+            <span class="mp-locale-flag" id="mp-locale-current-flag"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg></span>
             <span class="mp-locale-name" id="mp-locale-current-name">日本語</span>
             <span class="mp-locale-arrow" aria-hidden="true">▾</span>
           </button>
@@ -135,7 +135,7 @@
 
     const cur = META[current];
     if (cur) {
-      if (flagEl) flagEl.textContent = cur.flag;
+      // flag は線画 globe SVG 固定 (menupaan デザイン)。 ロケール毎の国旗絵文字には差し替えない
       if (nameEl) nameEl.textContent = cur.name;
     }
 
