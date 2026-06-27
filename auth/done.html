@@ -3,44 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>PAAN — 確認</title>
+<title>PAAN — 確認 / Verification</title>
 <meta name="theme-color" content="#1A2E5C">
 <meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-  :root{ --navy:#1A2E5C; --ink:#1A1A1A; --mute:#5A5A5A; --soft:#8A8A8A; --line:#E5E5E5; --bg:#F7F8FA; --ok:#1F8A4C; --err:#9B1C31; }
+  :root{
+    --navy:#1A2E5C; --ink:#1A1A1F; --mute:#5A6170; --soft:#9AA1AC; --line:#E7EAF0;
+    --bg:#F4F6FA; --ok:#1F8A4C; --okBg:#EAF5EE; --err:#9B1C31; --errBg:#FBEEF1;
+  }
   *{ box-sizing:border-box; }
-  body{ margin:0; background:var(--bg); color:var(--ink);
+  html,body{ height:100%; }
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(26,46,92,.06), transparent 60%),
+      var(--bg);
+    color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
-    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; line-height:1.7; }
-  .card{ width:100%; max-width:440px; background:#fff; border:1px solid var(--line); border-radius:18px;
-    box-shadow:0 12px 40px rgba(26,46,92,.08); padding:40px 32px; text-align:center; }
-  .brand{ font-family:'Marcellus',serif; font-size:22px; letter-spacing:3px; color:var(--navy); font-weight:600; margin-bottom:28px; }
-  .icon{ width:56px; height:56px; margin:0 auto 18px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
-  .icon.ok{ background:rgba(31,138,76,.1); color:var(--ok); }
-  .icon.err{ background:rgba(155,28,49,.1); color:var(--err); }
-  .icon svg{ width:30px; height:30px; }
-  h1{ font-size:19px; margin:0 0 4px; color:var(--ink); }
-  .h1-en{ font-size:14px; color:var(--mute); margin:0 0 12px; font-weight:500; }
-  p.msg{ font-size:14px; color:var(--mute); margin:0 0 4px; }
-  .sub-en{ font-size:13px; color:var(--mute); margin-top:4px; }
-  .spin{ width:34px; height:34px; border:3px solid var(--line); border-top-color:var(--navy); border-radius:50%; animation:s .8s linear infinite; margin:8px auto 14px; }
+    min-height:100%; display:flex; align-items:center; justify-content:center;
+    padding:24px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .card{
+    width:100%; max-width:420px; background:#fff; border:1px solid var(--line);
+    border-radius:20px; box-shadow:0 18px 50px rgba(26,46,92,.10);
+    padding:36px 30px 30px; text-align:center;
+  }
+  /* ヘッダ: ブランドを控えめに横並び */
+  .brands{ display:flex; gap:20px; justify-content:center; align-items:center; flex-wrap:wrap;
+    padding-bottom:22px; margin-bottom:22px; border-bottom:1px solid var(--line); }
+  .brand{ display:inline-flex; align-items:center; gap:8px; }
+  .brand svg{ width:22px; height:22px; flex:none; display:block; }
+  .brand span{ font-family:'Marcellus','Noto Serif JP',serif; font-size:14px;
+    letter-spacing:2px; font-weight:400; }
+  .brand.menu span{ color:#9B1C31; }
+  .brand.resto span{ color:var(--navy); }
+  /* アイコン(円バッジ)。 svg は属性でも CSS でも 26px に固定 = 肥大防止 */
+  .icon{ width:60px; height:60px; margin:0 auto 16px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; }
+  .icon.ok{ background:var(--okBg); color:var(--ok); }
+  .icon.err{ background:var(--errBg); color:var(--err); }
+  .icon svg{ width:26px !important; height:26px !important; display:block; }
+  h1{ font-size:19px; margin:0 0 3px; color:var(--ink); font-weight:700; letter-spacing:.2px; }
+  .h1-en{ font-size:13px; color:var(--soft); margin:0 0 14px; font-weight:500; letter-spacing:.3px; }
+  p.msg{ font-size:14px; color:var(--mute); margin:0; }
+  .sub-en{ font-size:12.5px; color:var(--soft); margin-top:5px; }
+  .spin{ width:34px; height:34px; border:3px solid var(--line); border-top-color:var(--navy);
+    border-radius:50%; animation:s .8s linear infinite; margin:10px auto 16px; }
   @keyframes s{ to{ transform:rotate(360deg); } }
-  form{ margin-top:18px; text-align:left; }
-  label{ display:block; font-size:13px; color:var(--mute); margin-bottom:6px; }
-  input[type=password]{ width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font-size:15px; margin-bottom:12px; }
-  button{ width:100%; padding:13px; border:none; border-radius:999px; background:var(--navy); color:#fff; font-size:15px; font-weight:600; cursor:pointer; }
-  button:disabled{ opacity:.5; cursor:default; }
-  .hint{ font-size:12px; color:var(--soft); margin-top:14px; }
-  .foot{ margin-top:26px; font-size:11.5px; color:var(--soft); }
+  form{ margin-top:20px; text-align:left; }
+  label{ display:block; font-size:12.5px; color:var(--mute); margin-bottom:7px; font-weight:600; }
+  input[type=password]{ width:100%; padding:13px 14px; border:1px solid var(--line);
+    border-radius:12px; font-size:15px; margin-bottom:14px; background:#FBFCFE; }
+  input[type=password]:focus{ outline:none; border-color:var(--navy); background:#fff;
+    box-shadow:0 0 0 3px rgba(26,46,92,.10); }
+  button{ width:100%; padding:14px; border:none; border-radius:999px; background:var(--navy);
+    color:#fff; font-size:15px; font-weight:600; cursor:pointer; transition:opacity .15s; }
+  button:hover{ opacity:.92; } button:disabled{ opacity:.5; cursor:default; }
+  .hint{ font-size:12px; color:var(--soft); margin-top:14px; min-height:1em; }
+  .hint.err{ color:var(--err); }
+  .foot{ margin-top:24px; padding-top:18px; border-top:1px solid var(--line);
+    font-size:11.5px; color:var(--soft); }
+  .foot a{ color:inherit; text-decoration:none; }
   .hide{ display:none !important; }
 </style>
 </head>
 <body>
 <div class="card">
-  <div class="brand" style="margin-bottom:28px;display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap">
-    <span style="display:inline-flex;align-items:center;gap:7px"><svg width="26" height="26" viewBox="0 0 512 512"><rect width="512" height="512" rx="110" fill="#9B1C31"/><circle cx="256" cy="189" r="92" fill="#fff"/><line x1="164" y1="189" x2="348" y2="189" stroke="#9B1C31" stroke-width="8" stroke-linecap="round"/><line x1="256" y1="97" x2="256" y2="281" stroke="#9B1C31" stroke-width="8" stroke-linecap="round"/><ellipse cx="256" cy="189" rx="50" ry="92" fill="none" stroke="#9B1C31" stroke-width="8"/><ellipse cx="256" cy="356" rx="166" ry="32" fill="#fff"/><ellipse cx="256" cy="356" rx="136" ry="14" fill="none" stroke="#9B1C31" stroke-width="8"/></svg><span style="font-family:'Marcellus','Noto Serif JP','Times New Roman',serif;font-weight:400;font-size:16px;letter-spacing:2px;color:#9B1C31">MENU-PAAN</span></span>
-    <span style="display:inline-flex;align-items:center;gap:7px"><svg width="26" height="26" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#1A2E5C"/><g fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"><rect x="150" y="120" width="212" height="272" rx="20"/><line x1="196" y1="186" x2="316" y2="186"/><line x1="196" y1="240" x2="316" y2="240"/><line x1="196" y1="294" x2="280" y2="294"/></g></svg><span style="font-family:'Marcellus','Noto Serif JP','Times New Roman',serif;font-weight:400;font-size:16px;letter-spacing:2px;color:#1A2E5C">RESTO-PAAN</span></span>
+
+  <div class="brands">
+    <span class="brand menu">
+      <svg width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="110" fill="#9B1C31"/><circle cx="256" cy="189" r="92" fill="#fff"/><line x1="164" y1="189" x2="348" y2="189" stroke="#9B1C31" stroke-width="8" stroke-linecap="round"/><line x1="256" y1="97" x2="256" y2="281" stroke="#9B1C31" stroke-width="8" stroke-linecap="round"/><ellipse cx="256" cy="189" rx="50" ry="92" fill="none" stroke="#9B1C31" stroke-width="8"/><ellipse cx="256" cy="356" rx="166" ry="32" fill="#fff"/><ellipse cx="256" cy="356" rx="136" ry="14" fill="none" stroke="#9B1C31" stroke-width="8"/></svg>
+      <span>MENU-PAAN</span>
+    </span>
+    <span class="brand resto">
+      <svg width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#1A2E5C"/><g fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"><rect x="150" y="120" width="212" height="272" rx="20"/><line x1="196" y1="186" x2="316" y2="186"/><line x1="196" y1="240" x2="316" y2="240"/><line x1="196" y1="294" x2="280" y2="294"/></g></svg>
+      <span>RESTO-PAAN</span>
+    </span>
   </div>
 
   <!-- 処理中 -->
@@ -52,19 +92,20 @@
 
   <!-- 成功(確認系: signup / email_change / magiclink / invite) -->
   <div id="ok" class="hide">
-    <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <div class="icon ok"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
     <h1 id="okTitle">承認が完了しました</h1>
     <div class="h1-en" id="okTitleEn">Done</div>
-    <p class="msg">ご確認ありがとうございます。手続きが完了しました。このページは閉じていただいて構いません。</p>
-    <p class="sub-en">Thank you. This has been completed — you may close this page.</p>
+    <p class="msg">手続きが完了しました。このページは閉じていただいて構いません。</p>
+    <p class="sub-en">All set — you may close this page.</p>
   </div>
 
   <!-- パスワード再設定フォーム(recovery) -->
   <div id="reset" class="hide">
-    <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+    <div class="icon ok"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
     <h1>新しいパスワードの設定</h1>
     <div class="h1-en">Set a new password</div>
-    <p class="msg">新しいパスワードを入力してください。 / Enter your new password below.</p>
+    <p class="msg">新しいパスワードを入力してください。</p>
+    <p class="sub-en">Enter your new password below.</p>
     <form id="resetForm" autocomplete="off">
       <label for="pw">新しいパスワード(8文字以上) / New password</label>
       <input id="pw" type="password" minlength="8" required autocomplete="new-password" placeholder="••••••••">
@@ -75,7 +116,7 @@
 
   <!-- パスワード変更完了 -->
   <div id="resetDone" class="hide">
-    <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <div class="icon ok"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
     <h1>パスワードを変更しました</h1>
     <div class="h1-en">Password changed</div>
     <p class="msg">新しいパスワードでログインできます。このページは閉じていただいて構いません。</p>
@@ -84,14 +125,14 @@
 
   <!-- エラー -->
   <div id="err" class="hide">
-    <div class="icon err"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><path d="M12 16h.01"/><circle cx="12" cy="12" r="10"/></svg></div>
+    <div class="icon err"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><path d="M12 16h.01"/><circle cx="12" cy="12" r="10"/></svg></div>
     <h1>リンクが無効です</h1>
     <div class="h1-en">Invalid link</div>
     <p class="msg">このリンクは期限切れか、すでに使用済みの可能性があります。お手数ですが、アプリから再度お手続きください。</p>
     <p class="sub-en">This link is invalid or has expired. Please try again from the app.</p>
   </div>
 
-  <div class="foot">© 2026 <a href="https://www.paan.co.jp" style="color:inherit;text-decoration:none">株式会社PAAN</a></div>
+  <div class="foot">© 2026 <a href="https://www.paan.co.jp">株式会社PAAN</a></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -154,8 +195,8 @@
   document.addEventListener('submit', async function(ev){
     if (ev.target.id !== 'resetForm') return;
     ev.preventDefault();
-    var btn = $('pwBtn'), pw = $('pw').value;
-    btn.disabled = true; $('pwHint').textContent = '更新中… / Updating…';
+    var btn = $('pwBtn'), pw = $('pw').value, hint = $('pwHint');
+    btn.disabled = true; hint.classList.remove('err'); hint.textContent = '更新中… / Updating…';
     try {
       var res = await sb.auth.updateUser({ password: pw });
       if (res.error) throw res.error;
@@ -163,7 +204,8 @@
       show('resetDone');
     } catch(e){
       console.error(e); btn.disabled = false;
-      $('pwHint').textContent = '変更できませんでした。8文字以上で、もう一度お試しください。 / Could not update. Please try again.';
+      hint.classList.add('err');
+      hint.textContent = '変更できませんでした。8文字以上で、もう一度お試しください。 / Could not update. Please try again.';
     }
   });
 
