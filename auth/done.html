@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>PAAN — 確認</title>
+<meta name="theme-color" content="#1A2E5C">
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root{ --navy:#1A2E5C; --ink:#1A1A1A; --mute:#5A5A5A; --soft:#8A8A8A; --line:#E5E5E5; --bg:#F7F8FA; --ok:#1F8A4C; --err:#9B1C31; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; line-height:1.7; }
+  .card{ width:100%; max-width:440px; background:#fff; border:1px solid var(--line); border-radius:18px;
+    box-shadow:0 12px 40px rgba(26,46,92,.08); padding:40px 32px; text-align:center; }
+  .brand{ font-family:'Marcellus',serif; font-size:22px; letter-spacing:3px; color:var(--navy); font-weight:600; margin-bottom:28px; }
+  .icon{ width:56px; height:56px; margin:0 auto 18px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  .icon.ok{ background:rgba(31,138,76,.1); color:var(--ok); }
+  .icon.err{ background:rgba(155,28,49,.1); color:var(--err); }
+  .icon svg{ width:30px; height:30px; }
+  h1{ font-size:20px; margin:0 0 8px; color:var(--ink); }
+  p.msg{ font-size:14.5px; color:var(--mute); margin:0 0 4px; }
+  .sub-en{ font-size:12.5px; color:var(--soft); margin-top:6px; }
+  .spin{ width:34px; height:34px; border:3px solid var(--line); border-top-color:var(--navy); border-radius:50%; animation:s .8s linear infinite; margin:8px auto 14px; }
+  @keyframes s{ to{ transform:rotate(360deg); } }
+  form{ margin-top:18px; text-align:left; }
+  label{ display:block; font-size:13px; color:var(--mute); margin-bottom:6px; }
+  input[type=password]{ width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font-size:15px; margin-bottom:12px; }
+  button{ width:100%; padding:13px; border:none; border-radius:999px; background:var(--navy); color:#fff; font-size:15px; font-weight:600; cursor:pointer; }
+  button:disabled{ opacity:.5; cursor:default; }
+  .hint{ font-size:12px; color:var(--soft); margin-top:14px; }
+  .foot{ margin-top:26px; font-size:11.5px; color:var(--soft); }
+  .hide{ display:none !important; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="brand">PAAN</div>
+
+  <!-- 処理中 -->
+  <div id="loading">
+    <div class="spin"></div>
+    <p class="msg">確認しています…</p>
+    <p class="sub-en">Verifying…</p>
+  </div>
+
+  <!-- 成功(確認系: signup / email_change / magiclink / invite) -->
+  <div id="ok" class="hide">
+    <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <h1 id="okTitle">承認が完了しました</h1>
+    <p class="msg" id="okMsg">ご確認ありがとうございます。手続きが完了しました。このページは閉じていただいて構いません。</p>
+    <p class="sub-en" id="okEn">Done. You may close this page.</p>
+  </div>
+
+  <!-- パスワード再設定フォーム(recovery) -->
+  <div id="reset" class="hide">
+    <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+    <h1>新しいパスワードの設定</h1>
+    <p class="msg">新しいパスワードを入力してください。</p>
+    <form id="resetForm" autocomplete="off">
+      <label for="pw">新しいパスワード(8文字以上) / New password</label>
+      <input id="pw" type="password" minlength="8" required autocomplete="new-password" placeholder="••••••••">
+      <button id="pwBtn" type="submit">パスワードを変更する / Update</button>
+    </form>
+    <p class="hint" id="pwHint"></p>
+  </div>
+
+  <!-- パスワード変更完了 -->
+  <div id="resetDone" class="hide">
+    <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <h1>パスワードを変更しました</h1>
+    <p class="msg">新しいパスワードでログインできます。このページは閉じていただいて構いません。</p>
+    <p class="sub-en">Your password has been changed. You may close this page.</p>
+  </div>
+
+  <!-- エラー -->
+  <div id="err" class="hide">
+    <div class="icon err"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><path d="M12 16h.01"/><circle cx="12" cy="12" r="10"/></svg></div>
+    <h1>リンクが無効です</h1>
+    <p class="msg">このリンクは期限切れか、すでに使用済みの可能性があります。お手数ですが、アプリから再度お手続きください。</p>
+    <p class="sub-en">This link is invalid or has expired. Please try again from the app.</p>
+  </div>
+
+  <div class="foot">© 2026 株式会社PAAN</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  var SB_URL = 'https://olsjtsfwsqsbjebmaxdq.supabase.co';
+  var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9sc2p0c2Z3c3FzYmplYm1heGRxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1MjgxNjEsImV4cCI6MjA5ODEwNDE2MX0.KBqancMwK9db5vcTWrJ-vIaQL4Z9SLRad-kPaJ-AiI8';
+  var sb = window.supabase.createClient(SB_URL, SB_KEY, { auth: { persistSession:false, detectSessionInUrl:false } });
+  var $ = function(id){ return document.getElementById(id); };
+  function show(id){ ['loading','ok','reset','resetDone','err'].forEach(function(x){ $(x).classList.add('hide'); }); $(id).classList.remove('hide'); }
+
+  // クエリ + ハッシュの両方からパラメータを拾う
+  function params(){
+    var p = {};
+    var q = new URLSearchParams(location.search);
+    q.forEach(function(v,k){ p[k]=v; });
+    if (location.hash){ var h = new URLSearchParams(location.hash.replace(/^#/,'')); h.forEach(function(v,k){ if(!(k in p)) p[k]=v; }); }
+    return p;
+  }
+
+  // 完了系メッセージ(type別)
+  var TITLES = {
+    signup:       ['メールアドレスを確認しました', 'Email confirmed'],
+    email_change: ['メールアドレスの変更を承りました', 'Email change confirmed'],
+    email:        ['メールアドレスを確認しました', 'Email confirmed'],
+    magiclink:    ['ログインを確認しました', 'Sign-in confirmed'],
+    invite:       ['ご招待を承認しました', 'Invitation accepted']
+  };
+
+  async function run(){
+    var p = params();
+    var type = p.type || '';
+    var token_hash = p.token_hash || p.token || '';
+
+    // エラーがクエリに乗ってくるケース
+    if (p.error || p.error_description){ show('err'); return; }
+    if (!token_hash || !type){ show('err'); return; }
+
+    try {
+      var res = await sb.auth.verifyOtp({ type: type, token_hash: token_hash });
+      if (res.error) throw res.error;
+
+      if (type === 'recovery'){
+        // 新パスワード入力へ(verifyOtp でセッション確立済み)
+        show('reset');
+        return;
+      }
+      // 確認系: 完了表示
+      var t = TITLES[type] || ['承認が完了しました', 'Done'];
+      $('okTitle').textContent = t[0];
+      $('okEn').textContent = t[1] + '. You may close this page.';
+      show('ok');
+      try { await sb.auth.signOut(); } catch(e){}  // 確認系はセッションを残さない
+    } catch(e){
+      console.error(e); show('err');
+    }
+  }
+
+  // パスワード再設定フォーム
+  document.addEventListener('submit', async function(ev){
+    if (ev.target.id !== 'resetForm') return;
+    ev.preventDefault();
+    var btn = $('pwBtn'), pw = $('pw').value;
+    btn.disabled = true; $('pwHint').textContent = '更新中… / Updating…';
+    try {
+      var res = await sb.auth.updateUser({ password: pw });
+      if (res.error) throw res.error;
+      try { await sb.auth.signOut(); } catch(e){}
+      show('resetDone');
+    } catch(e){
+      console.error(e); btn.disabled = false;
+      $('pwHint').textContent = '変更できませんでした。8文字以上で、もう一度お試しください。 / Could not update. Please try again.';
+    }
+  });
+
+  run();
+})();
+</script>
+</body>
+</html>
