@@ -19,9 +19,10 @@
   .icon.ok{ background:rgba(31,138,76,.1); color:var(--ok); }
   .icon.err{ background:rgba(155,28,49,.1); color:var(--err); }
   .icon svg{ width:30px; height:30px; }
-  h1{ font-size:20px; margin:0 0 8px; color:var(--ink); }
-  p.msg{ font-size:14.5px; color:var(--mute); margin:0 0 4px; }
-  .sub-en{ font-size:12.5px; color:var(--soft); margin-top:6px; }
+  h1{ font-size:19px; margin:0 0 4px; color:var(--ink); }
+  .h1-en{ font-size:14px; color:var(--mute); margin:0 0 12px; font-weight:500; }
+  p.msg{ font-size:14px; color:var(--mute); margin:0 0 4px; }
+  .sub-en{ font-size:13px; color:var(--mute); margin-top:4px; }
   .spin{ width:34px; height:34px; border:3px solid var(--line); border-top-color:var(--navy); border-radius:50%; animation:s .8s linear infinite; margin:8px auto 14px; }
   @keyframes s{ to{ transform:rotate(360deg); } }
   form{ margin-top:18px; text-align:left; }
@@ -49,15 +50,17 @@
   <div id="ok" class="hide">
     <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
     <h1 id="okTitle">承認が完了しました</h1>
-    <p class="msg" id="okMsg">ご確認ありがとうございます。手続きが完了しました。このページは閉じていただいて構いません。</p>
-    <p class="sub-en" id="okEn">Done. You may close this page.</p>
+    <div class="h1-en" id="okTitleEn">Done</div>
+    <p class="msg">ご確認ありがとうございます。手続きが完了しました。このページは閉じていただいて構いません。</p>
+    <p class="sub-en">Thank you. This has been completed — you may close this page.</p>
   </div>
 
   <!-- パスワード再設定フォーム(recovery) -->
   <div id="reset" class="hide">
     <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
     <h1>新しいパスワードの設定</h1>
-    <p class="msg">新しいパスワードを入力してください。</p>
+    <div class="h1-en">Set a new password</div>
+    <p class="msg">新しいパスワードを入力してください。 / Enter your new password below.</p>
     <form id="resetForm" autocomplete="off">
       <label for="pw">新しいパスワード(8文字以上) / New password</label>
       <input id="pw" type="password" minlength="8" required autocomplete="new-password" placeholder="••••••••">
@@ -70,14 +73,16 @@
   <div id="resetDone" class="hide">
     <div class="icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
     <h1>パスワードを変更しました</h1>
+    <div class="h1-en">Password changed</div>
     <p class="msg">新しいパスワードでログインできます。このページは閉じていただいて構いません。</p>
-    <p class="sub-en">Your password has been changed. You may close this page.</p>
+    <p class="sub-en">You can now sign in with your new password — you may close this page.</p>
   </div>
 
   <!-- エラー -->
   <div id="err" class="hide">
     <div class="icon err"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><path d="M12 16h.01"/><circle cx="12" cy="12" r="10"/></svg></div>
     <h1>リンクが無効です</h1>
+    <div class="h1-en">Invalid link</div>
     <p class="msg">このリンクは期限切れか、すでに使用済みの可能性があります。お手数ですが、アプリから再度お手続きください。</p>
     <p class="sub-en">This link is invalid or has expired. Please try again from the app.</p>
   </div>
@@ -133,7 +138,7 @@
       // 確認系: 完了表示
       var t = TITLES[type] || ['承認が完了しました', 'Done'];
       $('okTitle').textContent = t[0];
-      $('okEn').textContent = t[1] + '. You may close this page.';
+      $('okTitleEn').textContent = t[1];
       show('ok');
       try { await sb.auth.signOut(); } catch(e){}  // 確認系はセッションを残さない
     } catch(e){
