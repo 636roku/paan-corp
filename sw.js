@@ -12,7 +12,7 @@
  *
  * バージョン管理: CACHE_VERSION 更新で旧キャッシュは自動破棄
  */
-const CACHE_VERSION = 'paan-v45';
+const CACHE_VERSION = 'paan-v46';
 const CACHE_NAME = `paan-cache-${CACHE_VERSION}`;
 
 // ============================================
