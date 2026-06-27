@@ -86,13 +86,20 @@
       "productd_name": "產品D",
       "productd_desc": "找到想要細細品味的葡萄酒與日本酒。 面向 Consumer 的應用。",
       "productc_feature_form_label": "預期提供形態",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web (同步發布)",
       "productc_feature_launch_label": "預計公開",
       "productc_feature_launch_value": "2026 財年內",
       "productd_feature_form_label": "預期提供形態",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web (同步發布)",
       "productd_feature_launch_label": "預計公開",
-      "productd_feature_launch_value": "2026 財年內"
+      "productd_feature_launch_value": "2026 財年內",
+      "producte_status": "開發中",
+      "producte_name": "產品E",
+      "producte_desc": "輕鬆管理店內葡萄酒、 日本酒與威士忌的庫存。 面向 Restaurant 的應用。",
+      "producte_feature_form_label": "預期提供形態",
+      "producte_feature_form_value": "iOS / Web (同步發布)",
+      "producte_feature_launch_label": "預計公開",
+      "producte_feature_launch_value": "2026 財年內"
     },
     "company": {
       "title": "PAAN",

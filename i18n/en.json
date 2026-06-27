@@ -86,13 +86,20 @@
       "productd_name": "Product D",
       "productd_desc": "Discover the wine and sake you long to savor. A Consumer-facing app.",
       "productc_feature_form_label": "Format envisaged",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web (simultaneous release)",
       "productc_feature_launch_label": "Planned launch",
       "productc_feature_launch_value": "Within FY2026",
       "productd_feature_form_label": "Format envisaged",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web (simultaneous release)",
       "productd_feature_launch_label": "Planned launch",
-      "productd_feature_launch_value": "Within FY2026"
+      "productd_feature_launch_value": "Within FY2026",
+      "producte_status": "In development",
+      "producte_name": "Product E",
+      "producte_desc": "Effortless inventory management for your wine, sake and whisky. A Restaurant-facing app.",
+      "producte_feature_form_label": "Format envisaged",
+      "producte_feature_form_value": "iOS / Web (simultaneous release)",
+      "producte_feature_launch_label": "Planned launch",
+      "producte_feature_launch_value": "Within FY2026"
     },
     "company": {
       "title": "PAAN",

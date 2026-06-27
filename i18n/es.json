@@ -86,13 +86,20 @@
       "productd_name": "Producto D",
       "productd_desc": "Encuentra el vino y el sake que deseas degustar. Una app para el Consumer.",
       "productc_feature_form_label": "Formato previsto",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web (lanzamiento simultáneo)",
       "productc_feature_launch_label": "Lanzamiento previsto",
       "productc_feature_launch_value": "Durante el año fiscal 2026",
       "productd_feature_form_label": "Formato previsto",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web (lanzamiento simultáneo)",
       "productd_feature_launch_label": "Lanzamiento previsto",
-      "productd_feature_launch_value": "Durante el año fiscal 2026"
+      "productd_feature_launch_value": "Durante el año fiscal 2026",
+      "producte_status": "En desarrollo",
+      "producte_name": "Producto E",
+      "producte_desc": "Gestiona sin esfuerzo el inventario de vinos, sake y whisky de tu local. Una app para el Restaurant.",
+      "producte_feature_form_label": "Formato previsto",
+      "producte_feature_form_value": "iOS / Web (lanzamiento simultáneo)",
+      "producte_feature_launch_label": "Lanzamiento previsto",
+      "producte_feature_launch_value": "Durante el año fiscal 2026"
     },
     "company": {
       "title": "PAAN",

@@ -86,13 +86,20 @@
       "productd_name": "프로덕트 D",
       "productd_desc": "음미하고 싶은 와인과 사케를 만난다. Consumer 대상 앱.",
       "productc_feature_form_label": "제공 예정 형태",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web (동시 출시)",
       "productc_feature_launch_label": "공개 예정",
       "productc_feature_launch_value": "2026 회계연도 중",
       "productd_feature_form_label": "제공 예정 형태",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web (동시 출시)",
       "productd_feature_launch_label": "공개 예정",
-      "productd_feature_launch_value": "2026 회계연도 중"
+      "productd_feature_launch_value": "2026 회계연도 중",
+      "producte_status": "개발 중",
+      "producte_name": "프로덕트 E",
+      "producte_desc": "매장의 와인과 사케, 위스키 재고를 손쉽게 관리. Restaurant 대상 앱.",
+      "producte_feature_form_label": "제공 예정 형태",
+      "producte_feature_form_value": "iOS / Web (동시 출시)",
+      "producte_feature_launch_label": "공개 예정",
+      "producte_feature_launch_value": "2026 회계연도 중"
     },
     "company": {
       "title": "PAAN",

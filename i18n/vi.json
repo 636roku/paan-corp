@@ -86,13 +86,20 @@
       "productd_name": "Sản phẩm D",
       "productd_desc": "Tìm thấy loại vang và rượu sake bạn muốn thưởng thức. Ứng dụng dành cho Consumer.",
       "productc_feature_form_label": "Hình thức dự kiến",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web (phát hành đồng thời)",
       "productc_feature_launch_label": "Dự kiến ra mắt",
       "productc_feature_launch_value": "Trong năm tài chính 2026",
       "productd_feature_form_label": "Hình thức dự kiến",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web (phát hành đồng thời)",
       "productd_feature_launch_label": "Dự kiến ra mắt",
-      "productd_feature_launch_value": "Trong năm tài chính 2026"
+      "productd_feature_launch_value": "Trong năm tài chính 2026",
+      "producte_status": "Đang phát triển",
+      "producte_name": "Sản phẩm E",
+      "producte_desc": "Quản lý tồn kho vang, sake và whisky của nhà hàng một cách dễ dàng. Ứng dụng dành cho Restaurant.",
+      "producte_feature_form_label": "Hình thức dự kiến",
+      "producte_feature_form_value": "iOS / Web (phát hành đồng thời)",
+      "producte_feature_launch_label": "Dự kiến ra mắt",
+      "producte_feature_launch_value": "Trong năm tài chính 2026"
     },
     "company": {
       "title": "PAAN",

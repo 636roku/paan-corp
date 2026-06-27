@@ -86,13 +86,20 @@
       "productd_name": "Produk D",
       "productd_desc": "Temukan wine dan sake yang ingin Anda nikmati. Aplikasi untuk Consumer.",
       "productc_feature_form_label": "Format yang direncanakan",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web (rilis bersamaan)",
       "productc_feature_launch_label": "Rencana rilis",
       "productc_feature_launch_value": "Dalam tahun fiskal 2026",
       "productd_feature_form_label": "Format yang direncanakan",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web (rilis bersamaan)",
       "productd_feature_launch_label": "Rencana rilis",
-      "productd_feature_launch_value": "Dalam tahun fiskal 2026"
+      "productd_feature_launch_value": "Dalam tahun fiskal 2026",
+      "producte_status": "Dalam pengembangan",
+      "producte_name": "Produk E",
+      "producte_desc": "Kelola stok wine, sake, dan wiski restoran Anda dengan mudah. Aplikasi untuk Restaurant.",
+      "producte_feature_form_label": "Format yang direncanakan",
+      "producte_feature_form_value": "iOS / Web (rilis bersamaan)",
+      "producte_feature_launch_label": "Rencana rilis",
+      "producte_feature_launch_value": "Dalam tahun fiskal 2026"
     },
     "company": {
       "title": "PAAN",

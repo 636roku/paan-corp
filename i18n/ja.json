@@ -86,13 +86,20 @@
       "productd_name": "プロダクトD",
       "productd_desc": "嗜みたいワインや日本酒が見つかる。 Consumer 向けアプリ。",
       "productc_feature_form_label": "想定提供形態",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web 版 (同時リリース予定)",
       "productc_feature_launch_label": "公開予定",
       "productc_feature_launch_value": "2026 年度中",
       "productd_feature_form_label": "想定提供形態",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web 版 (同時リリース予定)",
       "productd_feature_launch_label": "公開予定",
-      "productd_feature_launch_value": "2026 年度中"
+      "productd_feature_launch_value": "2026 年度中",
+      "producte_status": "開発中",
+      "producte_name": "プロダクトE",
+      "producte_desc": "お店のワインや日本酒、 ウイスキーを簡単に在庫管理。 Restaurant 向けアプリ。",
+      "producte_feature_form_label": "想定提供形態",
+      "producte_feature_form_value": "iOS / Web 版 (同時リリース予定)",
+      "producte_feature_launch_label": "公開予定",
+      "producte_feature_launch_value": "2026 年度中"
     },
     "company": {
       "title": "PAAN",

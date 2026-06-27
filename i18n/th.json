@@ -86,13 +86,20 @@
       "productd_name": "ผลิตภัณฑ์ D",
       "productd_desc": "ค้นพบไวน์และสาเกที่คุณอยากลิ้มลอง แอปสำหรับ Consumer",
       "productc_feature_form_label": "รูปแบบที่วางแผน",
-      "productc_feature_form_value": "iOS",
+      "productc_feature_form_value": "iOS / Web (เปิดตัวพร้อมกัน)",
       "productc_feature_launch_label": "กำหนดเปิดตัว",
       "productc_feature_launch_value": "ภายในปีงบประมาณ 2026",
       "productd_feature_form_label": "รูปแบบที่วางแผน",
-      "productd_feature_form_value": "iOS",
+      "productd_feature_form_value": "iOS / Web (เปิดตัวพร้อมกัน)",
       "productd_feature_launch_label": "กำหนดเปิดตัว",
-      "productd_feature_launch_value": "ภายในปีงบประมาณ 2026"
+      "productd_feature_launch_value": "ภายในปีงบประมาณ 2026",
+      "producte_status": "อยู่ในระหว่างการพัฒนา",
+      "producte_name": "ผลิตภัณฑ์ E",
+      "producte_desc": "จัดการสต๊อกไวน์ สาเก และวิสกี้ของร้านได้อย่างง่ายดาย แอปสำหรับ Restaurant",
+      "producte_feature_form_label": "รูปแบบที่วางแผน",
+      "producte_feature_form_value": "iOS / Web (เปิดตัวพร้อมกัน)",
+      "producte_feature_launch_label": "กำหนดเปิดตัว",
+      "producte_feature_launch_value": "ภายในปีงบประมาณ 2026"
     },
     "company": {
       "title": "PAAN",
