@@ -109,6 +109,8 @@
       "info_h": "L'azienda",
       "info_name": "Ragione sociale",
       "info_name_v": "PAAN Co., Ltd. (株式会社PAAN)",
+      "info_corpnum": "Numero aziendale",
+      "info_corpnum_v": "2011001178335",
       "info_founded": "Costituzione",
       "info_founded_v": "3 giugno 2026",
       "info_ceo": "Direttore Rappresentante",
@@ -173,6 +175,10 @@
       "signature_name": "Rokusaburo Inui",
       "back_to_company": "← Torna a Azienda"
     }
+  },
+  "pwa": {
+    "update_tap": "È disponibile una nuova versione — tocca per aggiornare",
+    "updating": "Aggiornamento…"
   },
   "cookie_banner": {
     "title": "Sull'uso dei cookie",

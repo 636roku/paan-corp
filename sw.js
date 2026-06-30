@@ -11,8 +11,14 @@
  *           それでいて HTML は network-first なので、 デプロイした変更は最大1回遅延で反映
  *
  * バージョン管理: CACHE_VERSION 更新で旧キャッシュは自動破棄
+ *
+ * v47 (社長指示2026-06-30「menupaan.com 同様、 新版が出たら画面下にトーストを出す」):
+ *   install での自動 skipWaiting を撤廃。 新 SW は waiting のまま留め、 ページ側
+ *   (paan-anim.js) が画面下に「タップして更新」トーストを表示。 タップで SKIP_WAITING を
+ *   postMessage → 本 SW が skipWaiting → controllerchange でユーザー主導の1回リロード。
+ *   初回訪問(既存 controller 無し)は waiting せず即 activate するので体感影響なし。
  */
-const CACHE_VERSION = 'paan-v46';
+const CACHE_VERSION = 'paan-v47';
 const CACHE_NAME = `paan-cache-${CACHE_VERSION}`;
 
 // ============================================
@@ -88,8 +94,18 @@ self.addEventListener('install', (event) => {
           )
         );
       })
-      .then(() => self.skipWaiting())
+      // 自動 skipWaiting は撤廃 (v47): 新 SW は waiting で待機し、 ユーザーが
+      // トーストをタップして SKIP_WAITING を送るまで切替えない。
   );
+});
+
+// ============================================
+// message: ページからの SKIP_WAITING でユーザー主導の更新切替
+// ============================================
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 // ============================================

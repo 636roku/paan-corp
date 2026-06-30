@@ -109,6 +109,8 @@
       "info_h": "運営会社",
       "info_name": "商号",
       "info_name_v": "株式会社PAAN (PAAN Co., Ltd.)",
+      "info_corpnum": "法人番号",
+      "info_corpnum_v": "2011001178335",
       "info_founded": "設立",
       "info_founded_v": "2026 年 6 月 3 日",
       "info_ceo": "代表取締役",
@@ -173,6 +175,10 @@
       "signature_name": "乾 禄三郎",
       "back_to_company": "← 会社概要へ戻る"
     }
+  },
+  "pwa": {
+    "update_tap": "新しいバージョンがあります — タップして更新",
+    "updating": "更新中..."
   },
   "cookie_banner": {
     "title": "Cookie の使用について",

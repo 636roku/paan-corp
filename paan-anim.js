@@ -262,13 +262,98 @@
   }
 
   // ============================================
-  // Service Worker 登録 (= 2回目以降のオフライン即表示、 3G対応)
+  // Service Worker 登録 + 「タップして更新」トースト
+  //   (社長指示2026-06-30: menupaan.com 同様、 新版が出たら画面下にトースト)
+  //   新 SW は waiting で留め(sw.js v47で自動skipWaiting撤廃)、 トーストをタップ →
+  //   SKIP_WAITING postMessage → controllerchange で1回だけリロード(ユーザー主導)。
   // ============================================
   if ('serviceWorker' in navigator) {
+    let updBanner = null;
+    let waitingWorker = null;
+    let userInitiated = false;
+
+    const tt = (key, fb) => {
+      try {
+        if (window.PAAN && window.PAAN.i18n && window.PAAN.i18n.t) {
+          const v = window.PAAN.i18n.t(key);
+          if (v && v !== key) return v;
+        }
+      } catch (_) {}
+      return fb;
+    };
+
+    const injectUpdCSS = () => {
+      if (document.getElementById('paan-upd-css')) return;
+      const s = document.createElement('style');
+      s.id = 'paan-upd-css';
+      s.textContent =
+        '#paan-upd{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));' +
+        'transform:translateX(-50%);z-index:99999;display:flex;align-items:center;justify-content:center;' +
+        'max-width:min(88vw,360px);background:#3A1420;color:#fff;border:none;border-radius:18px;' +
+        'padding:13px 22px;box-shadow:0 12px 34px rgba(0,0,0,.30);text-align:center;white-space:normal;cursor:pointer;' +
+        'font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Segoe UI",sans-serif;' +
+        'font-weight:600;font-size:14px;line-height:1.5;animation:paanUpdIn .3s ease-out;}' +
+        '#paan-upd:active{opacity:.9;}' +
+        '@keyframes paanUpdIn{from{opacity:0;transform:translate(-50%,14px);}to{opacity:1;transform:translateX(-50%);}}';
+      document.head.appendChild(s);
+    };
+
+    const showUpdBanner = (worker) => {
+      if (worker) waitingWorker = worker;
+      if (updBanner || !document.body) return;
+      injectUpdCSS();
+      updBanner = document.createElement('button');
+      updBanner.id = 'paan-upd';
+      updBanner.type = 'button';
+      updBanner.setAttribute('role', 'status');
+      updBanner.textContent = tt('pwa.update_tap', '新しいバージョンがあります — タップして更新');
+      document.body.appendChild(updBanner);
+      let updating = false;
+      updBanner.addEventListener('click', () => {
+        if (updating) return;
+        updating = true;
+        userInitiated = true;
+        updBanner.textContent = tt('pwa.updating', '更新中...');
+        try { if (waitingWorker) waitingWorker.postMessage({ type: 'SKIP_WAITING' }); } catch (_) {}
+        // controllerchange が来ない端末向けフォールバック(iOS Safari PWA 対策)
+        setTimeout(() => { try { location.reload(); } catch (_) {} }, 2800);
+      });
+    };
+
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch((err) => {
-        // SW登録失敗してもサイトは普通に動くので、 console警告のみ
-        console.warn('[paan] SW registration failed:', err);
+      navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
+        .then((reg) => {
+          // 既に新 SW が待機中(別タブで install 済) → 即トースト
+          if (reg.waiting && navigator.serviceWorker.controller) showUpdBanner(reg.waiting);
+          // 新 SW を検知 → install 完了でトースト
+          reg.addEventListener('updatefound', () => {
+            const installing = reg.installing;
+            if (!installing) return;
+            installing.addEventListener('statechange', () => {
+              if (installing.state === 'installed' && navigator.serviceWorker.controller) showUpdBanner(installing);
+            });
+          });
+          // 各画面・復帰時に最新版チェック
+          reg.update().catch(() => {});
+          setInterval(() => { reg.update().catch(() => {}); }, 30 * 60 * 1000);
+          document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') reg.update().catch(() => {});
+          });
+          window.addEventListener('focus', () => { reg.update().catch(() => {}); });
+          window.addEventListener('pageshow', () => { reg.update().catch(() => {}); });
+        })
+        .catch((err) => {
+          // SW登録失敗してもサイトは普通に動くので、 console警告のみ
+          console.warn('[paan] SW registration failed:', err);
+        });
+
+      // 制御交代でのリロードは「更新」タップ時のみ(userInitiated)。 初回 install の
+      // clients.claim() による裏での切替では自動リロードしない。
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!userInitiated || refreshing) return;
+        refreshing = true;
+        try { window.location.reload(); } catch (_) {}
       });
     });
   }

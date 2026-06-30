@@ -109,6 +109,8 @@
       "info_h": "Công ty vận hành",
       "info_name": "Tên công ty",
       "info_name_v": "PAAN Co., Ltd. (株式会社PAAN)",
+      "info_corpnum": "Mã số doanh nghiệp",
+      "info_corpnum_v": "2011001178335",
       "info_founded": "Thành lập",
       "info_founded_v": "Ngày 3 tháng 6 năm 2026",
       "info_ceo": "Tổng giám đốc đại diện",
@@ -173,6 +175,10 @@
       "signature_name": "Rokusaburo Inui",
       "back_to_company": "← Quay lại Về công ty"
     }
+  },
+  "pwa": {
+    "update_tap": "Đã có phiên bản mới — chạm để cập nhật",
+    "updating": "Đang cập nhật…"
   },
   "cookie_banner": {
     "title": "Về việc sử dụng cookie",

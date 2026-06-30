@@ -109,6 +109,8 @@
       "info_h": "운영 회사",
       "info_name": "상호",
       "info_name_v": "PAAN 주식회사 (PAAN Co., Ltd.)",
+      "info_corpnum": "법인번호",
+      "info_corpnum_v": "2011001178335",
       "info_founded": "설립",
       "info_founded_v": "2026년 6월 3일",
       "info_ceo": "대표이사",
@@ -173,6 +175,10 @@
       "signature_name": "이누이 로쿠사부로",
       "back_to_company": "← 회사 개요로 돌아가기"
     }
+  },
+  "pwa": {
+    "update_tap": "새 버전이 있습니다 — 탭하여 업데이트",
+    "updating": "업데이트 중…"
   },
   "cookie_banner": {
     "title": "쿠키 사용에 관하여",

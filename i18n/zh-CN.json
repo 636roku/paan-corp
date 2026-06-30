@@ -109,6 +109,8 @@
       "info_h": "运营公司",
       "info_name": "商号",
       "info_name_v": "PAAN 株式会社 (PAAN Co., Ltd.)",
+      "info_corpnum": "法人编号",
+      "info_corpnum_v": "2011001178335",
       "info_founded": "成立",
       "info_founded_v": "2026 年 6 月 3 日",
       "info_ceo": "代表董事",
@@ -173,6 +175,10 @@
       "signature_name": "乾 禄三郎",
       "back_to_company": "← 返回公司概要"
     }
+  },
+  "pwa": {
+    "update_tap": "有新版本 — 点按以更新",
+    "updating": "正在更新…"
   },
   "cookie_banner": {
     "title": "关于 Cookie 的使用",

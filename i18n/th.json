@@ -109,6 +109,8 @@
       "info_h": "บริษัทผู้ดำเนินงาน",
       "info_name": "ชื่อบริษัท",
       "info_name_v": "PAAN Co., Ltd. (株式会社PAAN)",
+      "info_corpnum": "เลขทะเบียนนิติบุคคล",
+      "info_corpnum_v": "2011001178335",
       "info_founded": "ก่อตั้ง",
       "info_founded_v": "3 มิถุนายน 2026",
       "info_ceo": "กรรมการผู้แทน",
@@ -173,6 +175,10 @@
       "signature_name": "โรคุซาบุโร อินูอิ",
       "back_to_company": "← กลับสู่ข้อมูลบริษัท"
     }
+  },
+  "pwa": {
+    "update_tap": "มีเวอร์ชันใหม่ — แตะเพื่ออัปเดต",
+    "updating": "กำลังอัปเดต…"
   },
   "cookie_banner": {
     "title": "เกี่ยวกับการใช้คุกกี้",
